@@ -1,0 +1,118 @@
+body {
+    background-color: #0d1218;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    color: #ebe6e6;
+}
+
+
+h2 {
+    color: #dcd4d4;
+}
+
+
+p {
+    color: #c7c9cc;
+}
+
+
+li {
+    color: #c7c9cc;
+}
+
+
+.section {
+    background-color: #3a3d42;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: #0d1218;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Khối nội dung chính */
+body > div {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+/* Tiêu đề chính */
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+/* Ảnh Audi A8 chính */
+body > div > img:first-of-type {
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto 35px;
+    border-radius: 15px;
+
+    transition: 0.5s;
+}
+
+body > div > img:first-of-type:hover {
+    transform: scale(1.03);
+}
+
+/* Đoạn giới thiệu */
+p {
+    color: #c7c9cc;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Tiêu đề các phần */
+h2 {
+    color: #ffffff;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 4px solid #ffffff;
+}
+
+/* Nhóm ảnh nhỏ */
+body > div > img:not(:first-of-type) {
+    width: 300px !important;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 12px;
+
+    transition: 0.4s;
+}
+
+/* Hover ảnh */
+body > div > img:not(:first-of-type):hover {
+    transform: scale(1.05);
+}
+
+/* Danh sách */
+ul {
+    padding-left: 25px;
+}
+
+li {
+    color: #c7c9cc;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+strong {
+    color: #ffffff;
+}

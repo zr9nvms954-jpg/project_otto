@@ -1,0 +1,37 @@
+
+
+body {
+    background-color: #1b1b1b;
+    color: rgb(220, 214, 214);
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("img/logo-ferrari.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    opacity: 0.15;
+    z-index: -1;
+}
+
+h1 {
+    color: rgb(197, 189, 189);
+}
+
+h2 {
+    color: #dd1c15;
+}
+
+p {
+    color: #d0d0d0d3;
+}
+
+li {
+    color: #d0d0d0;
+}
