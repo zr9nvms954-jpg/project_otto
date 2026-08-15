@@ -1,0 +1,124 @@
+/* ==========================================================
+   THEME NỘI THẤT AUDI R8 - SPORT BLACK & ACCENT RED
+   ========================================================== */
+
+/* 1. ĐỊNH DẠNG CHUNG */
+body {
+    background-color: #121212; /* Màu đen da cao cấp */
+    color: #e0e0e0;            /* Màu chữ sáng rõ, dễ đọc */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px 40px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (HEADINGS) */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 25px;
+}
+
+/* Tiêu đề chính h1 có đường viền chỉ đỏ dưới chân */
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid #ff1744; /* Đường chỉ khâu đỏ */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    border-left: 4px solid #ff1744; /* Vạch đánh dấu 12h màu đỏ */
+    padding-left: 12px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH (<hr>) */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #ff1744, #333333, transparent);
+    margin: 30px 0;
+}
+
+/* 4. ĐƯỜNG DẪN BREADCRUMB (<nav>) */
+nav {
+    background-color: #1e1e1e;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: 1px solid #2c2c2c;
+}
+
+nav a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff1744; /* Đổi sang đỏ khi hover */
+}
+
+/* 5. DẠNG LINK / LIÊN KẾT GIAO DIỆN */
+a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #ff1744;
+    text-decoration: underline;
+}
+
+/* 6. HÌNH ẢNH (IMAGES) */
+img {
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Đổ bóng tạo độ sâu */
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+/* 7. NÚT BẤM (BUTTON) - LẤY CẢM HỨNG TỪ NÚT START/STOP */
+button {
+    background: linear-gradient(135deg, #d32f2f, #9a0007); /* Nút đỏ Start/Stop */
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff1744, #d32f2f);
+    box-shadow: 0 6px 15px rgba(255, 23, 68, 0.6);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 8. BẢNG BIỂU / DANH SÁCH Xe (Nếu có) */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Highlight thông số giá / tình trạng xe */
+p strong {
+    color: #ffffff;
+}

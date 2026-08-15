@@ -1,0 +1,123 @@
+/* ==========================================================
+   THEME AUDI RS7 SPORTBACK - PERFORMANCE BLACK & AMBIENT RED
+   ========================================================== */
+
+/* 1. NỀN & TỔNG THỂ (Màu taplo và ghế da Valcona đen) */
+body {
+    background-color: #0a0a0c;       /* Đen sâu mờ */
+    color: #d1d1d6;                  /* Chữ xám bạc sáng */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 50px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (Mang phong cách thể thao RS) */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tiêu đề chính h1 - Mô phỏng dải đèn Ambient Light đỏ rực ngang taplo */
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid #e60028; /* Đỏ RS */
+    box-shadow: 0 4px 10px -4px rgba(230, 0, 40, 0.6); /* Hiệu ứng phát sáng nhẹ */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    border-left: 4px solid #e60028;
+    padding-left: 12px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH - Kéo dài dải đèn LED */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #e60028, #1a1a20, transparent);
+    box-shadow: 0 1px 5px rgba(230, 0, 40, 0.4);
+    margin: 30px 0;
+}
+
+/* 4. THANH ĐIỀU HƯỚNG (BREADCRUMB) */
+nav {
+    background-color: #121215;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #222228;
+}
+
+nav a {
+    color: #888892;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e60028;
+}
+
+/* 5. LIÊN KẾT (LINKS) */
+a {
+    color: #e60028;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff3355; /* Đỏ sáng hơn khi hover */
+    text-shadow: 0 0 8px rgba(230, 0, 40, 0.5); /* Sáng lên như màn hình Virtual Cockpit */
+}
+
+/* 6. HÌNH ẢNH - Viền nhôm xước & Đổ bóng tối */
+img {
+    border-radius: 4px;
+    border: 2px solid #2a2a30; /* Màu ốp nhôm tối */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+/* 7. NÚT BẤM (RS MODE BUTTON) - Gắn liền với cụm vô-lăng thể thao */
+button {
+    background-color: transparent;
+    color: #e60028;
+    border: 2px solid #e60028;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0; /* Vuông vức hầm hố */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e60028;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(230, 0, 40, 0.6);
+}
+
+/* 8. DANH SÁCH & THÔNG SỐ (Chỉ khâu tổ ong) */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+p strong, li strong {
+    color: #ffffff; /* Từ khóa nổi bật màu trắng sáng */
+}

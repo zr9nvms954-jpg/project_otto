@@ -1,0 +1,129 @@
+/* ==========================================================
+   THEME BMW Z4 ROADSTER - TITANIUM GREY & CORAL RED INTERIOR
+   ========================================================== */
+
+/* 1. TOÀN TRANG (Nền xám titan ánh metallic, chữ xám bạc) */
+body {
+    background-color: #1c1e22;       /* Xám Titan cao cấp */
+    color: #d8dadf;                  /* Chữ xám bạc dễ đọc */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+    margin: 0;
+    padding: 30px 50px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (Điểm nhấn Đỏ Da Coral Red) */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Tiêu đề h1 - Tông màu ghế da Coral Red quyến rũ */
+h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    border-bottom: 3px solid #b82e2e; /* Màu da đỏ gốm Coral Red */
+    box-shadow: 0 4px 12px rgba(184, 46, 46, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #f0f2f5;
+    border-left: 4px solid #b82e2e;
+    padding-left: 14px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #b82e2e, #2d3138, transparent);
+    margin: 35px 0;
+}
+
+/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+nav {
+    background-color: #24282f;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid #323742;
+}
+
+nav a {
+    color: #9299a6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b82e2e;
+}
+
+/* 5. LIÊN KẾT (LINKS) */
+a {
+    color: #d64545;                  /* Đỏ viền nổi bật */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff5c5c;
+    text-shadow: 0 0 8px rgba(184, 46, 46, 0.4);
+}
+
+/* 6. HÌNH ẢNH (Khung xám titan bóng nhẹ) */
+img {
+    border-radius: 8px;
+    border: 1px solid #383e4a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    border-color: #b82e2e;
+}
+
+/* 7. NÚT BẤM CỰC CHẤT (Thương hiệu Ghế Da Đỏ BMW Z4) */
+button {
+    background: linear-gradient(135deg, #b82e2e, #851c1c);
+    color: #ffffff;
+    border: none;
+    padding: 13px 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(184, 46, 46, 0.35);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #d63838, #b82e2e);
+    box-shadow: 0 6px 20px rgba(184, 46, 46, 0.55);
+    transform: translateY(-2px);
+}
+
+/* 8. DANH SÁCH & THÔNG SỐ */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #d8dadf;
+}
+
+p strong, li strong {
+    color: #ffffff;
+}

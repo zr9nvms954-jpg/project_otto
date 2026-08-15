@@ -1,0 +1,128 @@
+/* ==========================================================
+   THEME AUDI A8L - LUXURY EXECUTIVE (SANG TRỌNG & THƯƠNG GIA)
+   ========================================================== */
+
+/* 1. TOÀN TRANG (BACKGROUND & FONT) */
+body {
+    background-color: #0f0f11;       /* Đen Onyx lịch lãm */
+    color: #e2e2e8;                  /* Chữ trắng ánh kim xám nhẹ */
+    font-family: 'Cinzel', 'Segoe UI', -apple-system, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 30px 60px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (HEADINGS) */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Tiêu đề chính h1 - Ánh kim vàng đồng cao cấp */
+h1 {
+    font-size: 2.4rem;
+    color: #f3e5ab;
+    border-bottom: 2px solid #d4af37; /* Đường viền Vàng Đồng */
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* Tiêu đề mục h2 - Phong cách viền mạ Chrome/Champagne */
+h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    border-left: 3px solid #d4af37;
+    padding-left: 15px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH (<hr>) */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #d4af37, #2a2a30, transparent);
+    margin: 35px 0;
+}
+
+/* 4. THANH HƯỚNG DẪN (BREADCRUMB) */
+nav {
+    background-color: #17171c;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: 1px solid #2a2a32;
+}
+
+nav a {
+    color: #a0a0ab;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* 5. ĐƯỜNG DẪN & LIÊN KẾT GAIO DIỆN */
+a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #f3e5ab;
+    text-decoration: underline;
+}
+
+/* 6. KHU VỰC ẢNH & HIỆU ỨNG TẠO ĐỘ SANG */
+img {
+    border-radius: 6px;
+    border: 1px solid #2c2c35;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8); /* Đổ bóng sâu */
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    transition: transform 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.01); /* Zoom nhẹ khi hover tạo cảm giác mượt mà */
+}
+
+/* 7. NÚT LIÊN HỆ ĐẶT HÀNG (VIP BUTTON) */
+button {
+    background: linear-gradient(135deg, #c5a059, #9a7b38); /* Vàng kim loại mờ */
+    color: #0f0f11;
+    border: none;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #e5c178, #c5a059);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+    transform: translateY(-2px);
+}
+
+/* 8. DANH SÁCH THÔNG SỐ (LISTS) */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+p strong, li strong {
+    color: #ffffff; /* Làm nổi bật các từ khóa thông số */
+}

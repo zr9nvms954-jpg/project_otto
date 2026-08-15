@@ -1,118 +1,130 @@
+/* ==========================================================
+   THEME AUDI MODERN SHOWROOM - SLATE BLACK & ELECTRIC CYAN
+   ========================================================== */
+
+/* 1. TOÀN TRANG (Nền xám than cao cấp chuẩn Audi.vn) */
 body {
-    background-color: #0d1218;
-    color: #f5f5f5;
-    font-family: Arial, sans-serif;
-}
-
-
-h1 {
-    color: #ebe6e6;
-}
-
-
-h2 {
-    color: #dcd4d4;
-}
-
-
-p {
-    color: #c7c9cc;
-}
-
-
-li {
-    color: #c7c9cc;
-}
-
-
-.section {
-    background-color: #3a3d42;
-    padding: 40px;
-    border-radius: 20px;
-}
-
-body {
+    background-color: #0f1217;       /* Xám than Slate chìm */
+    color: #9ba3af;                  /* Chữ xám nhạt hiện đại */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    background-color: #0d1218;
+    padding: 30px 50px;
+}
+
+/* 2. TIÊU ĐỀ CHÍNH & MỤC (Accent Cyan bắt mắt) */
+h1, h2, h3 {
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.2px;
 }
 
-/* Khối nội dung chính */
-body > div {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 0;
-}
-
-/* Tiêu đề chính */
+/* Tiêu đề h1 nổi bật với hiệu ứng viền Neon Cyber */
 h1 {
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 40px;
+    font-size: 2.2rem;
     color: #ffffff;
-}
-
-/* Ảnh Audi A8 chính */
-body > div > img:first-of-type {
-    display: block;
-    width: 80%;
-    max-width: 900px;
-    height: auto;
-    margin: 0 auto 35px;
-    border-radius: 15px;
-
-    transition: 0.5s;
-}
-
-body > div > img:first-of-type:hover {
-    transform: scale(1.03);
-}
-
-/* Đoạn giới thiệu */
-p {
-    color: #c7c9cc;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* Tiêu đề các phần */
-h2 {
-    color: #ffffff;
-    margin-top: 60px;
+    border-bottom: 3px solid #00f0ff; /* Xanh Neon e-tron */
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.35); /* Phát sáng nhẹ */
+    padding-bottom: 10px;
     margin-bottom: 25px;
-    padding-left: 15px;
-    border-left: 4px solid #ffffff;
+    display: inline-block;
 }
 
-/* Nhóm ảnh nhỏ */
-body > div > img:not(:first-of-type) {
-    width: 300px !important;
-    height: 200px;
-    object-fit: cover;
-    margin: 10px;
+h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    border-left: 4px solid #00f0ff;
+    padding-left: 14px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH (Dải sáng dốc màu e-tron) */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #00f0ff, #1e2530, transparent);
+    margin: 35px 0;
+}
+
+/* 4. THANH HƯỚNG DẪN BREADCRUMB (Thiết kế dạng Card bo góc) */
+nav {
+    background-color: #181d24;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #252e3a;
+}
+
+nav a {
+    color: #6c788a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00f0ff;
+}
+
+/* 5. LIÊN KẾT (LINKS) */
+a {
+    color: #00f0ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #80f8ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+
+/* 6. CARD HÌNH ẢNH (Bo tròn góc như giao diện Audi e-tron) */
+img {
     border-radius: 12px;
-
-    transition: 0.4s;
+    border: 1px solid #252e3a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Hover ảnh */
-body > div > img:not(:first-of-type):hover {
-    transform: scale(1.05);
+img:hover {
+    transform: translateY(-4px);
+    border-color: #00f0ff;
 }
 
-/* Danh sách */
+/* 7. NÚT BẤM CỰC KỲ BẮT MẮT (Glow Button) */
+button {
+    background: linear-gradient(135deg, #00f0ff, #0080ff);
+    color: #0f1217;                  /* Chữ tối tương phản cao trên nền sáng */
+    border: none;
+    padding: 14px 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;              /* Nút bo tròn viên thuốc kiểu Audi hiện đại */
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #80f8ff, #00f0ff);
+    box-shadow: 0 6px 25px rgba(0, 240, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* 8. DANH SÁCH & NỔI BẬT THÔNG SỐ */
 ul {
-    padding-left: 25px;
+    padding-left: 20px;
 }
 
 li {
-    color: #c7c9cc;
-    line-height: 1.8;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    color: #9ba3af;
 }
 
-strong {
+p strong, li strong {
     color: #ffffff;
 }

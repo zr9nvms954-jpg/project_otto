@@ -1,0 +1,128 @@
+/* ==========================================================
+   THEME BMW OFFICIAL SHOWROOM - MINIMALIST LIGHT & BMW BLUE
+   ========================================================== */
+
+/* 1. TOÀN TRANG (Nền trắng xám tối giản, tinh tế) */
+body {
+    background-color: #ffffff;
+    color: #262626;                  /* Chữ đen xám hiện đại */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 50px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (Phong cách Typography của BMW) */
+h1, h2, h3 {
+    color: #111111;
+    font-weight: 300;                /* Font mảnh tinh tế chuẩn BMW */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Tiêu đề h1 - Thanh lịch với viền gạch BMW Blue */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    border-bottom: 3px solid #0066b1; /* Xanh BMW đặc trưng */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-left: 4px solid #111111;
+    padding-left: 12px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH (Vạch kẻ mảnh tối giản) */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: 35px 0;
+}
+
+/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+nav {
+    background-color: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+nav a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #0066b1;
+}
+
+/* 5. LIÊN KẾT (LINKS) */
+a {
+    color: #0066b1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #004477;
+    text-decoration: underline;
+}
+
+/* 6. HÌNH ẢNH (Hiển thị sản phẩm sạch xịn trên nền sáng) */
+img {
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bóng mờ rất nhẹ */
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: translateY(-3px);
+}
+
+/* 7. NÚT BẤM (BMW Official Black Button) */
+button {
+    background-color: #1c1c1c;       /* Nút đen nguyên khối chuẩn bmw.vn */
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background-color: #0066b1;       /* Đổi sang xanh BMW khi rê chuột */
+    box-shadow: 0 4px 12px rgba(0, 102, 177, 0.3);
+}
+
+/* 8. DANH SÁCH & THÔNG SỐ */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #444444;
+}
+
+p strong, li strong {
+    color: #111111;
+}

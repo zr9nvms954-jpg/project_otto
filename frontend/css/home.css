@@ -1,0 +1,129 @@
+/* ==========================================================
+   THEME PORSCHE GLOBAL - ULTRA-DARK LUXURY & PORSCHE RED
+   ========================================================== */
+
+/* 1. TOÀN TRANG (Nền đen sâu tuyệt đối chuẩn Porsche.com) */
+body {
+    background-color: #0e0f12;       /* Đen sâu mờ */
+    color: #e1e3e6;                  /* Chữ trắng xám cao cấp */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 50px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (Typography mạnh mẽ & sắc sảo) */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Tiêu đề h1 - Đội điểm nhấn Đỏ Porsche Red kinh điển */
+h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    border-bottom: 3px solid #d5001c; /* Porsche Guards Red */
+    box-shadow: 0 4px 15px rgba(213, 0, 28, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    border-left: 4px solid #d5001c;
+    padding-left: 14px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH (Dải sáng dốc tối giản) */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #d5001c, #212529, transparent);
+    margin: 35px 0;
+}
+
+/* 4. THANH HƯỚNG DẪN BREADCRUMB (Thiết kế dạng Capsule mờ) */
+nav {
+    background-color: #1a1c23;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #2a2d37;
+}
+
+nav a {
+    color: #8a8f99;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* 5. LIÊN KẾT (LINKS) */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #d5001c;
+}
+
+/* 6. CARD HÌNH ẢNH (Bo góc 16px chuẩn Porsche UI) */
+img {
+    border-radius: 16px;             /* Bo góc lớn hiện đại */
+    border: 1px solid #212529;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75);
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.015);         /* Phóng to mượt mà */
+    border-color: #343a40;
+}
+
+/* 7. NÚT BẤM CỰC CHẤT (Porsche Performance Button) */
+button {
+    background-color: #d5001c;       /* Đỏ Porsche */
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(213, 0, 28, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff0022;
+    box-shadow: 0 6px 25px rgba(213, 0, 28, 0.65);
+    transform: translateY(-2px);
+}
+
+/* 8. DANH SÁCH & THÔNG SỐ */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #c1c5cc;
+}
+
+p strong, li strong {
+    color: #ffffff;
+}

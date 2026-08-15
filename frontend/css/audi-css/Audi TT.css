@@ -1,0 +1,126 @@
+/* ==========================================================
+   THEME AUDI TT SPORT CUP - RACING GREY & RED ACCENT
+   ========================================================== */
+
+/* 1. TOÀN TRANG (Nền xám bê tông/đường đua đậm, chữ xám nhạt dễ đọc) */
+body {
+    background-color: #1a1c1e;       /* Xám Asphalt đậm */
+    color: #d1d5db;                  /* Chữ xám sáng nhẹ */
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 50px;
+}
+
+/* 2. CÁC TIÊU ĐỀ (Phong cách tem xe đua) */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tiêu đề h1 - Số 1 Racing Red nổi bật */
+h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    border-bottom: 4px solid #e10600; /* Đỏ tem xe Audi Sport */
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* Tiêu đề h2 - Nhấn dải màu đường đua */
+h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    border-left: 5px solid #e10600;
+    padding-left: 12px;
+    margin-top: 35px;
+}
+
+/* 3. ĐƯỜNG PHÂN CÁCH (Vạch kẻ đường đua) */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #e10600 0%, #3a3d40 50%, transparent 100%);
+    margin: 30px 0;
+}
+
+/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+nav {
+    background-color: #24272a;
+    padding: 10px 18px;
+    border-radius: 4px;
+    border-left: 3px solid #e10600;
+}
+
+nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* 5. LINK / LIÊN KẾT */
+a {
+    color: #ff3b30; /* Đỏ thể thao */
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* 6. HÌNH ẢNH (Khung viền mỏng như cánh gió Carbon) */
+img {
+    border-radius: 4px;
+    border: 1px solid #374151;
+    background-color: #111827;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+/* 7. NÚT BẤM CÁ TÍNH (Style tem xe đua Audi Sport) */
+button {
+    background-color: #e10600;      /* Đỏ Audi Sport làm chủ đạo */
+    color: #ffffff;                  /* Chữ trắng điểm nhấn */
+    border: none;
+    padding: 12px 26px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(225, 6, 0, 0.35);
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background-color: #ff1a14;
+    box-shadow: 0 6px 18px rgba(225, 6, 0, 0.55);
+    transform: translateY(-2px);
+}
+
+/* 8. DANH SÁCH THÔNG SỐ (Giao diện bảng thông số kỹ thuật) */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #d1d5db;
+}
+
+p strong, li strong {
+    color: #ffffff; /* Trắng sáng điểm nhấn cho các từ khóa chính */
+}
