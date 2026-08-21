@@ -1,8 +1,35 @@
-/* ==========================================================
-   THEME AUDI RS7 SPORTBACK - PERFORMANCE BLACK & AMBIENT RED
-   ========================================================== */
+@keyframes rsFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/* 1. NỀN & TỔNG THỂ (Màu taplo và ghế da Valcona đen) */
+/* Hiệu ứng 2: Đèn Ambient Light nhấp nháy thở mượt mà */
+@keyframes rsAmbientPulse {
+    0%, 100% {
+        box-shadow: 0 4px 10px -4px rgba(230, 0, 40, 0.6);
+        border-color: #e60028;
+    }
+    50% {
+        box-shadow: 0 4px 20px 2px rgba(230, 0, 40, 0.9);
+        border-color: #ff3355;
+    }
+}
+
+/* Hiệu ứng 3: Dải sáng chạy qua đường phân cách */
+@keyframes rsLineSweep {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ----------------------------------------------------------
+   1. NỀN & TỔNG THỂ
+   ---------------------------------------------------------- */
 body {
     background-color: #0a0a0c;       /* Đen sâu mờ */
     color: #d1d1d6;                  /* Chữ xám bạc sáng */
@@ -10,9 +37,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 30px 50px;
+    
+    /* Animation tải trang toàn bộ nội dung */
+    animation: rsFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. CÁC TIÊU ĐỀ (Mang phong cách thể thao RS) */
+/* ----------------------------------------------------------
+   2. CÁC TIÊU ĐỀ
+   ---------------------------------------------------------- */
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
@@ -20,14 +52,16 @@ h1, h2, h3 {
     letter-spacing: 1px;
 }
 
-/* Tiêu đề chính h1 - Mô phỏng dải đèn Ambient Light đỏ rực ngang taplo */
+/* Tiêu đề chính h1 - Hiệu ứng phát sáng Ambient Light động */
 h1 {
     font-size: 2.2rem;
-    border-bottom: 2px solid #e60028; /* Đỏ RS */
-    box-shadow: 0 4px 10px -4px rgba(230, 0, 40, 0.6); /* Hiệu ứng phát sáng nhẹ */
+    border-bottom: 2px solid #e60028;
     padding-bottom: 10px;
     margin-bottom: 25px;
     display: inline-block;
+    
+    /* Tự động phát sáng nhịp nhàng */
+    animation: rsAmbientPulse 3s infinite ease-in-out, rsFadeInUp 0.6s ease-out;
 }
 
 h2 {
@@ -36,59 +70,102 @@ h2 {
     border-left: 4px solid #e60028;
     padding-left: 12px;
     margin-top: 35px;
+    
+    /* Animation mượt cho viền trái khi hover */
+    transition: all 0.3s ease;
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH - Kéo dài dải đèn LED */
+h2:hover {
+    padding-left: 18px;
+    border-left-color: #ff3355;
+    text-shadow: 0 0 10px rgba(230, 0, 40, 0.5);
+}
+
+/* ----------------------------------------------------------
+   3. ĐƯỜNG PHÂN CÁCH
+   ---------------------------------------------------------- */
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #e60028, #1a1a20, transparent);
+    background: linear-gradient(90deg, #e60028 0%, #1a1a20 50%, transparent 100%);
+    background-size: 200% 100%;
     box-shadow: 0 1px 5px rgba(230, 0, 40, 0.4);
     margin: 30px 0;
+    
+    /* Dải LED quét nhẹ qua đường kẻ */
+    animation: rsLineSweep 6s infinite linear;
 }
 
-/* 4. THANH ĐIỀU HƯỚNG (BREADCRUMB) */
+/* ----------------------------------------------------------
+   4. THANH ĐIỀU HƯỚNG (BREADCRUMB)
+   ---------------------------------------------------------- */
 nav {
     background-color: #121215;
     padding: 10px 15px;
     border-radius: 4px;
     border: 1px solid #222228;
+    transition: border-color 0.3s ease;
+}
+
+nav:hover {
+    border-color: rgba(230, 0, 40, 0.4);
 }
 
 nav a {
     color: #888892;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #e60028;
+    transform: translateY(-1px);
 }
 
-/* 5. LIÊN KẾT (LINKS) */
+/* ----------------------------------------------------------
+   5. LIÊN KẾT (LINKS)
+   ---------------------------------------------------------- */
 a {
     color: #e60028;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
 }
 
 a:hover {
-    color: #ff3355; /* Đỏ sáng hơn khi hover */
-    text-shadow: 0 0 8px rgba(230, 0, 40, 0.5); /* Sáng lên như màn hình Virtual Cockpit */
+    color: #ff3355;
+    text-shadow: 0 0 10px rgba(230, 0, 40, 0.6);
 }
 
-/* 6. HÌNH ẢNH - Viền nhôm xước & Đổ bóng tối */
+/* ----------------------------------------------------------
+   6. HÌNH ẢNH - Viền nhôm & Zoom Sporty
+   ---------------------------------------------------------- */
 img {
     border-radius: 4px;
-    border: 2px solid #2a2a30; /* Màu ốp nhôm tối */
+    border: 2px solid #2a2a30;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
     max-width: 100%;
     height: auto;
     margin: 15px 0;
+    
+    /* Chuyển động mượt khi di chuột vào ảnh */
+    transition: transform 0.4s cubic-bezier(0.16. 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
-/* 7. NÚT BẤM (RS MODE BUTTON) - Gắn liền với cụm vô-lăng thể thao */
+img:hover {
+    transform: scale(1.02) translateY(-4px); /* Phóng to & nổi nhẹ */
+    border-color: #e60028;
+    box-shadow: 0 12px 30px rgba(230, 0, 40, 0.35);
+}
+
+/* ----------------------------------------------------------
+   7. NÚT BẤM (RS MODE BUTTON) - Siêu Thể Thao
+   ---------------------------------------------------------- */
 button {
     background-color: transparent;
     color: #e60028;
@@ -98,26 +175,64 @@ button {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-radius: 0; /* Vuông vức hầm hố */
+    border-radius: 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Lớp phủ chuyển màu nền từ trong ra */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #e60028;
+    z-index: -1;
+    transition: left 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 button:hover {
-    background-color: #e60028;
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(230, 0, 40, 0.6);
+    box-shadow: 0 0 25px rgba(230, 0, 40, 0.8);
+    transform: translateY(-2px);
 }
 
-/* 8. DANH SÁCH & THÔNG SỐ (Chỉ khâu tổ ong) */
+button:hover::before {
+    left: 0; /* Đẩy màu đỏ phủ kín nút khi di chuột */
+}
+
+button:active {
+    transform: translateY(0) scale(0.98); /* Hiệu ứng nhấn nút */
+}
+
+/* ----------------------------------------------------------
+   8. DANH SÁCH & THÔNG SỐ
+   ---------------------------------------------------------- */
 ul {
     padding-left: 20px;
 }
 
 li {
     margin-bottom: 8px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Rê chuột vào từng dòng thông số sẽ nhích nhẹ sang phải */
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
 }
 
 p strong, li strong {
-    color: #ffffff; /* Từ khóa nổi bật màu trắng sáng */
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+li:hover strong {
+    color: #e60028; /* Đổi màu từ khóa thành Đỏ RS khi rê chuột vào dòng */
 }

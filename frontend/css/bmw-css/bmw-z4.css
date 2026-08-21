@@ -1,33 +1,91 @@
 /* ==========================================================
    THEME BMW Z4 ROADSTER - TITANIUM GREY & CORAL RED INTERIOR
+   (ADDED: ULTRA-SMOOTH ROADSTER PERFORMANCE ANIMATIONS)
    ========================================================== */
 
-/* 1. TOÀN TRANG (Nền xám titan ánh metallic, chữ xám bạc) */
+/* ----------------------------------------------------------
+   0. KEYFRAMES ANIMATION (HIỆU ỨNG TỰ ĐỘNG CHUYỂN ĐỘNG)
+   ---------------------------------------------------------- */
+
+/* Tải trang mượt chuẩn Roadster Luxury */
+@keyframes z4PageEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Ánh đỏ Coral Red phát sáng nhịp nhàng */
+@keyframes z4CoralPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(184, 46, 46, 0.3);
+        border-bottom-color: #b82e2e;
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(214, 69, 69, 0.65);
+        border-bottom-color: #d64545;
+    }
+}
+
+/* Dải sáng Coral Red quét qua đường kẻ phân cách */
+@keyframes z4RedSweep {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Nút bấm thở sáng màu đỏ da Coral Red */
+@keyframes z4ButtonGlow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(184, 46, 46, 0.35);
+    }
+    50% {
+        box-shadow: 0 8px 28px rgba(214, 69, 69, 0.8);
+    }
+}
+
+/* ----------------------------------------------------------
+   1. TOÀN TRANG
+   ---------------------------------------------------------- */
 body {
-    background-color: #1c1e22;       /* Xám Titan cao cấp */
-    color: #d8dadf;                  /* Chữ xám bạc dễ đọc */
+    background-color: #1c1e22;
+    color: #d8dadf;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.65;
     margin: 0;
     padding: 30px 50px;
+    animation: z4PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. CÁC TIÊU ĐỀ (Điểm nhấn Đỏ Da Coral Red) */
+/* ----------------------------------------------------------
+   2. CÁC TIÊU ĐỀ
+   ---------------------------------------------------------- */
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
-/* Tiêu đề h1 - Tông màu ghế da Coral Red quyến rũ */
 h1 {
     font-size: 2.2rem;
     color: #ffffff;
-    border-bottom: 3px solid #b82e2e; /* Màu da đỏ gốm Coral Red */
-    box-shadow: 0 4px 12px rgba(184, 46, 46, 0.3);
+    border-bottom: 3px solid #b82e2e;
     padding-bottom: 10px;
     margin-bottom: 25px;
     display: inline-block;
+    animation: z4CoralPulse 3s infinite ease-in-out;
+    transition: all 0.4s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 15px rgba(214, 69, 69, 0.6);
 }
 
 h2 {
@@ -36,48 +94,75 @@ h2 {
     border-left: 4px solid #b82e2e;
     padding-left: 14px;
     margin-top: 35px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH */
+h2:hover {
+    padding-left: 20px;
+    border-left-color: #d64545;
+    text-shadow: 0 0 12px rgba(184, 46, 46, 0.5);
+}
+
+/* ----------------------------------------------------------
+   3. ĐƯỜNG PHÂN CÁCH
+   ---------------------------------------------------------- */
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #b82e2e, #2d3138, transparent);
+    background: linear-gradient(90deg, #b82e2e 0%, #2d3138 50%, transparent 100%);
+    background-size: 200% 100%;
     margin: 35px 0;
+    animation: z4RedSweep 6s infinite linear;
 }
 
-/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+/* ----------------------------------------------------------
+   4. THANH HƯỚNG DẪN BREADCRUMB
+   ---------------------------------------------------------- */
 nav {
     background-color: #24282f;
     padding: 12px 20px;
     border-radius: 6px;
     border: 1px solid #323742;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+    border-color: rgba(184, 46, 46, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 nav a {
     color: #9299a6;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #b82e2e;
+    transform: translateY(-1px);
 }
 
-/* 5. LIÊN KẾT (LINKS) */
+/* ----------------------------------------------------------
+   5. LIÊN KẾT (LINKS)
+   ---------------------------------------------------------- */
 a {
-    color: #d64545;                  /* Đỏ viền nổi bật */
+    color: #d64545;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
 }
 
 a:hover {
     color: #ff5c5c;
-    text-shadow: 0 0 8px rgba(184, 46, 46, 0.4);
+    text-shadow: 0 0 10px rgba(184, 46, 46, 0.5);
+    transform: translateY(-1px);
 }
 
-/* 6. HÌNH ẢNH (Khung xám titan bóng nhẹ) */
+/* ----------------------------------------------------------
+   6. HÌNH ẢNH & THẺ CARD XE (VIDEO PREVIEW HOVER)
+   ---------------------------------------------------------- */
 img {
     border-radius: 8px;
     border: 1px solid #383e4a;
@@ -85,14 +170,65 @@ img {
     max-width: 100%;
     height: auto;
     margin: 15px 0;
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 img:hover {
+    transform: scale(1.02) translateY(-4px);
     border-color: #b82e2e;
+    box-shadow: 0 15px 35px rgba(184, 46, 46, 0.3);
 }
 
-/* 7. NÚT BẤM CỰC CHẤT (Thương hiệu Ghế Da Đỏ BMW Z4) */
+/* Container hỗ trợ Video Preview khi hovering */
+.car-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    border: 1px solid #383e4a;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    margin: 20px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.car-card:hover {
+    transform: scale(1.02) translateY(-4px);
+    border-color: #b82e2e;
+    box-shadow: 0 15px 35px rgba(184, 46, 46, 0.3);
+}
+
+.car-img, 
+.car-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   7. NÚT BẤM (CORAL RED BUTTON)
+   ---------------------------------------------------------- */
 button {
     background: linear-gradient(135deg, #b82e2e, #851c1c);
     color: #ffffff;
@@ -105,16 +241,40 @@ button {
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(184, 46, 46, 0.35);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Quét ánh kim khi rê chuột */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.5s ease;
 }
 
 button:hover {
     background: linear-gradient(135deg, #d63838, #b82e2e);
-    box-shadow: 0 6px 20px rgba(184, 46, 46, 0.55);
     transform: translateY(-2px);
+    animation: z4ButtonGlow 1.8s infinite ease-in-out;
 }
 
-/* 8. DANH SÁCH & THÔNG SỐ */
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ----------------------------------------------------------
+   8. DANH SÁCH & THÔNG SỐ
+   ---------------------------------------------------------- */
 ul {
     padding-left: 20px;
 }
@@ -122,8 +282,19 @@ ul {
 li {
     margin-bottom: 10px;
     color: #d8dadf;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
 }
 
 p strong, li strong {
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+li:hover strong {
+    color: #d64545;
 }

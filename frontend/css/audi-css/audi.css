@@ -1,130 +1,259 @@
 /* ==========================================================
-   THEME AUDI MODERN SHOWROOM - SLATE BLACK & ELECTRIC CYAN
+   THEME NỘI THẤT AUDI R8 - SPORT BLACK & ACCENT RED
+   (ADDED: SUPERCAR PERFORMANCE ANIMATIONS + VIDEO PREVIEW)
    ========================================================== */
 
-/* 1. TOÀN TRANG (Nền xám than cao cấp chuẩn Audi.vn) */
-body {
-    background-color: #0f1217;       /* Xám than Slate chìm */
-    color: #9ba3af;                  /* Chữ xám nhạt hiện đại */
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 30px 50px;
+@keyframes r8EngineStart {
+    from {
+        opacity: 0;
+        transform: scale(0.98) translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
-/* 2. TIÊU ĐỀ CHÍNH & MỤC (Accent Cyan bắt mắt) */
+@keyframes r8StartPulse {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 23, 68, 0.85);
+    }
+}
+
+@keyframes r8LightSweep {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px 40px;
+    animation: r8EngineStart 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
-    letter-spacing: -0.2px;
+    letter-spacing: 0.5px;
+    margin-top: 25px;
 }
 
-/* Tiêu đề h1 nổi bật với hiệu ứng viền Neon Cyber */
 h1 {
     font-size: 2.2rem;
-    color: #ffffff;
-    border-bottom: 3px solid #00f0ff; /* Xanh Neon e-tron */
-    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.35); /* Phát sáng nhẹ */
+    border-bottom: 3px solid #ff1744;
     padding-bottom: 10px;
-    margin-bottom: 25px;
     display: inline-block;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 12px rgba(255, 23, 68, 0.7);
+    border-bottom-color: #ff5252;
 }
 
 h2 {
     font-size: 1.5rem;
-    color: #ffffff;
-    border-left: 4px solid #00f0ff;
-    padding-left: 14px;
-    margin-top: 35px;
+    color: #f5f5f5;
+    border-left: 4px solid #ff1744;
+    padding-left: 12px;
+    transition: all 0.25s ease;
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH (Dải sáng dốc màu e-tron) */
+h2:hover {
+    padding-left: 18px;
+    border-left-color: #ff5252;
+    text-shadow: 0 0 8px rgba(255, 23, 68, 0.5);
+}
+
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #00f0ff, #1e2530, transparent);
-    margin: 35px 0;
+    background: linear-gradient(90deg, #ff1744, #333333, transparent);
+    background-size: 200% 100%;
+    margin: 30px 0;
+    animation: r8LightSweep 6s infinite linear;
 }
 
-/* 4. THANH HƯỚNG DẪN BREADCRUMB (Thiết kế dạng Card bo góc) */
 nav {
-    background-color: #181d24;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: 1px solid #252e3a;
+    background-color: #1e1e1e;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: 1px solid #2c2c2c;
+    transition: all 0.3s ease;
+}
+
+nav:hover {
+    border-color: rgba(255, 23, 68, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 nav a {
-    color: #6c788a;
+    color: #b0b0b0;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
-    color: #00f0ff;
+    color: #ff1744;
+    transform: translateY(-1px);
 }
 
-/* 5. LIÊN KẾT (LINKS) */
 a {
-    color: #00f0ff;
+    color: #ff4d4d;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
+    display: inline-block;
 }
 
 a:hover {
-    color: #80f8ff;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+    color: #ff1744;
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(255, 23, 68, 0.6);
 }
 
-/* 6. CARD HÌNH ẢNH (Bo tròn góc như giao diện Audi e-tron) */
+/* ----------------------------------------------------------
+   KHU VỰC THẺ XE & VIDEO PREVIEW HOVER
+   ---------------------------------------------------------- */
+.car-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    margin: 20px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.car-card:hover {
+    transform: scale(1.02) translateY(-3px);
+    border-color: #ff1744;
+    box-shadow: 0 10px 25px rgba(255, 23, 68, 0.35);
+}
+
+.car-img, 
+.car-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   CÁC PHẦN TỬ KHÁC
+   ---------------------------------------------------------- */
 img {
-    border-radius: 12px;
-    border: 1px solid #252e3a;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
     max-width: 100%;
     height: auto;
     margin: 15px 0;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 img:hover {
-    transform: translateY(-4px);
-    border-color: #00f0ff;
+    transform: scale(1.02) translateY(-3px);
+    border-color: #ff1744;
+    box-shadow: 0 10px 25px rgba(255, 23, 68, 0.35);
 }
 
-/* 7. NÚT BẤM CỰC KỲ BẮT MẮT (Glow Button) */
 button {
-    background: linear-gradient(135deg, #00f0ff, #0080ff);
-    color: #0f1217;                  /* Chữ tối tương phản cao trên nền sáng */
+    background: linear-gradient(135deg, #d32f2f, #9a0007);
+    color: #ffffff;
     border: none;
-    padding: 14px 30px;
-    font-size: 0.95rem;
-    font-weight: 700;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 30px;              /* Nút bo tròn viên thuốc kiểu Audi hiện đại */
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #80f8ff, #00f0ff);
-    box-shadow: 0 6px 25px rgba(0, 240, 255, 0.7);
+    background: linear-gradient(135deg, #ff1744, #d32f2f);
+    box-shadow: 0 6px 20px rgba(255, 23, 68, 0.7);
     transform: translateY(-2px);
+    animation: r8StartPulse 1.5s infinite ease-in-out;
 }
 
-/* 8. DANH SÁCH & NỔI BẬT THÔNG SỐ */
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0) scale(0.97);
+}
+
 ul {
     padding-left: 20px;
 }
 
 li {
-    margin-bottom: 10px;
-    color: #9ba3af;
+    margin-bottom: 8px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
 }
 
 p strong, li strong {
     color: #ffffff;
+    transition: color 0.25s ease;
+}
+
+li:hover strong {
+    color: #ff4d4d;
 }

@@ -1,33 +1,91 @@
 /* ==========================================================
    THEME BMW VISION CONCEPT - FROZEN SILVER & LASER BLUE
+   (ADDED: FUTURE LASER & INTERACTIVE ANIMATIONS)
    ========================================================== */
 
-/* 1. TOÀN TRANG (Nền xám bạc kim loại mờ, cực kỳ hiện đại) */
+/* ----------------------------------------------------------
+   0. KEYFRAMES ANIMATION (HIỆU ỨNG TƯƠNG LAI)
+   ---------------------------------------------------------- */
+
+/* Tải trang mượt chuẩn Vision Concept */
+@keyframes bmwVisionEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Ánh sáng Laser Blue quét thở nhịp nhàng */
+@keyframes bmwLaserPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 168, 255, 0.4);
+        border-bottom-color: #00a8ff;
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(82, 196, 255, 0.85);
+        border-bottom-color: #52c4ff;
+    }
+}
+
+/* Dải sáng Neon BMW ConnectedDrive chuyển động */
+@keyframes bmwNeonSweep {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Nút bấm i-Drive phát sáng laser */
+@keyframes bmwButtonGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 168, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 168, 255, 0.85);
+    }
+}
+
+/* ----------------------------------------------------------
+   1. TOÀN TRANG
+   ---------------------------------------------------------- */
 body {
-    background-color: #1a1e24;       /* Xám kim loại tối */
-    color: #c2c8d4;                  /* Chữ xám bạc dịu mắt */
+    background-color: #1a1e24;
+    color: #c2c8d4;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 30px 50px;
+    animation: bmwVisionEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. TIÊU ĐỀ CHÍNH & MỤC (Ánh sáng Laser Blue) */
+/* ----------------------------------------------------------
+   2. TIÊU ĐỀ CHÍNH & MỤC
+   ---------------------------------------------------------- */
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
-/* Tiêu đề h1 - Mô phỏng dải đèn Laser Blue uốn lượn trên nắp capo */
 h1 {
     font-size: 2.2rem;
     color: #ffffff;
     border-bottom: 2px solid #00a8ff;
-    box-shadow: 0 4px 12px rgba(0, 168, 255, 0.4); /* Phát sáng dải LED */
     padding-bottom: 10px;
     margin-bottom: 25px;
     display: inline-block;
+    animation: bmwLaserPulse 3s infinite ease-in-out;
+    transition: all 0.4s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 15px rgba(82, 196, 255, 0.8);
 }
 
 h2 {
@@ -36,49 +94,76 @@ h2 {
     border-left: 4px solid #00a8ff;
     padding-left: 14px;
     margin-top: 35px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH (Dải sáng Neon BMW ConnectedDrive) */
+h2:hover {
+    padding-left: 20px;
+    border-left-color: #52c4ff;
+    text-shadow: 0 0 12px rgba(0, 168, 255, 0.6);
+}
+
+/* ----------------------------------------------------------
+   3. ĐƯỜNG PHÂN CÁCH
+   ---------------------------------------------------------- */
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #00a8ff, #2b323e, transparent);
+    background: linear-gradient(90deg, #00a8ff 0%, #2b323e 50%, transparent 100%);
+    background-size: 200% 100%;
     box-shadow: 0 0 8px rgba(0, 168, 255, 0.3);
     margin: 35px 0;
+    animation: bmwNeonSweep 6s infinite linear;
 }
 
-/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+/* ----------------------------------------------------------
+   4. THANH HƯỚNG DẪN BREADCRUMB
+   ---------------------------------------------------------- */
 nav {
     background-color: #222730;
     padding: 12px 20px;
     border-radius: 6px;
     border: 1px solid #313846;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+    border-color: rgba(0, 168, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 168, 255, 0.2);
 }
 
 nav a {
     color: #8c96a8;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #00a8ff;
+    transform: translateY(-1px);
 }
 
-/* 5. LIÊN KẾT (LINKS) */
+/* ----------------------------------------------------------
+   5. LIÊN KẾT (LINKS)
+   ---------------------------------------------------------- */
 a {
     color: #00a8ff;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
 }
 
 a:hover {
     color: #52c4ff;
-    text-shadow: 0 0 8px rgba(0, 168, 255, 0.5);
+    text-shadow: 0 0 12px rgba(0, 168, 255, 0.7);
+    transform: translateY(-1px);
 }
 
-/* 6. HÌNH ẢNH (Khung xám bạc uốn cong mềm mại) */
+/* ----------------------------------------------------------
+   6. HÌNH ẢNH & THẺ CARD XE (VIDEO PREVIEW HOVER)
+   ---------------------------------------------------------- */
 img {
     border-radius: 10px;
     border: 1px solid #3a4354;
@@ -86,15 +171,65 @@ img {
     max-width: 100%;
     height: auto;
     margin: 15px 0;
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 img:hover {
+    transform: scale(1.02) translateY(-4px);
     border-color: #00a8ff;
-    box-shadow: 0 12px 30px rgba(0, 168, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 168, 255, 0.35);
 }
 
-/* 7. NÚT BẤM CÔNG NGỆ TƯƠNG LAI (BMW i-Drive Style) */
+/* Container hỗ trợ Video Preview khi di chuột */
+.car-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 10px;
+    border: 1px solid #3a4354;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    margin: 20px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.car-card:hover {
+    transform: scale(1.02) translateY(-4px);
+    border-color: #00a8ff;
+    box-shadow: 0 15px 35px rgba(0, 168, 255, 0.35);
+}
+
+.car-img, 
+.car-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   7. NÚT BẤM (BMW i-DRIVE STYLE)
+   ---------------------------------------------------------- */
 button {
     background: transparent;
     color: #00a8ff;
@@ -104,20 +239,44 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 25px;            /* Bo tròn tương lai */
+    border-radius: 25px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 168, 255, 0.2);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lớp sóng quét khi hover */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
 }
 
 button:hover {
     background-color: #00a8ff;
-    color: #0e1116;                 /* Chữ đen nổi bật khi hover */
-    box-shadow: 0 0 20px rgba(0, 168, 255, 0.6);
+    color: #0e1116;
     transform: translateY(-2px);
+    animation: bmwButtonGlow 1.8s infinite ease-in-out;
 }
 
-/* 8. DANH SÁCH & THÔNG SỐ */
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* ----------------------------------------------------------
+   8. DANH SÁCH & THÔNG SỐ
+   ---------------------------------------------------------- */
 ul {
     padding-left: 20px;
 }
@@ -125,8 +284,19 @@ ul {
 li {
     margin-bottom: 10px;
     color: #c2c8d4;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
 }
 
 p strong, li strong {
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+li:hover strong {
+    color: #00a8ff;
 }

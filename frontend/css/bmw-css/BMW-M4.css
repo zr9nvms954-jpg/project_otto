@@ -1,83 +1,168 @@
 /* ==========================================================
    THEME BMW M4 SHADOW GREEN - DARK EMERALD & AMBER LIGHT
+   (ADDED: ULTRA-SMOOTH M PERFORMANCE ANIMATIONS)
    ========================================================== */
 
-/* 1. TOÀN TRANG (Nền xám đen ánh xanh rêu siêu bí ẩn) */
+/* ----------------------------------------------------------
+   0. KEYFRAMES ANIMATION (HIỆU ỨNG M POWER CHUYỂN ĐỘNG)
+   ---------------------------------------------------------- */
+
+/* Tải trang mượt chuẩn M Performance */
+@keyframes m4PageEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Đèn Angel Eyes hổ phách phát sáng nhịp nhàng */
+@keyframes m4AmberPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(224, 169, 109, 0.25);
+        border-bottom-color: #e0a96d;
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(242, 201, 157, 0.65);
+        border-bottom-color: #f2c99d;
+    }
+}
+
+/* Dải sáng Amber / Emerald quét qua đường kẻ ngang */
+@keyframes m4AmberSweep {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Nút bấm M Power thở sáng hổ phách */
+@keyframes m4ButtonGlow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(224, 169, 109, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 28px rgba(242, 201, 157, 0.75);
+    }
+}
+
+/* ----------------------------------------------------------
+   1. TOÀN TRANG
+   ---------------------------------------------------------- */
 body {
-    background-color: #121614;       /* Đen ánh xêu rêu trầm */
-    color: #c8cfca;                  /* Chữ xám bạc hơi ấm */
+    background-color: #121614;
+    color: #c8cfca;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.65;
     margin: 0;
     padding: 30px 50px;
+    animation: m4PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. CÁC TIÊU ĐỀ (Phong cách M Performance) */
+/* ----------------------------------------------------------
+   2. CÁC TIÊU ĐỀ
+   ---------------------------------------------------------- */
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
-/* Tiêu đề h1 - Điểm nhấn Vàng Hổ Phách từ đèn Angel Eyes */
 h1 {
     font-size: 2.2rem;
     color: #ffffff;
-    border-bottom: 3px solid #e0a96d; /* Màu đèn pha vàng/hổ phách */
-    box-shadow: 0 4px 12px rgba(224, 169, 109, 0.25);
+    border-bottom: 3px solid #e0a96d;
     padding-bottom: 10px;
     margin-bottom: 25px;
     display: inline-block;
+    animation: m4AmberPulse 3s infinite ease-in-out;
+    transition: all 0.4s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 15px rgba(242, 201, 157, 0.6);
 }
 
 h2 {
     font-size: 1.4rem;
     color: #f0f2f1;
-    border-left: 4px solid #486354;   /* Xanh rêu M Sport */
+    border-left: 4px solid #486354;
     padding-left: 14px;
     margin-top: 35px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH */
+h2:hover {
+    padding-left: 20px;
+    border-left-color: #e0a96d;
+    text-shadow: 0 0 12px rgba(224, 169, 109, 0.4);
+}
+
+/* ----------------------------------------------------------
+   3. ĐƯỜNG PHÂN CÁCH
+   ---------------------------------------------------------- */
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #e0a96d, #232c27, transparent);
+    background: linear-gradient(90deg, #e0a96d 0%, #232c27 50%, transparent 100%);
+    background-size: 200% 100%;
     margin: 35px 0;
+    animation: m4AmberSweep 6s infinite linear;
 }
 
-/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+/* ----------------------------------------------------------
+   4. THANH HƯỚNG DẪN BREADCRUMB
+   ---------------------------------------------------------- */
 nav {
     background-color: #1b211e;
     padding: 12px 20px;
     border-radius: 6px;
     border: 1px solid #28332d;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+    border-color: rgba(224, 169, 109, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 nav a {
     color: #8c9690;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #e0a96d;
+    transform: translateY(-1px);
 }
 
-/* 5. LIÊN KẾT (LINKS) */
+/* ----------------------------------------------------------
+   5. LIÊN KẾT (LINKS)
+   ---------------------------------------------------------- */
 a {
     color: #e0a96d;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
 }
 
 a:hover {
     color: #f2c99d;
-    text-shadow: 0 0 8px rgba(224, 169, 109, 0.4);
+    text-shadow: 0 0 10px rgba(224, 169, 109, 0.5);
+    transform: translateY(-1px);
 }
 
-/* 6. HÌNH ẢNH (Khung sơn bóng mờ Shadow Line) */
+/* ----------------------------------------------------------
+   6. HÌNH ẢNH & THẺ CARD XE (VIDEO PREVIEW HOVER)
+   ---------------------------------------------------------- */
 img {
     border-radius: 8px;
     border: 1px solid #2e3b34;
@@ -85,17 +170,68 @@ img {
     max-width: 100%;
     height: auto;
     margin: 15px 0;
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 img:hover {
+    transform: scale(1.02) translateY(-4px);
     border-color: #e0a96d;
+    box-shadow: 0 15px 35px rgba(224, 169, 109, 0.3);
 }
 
-/* 7. NÚT BẤM CÁ TÍNH (M Power Amber Button) */
+/* Container hỗ trợ Video Preview khi hovering */
+.car-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    border: 1px solid #2e3b34;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    margin: 20px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.car-card:hover {
+    transform: scale(1.02) translateY(-4px);
+    border-color: #e0a96d;
+    box-shadow: 0 15px 35px rgba(224, 169, 109, 0.3);
+}
+
+.car-img, 
+.car-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   7. NÚT BẤM CÁ TÍNH (M POWER AMBER BUTTON)
+   ---------------------------------------------------------- */
 button {
     background: linear-gradient(135deg, #e0a96d, #a8743a);
-    color: #0f1412;                 /* Chữ đen trầm tương phản */
+    color: #0f1412;
     border: none;
     padding: 13px 30px;
     font-size: 0.95rem;
@@ -105,16 +241,40 @@ button {
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(224, 169, 109, 0.3);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Quét ánh kim khi rê chuột */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
 }
 
 button:hover {
     background: linear-gradient(135deg, #f0be88, #e0a96d);
-    box-shadow: 0 6px 20px rgba(224, 169, 109, 0.5);
     transform: translateY(-2px);
+    animation: m4ButtonGlow 1.8s infinite ease-in-out;
 }
 
-/* 8. DANH SÁCH & THÔNG SỐ */
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ----------------------------------------------------------
+   8. DANH SÁCH & THÔNG SỐ
+   ---------------------------------------------------------- */
 ul {
     padding-left: 20px;
 }
@@ -122,8 +282,19 @@ ul {
 li {
     margin-bottom: 10px;
     color: #c8cfca;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
 }
 
 p strong, li strong {
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+li:hover strong {
+    color: #f2c99d;
 }

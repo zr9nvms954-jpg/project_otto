@@ -1,33 +1,91 @@
 /* ==========================================================
    THEME BMW i8 ROADSTER - SUNSET GOLD & CARBON BLACK
+   (ADDED: ULTRA-SMOOTH HYBRID LUXURY ANIMATIONS)
    ========================================================== */
 
-/* 1. TOÀN TRANG (Nền xám than/carbon tối, tôn vinh màu vàng đồng) */
+/* ----------------------------------------------------------
+   0. KEYFRAMES ANIMATION (HIỆU ỨNG TỰ ĐỘNG CHUYỂN ĐỘNG)
+   ---------------------------------------------------------- */
+
+/* Tải trang mượt chuẩn Ultra-Luxury */
+@keyframes i8PageEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.99);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Ánh kim Sunset Gold phát sáng nhịp nhàng */
+@keyframes i8SunsetPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.35);
+        border-bottom-color: #e08b2d;
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(252, 163, 56, 0.7);
+        border-bottom-color: #fca338;
+    }
+}
+
+/* Dải sáng LED Sunset chạy qua đường kẻ ngang */
+@keyframes i8GoldSweep {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Nút bấm thở ánh kim metallic */
+@keyframes i8ButtonGlow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(252, 163, 56, 0.85);
+    }
+}
+
+/* ----------------------------------------------------------
+   1. TOÀN TRANG
+   ---------------------------------------------------------- */
 body {
-    background-color: #17191c;       /* Xám carbon đô thị */
-    color: #d2d6dc;                  /* Chữ xám bạc dễ đọc */
+    background-color: #17191c;
+    color: #d2d6dc;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.65;
     margin: 0;
     padding: 30px 50px;
+    animation: i8PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. CÁC TIÊU ĐỀ (Điểm nhấn Vàng Cam Sunset Gold) */
+/* ----------------------------------------------------------
+   2. CÁC TIÊU ĐỀ
+   ---------------------------------------------------------- */
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
-/* Tiêu đề h1 - Màu sơn Vàng Đồng cực kỳ thu hút */
 h1 {
     font-size: 2.2rem;
     color: #ffffff;
-    border-bottom: 3px solid #e08b2d; /* Vàng Cam Metallic */
-    box-shadow: 0 4px 15px rgba(224, 139, 45, 0.35); /* Glow nhẹ */
+    border-bottom: 3px solid #e08b2d;
     padding-bottom: 10px;
     margin-bottom: 25px;
     display: inline-block;
+    animation: i8SunsetPulse 3s infinite ease-in-out;
+    transition: all 0.4s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 15px rgba(252, 163, 56, 0.6);
 }
 
 h2 {
@@ -36,48 +94,75 @@ h2 {
     border-left: 4px solid #e08b2d;
     padding-left: 14px;
     margin-top: 35px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH */
+h2:hover {
+    padding-left: 20px;
+    border-left-color: #fca338;
+    text-shadow: 0 0 12px rgba(224, 139, 45, 0.5);
+}
+
+/* ----------------------------------------------------------
+   3. ĐƯỜNG PHÂN CÁCH
+   ---------------------------------------------------------- */
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #e08b2d, #2a2e35, transparent);
+    background: linear-gradient(90deg, #e08b2d 0%, #2a2e35 50%, transparent 100%);
+    background-size: 200% 100%;
     margin: 35px 0;
+    animation: i8GoldSweep 6s infinite linear;
 }
 
-/* 4. THANH HƯỚNG DẪN BREADCRUMB */
+/* ----------------------------------------------------------
+   4. THANH HƯỚNG DẪN BREADCRUMB
+   ---------------------------------------------------------- */
 nav {
     background-color: #20242a;
     padding: 12px 20px;
     border-radius: 6px;
     border: 1px solid #2e343e;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+    border-color: rgba(224, 139, 45, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 nav a {
     color: #8b93a0;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #e08b2d;
+    transform: translateY(-1px);
 }
 
-/* 5. LIÊN KẾT (LINKS) */
+/* ----------------------------------------------------------
+   5. LIÊN KẾT (LINKS)
+   ---------------------------------------------------------- */
 a {
-    color: #e08b2d;                  /* Vàng đồng nổi bật */
+    color: #e08b2d;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
 }
 
 a:hover {
     color: #fca338;
-    text-shadow: 0 0 10px rgba(224, 139, 45, 0.5);
+    text-shadow: 0 0 10px rgba(224, 139, 45, 0.6);
+    transform: translateY(-1px);
 }
 
-/* 6. HÌNH ẢNH (Khung viền mỏng mạ viền vàng đồng nhẹ) */
+/* ----------------------------------------------------------
+   6. HÌNH ẢNH & THẺ CARD XE (VIDEO HOVER CỰC MƯỢT)
+   ---------------------------------------------------------- */
 img {
     border-radius: 8px;
     border: 1px solid #363d48;
@@ -85,14 +170,65 @@ img {
     max-width: 100%;
     height: auto;
     margin: 15px 0;
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 img:hover {
+    transform: scale(1.02) translateY(-4px);
     border-color: #e08b2d;
+    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
 }
 
-/* 7. NÚT BẤM CỰC CHẤT (Gold Metallic Glow Button) */
+/* Thẻ Container phục vụ Video Preview Hover */
+.car-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    border: 1px solid #363d48;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    margin: 20px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.car-card:hover {
+    transform: scale(1.02) translateY(-4px);
+    border-color: #e08b2d;
+    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
+}
+
+.car-img, 
+.car-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   7. NÚT BẤM (METALLIC GOLD GLOW)
+   ---------------------------------------------------------- */
 button {
     background: linear-gradient(135deg, #e08b2d, #b86414);
     color: #ffffff;
@@ -105,16 +241,40 @@ button {
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lớp quét ánh kim khi rê chuột */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.5s ease;
 }
 
 button:hover {
     background: linear-gradient(135deg, #f59e38, #e08b2d);
-    box-shadow: 0 6px 20px rgba(224, 139, 45, 0.6);
     transform: translateY(-2px);
+    animation: i8ButtonGlow 1.8s infinite ease-in-out;
 }
 
-/* 8. DANH SÁCH & THÔNG SỐ */
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ----------------------------------------------------------
+   8. DANH SÁCH & THÔNG SỐ
+   ---------------------------------------------------------- */
 ul {
     padding-left: 20px;
 }
@@ -122,8 +282,19 @@ ul {
 li {
     margin-bottom: 10px;
     color: #d2d6dc;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
 }
 
 p strong, li strong {
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+li:hover strong {
+    color: #fca338;
 }
