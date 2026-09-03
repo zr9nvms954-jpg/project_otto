@@ -1,129 +1,173 @@
-/* ==========================================================
-   THEME PORSCHE GLOBAL - ULTRA-DARK LUXURY & PORSCHE RED
-   ========================================================== */
-
-/* 1. TOÀN TRANG (Nền đen sâu tuyệt đối chuẩn Porsche.com) */
-body {
-    background-color: #0e0f12;       /* Đen sâu mờ */
-    color: #e1e3e6;                  /* Chữ trắng xám cao cấp */
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 30px 50px;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* 2. CÁC TIÊU ĐỀ (Typography mạnh mẽ & sắc sảo) */
-h1, h2, h3 {
+body {
+    background-color: #0b0b0c; /* Tông màu tối giao diện Porsche */
     color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    padding: 20px;
 }
 
-/* Tiêu đề h1 - Đội điểm nhấn Đỏ Porsche Red kinh điển */
-h1 {
-    font-size: 2.2rem;
-    color: #ffffff;
-    border-bottom: 3px solid #d5001c; /* Porsche Guards Red */
-    box-shadow: 0 4px 15px rgba(213, 0, 28, 0.3);
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    display: inline-block;
+/* Navbar top */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 10px 0;
 }
 
-h2 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    border-left: 4px solid #d5001c;
-    padding-left: 14px;
-    margin-top: 35px;
+.logo h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
 }
 
-/* 3. ĐƯỜNG PHÂN CÁCH (Dải sáng dốc tối giản) */
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, #d5001c, #212529, transparent);
-    margin: 35px 0;
+.logo p {
+    font-size: 13px;
+    color: #888;
 }
 
-/* 4. THANH HƯỚNG DẪN BREADCRUMB (Thiết kế dạng Capsule mờ) */
-nav {
-    background-color: #1a1c23;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: 1px solid #2a2d37;
-}
-
-nav a {
-    color: #8a8f99;
+.btn-auth {
+    color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #ffffff;
+.btn-auth:hover {
+    background-color: #333;
 }
 
-/* 5. LIÊN KẾT (LINKS) */
-a {
-    color: #ffffff;
+/* Lưới hiển thị 2 cột chuẩn giống hình */
+.brand-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột mỗi hàng */
+    gap: 20px;
+}
+
+/* Thẻ Card */
+.car-card {
+    position: relative;
+    height: 280px; /* Giảm chiều cao khung từ 400px xuống 280px */
+    border-radius: 20px;
+    overflow: hidden;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212; /* Nền tối cho khung */
+    padding: 20px;
 }
 
-a:hover {
-    color: #d5001c;
-}
-
-/* 6. CARD HÌNH ẢNH (Bo góc 16px chuẩn Porsche UI) */
-img {
-    border-radius: 16px;             /* Bo góc lớn hiện đại */
-    border: 1px solid #212529;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75);
-    max-width: 100%;
+.car-img {
+    max-width: 60%; /* Giới hạn chiều rộng ảnh ở mức 60% khung */
+    max-height: 60%; /* Giới hạn chiều cao ảnh ở mức 60% khung */
+    width: auto;
     height: auto;
-    margin: 15px 0;
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    object-fit: contain; /* Thu nhỏ nguyên vẹn tỉ lệ ảnh, không bị tràn hay bị cắt */
+    transition: transform 0.3s ease;
 }
 
-img:hover {
-    transform: scale(1.015);         /* Phóng to mượt mà */
-    border-color: #343a40;
+.car-card:hover .car-img {
+    transform: scale(1.04); /* Phóng to nhẹ khi di chuột */
 }
 
-/* 7. NÚT BẤM CỰC CHẤT (Porsche Performance Button) */
-button {
-    background-color: #d5001c;       /* Đỏ Porsche */
+/* Lớp phủ đè chữ lên ảnh */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+/* Tiêu đề thương hiệu nằm trên cùng ảnh */
+.brand-title {
     color: #ffffff;
-    border: none;
-    padding: 14px 32px;
-    font-size: 0.95rem;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 3px;
+    font-style: italic;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 18px rgba(213, 0, 28, 0.4);
-    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #ff0022;
-    box-shadow: 0 6px 25px rgba(213, 0, 28, 0.65);
-    transform: translateY(-2px);
+/* Thanh thông tin & nút bấm ở đáy card */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* 8. DANH SÁCH & THÔNG SỐ */
-ul {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-    color: #c1c5cc;
-}
-
-p strong, li strong {
+.badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.btn-arrow {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.car-card:hover .btn-arrow {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Footer */
+.footer {
+    max-width: 1200px;
+    margin: 50px auto 20px auto;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Responsive cho màn hình điện thoại */
+@media (max-width: 768px) {
+    .brand-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên di động */
+    }
+    
+    .car-card {
+        height: 300px;
+    }
 }
