@@ -6,88 +6,169 @@
     <title>Danh Sách Xe Mercedes-Benz & Maybach - Otto Luxury</title>
     <link rel="stylesheet" href="/frontend/css/mec-css/mec-tong.css">
 </head>
-
 <body>
 
     <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
+    <nav class="breadcrumb">
         <p><a href="../HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; <strong>Thương Hiệu Mercedes-Benz & Maybach</strong></p>
     </nav>
 
-    <hr>
+    <main class="container">
+        <header class="page-header">
+            <h1>Bộ Sưu Tập Các Dòng Xe Mercedes-Benz & Maybach</h1>
+            <p>Trải nghiệm sự đỉnh cao của đẳng cấp, sang trọng, hiệu năng vượt trội và tiện nghi đỉnh phong.</p>
+        </header>
 
-    <!-- [NOTE 1]: Đổi thẻ <main> thành <div> để ăn khớp với selector CSS `body > div` -->
-    <div>
-        <!-- [NOTE 2]: Giữ nguyên thẻ <h1> vì CSS có đoạn `h1` -->
-        <h1>Bộ Sưu Tập Các Dòng Xe Mercedes-Benz & Maybach</h1>
+        <!-- Lưới danh sách xe Mercedes & Maybach -->
+        <div class="car-grid">
+            <article class="car-card">
+                <a href="Mec-AMGG63.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/amg_g63_chinh.jpg" alt="Mercedes-AMG G63">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-AMG G63</h3>
+                        <p class="car-price">Giá từ 11.750.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <!-- [NOTE 3]: Thêm thẻ <img> đầu tiên này để ăn khớp với CSS `body > div > img:first-of-type` (Ảnh đại diện chính có hiệu ứng zoom nhẹ khi hover) -->
-        <img src="../../img/mercedes/amg_g63_chinh.jpg" alt="Ảnh đại diện bộ sưu tập" style="width: 100%;">
+            <article class="car-card">
+                <a href="Mec-AMGGT63.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/amg_gt63_chinh.jpg" alt="Mercedes-AMG GT 63 S 4MATIC+">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-AMG GT 63 S 4MATIC+</h3>
+                        <p class="car-price">Giá từ 15.500.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <p>Trải nghiệm sự đỉnh cao của đẳng cấp, sang trọng, hiệu năng vượt trội và tiện nghi đỉnh phong.</p>
+            <article class="car-card">
+                <a href="Mec-AMGSL63.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/amg_sl63_chinh.jpg" alt="Mercedes-AMG SL 63 4MATIC+">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-AMG SL 63 4MATIC+</h3>
+                        <p class="car-price">Giá từ 12.290.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <!-- [NOTE 4]: Đổi tên các phần thành <h2> để ăn khớp với CSS `h2` (có viền trắng bên trái: `border-left: 4px solid #ffffff`) -->
-        <h2>Danh Sách Các Dòng Xe Nổi Bật</h2>
+            <article class="car-card">
+                <a href="Mec-C300AMG.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/c300_amg_chinh.jpg" alt="Mercedes-Benz C300 AMG">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Benz C300 AMG</h3>
+                        <p class="car-price">Giá từ 2.099.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <!-- [NOTE 5]: Đặt các thẻ <img> làm con trực tiếp của <div> (không bọc trong <ul> <li>) để ăn khớp với CSS `body > div > img:not(:first-of-type)` -->
-        <img src="../../img/mercedes/amg_g63_chinh.jpg" alt="Mercedes-AMG G63">
-        <img src="../../img/mercedes/amg_gt63_chinh.jpg" alt="Mercedes-AMG GT 63 S 4MATIC+">
-        <img src="../../img/mercedes/amg_sl63_chinh.jpg" alt="Mercedes-AMG SL 63 4MATIC+">
-        <img src="../../img/mercedes/c300_amg_chinh.jpg" alt="Mercedes-Benz C300 AMG">
-        <img src="../../img/mercedes/e300_amg_chinh.jpg" alt="Mercedes-Benz E300 AMG">
-        <img src="../../img/mercedes/eqs_580_chinh.jpg" alt="Mercedes-Benz EQS 580 4MATIC">
-        <img src="../../img/mercedes/maybach_eqs680_chinh.jpg" alt="Mercedes-Maybach EQS 680 SUV">
-        <img src="../../img/mercedes/maybach_haute_voiture_chinh.jpg" alt="Mercedes-Maybach Haute Voiture">
-        <img src="../../img/maybach-s580.jpg" alt="Mercedes-Maybach S580">
-        <img src="../../img/maybach-s680.jpg" alt="Mercedes-Maybach S680">
-        <img src="../../img/maybach-sl680.jpg" alt="Mercedes-Maybach SL680 Monogram Series">
-        <img src="../../img/maybach-gls600.jpg" alt="Mercedes-Maybach GLS 600">
+            <article class="car-card">
+                <a href="Mec-E300AMG.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/e300_amg_chinh.jpg" alt="Mercedes-Benz E300 AMG">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Benz E300 AMG</h3>
+                        <p class="car-price">Giá từ 3.209.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <!-- [NOTE 6]: Giữ nguyên <ul> <li> để ăn khớp với CSS `ul` và `li` -->
-        <ul>
-            <li>
-                <p><strong>Mercedes-AMG G63:</strong> Giá từ 11.750.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-AMG GT 63 S 4MATIC+:</strong> Giá từ 15.500.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-AMG SL 63 4MATIC+:</strong> Giá từ 12.290.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Benz C300 AMG:</strong> Giá từ 2.099.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Benz E300 AMG:</strong> Giá từ 3.209.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Benz EQS 580 4MATIC:</strong> Giá từ 5.959.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Maybach EQS 680 SUV:</strong> Giá từ 7.610.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Maybach Haute Voiture:</strong> Giá từ 22.000.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Maybach S580:</strong> Giá từ 11.599.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Maybach S680:</strong> Giá từ 15.990.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Maybach SL680 Monogram Series:</strong> Giá từ 18.500.000.000 VNĐ</p>
-            </li>
-            <li>
-                <p><strong>Mercedes-Maybach GLS 600:</strong> Giá từ 12.119.000.000 VNĐ</p>
-            </li>
-        </ul>
-    </div>
+            <article class="car-card">
+                <a href="Mec-EQS580.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/eqs_580_chinh.jpg" alt="Mercedes-Benz EQS 580 4MATIC">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Benz EQS 580 4MATIC</h3>
+                        <p class="car-price">Giá từ 5.959.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-    <hr>
+            <article class="car-card">
+                <a href="Mec-MaybachEQS680.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/maybach_eqs680_chinh.jpg" alt="Mercedes-Maybach EQS 680 SUV">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Maybach EQS 680 SUV</h3>
+                        <p class="car-price">Giá từ 7.610.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-    <footer>
-        <p><a href="/HE-thong/TRANG-CHU.html">← Quay lại Trang Chủ</a></p>
+            <article class="car-card">
+                <a href="Mec-MaybachHauteVoiture.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/mercedes/maybach_haute_voiture_chinh.jpg" alt="Mercedes-Maybach Haute Voiture">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Maybach Haute Voiture</h3>
+                        <p class="car-price">Giá từ 22.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Mercedes-Maybach S580.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/maybach-s580.jpg" alt="Mercedes-Maybach S580">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Maybach S580</h3>
+                        <p class="car-price">Giá từ 11.599.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Mercedes-Maybach S680.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/maybach-s680.jpg" alt="Mercedes-Maybach S680">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Maybach S680</h3>
+                        <p class="car-price">Giá từ 15.990.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Mercedes-Maybach SL680 Monogram.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/maybach-sl680.jpg" alt="Mercedes-Maybach SL680 Monogram Series">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Maybach SL680 Monogram Series</h3>
+                        <p class="car-price">Giá từ 18.500.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Mercedes-Maybach_GLS_600.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/maybach-gls600.jpg" alt="Mercedes-Maybach GLS 600">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-Maybach GLS 600</h3>
+                        <p class="car-price">Giá từ 12.119.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <a href="/HE-thong/TRANG-CHU.html">← Quay lại Trang Chủ</a>
     </footer>
 
 </body>

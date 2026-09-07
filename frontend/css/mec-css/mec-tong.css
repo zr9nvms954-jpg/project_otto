@@ -1,113 +1,134 @@
-body {
+/* Tùy chỉnh chung toàn trang */
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #0a0d12;
-    color: #f0f2f5;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 0;
 }
 
-/* Khối nội dung chính */
-body > div {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 0;
-}
-
-/* Tiêu đề chính */
-h1 {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 30px;
+body {
+    background-color: #0d0d0d;
     color: #ffffff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
 }
 
-/* Ảnh chính (Hero image) */
-body > div > img:first-of-type {
-    display: block;
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    margin: 0 auto 35px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Breadcrumb & Footer */
+.breadcrumb {
+    padding: 15px 20px;
+    background-color: #141414;
+    border-bottom: 1px solid #222;
+}
+
+.breadcrumb a, .page-footer a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover, .page-footer a:hover {
+    color: #fff;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-header p {
+    color: #aaa;
+}
+
+/* Lưới hiển thị danh sách xe (Grid 2 cột) */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.car-card {
+    background-color: #161616;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 173, 239, 0.15); /* Đổ bóng xanh nhẹ */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #262626;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    border-color: #444;
+}
+
+.car-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Khung hình ảnh */
+.car-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     transition: transform 0.4s ease;
 }
 
-body > div > img:first-of-type:hover {
-    transform: scale(1.02);
+.car-card:hover .car-image img {
+    transform: scale(1.05);
 }
 
-/* Đoạn giới thiệu */
-p {
-    color: #a0aab8;
-    font-size: 17px;
-    line-height: 1.8;
+/* Thông tin tên và giá xe bên dưới ảnh */
+.car-info {
+    padding: 18px 20px;
 }
 
-/* Tiêu đề các phần */
-h2 {
-    color: #ffffff;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    padding-left: 15px;
-    border-left: 4px solid #00adef; /* Đổi viền sang màu xanh Mercedes Accent */
-    font-size: 26px;
-}
-
-/* Nhóm ảnh xe nhỏ */
-body > div > img:not(:first-of-type) {
-    width: 300px !important;
-    height: 190px;
-    object-fit: cover;
-    margin: 12px;
-    border-radius: 10px;
-    border: 1px solid #222c38;
-    transition: all 0.4s ease;
-}
-
-/* Hover ảnh xe nhỏ */
-body > div > img:not(:first-of-type):hover {
-    transform: translateY(-5px) scale(1.03);
-    border-color: #00adef;
-    box-shadow: 0 8px 20px rgba(0, 173, 239, 0.25);
-}
-
-/* Thẻ định dạng danh sách */
-ul {
-    padding-left: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
-li {
-    background-color: #141921;
-    padding: 18px 22px;
-    border-radius: 8px;
-    border: 1px solid #1e2633;
-    color: #c5cebc;
-    transition: 0.3s;
-}
-
-li:hover {
-    border-color: #00adef;
-}
-
-strong {
-    color: #00adef; /* Đổi màu chữ thông số/giá sang màu nhấn */
+.car-name {
+    font-size: 1.25rem;
     font-weight: 600;
-}
-
-/* Link màu xanh hiện đại */
-a {
     color: #ffffff;
-    text-decoration: none;
-    transition: 0.3s;
+    margin-bottom: 6px;
 }
 
-a:hover {
-    color: #00adef;
+.car-price {
+    font-size: 0.95rem;
+    color: #888888;
+}
+
+.page-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+/* Responsive cho màn hình điện thoại */
+@media (max-width: 768px) {
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .car-image {
+        height: 220px;
+    }
 }

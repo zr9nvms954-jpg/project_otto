@@ -4,67 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh Sách Xe Lamborghini - Otto Luxury</title>
-    <!-- [FIX LỖI 1]: Đã chuyển thẻ <link> vào bên trong <head> -->
     <link rel="stylesheet" href="/frontend/css/lambor-css/lambor-tong.css">
 </head>
-
 <body>
 
     <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
+    <nav class="breadcrumb">
         <p><a href="../HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; <strong>Thương Hiệu Lamborghini</strong></p>
     </nav>
 
-    <hr>
+    <main class="container">
+        <header class="page-header">
+            <h1>Bộ Sưu Tập Các Dòng Xe Lamborghini</h1>
+            <p>Khám phá các dòng siêu xe và SUV thể thao đỉnh cao mang tính biểu tượng từ thương hiệu Lamborghini.</p>
+        </header>
 
-    <!-- [FIX LỖI 2]: Đổi <main> thành <div> để ăn khớp CSS `body > div` -->
-    <div>
-        <h1>Bộ Sưu Tập Các Dòng Xe Lamborghini</h1>
-        
-        <!-- [FIX LỖI 3]: Đã thêm ảnh chính đầu tiên để khớp selector `body > div > img:first-of-type` -->
-        <img src="../../img/lamborghini/aventador_ultimae_chinh.jpg" alt="Lamborghini Collection Banner">
+        <!-- Lưới danh sách xe Lamborghini -->
+        <div class="car-grid">
+            <article class="car-card">
+                <a href="Lambor-Asterion.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/asterion_chinh.jpg" alt="Lamborghini Asterion LPI 910-4">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Asterion LPI 910-4</h3>
+                        <p class="car-price">Giá từ 45.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <p>Khám phá các dòng siêu xe và SUV thể thao đỉnh cao mang tính biểu tượng từ thương hiệu Lamborghini.</p>
+            <article class="car-card">
+                <a href="Lambor-AventadorUltimae.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/aventador_ultimae_chinh.jpg" alt="Lamborghini Aventador LP 780-4 Ultimae">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Aventador LP 780-4 Ultimae</h3>
+                        <p class="car-price">Giá từ 50.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <h2>Danh Sách Các Dòng Xe Nổi Bật</h2>
+            <article class="car-card">
+                <a href="Lambor-Centenario.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/centenario_chinh.jpg" alt="Lamborghini Centenario LP 770-4">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Centenario LP 770-4</h3>
+                        <p class="car-price">Giá từ 65.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <!-- [FIX LỖI 4]: Đưa các ảnh xe nhỏ ra ngoài làm con trực tiếp của <div> để khớp `body > div > img:not(:first-of-type)` -->
-        <img src="../../img/lamborghini/asterion_chinh.jpg" alt="Lamborghini Asterion">
-        <img src="../../img/lamborghini/aventador_ultimae_chinh.jpg" alt="Lamborghini Aventador Ultimae">
-        <img src="../../img/lamborghini/centenario_chinh.jpg" alt="Lamborghini Centenario">
-        <img src="../../img/lamborghini/countach_lpi800_chinh.jpg" alt="Lamborghini Countach LPI 800-4">
-        <img src="../../img/lamborghini/huracan_sterrato_chinh.jpg" alt="Lamborghini Huracán Sterrato">
-        <img src="../../img/lamborghini/huracan_tecnica_chinh.jpg" alt="Lamborghini Huracán Tecnica">
-        <img src="../../img/lamborghini/sesto_elemento_chinh.jpg" alt="Lamborghini Sesto Elemento">
-        <img src="../../img/lamborghini/sian_fkp37_chinh.jpg" alt="Lamborghini Sian FKP 37">
-        <img src="../../img/lamborghini/veneno_chinh.jpg" alt="Lamborghini Veneno">
-        <img src="../../img/aventador_ngoaithat.jpg" alt="Lamborghini Aventador SVJ">
-        <img src="../../img/Huracan-ngoaithat-jpg.jpg" alt="Lamborghini Huracán STO">
-        <img src="../../img/Revuelto_ngoaithat.jpeg" alt="Lamborghini Revuelto">
-        <img src="../../img/Urus SE-ngoaithat.jpg" alt="Lamborghini Urus SE">
+            <article class="car-card">
+                <a href="Lambor-CountachLPI800.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/countach_lpi800_chinh.jpg" alt="Lamborghini Countach LPI 800-4">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Countach LPI 800-4</h3>
+                        <p class="car-price">Giá từ 75.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-        <!-- Danh sách thông tin xe -->
-        <ul>
-            <li><p><strong>Lamborghini Asterion LPI 910-4:</strong> Giá từ 45.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Aventador LP 780-4 Ultimae:</strong> Giá từ 50.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Centenario LP 770-4:</strong> Giá từ 65.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Countach LPI 800-4:</strong> Giá từ 75.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Huracán Sterrato:</strong> Giá từ 28.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Huracán Tecnica:</strong> Giá từ 19.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Sesto Elemento:</strong> Giá từ 80.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Sián FKP 37:</strong> Giá từ 85.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Veneno Roadster:</strong> Giá từ 110.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Aventador SVJ:</strong> Giá từ 60.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Huracán STO:</strong> Giá từ 32.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Revuelto:</strong> Giá từ 44.000.000.000 VNĐ</p></li>
-            <li><p><strong>Lamborghini Urus SE:</strong> Giá từ 14.500.000.000 VNĐ</p></li>
-        </ul>
-    </div>
+            <article class="car-card">
+                <a href="Lambor-HuracanSterrato.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/huracan_sterrato_chinh.jpg" alt="Lamborghini Huracán Sterrato">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Huracán Sterrato</h3>
+                        <p class="car-price">Giá từ 28.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-    <hr>
+            <article class="car-card">
+                <a href="Lambor-HuracanTecnica.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/huracan_tecnica_chinh.jpg" alt="Lamborghini Huracán Tecnica">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Huracán Tecnica</h3>
+                        <p class="car-price">Giá từ 19.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
 
-    <footer>
-        <p><a href="../HE-thong/TRANG-CHU.html">← Quay lại Trang Chủ</a></p>
+            <article class="car-card">
+                <a href="Lambor-SestoElemento.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/sesto_elemento_chinh.jpg" alt="Lamborghini Sesto Elemento">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Sesto Elemento</h3>
+                        <p class="car-price">Giá từ 80.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Lambor-SianFKP37.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/sian_fkp37_chinh.jpg" alt="Lamborghini Sián FKP 37">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Sián FKP 37</h3>
+                        <p class="car-price">Giá từ 85.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Lambor-Veneno.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/lamborghini/veneno_chinh.jpg" alt="Lamborghini Veneno Roadster">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Veneno Roadster</h3>
+                        <p class="car-price">Giá từ 110.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Lambor-AventadorSVJ.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/aventador_ngoaithat.jpg" alt="Lamborghini Aventador SVJ">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Aventador SVJ</h3>
+                        <p class="car-price">Giá từ 60.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Lambor-HuracanSTO.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/Huracan-ngoaithat-jpg.jpg" alt="Lamborghini Huracán STO">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Huracán STO</h3>
+                        <p class="car-price">Giá từ 32.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Lambor-Revuelto.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/Revuelto_ngoaithat.jpeg" alt="Lamborghini Revuelto">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Revuelto</h3>
+                        <p class="car-price">Giá từ 44.000.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="car-card">
+                <a href="Lambor-UrusSE.html" class="car-link">
+                    <div class="car-image">
+                        <img src="../../img/Urus SE-ngoaithat.jpg" alt="Lamborghini Urus SE">
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Urus SE</h3>
+                        <p class="car-price">Giá từ 14.500.000.000 VNĐ</p>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <a href="../HE-thong/TRANG-CHU.html">← Quay lại Trang Chủ</a>
     </footer>
 
 </body>

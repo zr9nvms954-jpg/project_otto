@@ -1,37 +1,134 @@
-
+/* Tùy chỉnh chung toàn trang */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-color: #1b1b1b;
-    color: rgb(220, 214, 214);
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
 }
 
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: url("img/logo-ferrari.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-
-    opacity: 0.15;
-    z-index: -1;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-h1 {
-    color: rgb(197, 189, 189);
+/* Breadcrumb & Footer */
+.breadcrumb {
+    padding: 15px 20px;
+    background-color: #141414;
+    border-bottom: 1px solid #222;
 }
 
-h2 {
-    color: #dd1c15;
+.breadcrumb a, .page-footer a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-p {
-    color: #d0d0d0d3;
+.breadcrumb a:hover, .page-footer a:hover {
+    color: #fff;
 }
 
-li {
-    color: #d0d0d0;
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-header p {
+    color: #aaa;
+}
+
+/* Lưới hiển thị danh sách xe (Grid 2 cột) */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.car-card {
+    background-color: #161616;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #262626;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    border-color: #444;
+}
+
+.car-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Khung hình ảnh */
+.car-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.car-card:hover .car-image img {
+    transform: scale(1.05);
+}
+
+/* Thông tin tên và giá xe bên dưới ảnh */
+.car-info {
+    padding: 18px 20px;
+}
+
+.car-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.car-price {
+    font-size: 0.95rem;
+    color: #888888;
+}
+
+.page-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+/* Responsive cho màn hình điện thoại */
+@media (max-width: 768px) {
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .car-image {
+        height: 220px;
+    }
 }

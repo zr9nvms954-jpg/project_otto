@@ -1,130 +1,134 @@
-body {
+/* Tùy chỉnh chung toàn trang */
+* {
+    box-sizing: border-box;
     margin: 0;
-    /* Nền đen xám khói trầm */
-    background: linear-gradient(135deg, #090a0c 0%, #12151c 50%, #090a0c 100%);
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    min-height: 100vh;
+    padding: 0;
 }
 
-/* Khối nội dung chính */
-body > div {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 0;
-}
-
-/* Tiêu đề chính */
-h1 {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 30px;
-    /* Chữ màu Vàng Khói Kim Loại */
-    color: #d4af37;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-}
-
-/* Ảnh Banner chính */
-body > div > img:first-of-type {
-    display: block;
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    margin: 0 auto 35px;
-    border-radius: 10px;
-    /* Viền Vàng Khói mờ nhẹ */
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    /* Hiệu ứng Đổ bóng Khói Tối */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-body > div > img:first-of-type:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.3);
-}
-
-/* Đoạn giới thiệu */
-p {
-    color: #a5a9b0;
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-/* Tiêu đề các phần */
-h2 {
+body {
+    background-color: #0d0d0d;
     color: #ffffff;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    padding-left: 15px;
-    /* Viền dọc Vàng Khói */
-    border-left: 4px solid #c5a059;
-    font-size: 24px;
-    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
 }
 
-/* Nhóm ảnh siêu xe nhỏ */
-body > div > img:not(:first-of-type) {
-    width: 300px !important;
-    height: 190px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 8px;
-    border: 1px solid #1f242e;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Hover ảnh xe nhỏ - Bật hiệu ứng Vàng Khói */
-body > div > img:not(:first-of-type):hover {
-    transform: translateY(-5px) scale(1.04);
-    border-color: #c5a059;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.3);
+/* Breadcrumb & Footer */
+.breadcrumb {
+    padding: 15px 20px;
+    background-color: #141414;
+    border-bottom: 1px solid #222;
 }
 
-/* Thẻ định dạng danh sách */
-ul {
-    padding-left: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 15px;
-}
-
-/* Các ô thông tin xe - Nền Đen Khói */
-li {
-    background: #11141a;
-    padding: 16px 20px;
-    border-radius: 6px;
-    border-left: 3px solid #c5a059;
-    border-top: 1px solid #1a1e28;
-    border-right: 1px solid #1a1e28;
-    border-bottom: 1px solid #1a1e28;
-    transition: 0.3s;
-}
-
-li:hover {
-    background: #171b24;
-    border-left-color: #e5c158;
-}
-
-/* Nhấn mạnh chữ giá/thông số bằng Vàng Khói */
-strong {
-    color: #d4af37;
-}
-
-/* Chân trang và điều hướng */
-nav a, footer a {
-    color: #c5a059;
+.breadcrumb a, .page-footer a {
+    color: #888;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    transition: color 0.2s;
 }
 
-nav a:hover, footer a:hover {
-    color: #e5c158;
-    text-shadow: 0 0 8px rgba(229, 193, 88, 0.4);
+.breadcrumb a:hover, .page-footer a:hover {
+    color: #fff;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-header p {
+    color: #aaa;
+}
+
+/* Lưới hiển thị danh sách xe (Grid 2 cột) */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.car-card {
+    background-color: #161616;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #262626;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    border-color: #444;
+}
+
+.car-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Khung hình ảnh */
+.car-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.car-card:hover .car-image img {
+    transform: scale(1.05);
+}
+
+/* Thông tin tên và giá xe bên dưới ảnh */
+.car-info {
+    padding: 18px 20px;
+}
+
+.car-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.car-price {
+    font-size: 0.95rem;
+    color: #888888;
+}
+
+.page-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+/* Responsive cho màn hình điện thoại */
+@media (max-width: 768px) {
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .car-image {
+        height: 220px;
+    }
 }
