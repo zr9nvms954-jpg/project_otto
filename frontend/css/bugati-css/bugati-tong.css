@@ -1,8 +1,10 @@
 body {
     margin: 0;
-    background-color: #0d1218;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    /* Nền Đen Carbon dệt sợi với dải xanh đêm thẫm */
+    background: radial-gradient(circle at top, #060b12 0%, #030406 70%, #000000 100%);
+    color: #d1d5db;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
 }
 
 /* Khối nội dung chính */
@@ -16,70 +18,115 @@ body > div {
 /* Tiêu đề chính */
 h1 {
     text-align: center;
-    font-size: 50px;
-    margin-bottom: 40px;
+    font-size: 42px;
+    margin-bottom: 30px;
     color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Ánh sáng Xanh Dương Đậm ẩn dưới tiêu đề */
+    text-shadow: 0 0 25px rgba(10, 50, 110, 0.6);
 }
 
-/* Ảnh Audi A8 chính */
+/* Ảnh Banner chính */
 body > div > img:first-of-type {
     display: block;
-    width: 80%;
+    width: 100%;
     max-width: 900px;
     height: auto;
     margin: 0 auto 35px;
-    border-radius: 15px;
-
-    transition: 0.5s;
+    border-radius: 12px;
+    /* Viền Xanh Dương Đậm */
+    border: 1px solid #0f3875;
+    /* Đổ bóng Đen Carbon sâu kết hợp ánh xanh thẫm */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(15, 56, 117, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 body > div > img:first-of-type:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.95), 0 0 30px rgba(22, 78, 160, 0.6);
 }
 
 /* Đoạn giới thiệu */
 p {
-    color: #c7c9cc;
-    font-size: 18px;
+    color: #9ca3af;
+    font-size: 17px;
     line-height: 1.8;
 }
 
 /* Tiêu đề các phần */
 h2 {
     color: #ffffff;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 25px;
     padding-left: 15px;
-    border-left: 4px solid #ffffff;
+    /* Dải vệt Xanh Dương Đậm */
+    border-left: 4px solid #164ea0;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
-/* Nhóm ảnh nhỏ */
+/* Nhóm ảnh siêu xe nhỏ */
 body > div > img:not(:first-of-type) {
     width: 300px !important;
-    height: 200px;
+    height: 190px;
     object-fit: cover;
     margin: 10px;
-    border-radius: 12px;
-
-    transition: 0.4s;
+    border-radius: 8px;
+    /* Viền khung xám Carbon */
+    border: 1px solid #1f242d;
+    background-color: #0b0e14;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
 }
 
-/* Hover ảnh */
+/* Hover ảnh xe - Rực sáng Xanh Dương Đậm */
 body > div > img:not(:first-of-type):hover {
-    transform: scale(1.07);
+    transform: translateY(-5px) scale(1.04);
+    border-color: #1a5bc4;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), 0 0 20px rgba(26, 91, 196, 0.5);
 }
 
-/* Danh sách */
+/* Thẻ định dạng danh sách */
 ul {
-    padding-left: 25px;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
 }
 
+/* Khối thông tin xe - Nền Đen Carbon kết hợp vệt viền Xanh Đậm */
 li {
-    color: #c7c9cc;
-    line-height: 1.8;
-    margin-bottom: 12px;
+    background: #0d1117;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border-left: 3px solid #164ea0;
+    border-top: 1px solid #161b22;
+    border-right: 1px solid #161b22;
+    border-bottom: 1px solid #161b22;
+    transition: 0.3s;
 }
 
+li:hover {
+    background: #121822;
+    border-left-color: #216be0;
+}
+
+/* Giá tiền/Thông số dùng màu Xanh Dương Đậm nổi bật */
 strong {
-    color: #ffffff;
+    color: #2b7fff;
+}
+
+/* Điều hướng và chân trang */
+nav a, footer a {
+    color: #2b7fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover, footer a:hover {
+    color: #5297ff;
+    text-shadow: 0 0 10px rgba(43, 127, 255, 0.5);
 }

@@ -1,8 +1,10 @@
 body {
     margin: 0;
-    background-color: #0d1218;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    /* Nền đen xám khói trầm */
+    background: linear-gradient(135deg, #090a0c 0%, #12151c 50%, #090a0c 100%);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
 }
 
 /* Khối nội dung chính */
@@ -16,70 +18,113 @@ body > div {
 /* Tiêu đề chính */
 h1 {
     text-align: center;
-    font-size: 50px;
-    margin-bottom: 40px;
-    color: #ffffff;
+    font-size: 42px;
+    margin-bottom: 30px;
+    /* Chữ màu Vàng Khói Kim Loại */
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
-/* Ảnh Audi A8 chính */
+/* Ảnh Banner chính */
 body > div > img:first-of-type {
     display: block;
-    width: 80%;
+    width: 100%;
     max-width: 900px;
     height: auto;
     margin: 0 auto 35px;
-    border-radius: 15px;
-
-    transition: 0.5s;
+    border-radius: 10px;
+    /* Viền Vàng Khói mờ nhẹ */
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    /* Hiệu ứng Đổ bóng Khói Tối */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 body > div > img:first-of-type:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
 /* Đoạn giới thiệu */
 p {
-    color: #c7c9cc;
-    font-size: 18px;
+    color: #a5a9b0;
+    font-size: 17px;
     line-height: 1.8;
 }
 
 /* Tiêu đề các phần */
 h2 {
     color: #ffffff;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 25px;
     padding-left: 15px;
-    border-left: 4px solid #ffffff;
+    /* Viền dọc Vàng Khói */
+    border-left: 4px solid #c5a059;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
-/* Nhóm ảnh nhỏ */
+/* Nhóm ảnh siêu xe nhỏ */
 body > div > img:not(:first-of-type) {
     width: 300px !important;
-    height: 200px;
+    height: 190px;
     object-fit: cover;
     margin: 10px;
-    border-radius: 12px;
-
-    transition: 0.4s;
+    border-radius: 8px;
+    border: 1px solid #1f242e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
-/* Hover ảnh */
+/* Hover ảnh xe nhỏ - Bật hiệu ứng Vàng Khói */
 body > div > img:not(:first-of-type):hover {
-    transform: scale(1.07);
+    transform: translateY(-5px) scale(1.04);
+    border-color: #c5a059;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.3);
 }
 
-/* Danh sách */
+/* Thẻ định dạng danh sách */
 ul {
-    padding-left: 25px;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
 }
 
+/* Các ô thông tin xe - Nền Đen Khói */
 li {
-    color: #c7c9cc;
-    line-height: 1.8;
-    margin-bottom: 12px;
+    background: #11141a;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border-left: 3px solid #c5a059;
+    border-top: 1px solid #1a1e28;
+    border-right: 1px solid #1a1e28;
+    border-bottom: 1px solid #1a1e28;
+    transition: 0.3s;
 }
 
+li:hover {
+    background: #171b24;
+    border-left-color: #e5c158;
+}
+
+/* Nhấn mạnh chữ giá/thông số bằng Vàng Khói */
 strong {
-    color: #ffffff;
+    color: #d4af37;
+}
+
+/* Chân trang và điều hướng */
+nav a, footer a {
+    color: #c5a059;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover, footer a:hover {
+    color: #e5c158;
+    text-shadow: 0 0 8px rgba(229, 193, 88, 0.4);
 }
