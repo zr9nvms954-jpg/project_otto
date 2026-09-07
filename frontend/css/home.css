@@ -45,7 +45,7 @@ body {
     background-color: #333;
 }
 
-/* Lưới hiển thị 2 cột chuẩn giống hình */
+/* Lưới hiển thị 2 cột chuẩn */
 .brand-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,45 +60,67 @@ body {
 /* Thẻ Card */
 .car-card {
     position: relative;
-    height: 280px; /* Giảm chiều cao khung từ 400px xuống 280px */
+    height: 280px;
     border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #121212; /* Nền tối cho khung */
-    padding: 20px;
+    display: block; /* Chuyển về block để chứa card-media tràn khung */
+    background-color: #121212;
 }
 
-.car-img {
-    max-width: 60%; /* Giới hạn chiều rộng ảnh ở mức 60% khung */
-    max-height: 60%; /* Giới hạn chiều cao ảnh ở mức 60% khung */
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Thu nhỏ nguyên vẹn tỉ lệ ảnh, không bị tràn hay bị cắt */
-    transition: transform 0.3s ease;
+/* Khung chứa phương tiện (Ảnh tĩnh & Video) */
+.card-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.car-card:hover .car-img {
-    transform: scale(1.04); /* Phóng to nhẹ khi di chuột */
+/* Định vị đè khít ảnh và video */
+.static-img,
+.hover-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Phủ kín khung card mượt mà */
+    display: block;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Lớp phủ đè chữ lên ảnh */
+/* Ẩn video mặc định */
+.hover-video {
+    opacity: 0;
+}
+
+/* Hiệu ứng khi di chuột vào Card: Hiện video + Phóng to nhẹ */
+.car-card:hover .hover-video {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.car-card:hover .static-img {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+/* Lớp phủ đè chữ lên trên Video/Ảnh */
 .card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+    z-index: 2; /* Đảm bảo nổi đè lên video */
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 25px;
+    pointer-events: none; /* Giúp thao tác chuột hover mượt qua phần chữ */
 }
 
-/* Tiêu đề thương hiệu nằm trên cùng ảnh */
+/* Tiêu đề thương hiệu nằm trên cùng */
 .brand-title {
     color: #ffffff;
     font-size: 32px;
@@ -136,7 +158,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .car-card:hover .btn-arrow {
@@ -168,6 +190,6 @@ body {
     }
     
     .car-card {
-        height: 300px;
+        height: 250px;
     }
 }
