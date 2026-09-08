@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi R8 V10 Performance - Chi Tiết Xe</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi-R8.css">
 </head>
 <body>
 
     <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
+    <nav class="breadcrumb">
         <p>
             <a href="/frontend/html/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <link rel="stylesheet" href="/frontend/css/audi-css/Audi-R8.css">
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
             <strong>Audi R8 V10 Performance</strong>
         </p>
@@ -19,44 +20,71 @@
 
     <hr>
 
-    <main>
-        <div>
-            <h1>Audi R8 V10 Performance</h1>
+    <main class="container">
+        <article class="car-detail">
+            <!-- Tiêu đề & Ảnh chính -->
+            <header class="car-detail-header">
+                <h1>Audi R8 V10 Performance</h1>
+                <div class="main-image-wrapper">
+                    <img src="/img/audi/anh_R8.jpg" alt="Audi R8 V10 Performance" width="500">
+                </div>
+            </header>
 
-            <!-- Đã sửa lại đường dẫn lấy ảnh chuẩn từ thư mục img -->
-            <img src="/img/audi/anh_R8.jpg" alt="Audi R8 V10 Performance" width="500">
-            <p><strong>Giá bán dự kiến:</strong> 12.000.000.000 VNĐ</p>
-            <p><strong>Tình trạng:</strong> Nhập khẩu nguyên chiếc</p>
-            <p><strong>Audi R8</strong> là mẫu siêu xe động cơ đặt giữa biểu tượng của thương hiệu 4 vòng tròn, kết hợp hoàn hảo giữa hiệu suất đua chuyên nghiệp và khả năng vận hành hàng ngày.</p>
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <ul>
-                <li>Thân xe làm từ nhôm và sợi carbon nhẹ, cứng cáp.</li>
-                <li>Hệ thống đèn pha LED tích hợp công nghệ chiếu sáng Laser tiên tiến.</li>
-                <li>Bộ vành hợp kim 20 inch độc quyền đi kèm phanh gốm carbon hiệu suất cao.</li>
-            </ul>
+            <!-- Khối 1: Thông tin chung & Giá bán -->
+            <section class="info-block">
+                <h2>1. Thông Tin Chung & Giá Bán</h2>
+                <ul>
+                    <li><strong>Giá bán dự kiến:</strong> 12.000.000.000 VNĐ</li>
+                    <li><strong>Kiểu dáng / Thể loại:</strong> Siêu xe thể thao động cơ đặt giữa (Mid-Engine Supercar)</li>
+                    <li><strong>Tình trạng:</strong> Nhập khẩu nguyên chiếc</li>
+                </ul>
+                <p>
+                    <strong>Audi R8 V10 Performance</strong> là mẫu siêu xe động cơ đặt giữa biểu tượng của thương hiệu 4 vòng tròn, kết hợp hoàn hảo giữa hiệu suất đua chuyên nghiệp và khả năng vận hành linh hoạt hàng ngày.
+                </p>
+            </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/audi_r8_dongco.jpg" alt="Audi A8" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V10 5.2L FSI hút khí tự nhiên - cỗ máy huyền thoại chung nền tảng với Lamborghini.</li>
-                <li><strong>Công suất tối đa:</strong> 602 - 610 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp S-Tronic kết hợp hệ dẫn động 4 bánh toàn thời gian Quattro nổi tiếng.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,2 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 330 km/h.</li>
-            </ul>
+            <!-- Khối 2: Thiết kế & Ngoại thất -->
+            <section class="info-block">
+                <h2>2. Thiết Kế & Ngoại Thất</h2>
+                <ul>
+                    <li><strong>Cấu trúc thân xe:</strong> Sử dụng công nghệ Audi Space Frame (ASF) kết hợp nhôm và sợi carbon siêu nhẹ, tăng độ cứng xoắn.</li>
+                    <li><strong>Công nghệ chiếu sáng:</strong> Hệ thống đèn pha LED tích hợp công nghệ chiếu sáng Laser tiên tiến giúp tối ưu tầm nhìn ở tốc độ cao.</li>
+                    <li><strong>Dàn chân & Phanh:</strong> Bộ vành hợp kim 20 inch thiết kế độc quyền đi kèm hệ thống phanh gốm carbon hiệu suất cao.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/noithat_R8.jpg" alt="Audi A8" width="500">
-            <ul>
-                <li>Nội thất thiết kế tập trung hoàn toàn vào người lái với ghế đua thể thao ôm sát.</li>
-                <li>Ghế ngồi bọc da cao cấp, vô-lăng tích hợp nút khởi động và chọn chế độ lái.</li>
-                <li>Vô-lăng thể thao đáy phẳng tích hợp nút bấm khởi động Start/Stop và chọn chế độ lái Audi Drive Select.</li>
-            </ul>
+            <!-- Khối 3: Động cơ & Vận hành -->
+            <section class="info-block">
+                <h2>3. Động Cơ & Vận Hành</h2>
+                <div class="image-wrapper">
+                    <img src="/img/audi/audi_r8_dongco.jpg" alt="Động cơ Audi R8 V10 Performance" width="500">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V10 5.2L FSI Hút khí tự nhiên - cỗ máy huyền thoại dùng chung nền tảng với siêu xe Lamborghini.</li>
+                    <li><strong>Công suất tối đa:</strong> 602 - 610 mã lực (HP).</li>
+                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số tự động ly hợp kép 7 cấp S-Tronic kết hợp hệ dẫn động 4 bánh toàn thời gian Quattro lừng danh.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,2 giây.</li>
+                    <li><strong>Tốc độ tối đa:</strong> 330 km/h.</li>
+                </ul>
+            </section>
+
+            <!-- Khối 4: Trang bị & Công nghệ nội thất -->
+            <section class="info-block">
+                <h2>4. Trang Bị & Công Nghệ Nội Thất</h2>
+                <div class="image-wrapper">
+                    <img src="/img/audi/noithat_R8.jpg" alt="Nội thất Audi R8 V10 Performance" width="500">
+                </div>
+                <ul>
+                    <li><strong>Triết lý khoang lái:</strong> Thiết kế "Monoposto" tập trung hoàn toàn vào người lái với không gian đậm chất thể thao.</li>
+                    <li><strong>Ghế ngồi cao cấp:</strong> Ghế đua ôm sát cơ thể được bọc da cao cấp chỉnh điện đa hướng.</li>
+                    <li><strong>Vô-lăng thể thao:</strong> Vô-lăng vát đáy phẳng tích hợp nút bấm khởi động Start/Stop, lẫy chuyển số và bộ chọn chế độ lái Audi Drive Select.</li>
+                </ul>
+            </section>
 
             <hr>
 
-            <!-- Nút tương tác và Quay lại -->
-            <section>
+            <!-- Bộ nút hành động -->
+            <section class="action-section">
                 <h3>Liên Hệ Đặt Mua</h3>
                 <form>
                     <button type="button">Yêu Cầu Báo Giá / Đặt Cọc</button>
@@ -64,7 +92,7 @@
                 <br>
                 <p><a href="audi-tong.html">← Quay lại danh sách Audi</a></p>
             </section>
-        </div>
+        </article>
     </main>
 
 </body>

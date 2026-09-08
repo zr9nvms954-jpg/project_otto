@@ -1,17 +1,17 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi Q7 - Chi Tiết Xe</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi Q7.css">
 </head>
 <body>
 
-    <!-- Thanh hướng dẫn đường đi -->
-    <nav>
+    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+    <nav class="breadcrumb">
         <p>
-            <link rel="stylesheet" href="/frontend/css/audi-css/Audi Q7.css">
             <a href="/frontend/html/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt;
             <strong>Audi Q7</strong>
@@ -20,86 +20,83 @@
 
     <hr>
 
-    <main>
-        <div>
-            <h1>Audi Q7</h1>
+    <main class="container">
+        <article class="car-detail">
+            <!-- Tiêu đề & Ảnh chính -->
+            <header class="car-detail-header">
+                <h1>Audi Q7</h1>
+                <div class="main-image-wrapper">
+                    <img src="/img/audi/q7-ngoai.jpg" alt="Audi Q7" width="500">
+                </div>
+            </header>
 
-            <img src="/img/audi/q7-ngoai.jpg"
-                 alt="Audi Q7"
-                 width="500">
-
-            <p><strong>Giá bán dự kiến:</strong> 3.500.000.000 VNĐ</p>
-            <p><strong>Tình trạng:</strong> Đang bán</p>
-
-            <p>
-                <strong>Audi Q7</strong> là mẫu SUV hạng sang cỡ lớn,
-                nổi bật với không gian rộng rãi, thiết kế mạnh mẽ
-                và nhiều công nghệ cao cấp.
-            </p>
-
-            <h2>1. Thiết kế & Ngoại thất</h2>
-
-            <ul>
-                <li>Thiết kế SUV cỡ lớn mạnh mẽ và sang trọng.</li>
-                <li>Lưới tản nhiệt Singleframe kích thước lớn.</li>
-                <li>Đèn LED Matrix hiện đại.</li>
-                <li>Mâm xe hợp kim kích thước lớn.</li>
-                <li>Thiết kế thân xe chắc chắn và bề thế.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-
-            <img src="/img/audi/q7-dongco.jpg"
-                 alt="Động cơ Audi Q7"
-                 width="500">
-
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI.</li>
-                <li><strong>Công suất:</strong> Khoảng 335 mã lực.</li>
-                <li><strong>Hộp số:</strong> Tự động 8 cấp.</li>
-                <li><strong>Hệ dẫn động:</strong> Quattro.</li>
-                <li><strong>Vận hành:</strong> Mạnh mẽ, êm ái và ổn định.</li>
-            </ul>
-
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-
-            <img src="/img/audi/q7-noithat.jpg"
-                 alt="Nội thất Audi Q7"
-                 width="500">
-
-            <ul>
-                <li>Audi Virtual Cockpit.</li>
-                <li>Màn hình giải trí MMI cảm ứng.</li>
-                <li>Hệ thống âm thanh cao cấp.</li>
-                <li>Apple CarPlay và Android Auto.</li>
-                <li>Ghế da cao cấp chỉnh điện.</li>
-                <li>Hệ thống điều hòa tự động nhiều vùng.</li>
-                <li>Cốp sau đóng mở điện.</li>
-            </ul>
-
-            <hr>
-
-            <section>
-                <h3>Liên Hệ Đặt Mua</h3>
-
-                <form>
-                    <button type="button">
-                        Yêu Cầu Báo Giá / Đặt Cọc
-                    </button>
-                </form>
-
-                <br>
-
+            <!-- Khối 1: Thông tin chung & Giá bán -->
+            <section class="info-block">
+                <h2>1. Thông Tin Chung & Giá Bán</h2>
+                <ul>
+                    <li><strong>Giá bán dự kiến:</strong> 3.500.000.000 VNĐ</li>
+                    <li><strong>Kiểu dáng / Thể loại:</strong> SUV 7 chỗ hạng sang cỡ lớn (Mid-Size Luxury SUV)</li>
+                    <li><strong>Tình trạng:</strong> Đang bán</li>
+                </ul>
                 <p>
-                    <a href="audi-tong.html">
-                        ← Quay lại danh sách Audi
-                    </a>
+                    <strong>Audi Q7</strong> là mẫu SUV hạng sang cỡ lớn nổi bật với cấu hình 7 chỗ rộng rãi, thiết kế bề thế, cùng hàng loạt công nghệ hiện đại tối tân đáp ứng trọn vẹn nhu cầu của gia đình.
                 </p>
             </section>
 
-        </div>
+            <!-- Khối 2: Thiết kế & Ngoại thất -->
+            <section class="info-block">
+                <h2>2. Thiết Kế & Ngoại Thất</h2>
+                <ul>
+                    <li><strong>Kiểu dáng tổng thể:</strong> Kiểu dáng SUV cỡ lớn vững chãi, cơ bắp và tràn đầy vẻ uy nghiêm.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Lưới tản nhiệt Singleframe bát giác cỡ lớn với các thanh nan dọc mạ chrome sang trọng.</li>
+                    <li><strong>Công nghệ chiếu sáng:</strong> Hệ thống đèn pha HD Matrix LED đỉnh cao tối ưu hóa tầm nhìn ban đêm.</li>
+                    <li><strong>Dàn chân & Thân xe:</strong> Mâm xe hợp kim thể thao kích thước lớn cùng đường nét thân xe chắc chắn, tinh tế.</li>
+                </ul>
+            </section>
+
+            <!-- Khối 3: Động cơ & Vận hành -->
+            <section class="info-block">
+                <h2>3. Động Cơ & Vận Hành</h2>
+                <div class="image-wrapper">
+                    <img src="/img/audi/q7-dongco.jpg" alt="Động cơ Audi Q7" width="500">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI kết hợp công nghệ Mild-Hybrid 48V.</li>
+                    <li><strong>Công suất tối đa:</strong> Khoảng 335 mã lực (HP).</li>
+                    <li><strong>Hộp số:</strong> Tự động 8 cấp Tiptronic chuyên chở lực mượt mà.</li>
+                    <li><strong>Hệ dẫn động:</strong> Dẫn động 4 bánh toàn thời gian Quattro lừng danh vượt trội mọi địa hình.</li>
+                    <li><strong>Trải nghiệm vận hành:</strong> Vận hành cực kỳ mạnh mẽ, êm ái và ổn định trên mọi hành trình dài.</li>
+                </ul>
+            </section>
+
+            <!-- Khối 4: Trang bị & Công nghệ nội thất -->
+            <section class="info-block">
+                <h2>4. Trang Bị & Công Nghệ Nội Thất</h2>
+                <div class="image-wrapper">
+                    <img src="/img/audi/q7-noithat.jpg" alt="Nội thất Audi Q7" width="500">
+                </div>
+                <ul>
+                    <li><strong>Bảng đồng hồ:</strong> Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit sắc nét.</li>
+                    <li><strong>Màn hình trung tâm:</strong> Hệ thống hai màn hình cảm ứng MMI cho phản hồi thao tác cực nhạy.</li>
+                    <li><strong>Ghế ngồi & Tiện nghi:</strong> Cấu hình 7 chỗ linh hoạt, ghế bọc da cao cấp chỉnh điện đa hướng kèm nhớ vị trí.</li>
+                    <li><strong>Giải trí & Điều hòa:</strong> Hệ thống điều hòa tự động nhiều vùng độc lập cùng dàn âm thanh vòm đỉnh cao.</li>
+                    <li><strong>Tiện ích khoang hành lý:</strong> Cốp sau đóng mở điện thông minh chống kẹt tiện lợi.</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Bộ nút hành động -->
+            <section class="action-section">
+                <h3>Liên Hệ Đặt Mua</h3>
+                <form>
+                    <button type="button">Yêu Cầu Báo Giá / Đặt Cọc</button>
+                </form>
+                <br>
+                <p><a href="audi-tong.html">← Quay lại danh sách Audi</a></p>
+            </section>
+        </article>
     </main>
 
 </body>
 </html>
-```

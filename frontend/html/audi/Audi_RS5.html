@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi RS5 - Chi Tiết Xe</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi RS5.css">
 </head>
 <body>
 
-    <!-- Thanh hướng dẫn đường đi -->
-    <nav>
+    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+    <nav class="breadcrumb">
         <p>
-            <link rel="stylesheet" href="/frontend/css/audi-css/Audi RS5.css">
             <a href="/frontend/html/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt;
             <strong>Audi RS5</strong>
@@ -19,81 +20,81 @@
 
     <hr>
 
-    <main>
-        <div>
-            <h1>Audi RS5</h1>
+    <main class="container">
+        <article class="car-detail">
+            <!-- Tiêu đề & Ảnh chính -->
+            <header class="car-detail-header">
+                <h1>Audi RS5</h1>
+                <div class="main-image-wrapper">
+                    <img src="/img/audi/rs5-ngoai.jpg" alt="Audi RS5" width="500">
+                </div>
+            </header>
 
-            <img src="/img/audi/rs5-ngoai.jpg"
-                 alt="Audi RS5"
-                 width="500">
-
-            <p><strong>Giá bán dự kiến:</strong> 3.800.000.000 VNĐ</p>
-            <p><strong>Tình trạng:</strong> Đang bán</p>
-
-            <p>
-                <strong>Audi RS5</strong> là mẫu coupe thể thao hiệu suất cao
-                của Audi, nổi bật với thiết kế mạnh mẽ và khả năng vận hành ấn tượng.
-            </p>
-
-            <h2>1. Thiết kế & Ngoại thất</h2>
-
-            <ul>
-                <li>Thiết kế coupe thể thao và mạnh mẽ.</li>
-                <li>Lưới tản nhiệt Singleframe đặc trưng.</li>
-                <li>Đèn LED Matrix hiện đại.</li>
-                <li>Mâm xe hợp kim thể thao.</li>
-                <li>Cản trước thiết kế riêng cho dòng RS.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-
-            <img src="/img/audi/rs5-dongco.jpg"
-                 alt="Động cơ Audi RS5"
-                 width="500">
-
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng V6 2.9L Twin-Turbo.</li>
-                <li><strong>Công suất:</strong> Khoảng 444 mã lực.</li>
-                <li><strong>Hộp số:</strong> Tự động 8 cấp.</li>
-                <li><strong>Hệ dẫn động:</strong> Quattro.</li>
-                <li><strong>Tăng tốc:</strong> Khoảng 3,9 giây từ 0 - 100 km/h.</li>
-            </ul>
-
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-
-            <img src="/img/audi/rs5-noithat.jpg"
-                 alt="Nội thất Audi RS5"
-                 width="500">
-
-            <ul>
-                <li>Audi Virtual Cockpit.</li>
-                <li>Ghế thể thao RS bọc da cao cấp.</li>
-                <li>Vô-lăng thể thao đa chức năng.</li>
-                <li>Hệ thống giải trí MMI.</li>
-                <li>Apple CarPlay và Android Auto.</li>
-            </ul>
-
-            <hr>
-
-            <section>
-                <h3>Liên Hệ Đặt Mua</h3>
-
-                <form>
-                    <button type="button">
-                        Yêu Cầu Báo Giá / Đặt Cọc
-                    </button>
-                </form>
-
-                <br>
-
+            <!-- Khối 1: Thông tin chung & Giá bán -->
+            <section class="info-block">
+                <h2>1. Thông Tin Chung & Giá Bán</h2>
+                <ul>
+                    <li><strong>Giá bán dự kiến:</strong> 3.800.000.000 VNĐ</li>
+                    <li><strong>Kiểu dáng / Thể loại:</strong> Coupe thể thao hiệu suất cao (High-Performance Coupe)</li>
+                    <li><strong>Tình trạng:</strong> Đang bán</li>
+                </ul>
                 <p>
-                    <a href="audi-tong.html">
-                        ← Quay lại danh sách Audi
-                    </a>
+                    <strong>Audi RS5</strong> là mẫu coupe thể thao hiệu suất cao của Audi, nổi bật với thiết kế mạnh mẽ, đường nét khí động học tối ưu và khả năng vận hành vô cùng ấn tượng.
                 </p>
             </section>
 
-        </div>
+            <!-- Khối 2: Thiết kế & Ngoại thất -->
+            <section class="info-block">
+                <h2>2. Thiết Kế & Ngoại Thất</h2>
+                <ul>
+                    <li><strong>Kiểu dáng tổng thể:</strong> Thiết kế Coupe thể thao 2 cửa cơ bắp, đường gân dập nổi hầm hố.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Thiết kế Singleframe đặc trưng dạng tổ ong mở rộng sơn đen bóng độc quyền dòng RS.</li>
+                    <li><strong>Công nghệ chiếu sáng:</strong> Cụm đèn pha Matrix LED hiện đại cho khả năng chiếu sáng thông minh.</li>
+                    <li><strong>Dàn chân & Cản xe:</strong> Mâm xe hợp kim thể thao RS kích thước lớn đi cùng cản trước/sau thiết kế khí động học chuyên biệt.</li>
+                </ul>
+            </section>
+
+            <!-- Khối 3: Động cơ & Vận hành -->
+            <section class="info-block">
+                <h2>3. Động Cơ & Vận Hành</h2>
+                <div class="image-wrapper">
+                    <img src="/img/audi/rs5-dongco.jpg" alt="Động cơ Audi RS5" width="500">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng V6 2.9L TFSI Twin-Turbo tăng áp kép.</li>
+                    <li><strong>Công suất tối đa:</strong> Khoảng 444 mã lực (HP).</li>
+                    <li><strong>Hộp số:</strong> Tự động 8 cấp Tiptronic chuyển số thể thao linh hoạt.</li>
+                    <li><strong>Hệ dẫn động:</strong> Dẫn động 4 bánh toàn thời gian Quattro lừng danh tối ưu lực bám.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> Khoảng 3,9 giây.</li>
+                </ul>
+            </section>
+
+            <!-- Khối 4: Trang bị & Công nghệ nội thất -->
+            <section class="info-block">
+                <h2>4. Trang Bị & Công Nghệ Nội Thất</h2>
+                <div class="image-wrapper">
+                    <img src="/img/audi/rs5-noithat.jpg" alt="Nội thất Audi RS5" width="500">
+                </div>
+                <ul>
+                    <li><strong>Bảng đồng hồ:</strong> Audi Virtual Cockpit với màn hình giao diện hiển thị RS chuyên biệt.</li>
+                    <li><strong>Ghế ngồi cao cấp:</strong> Ghế thể thao RS bọc da cao cấp ôm sát lưng người lái, thêu logo RS nổi bật.</li>
+                    <li><strong>Vô-lăng:</strong> Vô-lăng thể thao đa chức năng vát đáy phẳng tích hợp lẫy chuyển số.</li>
+                    <li><strong>Giải trí & Kết nối:</strong> Hệ thống thông tin giải trí MMI cảm ứng sắc nét, hỗ trợ kết nối không dây Apple CarPlay và Android Auto.</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Bộ nút hành động -->
+            <section class="action-section">
+                <h3>Liên Hệ Đặt Mua</h3>
+                <form>
+                    <button type="button">Yêu Cầu Báo Giá / Đặt Cọc</button>
+                </form>
+                <br>
+                <p><a href="audi-tong.html">← Quay lại danh sách Audi</a></p>
+            </section>
+        </article>
     </main>
 
 </body>
