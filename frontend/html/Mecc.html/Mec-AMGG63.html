@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes-AMG G63 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/mec-css/Mec-g63.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/mec-css/Mec-g63.css">
 <body>
 
     <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
+    <nav class="breadcrumb">
         <p>
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="/frontend/html/Mecc.html/Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt; 
@@ -19,57 +19,94 @@
 
     <hr>
 
-    <main>
-        <div>
-            <h1>/h1>
+    <main class="container">
+        <article class="car-detail">
+            <!-- Tiêu đề & Ảnh chính -->
+            <header class="car-detail-header">
+                <h1>Mercedes-AMG G63</h1>
+                <div class="main-image-wrapper">
+                    <img src="../../img/mercedes/amg_g63_chinh.jpg" alt="Mercedes-AMG G63" width="500">
+                </div>
+            </header>
 
-            <img src="../../img/mercedes/amg_g63_chinh.jpg" alt="Mercedes-AMG G63" width="500">
+            <!-- Khối 1: Thông tin chung & Giá bán -->
+            <section class="info-block">
+                <h2>1. Thông Tin Chung & Giá Bán</h2>
+                <ul>
+                    <li><strong>Giá bán niêm yết:</strong> 11.750.000.000 VNĐ</li>
+                    <li><strong>Kiểu dáng / Thể loại:</strong> SUV địa hình hiệu năng cao (Performance Luxury SUV)</li>
+                    <li><strong>Năm sản xuất:</strong> 2024 - 2026</li>
+                    <li><strong>Tình trạng:</strong> Nhập khẩu nguyên chiếc</li>
+                </ul>
+                <p><strong>Mercedes-AMG G63</strong> là "Ông vua địa hình" biểu tượng, sở hữu thiết kế hình hộp vuông vượt thời gian kết hợp hoàn hảo cùng hiệu năng vận hành mãnh liệt từ phân nhánh AMG danh tiếng.</p>
+            </section>
 
-            <p><strong>Giá bán dự kiến:</strong> 11.750.000.000 VNĐ</p>
-            <p><strong>Tình trạng:</strong> Nhập khẩu nguyên chiếc</p>
+            <!-- Khối 2: Kích thước & Không gian -->
+            <section class="info-block">
+                <h2>2. Kích Thước & Không Gian</h2>
+                <img src="../../img/mercedes/ngoaithat_amg_g63.jpg" alt="Ngoại thất Mercedes-AMG G63" width="500">
+                <ul>
+                    <li><strong>Kích thước tổng thể (D x R x C):</strong> 4.873 x 1.984 x 1.966 (mm)</li>
+                    <li><strong>Chiều dài cơ sở:</strong> 2.890 mm</li>
+                    <li><strong>Số ghế ngồi:</strong> 5 ghế</li>
+                    <li><strong>Khả năng lội nước:</strong> Lên tới 700 mm</li>
+                    <li><strong>Điểm nhấn ngoại thất:</strong> Kiểu dáng hộp vuông độc bản với tiếng đóng cửa cơ khí đặc trưng, lưới tản nhiệt Panamericana nan dọc, ống xả kép hông xe uy lực, đèn pha MULTIBEAM LED tròn cổ điển và bánh dự phòng treo cửa sau.</li>
+                </ul>
+            </section>
 
-            <p><strong>Mercedes-AMG G63</strong> là "Ông vua địa hình" biểu tượng, sở hữu thiết kế hộp vuông vượt thời gian kết hợp hiệu năng vận hành vượt trội từ phân nhánh AMG danh tiếng.</p>
+            <!-- Khối 3: Động cơ & Vận hành -->
+            <section class="info-block">
+                <h2>3. Động Cơ & Vận Hành</h2>
+                <img src="../../img/mercedes/dongco_amg_g63.jpg" alt="Động cơ Mercedes-AMG G63" width="500">
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 4.0L BiTurbo AMG chế tác thủ công ("One Man, One Engine").</li>
+                    <li><strong>Công suất tối đa:</strong> 585 mã lực tại 6.000 vòng/phút.</li>
+                    <li><strong>Mô-men xoắn cực đại:</strong> 850 Nm tại 2.500 - 3.500 vòng/phút.</li>
+                    <li><strong>Hộp số:</strong> Tự động 9 cấp AMG SPEEDSHIFT TCT 9G.</li>
+                    <li><strong>Hệ dẫn động:</strong> 4 bánh toàn thời gian biến thiên AMG Performance 4MATIC (Phân bổ lực kéo 40:60).</li>
+                </ul>
+            </section>
 
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <img src="../../img/mercedes/ngoaithat_amg_g63.jpg" alt="Ngoại thất Mercedes-AMG G63" width="500">
-            <ul>
-                <li>Kiểu dáng hình hộp huyền thoại không lẫn vào đâu được cùng cửa mở tiếng kêu cơ khí đặc trưng.</li>
-                <li>Lưới tản nhiệt Panamericana tản nhiệt dọc chuẩn phong cách xe đua AMG.</li>
-                <li>Ống xả kép đặt hai bên hông xe tạo nên âm thanh gầm rú uy lực khi nhấn ga.</li>
-                <li>Đèn pha MULTIBEAM LED tròn cổ điển tích hợp công nghệ chiếu sáng thông minh.</li>
-            </ul>
+            <!-- Khối 4: Hiệu năng -->
+            <section class="info-block">
+                <h2>4. Hiệu Năng</h2>
+                <ul>
+                    <li><strong>Gia tốc (0 - 100 km/h):</strong> 4,5 giây.</li>
+                    <li><strong>Tốc độ tối đa (Max Speed):</strong> 220 km/h (Hoặc 240 km/h với gói AMG Driver's Package).</li>
+                    <li><strong>Hệ thống chinh phục địa hình:</strong> 3 khóa vi sai độc lập (Cầu trước, trung tâm, cầu sau) kết hợp hệ thống treo thích ứng AMG RIDE CONTROL.</li>
+                </ul>
+            </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="../../img/mercedes/dongco_amg_g63.jpg" alt="Động cơ Mercedes-AMG G63" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V8 4.0L BiTurbo AMG chế tác thủ công "One Man, One Engine".</li>
-                <li><strong>Công suất tối đa:</strong> 585 mã lực tại 6.000 vòng/phút.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> AMG SPEEDSHIFT TCT 9 cấp, dẫn động 4 bánh AMG Performance 4MATIC.</li>
-                <li><strong>Khả năng off-road:</strong> 3 khóa vi sai độc lập chinh phục mọi địa hình khắc nghiệt nhất.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,5 giây.</li>
-            </ul>
+            <!-- Khối 5: Trang bị, Công nghệ & An toàn nổi bật -->
+            <section class="info-block">
+                <h2>5. Trang Bị, Công Nghệ & An Toàn Nổi Bật</h2>
+                <img src="../../img/mercedes/noithat_amg_g63.jpg" alt="Nội thất Mercedes-AMG G63" width="500">
+                <ul>
+                    <li><strong>Màn hình hiển thị:</strong> Cặp màn hình kép Widescreen Cockpit 12.3 inch trải dài trên bảng điều khiển trung tâm.</li>
+                    <li><strong>Nội thất & Vô-lăng:</strong> Ghế bọc da Nappa cao cấp cá nhân hóa, ốp sợi carbon thể thao, vô-lăng AMG Performance bọc da DINAMICA tích hợp cụm phím xoay tùy chỉnh chế độ lái nhanh.</li>
+                    <li><strong>Âm thanh & Tiện nghi:</strong> Âm thanh vòm Burmester® 15 loa công suất 590W, đèn viền 64 màu, cửa sổ trời chỉnh điện.</li>
+                    <li><strong>An toàn & Trợ lái:</strong> Gói an toàn Driving Assistance Package, hỗ trợ phanh chủ động Active Brake Assist, giữ làn đường Active Lane Keeping Assist, camera 360 độ và hệ thống bảo vệ PRE-SAFE®.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="../../img/mercedes/noithat_amg_g63.jpg" alt="Nội thất Mercedes-AMG G63" width="500">
-            <ul>
-                <li>Khoang lái hiện đại với cặp màn hình kép Widescreen Cockpit 12.3 inch.</li>
-                <li>Nội thất bọc da Nappa cao cấp kết hợp các chi tiết ốp sợi carbon thể thao.</li>
-                <li>Vô-lăng AMG Performance bọc da DINAMICA tích hợp cụm điều khiển chế độ lái nhanh.</li>
-                <li>Hệ thống âm thanh Burmester 15 loa công suất 590W sống động.</li>
-            </ul>
+            <!-- Khối 6: Mô tả chi tiết trải nghiệm -->
+            <section class="info-block">
+                <h2>6. Mô Tả Chi Tiết</h2>
+                <p>Mercedes-AMG G63 là sự hòa quyện tuyệt vời giữa thiết kế xe địa hình cổ điển bất tử và sức mạnh tốc độ hàng đầu từ phân nhánh AMG. Khối động cơ V8 BiTurbo 585 mã lực tạo ra âm thanh ống xả xẻ núi gầm rú đặc trưng mỗi khi tăng tốc 0-100 km/h trong 4,5 giây. Dù di chuyển trên đường phố sang trọng hay vượt qua những địa hình khắc nghiệt nhờ 3 khóa vi sai độc lập, G63 luôn khẳng định vị thế độc tôn và đẳng cấp của người sở hữu.</p>
+            </section>
 
             <hr>
 
             <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <section class="action-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
                     <button type="button">Yêu Cầu Báo Giá / Đặt Cọc</button>
                 </form>
                 <br>
-          <p><a href="/frontend/html/Mecc.html/Mec-tong.html">← Quay lại danh sách Mercedes-Maybach</a></p>
+                <p><a href="/frontend/html/Mecc.html/Mec-tong.html">← Quay lại danh sách Mercedes-Maybach</a></p>
             </section>
-        </div>
+        </article>
     </main>
 
 </body>
