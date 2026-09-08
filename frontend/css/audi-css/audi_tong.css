@@ -17,7 +17,28 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+/* Khung chứa Video */
+.car-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+}
 
+/* Cấu hình Video và Ảnh Poster */
+.car-image .hover-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Hover phóng to Video mượt mà */
+.car-card:hover .car-image .hover-video {
+    transform: scale(1.05);
+}
 /* Breadcrumb & Footer */
 .breadcrumb {
     padding: 15px 20px;
@@ -58,17 +79,31 @@ body {
     gap: 24px;
 }
 
+/* KHỐI NÀY ĐÃ ĐƯỢC CẬP NHẬT ĐỂ HỖ TRỢ JS ANIMATION */
 .car-card {
     background-color: #161616;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #262626;
+    
+    /* Trạng thái ẩn ban đầu để JS Scroll-Reveal kích hoạt */
+    opacity: 0;
+    transform: translateY(40px);
+    
+    /* Mượt mà khi xoay 3D và hiện lên */
+    transition: opacity 0.6s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform, opacity;
 }
 
+/* Class do JS tự động thêm vào khi cuộn trang tới */
+.car-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Đổ bóng khi Hover */
 .car-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
     border-color: #444;
 }
 

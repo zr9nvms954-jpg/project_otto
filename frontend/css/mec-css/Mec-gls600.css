@@ -1,0 +1,178 @@
+/* ==========================================================
+   MERCEDES-BENZ & MAYBACH OBSIDIAN & TAN LEATHER THEME
+   (mec-tong.css)
+   ========================================================== */
+
+/* Tùy chỉnh chung toàn trang */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0b0b0d; /* Đen Obsidian huyền bí */
+    color: #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Breadcrumb & Header */
+.breadcrumb {
+    padding: 16px 24px;
+    background-color: #121215;
+    border-bottom: 1px solid #282119;
+}
+
+.breadcrumb a, .page-footer a {
+    color: #a3988e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover, .page-footer a:hover {
+    color: #c9935a; /* Nâu da bò sáng (Tan Highlight) */
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    /* Gradient ánh kim nâu da bò & champagne xa xỉ */
+    background: linear-gradient(135deg, #ffffff 0%, #d4a373 50%, #8a5a2b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-header p {
+    color: #a3988e;
+    font-size: 1.05rem;
+}
+
+/* Lưới hiển thị danh sách xe (Grid 2 cột) */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+/* Thẻ sản phẩm Obsidian & Saddle Tan */
+.car-card {
+    background: linear-gradient(145deg, #161517, #0f0e10);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #2a221b; /* Viền nâu đồng ấm áp */
+    position: relative;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    border-color: #b87d4b; /* Viền nâu da bò nổi bật khi hover */
+    /* Hiệu ứng hắt sáng màu da bò sang trọng */
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.9), 0 0 20px rgba(184, 125, 75, 0.18);
+}
+
+.car-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Khung chứa video / hình ảnh */
+.car-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #050506;
+    position: relative;
+}
+
+/* Định dạng Ảnh & Video Hover */
+.car-image img,
+.car-image .hover-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Phóng to khi Hover */
+.car-card:hover .car-image img,
+.car-card:hover .car-image .hover-video {
+    transform: scale(1.06);
+}
+
+/* Thông tin tên và giá xe */
+.car-info {
+    padding: 22px 24px;
+    position: relative;
+}
+
+/* Đường chỉ may nội thất da bò khi Hover */
+.car-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c9935a, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.car-card:hover .car-info::before {
+    opacity: 1;
+}
+
+.car-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f5f5f7;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.car-card:hover .car-name {
+    color: #e0ab76; /* Chuyển màu tên xe sang tone Tan xa xỉ */
+}
+
+.car-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a3988e;
+}
+
+/* Footer Trang */
+.page-footer {
+    text-align: center;
+    padding: 45px 0;
+    border-top: 1px solid #282119;
+    margin-top: 60px;
+}
+
+/* Responsive Điện Thoại */
+@media (max-width: 768px) {
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .car-image {
+        height: 230px;
+    }
+}
