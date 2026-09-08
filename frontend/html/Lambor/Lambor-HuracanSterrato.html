@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamborghini Huracán Sterrato - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/lambor-css/lambor-sterrato.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/lambor-css/lambor-sterrato.css">
 <body>
 
     <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
+    <nav class="breadcrumb">
         <p>
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="Lambor-tong.html">Danh Sách Xe Lamborghini</a> &gt; 
@@ -19,49 +19,85 @@
 
     <hr>
 
-    <main>
-        <div>
-            <h1>Lamborghini Huracán Sterrato</h1>
+    <main class="container">
+        <article class="car-detail">
+            <!-- Tiêu đề & Ảnh chính -->
+            <header class="car-detail-header">
+                <h1>Lamborghini Huracán Sterrato</h1>
+                <div class="main-image-wrapper">
+                    <img src="../../img/lamborghini/sterrato_chinh.jpg" alt="Lamborghini Huracán Sterrato" width="500">
+                </div>
+            </header>
 
-            <img src="../../img/lamborghini/sterrato_chinh.jpg" alt="Lamborghini Huracán Sterrato" width="500">
+            <!-- Khối 1: Thông tin chung & Giá bán -->
+            <section class="info-block">
+                <h2>1. Thông Tin Chung & Giá Bán</h2>
+                <ul>
+                    <li><strong>Giá bán niêm yết:</strong> 18.500.000.000 VNĐ</li>
+                    <li><strong>Kiểu dáng / Thể loại:</strong> Siêu xe thể thao địa hình Off-road (All-Terrain Super sports car)</li>
+                    <li><strong>Năm sản xuất:</strong> 2023 - 2026</li>
+                    <li><strong>Tình trạng:</strong> Phiên bản giới hạn (1.499 chiếc toàn thế giới)</li>
+                </ul>
+                <p><strong>Lamborghini Huracán Sterrato</strong> là mẫu siêu xe địa hình off-road đầu tiên trên thế giới, kết hợp hoàn hảo giữa sức mạnh động cơ hút khí tự nhiên thuần túy và khả năng chinh phục các địa hình đất cát, sỏi đá vượt trội.</p>
+            </section>
 
-            <p><strong>Giá bán dự kiến:</strong> 18.500.000.000 VNĐ</p>
-            <p><strong>Tình trạng:</strong> Phiên bản giới hạn (1.499 chiếc toàn thế giới)</p>
+            <!-- Khối 2: Thiết kế & Ngoại thất -->
+            <section class="info-block">
+                <h2>2. Thiết Kế & Ngoại Thất</h2>
+                <img src="../../img/lamborghini/ngoaithat_sterrato.jpg" alt="Ngoại thất Lamborghini Huracán Sterrato" width="500">
+                <ul>
+                    <li><strong>Khả năng off-road:</strong> Khoảng sáng gầm xe tăng thêm 44 mm so với Huracán EVO, mở rộng vệt bánh trước thêm 30 mm và vệt bánh sau thêm 34 mm để tối ưu góc thoát.</li>
+                    <li><strong>Bảo vệ & Chi tiết hầm hố:</strong> Hốc bánh xe bọc vòm bảo vệ mở rộng, trang bị tấm bảo vệ gầm bằng nhôm cường lực bảo vệ tối đa khung gầm.</li>
+                    <li><strong>Hệ thống chiếu sáng & Hút gió:</strong> Đèn LED trợ sáng phía trước đậm chất rally; Ống hút gió động cơ đặt cao trên mui xe (Snorkel) giúp lấy không khí sạch khi chạy trên đường bụi cát.</li>
+                </ul>
+            </section>
 
-            <p><strong>Lamborghini Huracán Sterrato</strong> là mẫu siêu xe địa hình off-road đầu tiên trên thế giới, kết hợp sức mạnh động cơ V12/V10 truyền thống với khả năng chinh phục các địa hình đất cát phong phú.</p>
+            <!-- Khối 3: Động cơ & Vận hành -->
+            <section class="info-block">
+                <h2>3. Động Cơ & Vận Hành</h2>
+                <img src="../../img/lamborghini/dongco_sterrato.jpg" alt="Động cơ Lamborghini Huracán Sterrato" width="500">
+                <ul>
+                    <li><strong>Động cơ:</strong> V10 5.2L Hút khí tự nhiên (N/A) tinh chỉnh vượt địa hình.</li>
+                    <li><strong>Công suất tối đa:</strong> 610 mã lực (449 kW) tại 8.000 vòng/phút.</li>
+                    <li><strong>Mô-men xoắn cực đại:</strong> 565 Nm tại 6.500 vòng/phút.</li>
+                    <li><strong>Hộp số:</strong> Bán tự động ly hợp kép 7 cấp LDF (Lamborghini Doppia Frizione).</li>
+                    <li><strong>Hệ dẫn động:</strong> 4 bánh toàn thời gian AWD điều khiển điện tử kết hợp khóa vi sai cơ khí phía sau.</li>
+                </ul>
+            </section>
 
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <img src="../../img/lamborghini/ngoaithat_sterrato.jpg" alt="Ngoại thất Lamborghini Huracán Sterrato" width="500">
-            <ul>
-                <li>Khoảng sáng gầm xe tăng thêm 44 mm so với Huracán EVO giúp tối ưu góc thoát địa hình.</li>
-                <li>Hốc bánh xe bọc vòm bảo vệ mở rộng kết hợp đèn LED trợ sáng phía trước đậm chất địa hình.</li>
-                <li>Ống hút gió động cơ đặt cao trên mui xe (Snorkel) giúp lấy không khí sạch khi chạy trên cát.</li>
-                <li>Tấm bảo vệ gầm bằng nhôm cường lực bảo vệ tối đa các chi tiết quan trọng.</li>
-            </ul>
+            <!-- Khối 4: Hiệu năng -->
+            <section class="info-block">
+                <h2>4. Hiệu Năng</h2>
+                <ul>
+                    <li><strong>Gia tốc (0 - 100 km/h):</strong> 3,4 giây.</li>
+                    <li><strong>Gia tốc (0 - 200 km/h):</strong> 9,8 giây.</li>
+                    <li><strong>Tốc độ tối đa (Max Speed):</strong> 260 km/h (giới hạn điện tử nhằm bảo vệ lốp địa hình Bridgestone Dueler AT002 Run-Flat đặc chủng).</li>
+                    <li><strong>Quãng đường phanh (100 - 0 km/h):</strong> 39 mét.</li>
+                </ul>
+            </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="../../img/lamborghini/dongco_sterrato.jpg" alt="Động cơ Lamborghini Huracán Sterrato" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V10 5.2L Hút khí tự nhiên.</li>
-                <li><strong>Công suất tối đa:</strong> 610 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Ly hợp kép 7 cấp, dẫn động 4 bánh toàn thời gian AWD.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,4 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 260 km/h (giới hạn để đảm bảo an toàn cho lốp địa hình).</li>
-            </ul>
+            <!-- Khối 5: Trang bị & Công nghệ nội thất -->
+            <section class="info-block">
+                <h2>5. Trang Bị & Công Nghệ Nội Thất</h2>
+                <img src="../../img/lamborghini/noithat_sterrato.jpg" alt="Nội thất Lamborghini Huracán Sterrato" width="500">
+                <ul>
+                    <li><strong>Chất liệu nội thất:</strong> Tùy chọn da cao cấp và Alcantara màu xanh Verde Sterrato độc quyền chống bám bẩn.</li>
+                    <li><strong>Giao diện & Tiện ích:</strong> Màn hình HMI cập nhật đồ họa mới tích hợp thước đo góc nghiêng, góc lái, tọa độ địa hình và la bàn kỹ thuật số.</li>
+                    <li><strong>Chế độ lái:</strong> Hệ thống LDVI tích hợp chế độ RALLY lần đầu tiên xuất hiện trên dòng Huracán dành riêng cho bề mặt trơn trượt/bụi cát.</li>
+                    <li><strong>Ghế ngồi:</strong> Ghế thể thao khung carbon ôm sát cơ thể, mang lại cảm giác vững vàng trên các cung đường gồ ghề.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="../../img/lamborghini/noithat_sterrato.jpg" alt="Nội thất Lamborghini Huracán Sterrato" width="500">
-            <ul>
-                <li>Nội thất bọc Alcantara màu xanh Verde Sterrato độc quyền chống bám bẩn.</li>
-                <li>Màn hình HMI tích hợp thước đo góc nghiêng, góc lái và la bàn địa hình chuyên dụng.</li>
-                <li>Chế độ lái RALLY lần đầu tiên xuất hiện trên dòng xe Huracán.</li>
-                <li>Ghế đua thể thao ôm sát mang lại cảm giác vững vàng trên đường gồ ghề.</li>
-            </ul>
+            <!-- Khối 6: Mô tả chi tiết -->
+            <section class="info-block">
+                <h2>6. Mô Tả Chi Tiết</h2>
+                <p>Lamborghini Huracán Sterrato định hình lại khái niệm siêu xe thể thao khi đưa cảm giác lái bùng nổ của động cơ V10 rời khỏi đường đua trải nhựa để chinh phục những con đường bụi cát. Với thiết kế gầm cao, bảo vệ gia cường và hệ thống quản lý động lực học tinh chỉnh riêng cho chế độ RALLY, Sterrato đem tới trải nghiệm lái đầy phấn khích cho 1.499 chủ nhân may mắn.</p>
+            </section>
 
             <hr>
 
             <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <section class="action-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
                     <button type="button">Yêu Cầu Báo Giá / Đặt Cọc</button>
@@ -69,7 +105,7 @@
                 <br>
                 <p><a href="/frontend/html/Lambor/Lambor-tong.html">← Quay lại danh sách Lamborghini</a></p>
             </section>
-        </div>
+        </article>
     </main>
 
 </body>
