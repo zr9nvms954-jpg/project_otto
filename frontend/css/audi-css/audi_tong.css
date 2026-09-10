@@ -1,4 +1,6 @@
-/* Tùy chỉnh chung toàn trang */
+/* ==========================================
+   1. TÙY CHỈNH CHUNG TOÀN TRANG
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,42 +19,25 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-/* Khung chứa Video */
-.car-image {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    background-color: #000;
-    position: relative;
-}
 
-/* Cấu hình Video và Ảnh Poster */
-.car-image .hover-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-/* Hover phóng to Video mượt mà */
-.car-card:hover .car-image .hover-video {
-    transform: scale(1.05);
-}
-/* Breadcrumb & Footer */
+/* ==========================================
+   2. BREADCRUMB & HEADER
+   ========================================== */
 .breadcrumb {
     padding: 15px 20px;
     background-color: #141414;
     border-bottom: 1px solid #222;
 }
 
-.breadcrumb a, .page-footer a {
+.breadcrumb a, 
+.page-footer a {
     color: #888;
     text-decoration: none;
     transition: color 0.2s;
 }
 
-.breadcrumb a:hover, .page-footer a:hover {
+.breadcrumb a:hover, 
+.page-footer a:hover {
     color: #fff;
 }
 
@@ -72,14 +57,16 @@ body {
     color: #aaa;
 }
 
-/* Lưới hiển thị danh sách xe (Grid 2 cột) */
+/* ==========================================
+   3. DANH SÁCH XE (GRID 2 CỘT)
+   ========================================== */
 .car-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
-/* KHỐI NÀY ĐÃ ĐƯỢC CẬP NHẬT ĐỂ HỖ TRỢ JS ANIMATION */
+/* Khối Card chứa thông tin xe & hiệu ứng Scroll Reveal */
 .car-card {
     background-color: #161616;
     border-radius: 12px;
@@ -90,18 +77,18 @@ body {
     opacity: 0;
     transform: translateY(40px);
     
-    /* Mượt mà khi xoay 3D và hiện lên */
+    /* Hiệu ứng chuyển động mượt mà khi hiện và hover */
     transition: opacity 0.6s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
     will-change: transform, opacity;
 }
 
-/* Class do JS tự động thêm vào khi cuộn trang tới */
+/* Được JS tự động thêm class 'active' khi người dùng cuộn tới */
 .car-card.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Đổ bóng khi Hover */
+/* Đổ bóng & đổi màu viền khi Hover */
 .car-card:hover {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
     border-color: #444;
@@ -113,14 +100,19 @@ body {
     display: block;
 }
 
-/* Khung hình ảnh */
+/* ==========================================
+   4. KHUNG VIDEO & ẢNH POSTER
+   ========================================== */
 .car-image {
     width: 100%;
     height: 300px;
     overflow: hidden;
     background-color: #000;
+    position: relative;
 }
 
+/* Video & Hình ảnh xem trước */
+.car-image .hover-video,
 .car-image img {
     width: 100%;
     height: 100%;
@@ -129,11 +121,15 @@ body {
     transition: transform 0.4s ease;
 }
 
+/* Phóng to video/ảnh mượt mà khi rê chuột vào Card */
+.car-card:hover .car-image .hover-video,
 .car-card:hover .car-image img {
     transform: scale(1.05);
 }
 
-/* Thông tin tên và giá xe bên dưới ảnh */
+/* ==========================================
+   5. THÔNG TIN XE (TÊN & GIÁ)
+   ========================================== */
 .car-info {
     padding: 18px 20px;
 }
@@ -150,6 +146,9 @@ body {
     color: #888888;
 }
 
+/* ==========================================
+   6. FOOTER TRANG
+   ========================================== */
 .page-footer {
     text-align: center;
     padding: 40px 0;
@@ -157,7 +156,9 @@ body {
     margin-top: 50px;
 }
 
-/* Responsive cho màn hình điện thoại */
+/* ==========================================
+   7. RESPONSIVE CHO ĐIỆN THOẠI (< 768px)
+   ========================================== */
 @media (max-width: 768px) {
     .car-grid {
         grid-template-columns: 1fr;
@@ -165,5 +166,9 @@ body {
     
     .car-image {
         height: 220px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
     }
 }
