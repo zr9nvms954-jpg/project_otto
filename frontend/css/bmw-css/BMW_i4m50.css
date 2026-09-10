@@ -1,175 +1,291 @@
-/* ==========================================================
-   BMW LUXURY & M PERFORMANCE THEME (bmw-tong.css)
-   ========================================================== */
 
-/* Tùy chỉnh chung toàn trang */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@keyframes i8PageEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.99);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
+/* Ánh kim Sunset Gold phát sáng nhịp nhàng */
+@keyframes i8SunsetPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.35);
+        border-bottom-color: #e08b2d;
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(252, 163, 56, 0.7);
+        border-bottom-color: #fca338;
+    }
+}
+
+/* Dải sáng LED Sunset chạy qua đường kẻ ngang */
+@keyframes i8GoldSweep {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Nút bấm thở ánh kim metallic */
+@keyframes i8ButtonGlow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(252, 163, 56, 0.85);
+    }
+}
+
+/* ----------------------------------------------------------
+   1. TOÀN TRANG
+   ---------------------------------------------------------- */
 body {
-    background-color: #0b0e14; /* Nền tối ánh xanh đen BMW */
-    color: #f0f4f8;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #17191c;
+    color: #d2d6dc;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+    margin: 0;
+    padding: 30px 50px;
+    animation: i8PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Breadcrumb & Header */
-.breadcrumb {
-    padding: 16px 24px;
-    background-color: #101520;
-    border-bottom: 1px solid #1e293b;
-}
-
-.breadcrumb a, .page-footer a {
-    color: #94a3b8;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover, .page-footer a:hover {
-    color: #0066b1; /* BMW Electric Blue */
-}
-
-.page-header {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.page-header h1 {
-    font-size: 2.2rem;
+/* ----------------------------------------------------------
+   2. CÁC TIÊU ĐỀ
+   ---------------------------------------------------------- */
+h1, h2, h3 {
+    color: #ffffff;
     font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #ffffff 0%, #0066b1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
 }
 
-.page-header p {
-    color: #94a3b8;
-    font-size: 1.05rem;
+h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    border-bottom: 3px solid #e08b2d;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+    animation: i8SunsetPulse 3s infinite ease-in-out;
+    transition: all 0.4s ease;
 }
 
-/* Lưới hiển thị danh sách xe (Grid 2 cột) */
-.car-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+h1:hover {
+    text-shadow: 0 0 15px rgba(252, 163, 56, 0.6);
 }
 
-/* Thẻ sản phẩm */
+h2 {
+    font-size: 1.4rem;
+    color: #f3f4f6;
+    border-left: 4px solid #e08b2d;
+    padding-left: 14px;
+    margin-top: 35px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+h2:hover {
+    padding-left: 20px;
+    border-left-color: #fca338;
+    text-shadow: 0 0 12px rgba(224, 139, 45, 0.5);
+}
+
+/* ----------------------------------------------------------
+   3. ĐƯỜNG PHÂN CÁCH
+   ---------------------------------------------------------- */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, #e08b2d 0%, #2a2e35 50%, transparent 100%);
+    background-size: 200% 100%;
+    margin: 35px 0;
+    animation: i8GoldSweep 6s infinite linear;
+}
+
+/* ----------------------------------------------------------
+   4. THANH HƯỚNG DẪN BREADCRUMB
+   ---------------------------------------------------------- */
+nav {
+    background-color: #20242a;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid #2e343e;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+    border-color: rgba(224, 139, 45, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+nav a {
+    color: #8b93a0;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #e08b2d;
+    transform: translateY(-1px);
+}
+
+/* ----------------------------------------------------------
+   5. LIÊN KẾT (LINKS)
+   ---------------------------------------------------------- */
+a {
+    color: #e08b2d;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+}
+
+a:hover {
+    color: #fca338;
+    text-shadow: 0 0 10px rgba(224, 139, 45, 0.6);
+    transform: translateY(-1px);
+}
+
+/* ----------------------------------------------------------
+   6. HÌNH ẢNH & THẺ CARD XE (VIDEO HOVER CỰC MƯỢT)
+   ---------------------------------------------------------- */
+img {
+    border-radius: 8px;
+    border: 1px solid #363d48;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+img:hover {
+    transform: scale(1.02) translateY(-4px);
+    border-color: #e08b2d;
+    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
+}
+
+/* Thẻ Container phục vụ Video Preview Hover */
 .car-card {
-    background: linear-gradient(145deg, #131a26, #0d121b);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #1e293b;
     position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    border: 1px solid #363d48;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    margin: 20px 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 .car-card:hover {
-    transform: translateY(-8px);
-    border-color: #0066b1;
-    box-shadow: 0 12px 30px rgba(0, 102, 177, 0.25);
+    transform: scale(1.02) translateY(-4px);
+    border-color: #e08b2d;
+    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
 }
 
-.car-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-/* Khung chứa video / hình ảnh */
-.car-image {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    background-color: #000000;
-    position: relative;
-}
-
-/* Định dạng Ảnh & Video Hover */
-.car-image img,
-.car-image .hover-video {
+.car-img, 
+.car-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-/* Hiệu ứng Phóng to khi Hover */
-.car-card:hover .car-image img,
-.car-card:hover .car-image .hover-video {
-    transform: scale(1.06);
-}
-
-/* Thông tin tên và giá xe */
-.car-info {
-    padding: 22px 24px;
-    position: relative;
-}
-
-/* Vạch trang trí đặc trưng BMW M Power khi Hover */
-.car-info::before {
-    content: '';
     position: absolute;
     top: 0;
-    left: 24px;
-    right: 24px;
-    height: 2px;
-    background: linear-gradient(90deg, #0066b1 0%, #e52521 100%); /* M Stripes Accent */
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    left: 0;
+    transition: opacity 0.4s ease;
 }
 
-.car-card:hover .car-info::before {
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
     opacity: 1;
 }
 
-.car-name {
-    font-size: 1.3rem;
-    font-weight: 600;
+/* ----------------------------------------------------------
+   7. NÚT BẤM (METALLIC GOLD GLOW)
+   ---------------------------------------------------------- */
+button {
+    background: linear-gradient(135deg, #e08b2d, #b86414);
     color: #ffffff;
-    margin-bottom: 8px;
+    border: none;
+    padding: 13px 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lớp quét ánh kim khi rê chuột */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.5s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #f59e38, #e08b2d);
+    transform: translateY(-2px);
+    animation: i8ButtonGlow 1.8s infinite ease-in-out;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ----------------------------------------------------------
+   8. DANH SÁCH & THÔNG SỐ
+   ---------------------------------------------------------- */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #d2d6dc;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
+}
+
+p strong, li strong {
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
-.car-card:hover .car-name {
-    color: #38bdf8;
-}
-
-.car-price {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #94a3b8;
-}
-
-/* Footer Trang */
-.page-footer {
-    text-align: center;
-    padding: 45px 0;
-    border-top: 1px solid #1e293b;
-    margin-top: 60px;
-}
-
-/* Responsive Điện Thoại */
-@media (max-width: 768px) {
-    .car-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .car-image {
-        height: 230px;
-    }
+li:hover strong {
+    color: #fca338;
 }

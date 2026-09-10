@@ -1,17 +1,17 @@
 /* ==========================================================
-   THEME BMW M4 SHADOW GREEN - DARK EMERALD & AMBER LIGHT
-   (ADDED: ULTRA-SMOOTH M PERFORMANCE ANIMATIONS)
+   THEME BMW i8 ROADSTER - SUNSET GOLD & CARBON BLACK
+   (ADDED: ULTRA-SMOOTH HYBRID LUXURY ANIMATIONS)
    ========================================================== */
 
 /* ----------------------------------------------------------
-   0. KEYFRAMES ANIMATION (HIỆU ỨNG M POWER CHUYỂN ĐỘNG)
+   0. KEYFRAMES ANIMATION (HIỆU ỨNG TỰ ĐỘNG CHUYỂN ĐỘNG)
    ---------------------------------------------------------- */
 
-/* Tải trang mượt chuẩn M Performance */
-@keyframes m4PageEntrance {
+/* Tải trang mượt chuẩn Ultra-Luxury */
+@keyframes i8PageEntrance {
     from {
         opacity: 0;
-        transform: translateY(20px) scale(0.98);
+        transform: translateY(20px) scale(0.99);
     }
     to {
         opacity: 1;
@@ -19,20 +19,20 @@
     }
 }
 
-/* Đèn Angel Eyes hổ phách phát sáng nhịp nhàng */
-@keyframes m4AmberPulse {
+/* Ánh kim Sunset Gold phát sáng nhịp nhàng */
+@keyframes i8SunsetPulse {
     0%, 100% {
-        box-shadow: 0 4px 12px rgba(224, 169, 109, 0.25);
-        border-bottom-color: #e0a96d;
+        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.35);
+        border-bottom-color: #e08b2d;
     }
     50% {
-        box-shadow: 0 6px 25px rgba(242, 201, 157, 0.65);
-        border-bottom-color: #f2c99d;
+        box-shadow: 0 6px 25px rgba(252, 163, 56, 0.7);
+        border-bottom-color: #fca338;
     }
 }
 
-/* Dải sáng Amber / Emerald quét qua đường kẻ ngang */
-@keyframes m4AmberSweep {
+/* Dải sáng LED Sunset chạy qua đường kẻ ngang */
+@keyframes i8GoldSweep {
     0% {
         background-position: -200% 0;
     }
@@ -41,13 +41,13 @@
     }
 }
 
-/* Nút bấm M Power thở sáng hổ phách */
-@keyframes m4ButtonGlow {
+/* Nút bấm thở ánh kim metallic */
+@keyframes i8ButtonGlow {
     0%, 100% {
-        box-shadow: 0 4px 15px rgba(224, 169, 109, 0.3);
+        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
     }
     50% {
-        box-shadow: 0 8px 28px rgba(242, 201, 157, 0.75);
+        box-shadow: 0 8px 30px rgba(252, 163, 56, 0.85);
     }
 }
 
@@ -55,13 +55,13 @@
    1. TOÀN TRANG
    ---------------------------------------------------------- */
 body {
-    background-color: #121614;
-    color: #c8cfca;
+    background-color: #17191c;
+    color: #d2d6dc;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.65;
     margin: 0;
     padding: 30px 50px;
-    animation: m4PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: i8PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ----------------------------------------------------------
@@ -76,22 +76,22 @@ h1, h2, h3 {
 h1 {
     font-size: 2.2rem;
     color: #ffffff;
-    border-bottom: 3px solid #e0a96d;
+    border-bottom: 3px solid #e08b2d;
     padding-bottom: 10px;
     margin-bottom: 25px;
     display: inline-block;
-    animation: m4AmberPulse 3s infinite ease-in-out;
+    animation: i8SunsetPulse 3s infinite ease-in-out;
     transition: all 0.4s ease;
 }
 
 h1:hover {
-    text-shadow: 0 0 15px rgba(242, 201, 157, 0.6);
+    text-shadow: 0 0 15px rgba(252, 163, 56, 0.6);
 }
 
 h2 {
     font-size: 1.4rem;
-    color: #f0f2f1;
-    border-left: 4px solid #486354;
+    color: #f3f4f6;
+    border-left: 4px solid #e08b2d;
     padding-left: 14px;
     margin-top: 35px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -99,8 +99,8 @@ h2 {
 
 h2:hover {
     padding-left: 20px;
-    border-left-color: #e0a96d;
-    text-shadow: 0 0 12px rgba(224, 169, 109, 0.4);
+    border-left-color: #fca338;
+    text-shadow: 0 0 12px rgba(224, 139, 45, 0.5);
 }
 
 /* ----------------------------------------------------------
@@ -109,37 +109,37 @@ h2:hover {
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, #e0a96d 0%, #232c27 50%, transparent 100%);
+    background: linear-gradient(90deg, #e08b2d 0%, #2a2e35 50%, transparent 100%);
     background-size: 200% 100%;
     margin: 35px 0;
-    animation: m4AmberSweep 6s infinite linear;
+    animation: i8GoldSweep 6s infinite linear;
 }
 
 /* ----------------------------------------------------------
    4. THANH HƯỚNG DẪN BREADCRUMB
    ---------------------------------------------------------- */
 nav {
-    background-color: #1b211e;
+    background-color: #20242a;
     padding: 12px 20px;
     border-radius: 6px;
-    border: 1px solid #28332d;
+    border: 1px solid #2e343e;
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 nav:hover {
-    border-color: rgba(224, 169, 109, 0.5);
+    border-color: rgba(224, 139, 45, 0.5);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 nav a {
-    color: #8c9690;
+    color: #8b93a0;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
     display: inline-block;
 }
 
 nav a:hover {
-    color: #e0a96d;
+    color: #e08b2d;
     transform: translateY(-1px);
 }
 
@@ -147,7 +147,7 @@ nav a:hover {
    5. LIÊN KẾT (LINKS)
    ---------------------------------------------------------- */
 a {
-    color: #e0a96d;
+    color: #e08b2d;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -155,17 +155,17 @@ a {
 }
 
 a:hover {
-    color: #f2c99d;
-    text-shadow: 0 0 10px rgba(224, 169, 109, 0.5);
+    color: #fca338;
+    text-shadow: 0 0 10px rgba(224, 139, 45, 0.6);
     transform: translateY(-1px);
 }
 
 /* ----------------------------------------------------------
-   6. HÌNH ẢNH & THẺ CARD XE (VIDEO PREVIEW HOVER)
+   6. HÌNH ẢNH & THẺ CARD XE (VIDEO HOVER CỰC MƯỢT)
    ---------------------------------------------------------- */
 img {
     border-radius: 8px;
-    border: 1px solid #2e3b34;
+    border: 1px solid #363d48;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
     max-width: 100%;
     height: auto;
@@ -178,18 +178,18 @@ img {
 
 img:hover {
     transform: scale(1.02) translateY(-4px);
-    border-color: #e0a96d;
-    box-shadow: 0 15px 35px rgba(224, 169, 109, 0.3);
+    border-color: #e08b2d;
+    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
 }
 
-/* Container hỗ trợ Video Preview khi hovering */
+/* Thẻ Container phục vụ Video Preview Hover */
 .car-card {
     position: relative;
     width: 100%;
     max-width: 800px;
     height: 450px;
     border-radius: 8px;
-    border: 1px solid #2e3b34;
+    border: 1px solid #363d48;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
@@ -202,8 +202,8 @@ img:hover {
 
 .car-card:hover {
     transform: scale(1.02) translateY(-4px);
-    border-color: #e0a96d;
-    box-shadow: 0 15px 35px rgba(224, 169, 109, 0.3);
+    border-color: #e08b2d;
+    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
 }
 
 .car-img, 
@@ -227,26 +227,26 @@ img:hover {
 }
 
 /* ----------------------------------------------------------
-   7. NÚT BẤM CÁ TÍNH (M POWER AMBER BUTTON)
+   7. NÚT BẤM (METALLIC GOLD GLOW)
    ---------------------------------------------------------- */
 button {
-    background: linear-gradient(135deg, #e0a96d, #a8743a);
-    color: #0f1412;
+    background: linear-gradient(135deg, #e08b2d, #b86414);
+    color: #ffffff;
     border: none;
     padding: 13px 30px;
     font-size: 0.95rem;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(224, 169, 109, 0.3);
+    box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
 }
 
-/* Quét ánh kim khi rê chuột */
+/* Lớp quét ánh kim khi rê chuột */
 button::before {
     content: '';
     position: absolute;
@@ -254,14 +254,14 @@ button::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
     transition: left 0.5s ease;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #f0be88, #e0a96d);
+    background: linear-gradient(135deg, #f59e38, #e08b2d);
     transform: translateY(-2px);
-    animation: m4ButtonGlow 1.8s infinite ease-in-out;
+    animation: i8ButtonGlow 1.8s infinite ease-in-out;
 }
 
 button:hover::before {
@@ -281,7 +281,7 @@ ul {
 
 li {
     margin-bottom: 10px;
-    color: #c8cfca;
+    color: #d2d6dc;
     transition: transform 0.25s ease, color 0.25s ease;
 }
 
@@ -296,5 +296,5 @@ p strong, li strong {
 }
 
 li:hover strong {
-    color: #f2c99d;
+    color: #fca338;
 }
