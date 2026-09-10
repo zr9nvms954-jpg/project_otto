@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box HTML CSS</title>
+    <link rel="stylesheet" href="/frontend/css/He_thong_css/chat_box.css">
+    <!-- Thêm icon từ FontAwesome để làm nút gửi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Tiêu đề Chatbox -->
+        <div class="chat-header">
+            <div class="user-info">
+                <div class="avatar-status">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar">
+                    <span class="status-dot"></span>
+                </div>
+                <div>
+                    <h3>Hỗ Trợ Khách Hàng</h3>
+                    <span class="status-text">Đang hoạt động</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khung chứa tin nhắn -->
+        <div class="chat-messages">
+            <!-- Tin nhắn nhận -->
+            <div class="message incoming">
+                <p>Xin chào! Tôi có thể giúp gì cho bạn hôm nay?</p>
+                <span class="time">10:00</span>
+            </div>
+
+            <!-- Tin nhắn gửi -->
+            <div class="message outgoing">
+                <p>Chào bạn, tôi muốn tư vấn về dịch vụ thiết kế website.</p>
+                <span class="time">10:01</span>
+            </div>
+
+            <!-- Tin nhắn nhận -->
+            <div class="message incoming">
+                <p>Dạ vâng, bên em có các gói thiết kế theo yêu cầu. Bạn cần tư vấn gói cá nhân hay doanh nghiệp ạ?</p>
+                <span class="time">10:02</span>
+            </div>
+        </div>
+
+        <!-- Khung nhập tin nhắn -->
+        <div class="chat-input-area">
+            <input type="text" placeholder="Nhập tin nhắn..." id="message-input">
+            <button type="submit" class="send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
