@@ -1,8 +1,9 @@
 /* ==========================================================
    THEME AUDI TT SPORT CUP - RACING ORANGE & BLACK ACCENT
-   (ADDED: PROFESSIONAL RACING ANIMATIONS)
+   (FULL PRODUCTION-READY CSS FOR AUDI A7 DETAIL PAGE)
    ========================================================== */
 
+/* --- Keyframe Animations --- */
 @keyframes ttTrackSlideIn {
     from {
         opacity: 0;
@@ -28,6 +29,11 @@
     100% { background-position: 200% 0; }
 }
 
+/* --- Base Layout & Typography --- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #0d0d0d;
     color: #cccccc;
@@ -38,6 +44,12 @@ body {
     animation: ttTrackSlideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Headings --- */
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 800;
@@ -61,11 +73,12 @@ h1:hover {
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #ffffff;
     border-left: 5px solid #ff6600;
     padding-left: 12px;
-    margin-top: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     transition: all 0.25s ease;
 }
 
@@ -74,16 +87,23 @@ h2:hover {
     border-left-color: #ff8533;
 }
 
+h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
 hr {
     border: none;
     height: 2px;
     background: linear-gradient(90deg, #ff6600 0%, #333333 50%, transparent 100%);
     background-size: 200% 100%;
-    margin: 30px 0;
+    margin: 35px 0;
     animation: ttGridSweep 5s infinite linear;
 }
 
-nav {
+/* --- Navigation & Breadcrumb --- */
+nav, .breadcrumb {
     background-color: #1a1a1a;
     padding: 10px 18px;
     border-radius: 4px;
@@ -91,24 +111,29 @@ nav {
     border-top: 1px solid #262626;
     border-right: 1px solid #262626;
     border-bottom: 1px solid #262626;
+    margin-bottom: 25px;
     transition: all 0.3s ease;
 }
 
-nav:hover {
+nav:hover, .breadcrumb:hover {
     background-color: #242424;
     box-shadow: -4px 0 12px rgba(255, 102, 0, 0.4);
 }
 
-nav a {
+nav a, .breadcrumb a {
     color: #999999;
     text-decoration: none;
     transition: color 0.3s, transform 0.2s ease;
     display: inline-block;
 }
 
-nav a:hover {
+nav a:hover, .breadcrumb a:hover {
     color: #ffffff;
     transform: translateX(2px);
+}
+
+.breadcrumb strong {
+    color: #ff6600;
 }
 
 a {
@@ -125,31 +150,65 @@ a:hover {
     transform: translateY(-1px);
 }
 
-img {
+/* --- Component Block Layouts --- */
+.info-block {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-block:hover {
+    border-color: #ff6600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Tối Ưu Khung Video & Hình Ảnh --- */
+.video-wrapper, .image-wrapper, .main-image-wrapper {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 750px; /* Khống chế chiều rộng giúp khung xe/video vừa mắt */
+}
+
+video, img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Giữ tỉ lệ chuẩn không bị lẹm khung đen */
+    object-fit: cover;
     border-radius: 4px;
     border: 1px solid #262626;
-    background-color: #141414;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
+    background-color: #000000;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+    display: block;
     transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
                 border-color 0.35s ease, 
                 box-shadow 0.35s ease;
-    will-change: transform;
 }
 
-img:hover {
-    transform: scale(1.025) translateY(-3px);
+video:hover, img:hover {
+    transform: translateY(-2px);
     border-color: #ff6600;
-    box-shadow: 0 12px 28px rgba(255, 102, 0, 0.45);
+    box-shadow: 0 10px 24px rgba(255, 102, 0, 0.45);
+}
+
+/* Dark mode control bar cho Video */
+video::-webkit-media-controls-panel {
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+/* --- Buttons & Action Section --- */
+.action-section {
+    margin-top: 25px;
+    padding: 10px 0;
 }
 
 button {
     background-color: #ff6600;
     color: #ffffff;
     border: none;
-    padding: 12px 26px;
+    padding: 14px 30px;
     font-size: 0.95rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -188,12 +247,15 @@ button:active {
     transform: translateY(0) scale(0.97);
 }
 
+/* --- Lists & Text Content --- */
 ul {
     padding-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: #bbbbbb;
     transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -210,4 +272,27 @@ p strong, li strong {
 
 li:hover strong {
     color: #ff6600;
+}
+
+/* --- Responsive trên Di Động --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+    }
+    
+    .info-block {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
 }

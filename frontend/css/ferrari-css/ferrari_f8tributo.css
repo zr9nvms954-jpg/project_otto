@@ -161,23 +161,26 @@ a:hover {
 }
 
 /* ----------------------------------------------------------
-   6. HÌNH ẢNH & THẺ CARD XE (VIDEO HOVER CỰC MƯỢT)
+   6. HÌNH ẢNH & THẺ CARD XE (ĐÃ CHỈNH LẠI VIDEO CHUẨN ĐIỆN ẢNH 16:9)
    ---------------------------------------------------------- */
-img {
-    border-radius: 8px;
+img, video {
+    display: block;
+    width: 100%;
+    max-width: 800px;           /* Chiều rộng cân đối đẹp mắt với trang */
+    aspect-ratio: 16 / 9;       /* Cố định tỷ lệ video chuẩn 16:9 chuẩn điện ảnh */
+    object-fit: cover;          /* Phủ kín khung hình, không lo dẹt ảnh/video */
+    border-radius: 10px;        /* Bo góc mượt mà */
     border: 1px solid #1e2d54;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
+    margin: 20px 0;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                 border-color 0.4s ease, 
                 box-shadow 0.4s ease;
     will-change: transform;
 }
 
-img:hover {
-    transform: scale(1.02) translateY(-4px);
+img:hover, video:hover {
+    transform: scale(1.01) translateY(-4px);
     border-color: #ff5500;
     box-shadow: 0 15px 35px rgba(255, 85, 0, 0.35);
 }
