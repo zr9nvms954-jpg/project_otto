@@ -3,57 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Box HTML CSS</title>
+    <title>AI Assistant Chatbox</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/frontend/css/He_thong_css/chat_box.css">
-    <!-- Thêm icon từ FontAwesome để làm nút gửi -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Nhúng file CSS ngoài vào đây -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="chat-container">
-        <!-- Tiêu đề Chatbox -->
-        <div class="chat-header">
-            <div class="user-info">
-                <div class="avatar-status">
-                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar">
-                    <span class="status-dot"></span>
-                </div>
-                <div>
-                    <h3>Hỗ Trợ Khách Hàng</h3>
-                    <span class="status-text">Đang hoạt động</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Khung chứa tin nhắn -->
-        <div class="chat-messages">
-            <!-- Tin nhắn nhận -->
-            <div class="message incoming">
-                <p>Xin chào! Tôi có thể giúp gì cho bạn hôm nay?</p>
-                <span class="time">10:00</span>
-            </div>
-
-            <!-- Tin nhắn gửi -->
-            <div class="message outgoing">
-                <p>Chào bạn, tôi muốn tư vấn về dịch vụ thiết kế website.</p>
-                <span class="time">10:01</span>
-            </div>
-
-            <!-- Tin nhắn nhận -->
-            <div class="message incoming">
-                <p>Dạ vâng, bên em có các gói thiết kế theo yêu cầu. Bạn cần tư vấn gói cá nhân hay doanh nghiệp ạ?</p>
-                <span class="time">10:02</span>
-            </div>
-        </div>
-
-        <!-- Khung nhập tin nhắn -->
-        <div class="chat-input-area">
-            <input type="text" placeholder="Nhập tin nhắn..." id="message-input">
-            <button type="submit" class="send-btn">
-                <i class="fa-solid fa-paper-plane"></i>
+    <div class="chat-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="new-chat-btn">
+                <i class="fa-solid fa-plus"></i> Cuộc trò chuyện mới
             </button>
-        </div>
+            
+            <div class="history-title">Gần đây</div>
+            <ul class="chat-history-list">
+                <li class="chat-history-item active">
+                    <i class="fa-regular fa-message"></i> Thiết kế giao diện Chatbox
+                </li>
+                <li class="chat-history-item">
+                    <i class="fa-regular fa-message"></i> Hướng dẫn kết nối API
+                </li>
+            </ul>
+
+            <div class="user-profile">
+                <div class="avatar" style="background-image: url('https://ui-avatars.com/api/?name=User&background=random');"></div>
+                <div>
+                    <h4 style="font-size: 0.9rem; font-weight: 600;">Lập trình viên</h4>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Free Plan</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Panel -->
+        <main class="main-chat">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="bot-info">
+                    <div class="msg-avatar assistant" style="width: 42px; height: 42px;">
+                        <i class="fa-solid fa-robot" style="font-size: 1.2rem;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                            AI Assistant <span class="bot-status"></span>
+                        </h3>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Sẵn sàng hỗ trợ bạn</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Message Container -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Bot Message -->
+                <div class="message assistant">
+                    <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div>
+                        <div class="msg-content">
+                            Xin chào! Tôi là AI Assistant. Bạn cần tôi trợ giúp gì hôm nay?
+                        </div>
+                        <span class="msg-time">10:00 AM</span>
+                    </div>
+                </div>
+
+                <!-- User Message -->
+                <div class="message user">
+                    <div class="msg-avatar"><i class="fa-solid fa-user"></i></div>
+                    <div>
+                        <div class="msg-content">
+                            Chào bạn, hãy tạo cho tôi một giao diện chat thật đẹp mắt nhé!
+                        </div>
+                        <span class="msg-time">10:01 AM</span>
+                    </div>
+                </div>
+
+                <!-- Typing Indicator Placeholder -->
+                <div class="message assistant" id="typingContainer" style="display: none;">
+                    <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="typing-indicator" id="typingIndicator" style="display: flex;">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Box -->
+            <footer class="chat-input-container">
+                <form id="chatForm" onsubmit="event.preventDefault(); sendMessage();">
+                    <div class="input-box">
+                        <textarea 
+                            id="userInput" 
+                            class="chat-textarea" 
+                            placeholder="Nhập tin nhắn..." 
+                            rows="1"
+                            onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); }"
+                        ></textarea>
+                        <button type="submit" class="send-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </footer>
+        </main>
     </div>
 
+    <!-- Nhúng file Javascript ngoài vào đây -->
+    <script src="/frontend/java/chat_box.js"></script>
 </body>
 </html>
