@@ -1,7 +1,11 @@
 /* ==========================================================
    THEME AUDI TT SPORT CUP - RACING ORANGE & BLACK ACCENT
-   (ADDED: PROFESSIONAL RACING ANIMATIONS)
+   (REFACTORED: STRUCTURAL ENHANCEMENTS & CLEANUP)
    ========================================================== */
+
+/* ----------------------------------------------------------
+   0. KEYFRAMES ANIMATION
+   ---------------------------------------------------------- */
 
 @keyframes ttTrackSlideIn {
     from {
@@ -28,6 +32,10 @@
     100% { background-position: 200% 0; }
 }
 
+/* ----------------------------------------------------------
+   1. GLOBAL & LAYOUT
+   ---------------------------------------------------------- */
+
 body {
     background-color: #0d0d0d;
     color: #cccccc;
@@ -38,6 +46,20 @@ body {
     animation: ttTrackSlideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
+main {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin: 30px 0;
+}
+
+/* ----------------------------------------------------------
+   2. TYPOGRAPHY
+   ---------------------------------------------------------- */
+
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 800;
@@ -47,7 +69,6 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.2rem;
-    color: #ffffff;
     border-bottom: 4px solid #ff6600;
     padding-bottom: 8px;
     margin-bottom: 25px;
@@ -62,7 +83,6 @@ h1:hover {
 
 h2 {
     font-size: 1.4rem;
-    color: #ffffff;
     border-left: 5px solid #ff6600;
     padding-left: 12px;
     margin-top: 35px;
@@ -74,14 +94,19 @@ h2:hover {
     border-left-color: #ff8533;
 }
 
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, #ff6600 0%, #333333 50%, transparent 100%);
-    background-size: 200% 100%;
-    margin: 30px 0;
-    animation: ttGridSweep 5s infinite linear;
+h3 {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
 }
+
+p strong, li strong {
+    color: #ffffff;
+    transition: color 0.2s ease;
+}
+
+/* ----------------------------------------------------------
+   3. NAVIGATION & LINKS
+   ---------------------------------------------------------- */
 
 nav {
     background-color: #1a1a1a;
@@ -111,6 +136,10 @@ nav a:hover {
     transform: translateX(2px);
 }
 
+nav p {
+    margin: 0;
+}
+
 a {
     color: #ff6600;
     text-decoration: none;
@@ -125,13 +154,33 @@ a:hover {
     transform: translateY(-1px);
 }
 
-img {
+/* ----------------------------------------------------------
+   4. DIVIDERS & UI ACCENTS
+   ---------------------------------------------------------- */
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6600 0%, #333333 50%, transparent 100%);
+    background-size: 200% 100%;
+    margin: 30px 0;
+    animation: ttGridSweep 5s infinite linear;
+}
+
+/* ----------------------------------------------------------
+   5. MEDIA & CARDS (16:9 ASPECT RATIO)
+   ---------------------------------------------------------- */
+
+img, video {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 4px;
     border: 1px solid #262626;
     background-color: #141414;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-    max-width: 100%;
-    height: auto;
     margin: 15px 0;
     transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
                 border-color 0.35s ease, 
@@ -139,10 +188,62 @@ img {
     will-change: transform;
 }
 
-img:hover {
+img:hover, video:hover {
     transform: scale(1.025) translateY(-3px);
     border-color: #ff6600;
     box-shadow: 0 12px 28px rgba(255, 102, 0, 0.45);
+}
+
+.car-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 4px;
+    border: 1px solid #262626;
+    background-color: #141414;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    margin: 15px 0;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.35s ease, 
+                box-shadow 0.35s ease;
+    will-change: transform;
+}
+
+.car-card:hover {
+    transform: scale(1.025) translateY(-3px);
+    border-color: #ff6600;
+    box-shadow: 0 12px 28px rgba(255, 102, 0, 0.45);
+}
+
+.car-img, 
+.car-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.35s ease;
+}
+
+.car-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.car-card:hover .car-video {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   6. BUTTONS & FORMS
+   ---------------------------------------------------------- */
+
+form {
+    margin: 20px 0;
 }
 
 button {
@@ -160,6 +261,15 @@ button {
     transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
     overflow: hidden;
+}
+
+button p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: inherit;
+    display: inline-block;
 }
 
 button::after {
@@ -188,8 +298,13 @@ button:active {
     transform: translateY(0) scale(0.97);
 }
 
+/* ----------------------------------------------------------
+   7. LISTS
+   ---------------------------------------------------------- */
+
 ul {
     padding-left: 20px;
+    margin: 15px 0 25px 0;
 }
 
 li {
@@ -201,11 +316,6 @@ li {
 li:hover {
     transform: translateX(5px);
     color: #ffffff;
-}
-
-p strong, li strong {
-    color: #ffffff;
-    transition: color 0.2s ease;
 }
 
 li:hover strong {
