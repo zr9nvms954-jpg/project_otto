@@ -2,80 +2,187 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-    background-color: #0b0b0c; /* Tông màu tối giao diện Porsche */
+    background: #050507;
+    background-image: 
+        radial-gradient(circle at 50% 0%, #1a1e29 0%, #070709 65%, #040405 100%);
     color: #ffffff;
-    padding: 20px;
+    min-height: 100vh;
+    padding: 24px 20px 60px 20px;
 }
 
-/* Navbar top */
+/* ================= HEADER (NAVBAR) 3D LUXURY ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto 30px auto;
-    padding: 10px 0;
+    max-width: 1240px;
+    margin: 0 auto 40px auto;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-badge {
+    background: linear-gradient(135deg, #d4af37 0%, #85581a 100%);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    letter-spacing: 2px;
+    box-shadow: 
+        0 4px 15px rgba(212, 175, 55, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .logo h1 {
-    font-size: 22px;
-    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #ffffff 30%, #a5a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .logo p {
-    font-size: 13px;
-    color: #888;
+    font-size: 11px;
+    color: #a0a5b0;
+    letter-spacing: 1px;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff88;
+    display: inline-block;
+}
+
+.auth-links {
+    display: flex;
+    gap: 14px;
 }
 
 .btn-auth {
-    color: #fff;
+    position: relative;
+    color: #ffffff;
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid #333;
-    font-size: 14px;
-    transition: 0.3s;
+    padding: 11px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-auth:hover {
-    background-color: #333;
+.btn-register {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+        0 6px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 
-/* Lưới hiển thị 2 cột chuẩn */
+.btn-register:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 25px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #ffffff 0%, #dcdcdc 100%);
+    color: #0b0b0d;
+    border: 1px solid #ffffff;
+    box-shadow: 
+        0 8px 20px rgba(255, 255, 255, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.btn-login:hover {
+    background: #ffffff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 14px 30px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ================= GRID DANH SÁCH XE (KHUNG VIDEO THON GỌN) ================= */
 .brand-container {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
 .brand-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cột mỗi hàng */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
 }
 
-/* Thẻ Card */
+/* Thẻ Card Xe dạng Khung Trưng Bày (Display Case) */
 .car-card {
     position: relative;
-    height: 280px;
+    height: 260px; /* Thu nhỏ chiều cao video để tạo cảm giác sang trọng & tinh tế */
     border-radius: 20px;
-    overflow: hidden;
     text-decoration: none;
-    display: block; /* Chuyển về block để chứa card-media tràn khung */
-    background-color: #121212;
+    display: block;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px; /* Khung lót bao quanh video */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
-/* Khung chứa phương tiện (Ảnh tĩnh & Video) */
+.car-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Khung màn hình video nằm lọt lòng trong Card */
 .card-media {
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
 }
 
-/* Định vị đè khít ảnh và video */
 .static-img,
 .hover-video {
     position: absolute;
@@ -83,55 +190,63 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Phủ kín khung card mượt mà */
+    object-fit: cover;
     display: block;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Ẩn video mặc định */
 .hover-video {
     opacity: 0;
 }
 
-/* Hiệu ứng khi di chuột vào Card: Hiện video + Phóng to nhẹ */
+/* Hiệu ứng hover video giữ nguyên */
 .car-card:hover .hover-video {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .car-card:hover .static-img {
     opacity: 0;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Lớp phủ đè chữ lên trên Video/Ảnh */
+/* Lớp phủ chữ & icon */
 .card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Đảm bảo nổi đè lên video */
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
+    background: linear-gradient(
+        180deg, 
+        rgba(0, 0, 0, 0.6) 0%, 
+        rgba(0, 0, 0, 0) 50%, 
+        rgba(0, 0, 0, 0.85) 100%
+    );
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 25px;
-    pointer-events: none; /* Giúp thao tác chuột hover mượt qua phần chữ */
+    padding: 24px;
+    pointer-events: none;
 }
 
-/* Tiêu đề thương hiệu nằm trên cùng */
 .brand-title {
     color: #ffffff;
-    font-size: 32px;
-    font-weight: 800;
+    font-size: 26px; /* Tỉ lệ font chữ cân đối với khung nhỏ */
+    font-weight: 900;
     text-align: center;
-    letter-spacing: 3px;
-    font-style: italic;
+    letter-spacing: 4px;
     text-transform: uppercase;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    transition: all 0.4s ease;
 }
 
-/* Thanh thông tin & nút bấm ở đáy card */
+.car-card:hover .brand-title {
+    transform: translateY(2px);
+    letter-spacing: 5.5px;
+}
+
 .card-footer {
     display: flex;
     justify-content: space-between;
@@ -139,57 +254,170 @@ body {
 }
 
 .badge {
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: #ffffff;
-    padding: 6px 14px;
-    border-radius: 12px;
-    font-size: 12px;
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .btn-arrow {
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: white;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    transition: background 0.3s, color 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .car-card:hover .btn-arrow {
-    background-color: #ffffff;
+    background: #ffffff;
     color: #000000;
+    transform: translateX(3px) scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Footer */
+/* ================= FOOTER 3D SHOWCASE ================= */
 .footer {
-    max-width: 1200px;
-    margin: 50px auto 20px auto;
-    padding-top: 20px;
-    border-top: 1px solid #222;
-    color: #777;
-    font-size: 14px;
-    line-height: 1.8;
+    max-width: 1240px;
+    margin: 60px auto 20px auto;
+    padding: 36px 32px 24px 32px;
+    background: linear-gradient(180deg, rgba(20, 20, 26, 0.6) 0%, rgba(10, 10, 14, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
 }
 
-.footer h3 {
-    color: #fff;
-    margin-bottom: 10px;
-    font-size: 16px;
+.footer-top {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Responsive cho màn hình điện thoại */
+.footer-title {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.footer-subtitle {
+    color: #8a8e99;
+    font-size: 12.5px;
+    letter-spacing: 0.5px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.contact-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 10.5px;
+    color: #8a8e99;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.contact-details strong {
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 18px;
+    text-align: center;
+    color: #62656e;
+    font-size: 11.5px;
+}
+
+/* ================= RESPONSIVE DI ĐỘNG ================= */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
-    .brand-grid {
-        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên di động */
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 18px;
+    }
+
+    .logo-wrapper {
+        flex-direction: column;
+        gap: 8px;
     }
     
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+
     .car-card {
-        height: 250px;
+        height: 230px;
     }
 }

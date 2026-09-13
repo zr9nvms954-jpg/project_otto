@@ -1,4 +1,15 @@
-/* Tùy chỉnh chung toàn trang */
+/* Custom variables cho theme sang trọng 3D */
+:root {
+    --bg-main: #06080c;
+    --card-bg: rgba(18, 22, 31, 0.65);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --accent-blue: #0066b1;
+    --accent-cyan: #00d4ff;
+    --text-primary: #ffffff;
+    --text-secondary: #8a99ad;
+}
+
+/* Reset chung toàn trang */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,70 +17,181 @@
 }
 
 body {
-    background-color: #0d0d0d;
-    color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 102, 177, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.04) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px 20px 50px 20px;
 }
 
-/* Breadcrumb & Footer */
+/* =========================================================
+   LỘT XÁC THANH TRANG CHỦ / BREADCRUMB NỔI 3D GLASS
+   ========================================================= */
 .breadcrumb {
-    padding: 15px 20px;
-    background-color: #141414;
-    border-bottom: 1px solid #222;
+    background: rgba(15, 20, 30, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+    padding: 12px 24px;
+    margin: 20px auto 30px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.breadcrumb a, .page-footer a {
-    color: #888;
+.breadcrumb p {
+    font-size: 0.88rem;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Nút bấm "Trang Chủ" dạng Badge phát sáng */
+.breadcrumb a {
+    color: #e1e7f0;
     text-decoration: none;
-    transition: color 0.2s;
+    padding: 5px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
 }
 
-.breadcrumb a:hover, .page-footer a:hover {
-    color: #fff;
+/* Đèn LED cyan nhấp nháy nhẹ trước nút Trang Chủ */
+.breadcrumb a::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-cyan);
 }
 
+.breadcrumb a:hover {
+    color: #ffffff;
+    background: rgba(0, 102, 177, 0.35);
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Tag vị trí hiện tại "Thương Hiệu BMW" nổi bật 3D */
+.breadcrumb strong {
+    color: #ffffff;
+    font-weight: 500;
+    background: linear-gradient(135deg, rgba(0, 102, 177, 0.3), rgba(0, 212, 255, 0.15));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    padding: 5px 14px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   HEADER TIÊU ĐỀ CHÍNH
+   ========================================================= */
 .page-header {
     text-align: center;
-    margin-bottom: 40px;
+    padding: 30px 20px 20px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.page-header::before {
+    content: "/// LUXURY COLLECTION";
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--accent-cyan);
+    background: rgba(0, 102, 177, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+    backdrop-filter: blur(5px);
 }
 
 .page-header h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.1rem;
+    font-weight: 300;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 12px;
+    background: linear-gradient(180deg, #ffffff 30%, #a2b4c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
 }
 
 .page-header p {
-    color: #aaa;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Lưới hiển thị danh sách xe (Grid 2 cột) */
+.page-header::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    margin: 25px auto 0;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* =========================================================
+   LƯỚI DẠNG 3D & THẺ XE
+   ========================================================= */
 .car-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 28px;
+    perspective: 1200px;
 }
 
 .car-card {
-    background-color: #161616;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #262626;
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-style: preserve-3d;
 }
 
 .car-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-    border-color: #444;
+    transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
+    border-color: rgba(0, 212, 255, 0.35);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(0, 102, 177, 0.25);
 }
 
 .car-link {
@@ -78,62 +200,83 @@ body {
     display: block;
 }
 
-/* Khung chứa video/hình ảnh */
 .car-image {
     width: 100%;
-    height: 300px;
+    height: 210px;
+    border-radius: 10px;
     overflow: hidden;
     background-color: #000;
     position: relative;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-/* Áp dụng kiểu hiển thị cho cả Ảnh và Video Hover */
 .car-image img,
 .car-image .hover-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Hiệu ứng phóng to nhẹ khi di chuột vào thẻ xe */
 .car-card:hover .car-image img,
 .car-card:hover .car-image .hover-video {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
-/* Thông tin tên và giá xe bên dưới ảnh */
 .car-info {
-    padding: 18px 20px;
+    padding: 16px 10px 8px 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .car-name {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.car-card:hover .car-name {
+    color: var(--accent-cyan);
 }
 
 .car-price {
-    font-size: 0.95rem;
-    color: #888888;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 400;
 }
 
 .page-footer {
     text-align: center;
     padding: 40px 0;
-    border-top: 1px solid #222;
-    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 60px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
-/* Responsive cho màn hình điện thoại */
+/* Responsive */
+@media (max-width: 992px) {
+    .car-grid {
+        gap: 20px;
+    }
+    .car-image {
+        height: 190px;
+    }
+}
+
 @media (max-width: 768px) {
     .car-grid {
         grid-template-columns: 1fr;
     }
-    
     .car-image {
-        height: 220px;
+        height: 200px;
+    }
+    .page-header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
     }
 }
