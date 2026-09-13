@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTO-NEXUS // Quản Lý Bán Xe Ô Tô</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/frontend/css/He_thong_css/admin.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div>
+            <div class="brand">
+                <i class="fa-solid fa-car-tunnel"></i>
+                <span>AUTO-NEXUS</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="#"><i class="fa-solid fa-chart-pie"></i> Tổng Quan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa-solid fa-car-side"></i> Quản Lý Tin Bán Xe</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa-solid fa-users-gear"></i> Hoạt Động Khách Hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa-solid fa-calendar-check"></i> Đặt Lịch Lái Thử</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa-solid fa-clipboard-check"></i> Thẩm Định & Giá Xe</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa-solid fa-sliders"></i> Cấu Hình Nền Tảng</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="system-status-box">
+            <div class="status-title">
+                <span>HỆ THỐNG GIAO DỊCH</span>
+                <div class="pulse-dot"></div>
+            </div>
+            <div style="font-size: 13px; font-weight: bold; color: var(--accent-green);">HOẠT ĐỘNG BÌNH THƯỜNG</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">1,420 Xe đang giao dịch</div>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-wrapper">
+        
+        <!-- Header -->
+        <header>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Tìm biển số, người bán, tên dòng xe...">
+            </div>
+
+            <div class="user-profile">
+                <div class="action-icon">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="badge"></div>
+                </div>
+                <div class="action-icon">
+                    <i class="fa-solid fa-car-battery"></i>
+                </div>
+                
+                <div class="avatar">
+                    <img src="https://i.pravatar.cc/100?img=33" alt="Admin Avatar">
+                    <div>
+                        <div style="font-weight: 700; font-size: 14px;">Minh Tuấn (Quản lý)</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">Senior Auto Manager</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Metric Cards -->
+        <section class="metrics-grid">
+            <div class="tech-panel stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Tin Đăng Bán Xe Mới</span>
+                    <div class="stat-icon icon-cyan"><i class="fa-solid fa-car"></i></div>
+                </div>
+                <div class="stat-value">3,420</div>
+                <div class="stat-trend trend-up">
+                    <i class="fa-solid fa-arrow-trend-up"></i> +12.5% tuần này
+                </div>
+            </div>
+
+            <div class="tech-panel stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Yêu Cầu Lái Thử</span>
+                    <div class="stat-icon icon-purple"><i class="fa-solid fa-key"></i></div>
+                </div>
+                <div class="stat-value">856</div>
+                <div class="stat-trend trend-up">
+                    <i class="fa-solid fa-arrow-trend-up"></i> +18.2% lượt đặt
+                </div>
+            </div>
+
+            <div class="tech-panel stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Doanh Số Giao Dịch</span>
+                    <div class="stat-icon icon-green"><i class="fa-solid fa-sack-dollar"></i></div>
+                </div>
+                <div class="stat-value">128.5 Tỷ</div>
+                <div class="stat-trend trend-up">
+                    <i class="fa-solid fa-arrow-trend-up"></i> +9.4% so với tháng trước
+                </div>
+            </div>
+
+            <div class="tech-panel stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Yêu Cầu Thẩm Định</span>
+                    <div class="stat-icon icon-pink"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                </div>
+                <div class="stat-value">42</div>
+                <div class="stat-trend trend-down" style="color: var(--accent-red);">
+                    <i class="fa-solid fa-clock"></i> 12 hồ sơ chờ duyệt
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Grid -->
+        <section class="charts-container">
+            <!-- Line Chart Container -->
+            <div class="tech-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-chart-line" style="color: var(--primary-cyan);"></i>
+                        XU HƯỚNG TÌM KIẾM & ĐẶT LỊCH LÁI THỬ (THEO THÁNG)
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="carSalesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- User Live Activity Log -->
+            <div class="tech-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-bolt" style="color: var(--accent-purple);"></i>
+                        HOẠT ĐỘNG NGƯỜI DÙNG REALTIME
+                    </div>
+                </div>
+                <ul class="log-list">
+                    <li class="log-item">
+                        <div class="log-info">
+                            <i class="fa-solid fa-calendar-check" style="color: var(--accent-green);"></i>
+                            <span><b>Nguyễn Văn A</b> vừa đặt lịch lái thử <b>VF8</b></span>
+                        </div>
+                        <span class="log-time">2 phút trước</span>
+                    </li>
+                    <li class="log-item">
+                        <div class="log-info">
+                            <i class="fa-solid fa-square-plus" style="color: var(--primary-cyan);"></i>
+                            <span><b>Trần Thị B</b> đăng bán <b>Toyota Camry 2022</b></span>
+                        </div>
+                        <span class="log-time">10 phút trước</span>
+                    </li>
+                    <li class="log-item">
+                        <div class="log-info">
+                            <i class="fa-solid fa-comments-dollar" style="color: #ffc107;"></i>
+                            <span><b>Lê Văn C</b> thương lượng giá <b>Ford Ranger</b></span>
+                        </div>
+                        <span class="log-time">25 phút trước</span>
+                    </li>
+                    <li class="log-item">
+                        <div class="log-info">
+                            <i class="fa-solid fa-shield-halved" style="color: var(--accent-pink);"></i>
+                            <span><b>Hoàng D</b> đăng ký gói bài đăng VIP xe Lux A</span>
+                        </div>
+                        <span class="log-time">1 giờ trước</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Data Table: Car Listings & User Actions -->
+        <section class="tech-panel table-panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <i class="fa-solid fa-list-check" style="color: var(--accent-pink);"></i>
+                    DANH SÁCH TIN ĐĂNG & QUẢN LÝ HOẠT ĐỘNG GIAO DỊCH
+                </div>
+            </div>
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Khách Hàng / Chủ Xe</th>
+                        <th>Hành Động</th>
+                        <th>Mẫu Xe / Đời Xe</th>
+                        <th>Giá Niêm Yết</th>
+                        <th>Trạng Thái Tin</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Phạm Quốc Bảo</strong><br><small style="color: var(--text-muted)">ID: US-9921</small></td>
+                        <td>Đăng tin bán xe</td>
+                        <td><span style="color: var(--primary-cyan)">VinFast VF9 (2023)</span></td>
+                        <td>1.250.000.000 ₫</td>
+                        <td><span class="status-tag status-online">Đã Duyệt</span></td>
+                        <td><i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary-cyan);"></i></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Đặng Thùy Trang</strong><br><small style="color: var(--text-muted)">ID: US-4812</small></td>
+                        <td>Hẹn lái thử tại Showroom</td>
+                        <td><span style="color: var(--primary-cyan)">Mazda CX-5 (2024)</span></td>
+                        <td>830.000.000 ₫</td>
+                        <td><span class="status-tag status-warning">Chờ Xác Nhận</span></td>
+                        <td><i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary-cyan);"></i></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vũ Đình Trọng</strong><br><small style="color: var(--text-muted)">ID: US-7103</small></td>
+                        <td>Yêu cầu kiểm định kĩ thuật</td>
+                        <td><span style="color: var(--primary-cyan)">Mercedes-Benz C200</span></td>
+                        <td>1.180.000.000 ₫</td>
+                        <td><span class="status-tag status-critical">Cần Kiểm Tra</span></td>
+                        <td><i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary-cyan);"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- External JavaScript File -->
+    <script src="/frontend/java/admin.js"></script>
+</body>
+</html>

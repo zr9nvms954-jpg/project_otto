@@ -1,0 +1,247 @@
+:root {
+    --bg-dark: #060913;
+    --bg-card: rgba(13, 22, 41, 0.9);
+    --border-color: rgba(0, 242, 254, 0.25);
+    --primary-cyan: #00f2fe;
+    --accent-purple: #7f00ff;
+    --accent-green: #00ff87;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(127, 0, 255, 0.08) 0%, transparent 40%);
+}
+
+.checkout-card {
+    width: 100%;
+    max-width: 950px;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    box-shadow: 0 0 50px rgba(0, 242, 254, 0.12);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+/* --- Cột bên trái: Chi tiết đơn hàng --- */
+.order-details {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary-cyan);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 1px;
+}
+
+.item-summary {
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.item-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.item-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.price-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.price-total {
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    padding-top: 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+/* --- Cột bên phải: Luồng thanh toán --- */
+.payment-flow {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+.btn-action {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--primary-cyan));
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* VietQR Component */
+.qr-box {
+    background: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    display: inline-block;
+    margin: 15px 0;
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+}
+
+.qr-box img {
+    width: 190px;
+    height: 190px;
+    display: block;
+}
+
+.bank-details {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.bank-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bank-row:last-child {
+    margin-bottom: 0;
+}
+
+.copy-tag {
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--primary-cyan);
+    border: 1px solid var(--primary-cyan);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.copy-tag:hover {
+    background: var(--primary-cyan);
+    color: #000;
+}
+
+/* Step Visibility Controls */
+.step-panel {
+    display: none;
+    text-align: center;
+}
+
+.step-panel.active {
+    display: block;
+}
+
+/* Success Screen */
+.success-icon {
+    font-size: 60px;
+    color: var(--accent-green);
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .checkout-card { grid-template-columns: 1fr; }
+    .order-details { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+}
