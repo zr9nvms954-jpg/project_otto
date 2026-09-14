@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari Monza SP2 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_monza.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_monza.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-            <strong>Ferrari Monza SP2</strong>
-        </p>
-    </nav>
+    <div class="page-container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
+                <strong>Ferrari Monza SP2</strong>
+            </p>
+        </nav>
 
-    <hr>
+        <hr>
 
-    <main>
-        <div>
+        <main>
             <h1>Ferrari Monza SP2</h1>        
+            
             <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/FERRA/ngoaithat/fre9.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Ferrari Monza SP2 width="500">
+            <div class="media-container">
+                <video src="/img/FERRA/ngoaithat/fre9.mp4" controls autoplay muted loop></video>
+            </div>
+
             <ul>
                 <li>Thiết kế Speedster 2 chỗ ngồi loại bỏ hoàn toàn kính chắn gió và mui xe.</li>
                 <li>Công nghệ kính chắn gió ảo "Virtual Wind Shield" giúp điều hướng luồng không khí qua đầu người lái.</li>
@@ -31,7 +35,10 @@
             </ul>
 
             <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari Monza SP2" width="500">
+            <div class="media-container">
+                <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari Monza SP2">
+            </div>
+
             <ul>
                 <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên (Naturally Aspirated).</li>
                 <li><strong>Công suất tối đa:</strong> 810 mã lực.</li>
@@ -41,7 +48,10 @@
             </ul>
 
             <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/FERRA/noithat/Ferrari_Daytona_SP3_Vietnam.jpg" alt="Nội thất Ferrari Monza SP2" width="500">
+            <div class="media-container">
+                <img src="/img/FERRA/noithat/Ferrari_Daytona_SP3_Vietnam.jpg" alt="Nội thất Ferrari Monza SP2">
+            </div>
+
             <ul>
                 <li>Khoang lái thiết kế riêng biệt tối giản với ghế đua bọc da thuộc cao cấp.</li>
                 <li>Bảng điều khiển trung tâm bằng sợi carbon tích hợp các phím bấm cơ học tối ưu thao tác.</li>
@@ -50,16 +60,15 @@
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <!-- Bộ nút hành động -->
+            <section class="cta-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
-                    <button type="button"><p>45.000.000.000 VNĐ</p></button>
+                    <button type="button" class="buy-btn">45.000.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

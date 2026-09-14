@@ -4,64 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW M2 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m2.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m2.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-            <strong>BMW M2</strong>
-        </p>
-    </nav>
+    <div class="container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
+                <strong>BMW M2</strong>
+            </p>
+        </nav>
 
-    <hr>
-
-    <main>
-        <div>
+        <main>
             <h1>BMW M2 Coupe</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/BMW/ngoaithat/bmw6.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất BMW M2 Coupe width="500">
-            <ul>
-                <li>Lưới tản nhiệt thiết kế vuông vức, hầm hố riêng biệt không đụng hàng với các dòng xe khác.</li>
-                <li>Vòm bánh xe mở rộng đáng kể tạo nên phom dáng cơ bắp, đầm chắc.</li>
-                <li>Hệ thống đèn chiếu sáng LED sắc nét kết hợp khe gió khí động học lớn ở cản trước.</li>
-                <li>Bộ vành M hợp kim thể thao 19 inch (trước) và 20 inch (sau) thiết kế đa chấu.</li>
-            </ul>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/BMW/dongco/bmw5.png" alt="Động cơ BMW M2 Coupe" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ 3.0L 6 xi-lanh thẳng hàng TwinPower Turbo.</li>
-                <li><strong>Công suất tối đa:</strong> 453 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số tự động 8 cấp M Steptronic, dẫn động cầu sau RWD.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,1 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 250 - 285 km/h.</li>
-            </ul>
+            <section>
+                <h2>1. Thiết kế & Ngoại thất</h2>
+                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
+                <div class="car-card">
+                    <video class="car-video" src="/img/BMW/ngoaithat/bmw6.mp4" controls autoplay muted loop></video>
+                </div>
+                <ul>
+                    <li>Lưới tản nhiệt thiết kế vuông vức, hầm hố riêng biệt không đụng hàng với các dòng xe khác.</li>
+                    <li>Vòm bánh xe mở rộng đáng kể tạo nên phom dáng cơ bắp, đầm chắc.</li>
+                    <li>Hệ thống đèn chiếu sáng LED sắc nét kết hợp khe gió khí động học lớn ở cản trước.</li>
+                    <li>Bộ vành M hợp kim thể thao 19 inch (trước) và 20 inch (sau) thiết kế đa chấu.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/BMW/noithat/bmw1.png" alt="Nội thất BMW M2 Coupe" width="500">
-            <ul>
-                <li>Ghế thể thao M bọc da Vernasca cao cấp ôm sát người lái.</li>
-                <li>Màn hình cong BMW Curved Display hợp nhất bảng đồng hồ 12.3 inch và màn hình giải trí 14.9 inch.</li>
-                <li>Vô-lăng bọc da M Sport tích hợp các nút tùy chỉnh chế độ lái M1/M2 màu đỏ nổi bật.</li>
-                <li>Hệ thống âm thanh Harman Kardon vòm cao cấp mang lại trải nghiệm đỉnh cao.</li>
-            </ul>
+            <section>
+                <h2>2. Động cơ & Vận hành</h2>
+                <img src="/img/BMW/dongco/bmw5.png" alt="Động cơ BMW M2 Coupe">
+                <ul>
+                    <li><strong>Động cơ:</strong> Động cơ 3.0L 6 xi-lanh thẳng hàng TwinPower Turbo.</li>
+                    <li><strong>Công suất tối đa:</strong> 453 mã lực.</li>
+                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số tự động 8 cấp M Steptronic, dẫn động cầu sau RWD.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,1 giây.</li>
+                    <li><strong>Tốc độ tối đa:</strong> 250 - 285 km/h.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Trang bị & Công nghệ nội thất</h2>
+                <img src="/img/BMW/noithat/bmw1.png" alt="Nội thất BMW M2 Coupe">
+                <ul>
+                    <li>Ghế thể thao M bọc da Vernasca cao cấp ôm sát người lái.</li>
+                    <li>Màn hình cong BMW Curved Display hợp nhất bảng đồng hồ 12.3 inch và màn hình giải trí 14.9 inch.</li>
+                    <li>Vô-lăng bọc da M Sport tích hợp các nút tùy chỉnh chế độ lái M1/M2 màu đỏ nổi bật.</li>
+                    <li>Hệ thống âm thanh Harman Kardon vòm cao cấp mang lại trải nghiệm đỉnh cao.</li>
+                </ul>
+            </section>
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
+            <!-- Bộ nút hành động -->
             <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
+                <h2>Liên Hệ Đặt Mua / Tư Vấn</h2>
                 <form>
-                    <button type="button"><p>4.299.000.000 VNĐ</p></button>
+                    <button type="button">4.299.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

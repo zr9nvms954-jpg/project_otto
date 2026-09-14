@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi A8L - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi-A8.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/Audi-A8.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="/frontend/html/audi/audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi A8L</strong>
-        </p>
-    </nav>
+            <span>Audi A8L</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi18.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">LUXURY SEDAN</span>
+                    <h1>Audi A8L</h1>
+                    <p>Kiệt tác công nghệ và chuẩn mực mới của sự sang trọng</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi A8L</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi18.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi A8L width="500">
-            <ul>
-                <li>Đèn pha Digital Matrix LED chiếu sáng chính xác, tự động điều chỉnh tầm nhìn thông minh.</li>
-                <li>Đèn hậu OLED kỹ thuật số thay đổi đồ họa linh hoạt và phát cảnh báo khoảng cách.</li>
-                <li>Hiệu ứng đồ họa ánh sáng LED chào mừng độc bản mỗi khi mở hoặc khóa cửa xe.</li>
-                <li>Thân xe thiết kế kéo dài sang trọng với tỉ lệ cân đối đỉnh cao.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>6.000.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi5.png" alt="Động cơ Audi A8L" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V6 3.0L TFSI Mild-Hybrid 48V.</li>
-                <li><strong>Công suất cực đại:</strong> 340 mã lực (HP) cùng mô-men xoắn 500 Nm.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 8 cấp Tiptronic, dẫn động 4 bánh toàn thời gian Quattro.</li>
-                <li><strong>Cảm giác lái:</strong> Treo khí nén thích ứng kết hợp hệ thống đánh lái 4 bánh vận hành siêu êm ái.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi18.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Đèn pha:</strong> Digital Matrix LED chiếu sáng thông minh.</li>
+                    <li><strong>Đèn hậu:</strong> OLED kỹ thuật số đồ họa linh hoạt.</li>
+                    <li><strong>Đồ họa LED:</strong> Hiệu ứng chào mừng khi khóa/mở cửa.</li>
+                    <li><strong>Thân xe:</strong> Thiết kế kéo dài sang trọng, cân đối.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/audi-a8-dongco.jpg" alt="Nội thất Audi A8L" width="500">
-            <ul>
-                <li>Ghế thư giãn hàng ghế sau tích hợp massage 18 đệm khí và sưởi ấm lòng bàn chân.</li>
-                <li>Màn hình giải trí hàng ghế sau kép Full HD 10.1 inch hỗ trợ tháo rời linh hoạt.</li>
-                <li>Kính cách âm nhiều lớp triệt tiêu hoàn toàn tiếng ồn từ môi trường bên ngoài.</li>
-                <li>Dàn âm thanh Bang & Olufsen 3D trang bị 23 loa công suất 1.920W đỉnh cao.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi5.png" alt="Động cơ Audi A8L">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V6 3.0L TFSI Mild-Hybrid 48V.</li>
+                    <li><strong>Công suất:</strong> 340 mã lực (HP) & 500 Nm.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Tự động 8 cấp Tiptronic, Quattro 4 bánh.</li>
+                    <li><strong>Cảm giác lái:</strong> Treo khí nén thích ứng & đánh lái 4 bánh.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/audi-a8-dongco.jpg" alt="Nội thất Audi A8L">
+                </div>
+                <ul>
+                    <li><strong>Ghế hàng sau:</strong> Massage 18 đệm khí & sưởi chân.</li>
+                    <li><strong>Màn hình sau:</strong> Kép Full HD 10.1" tháo rời linh hoạt.</li>
+                    <li><strong>Cách âm:</strong> Kính nhiều lớp triệt tiêu tiếng ồn.</li>
+                    <li><strong>Âm thanh:</strong> Bang & Olufsen 3D 23 loa (1.920W).</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>6.000.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="Audi A8 3D Model" 
+                    src="https://sketchfab.com/models/922075ee49aa40869f532e7080522fd6/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

@@ -4,62 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW i8 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i8.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i8.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-            <strong>BMW i8</strong>
-        </p>
-    </nav>
+    <div class="container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
+                <strong>BMW i8</strong>
+            </p>
+        </nav>
 
-    <hr>
-
-    <main>
-        <div>
+        <main>
             <h1>BMW i8 Coupe</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/BMW/ngoaithat/bmw5.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất BMW i8 Coupe width="500">
-            <ul>
-                <li>Kiểu dáng khí động học Futuristic với cửa mở dạng cánh bướm (Swan-wing / Butterfly doors) cực kỳ ấn tượng.</li>
-                <li>Hệ thống đèn pha LED hiện đại, tích hợp tùy chọn công nghệ chiếu sáng Laser (BMW Laserlight).</li>
-                <li>Bộ mâm xe hợp kim siêu nhẹ 20 inch thiết kế tối ưu khí động học đi kèm thân xe làm từ sợi carbon (CFRP).</li>
-            </ul>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/BMW/dongco/bmw4.png" alt="Động cơ BMW i8 Coupe" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ xăng 1.5L 3-cylinder tăng áp kết hợp mô-tơ điện Plug-in Hybrid.</li>
-                <li><strong>Công suất tối đa:</strong> Tổng công suất kết hợp 369 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 6 cấp cho động cơ xăng + 2 cấp cho mô-tơ điện, hệ dẫn động 4 bánh xDrive thông minh.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,4 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 250 km/h.</li>
-            </ul>
+            <section>
+                <h2>1. Thiết kế & Ngoại thất</h2>
+                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
+                <div class="car-card">
+                    <video class="car-video" src="/img/BMW/ngoaithat/bmw5.mp4" controls autoplay muted loop></video>
+                </div>
+                <ul>
+                    <li>Kiểu dáng khí động học Futuristic với cửa mở dạng cánh bướm (Swan-wing / Butterfly doors) cực kỳ ấn tượng.</li>
+                    <li>Hệ thống đèn pha LED hiện đại, tích hợp tùy chọn công nghệ chiếu sáng Laser (BMW Laserlight).</li>
+                    <li>Bộ mâm xe hợp kim siêu nhẹ 20 inch thiết kế tối ưu khí động học đi kèm thân xe làm từ sợi carbon (CFRP).</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/BMW/noithat/bmw5.png" alt="Nội thất BMW i8 Coupe" width="500">
-            <ul>
-                <li>Nội thất thiết kế hiện đại, hướng về người lái với chất liệu da cao cấp và nhựa tái chế thân thiện môi trường.</li>
-                <li>Màn hình kỹ thuật số hiển thị đa thông tin kết hợp hệ thống màn hình giải trí iDrive 8.8 inch.</li>
-                <li>Vô-lăng bọc da thể thao tích hợp lẫy chuyển số và hệ thống âm thanh vòm cao cấp Harman Kardon.</li>
-            </ul>
+            <section>
+                <h2>2. Động cơ & Vận hành</h2>
+                <img src="/img/BMW/dongco/bmw4.png" alt="Động cơ BMW i8 Coupe">
+                <ul>
+                    <li><strong>Động cơ:</strong> Động cơ xăng 1.5L 3-cylinder tăng áp kết hợp mô-tơ điện Plug-in Hybrid.</li>
+                    <li><strong>Công suất tối đa:</strong> Tổng công suất kết hợp 369 mã lực.</li>
+                    <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 6 cấp cho động cơ xăng + 2 cấp cho mô-tơ điện, hệ dẫn động 4 bánh xDrive thông minh.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,4 giây.</li>
+                    <li><strong>Tốc độ tối đa:</strong> 250 km/h.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Trang bị & Công nghệ nội thất</h2>
+                <img src="/img/BMW/noithat/bmw5.png" alt="Nội thất BMW i8 Coupe">
+                <ul>
+                    <li>Nội thất thiết kế hiện đại, hướng về người lái với chất liệu da cao cấp và nhựa tái chế thân thiện môi trường.</li>
+                    <li>Màn hình kỹ thuật số hiển thị đa thông tin kết hợp hệ thống màn hình giải trí iDrive 8.8 inch.</li>
+                    <li>Vô-lăng bọc da thể thao tích hợp lẫy chuyển số và hệ thống âm thanh vòm cao cấp Harman Kardon.</li>
+                </ul>
+            </section>
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
+            <!-- Bộ nút hành động -->
             <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
+                <h2>Liên Hệ Đặt Mua / Tư Vấn</h2>
                 <form>
-                    <button type="button"><p>7.800.000.000 VNĐ</p></button>
+                    <button type="button">7.800.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

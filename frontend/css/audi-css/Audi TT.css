@@ -1,321 +1,166 @@
-/* ==========================================================
-   THEME AUDI TT SPORT CUP - RACING ORANGE & BLACK ACCENT
-   (BỔ SUNG THUỘC TÍNH CẤU TRÚC - GIỮ NGUYÊN MÀU SẮC GỐC)
-   ========================================================== */
-
-/* ----------------------------------------------------------
-   0. KEYFRAMES ANIMATION
-   ---------------------------------------------------------- */
-
-@keyframes ttTrackSlideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* =========================================================
+   CINEMATIC WIDESCREEN LAYOUT (OPTIMIZED & CLEAN)
+   ========================================================= */
+:root {
+    --bg-main: #0a0c10;
+    --card-bg: rgba(18, 22, 30, 0.7);
+    --border: rgba(255, 255, 255, 0.08);
+    --orange: #ff6600;
+    --orange-glow: rgba(255, 102, 0, 0.3);
+    --text: #ffffff;
+    --text-sub: #8a99ad;
 }
 
-@keyframes ttOrangeGlowPulse {
-    0%, 100% {
-        box-shadow: 0 4px 12px rgba(255, 102, 0, 0.35);
-    }
-    50% {
-        box-shadow: 0 4px 22px rgba(255, 102, 0, 0.75);
-    }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg-main); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 20px 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* BREADCRUMB */
+.breadcrumb { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 20px; }
+.breadcrumb a { color: var(--text-sub); text-decoration: none; }
+.breadcrumb span { color: var(--text); font-weight: 600; }
+
+/* 1. HERO VIDEO BANNER (CINEMATIC) */
+.hero-cinematic { width: 100%; margin-bottom: 25px; }
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    /* NOTE: Chỉnh tỷ lệ dẹt video Banner (21/9 là chuẩn siêu rộng, 16/9 là vừa) */
+    aspect-ratio: 21 / 9; 
+    max-height: 520px; /* NOTE: Giới hạn chiều cao tối đa của Video chính */
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
-@keyframes ttGridSweep {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-/* ----------------------------------------------------------
-   1. TOÀN TRANG & BỐ CỤC
-   ---------------------------------------------------------- */
-body {
-    background-color: #0d0d0d;
-    color: #cccccc;
-    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 30px 50px;
-    animation: ttTrackSlideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-main {
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-/* ----------------------------------------------------------
-   2. CÁC TIÊU ĐỀ
-   ---------------------------------------------------------- */
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,16,0.85) 100%);
 }
 
-h1 {
-    font-size: 2.2rem;
-    color: #ffffff;
-    border-bottom: 4px solid #ff6600;
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-    display: inline-block;
-    transition: all 0.3s ease;
+.hero-caption { position: absolute; bottom: 30px; left: 35px; z-index: 2; }
+.badge { background: var(--orange); color: #fff; font-size: 0.65rem; font-weight: 800; letter-spacing: 2px; padding: 4px 10px; border-radius: 4px; }
+.hero-caption h1 { font-size: 3rem; font-weight: 800; letter-spacing: 2px; margin-top: 6px; }
+.hero-caption p { color: var(--text-sub); font-size: 1rem; }
+
+/* 2. THANH GIÁ BÁN & NÚT BẤM */
+.action-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
 }
 
-h1:hover {
-    text-shadow: 0 0 12px rgba(255, 102, 0, 0.8);
-    border-bottom-color: #ff8533;
-}
+.price-info small { display: block; color: var(--text-sub); font-size: 0.8rem; }
+.price-info strong { font-size: 1.5rem; color: var(--orange); }
 
-h2 {
-    font-size: 1.4rem;
-    color: #ffffff;
-    border-left: 5px solid #ff6600;
-    padding-left: 12px;
-    margin-top: 35px;
-    transition: all 0.25s ease;
-}
-
-h2:hover {
-    padding-left: 18px;
-    border-left-color: #ff8533;
-}
-
-h3 {
-    font-size: 1.15rem;
-    margin-bottom: 15px;
-}
-
-/* ----------------------------------------------------------
-   3. ĐƯỜNG PHÂN CÁCH
-   ---------------------------------------------------------- */
-hr {
+.btn-cta {
+    background: var(--orange);
+    color: #fff;
     border: none;
-    height: 2px;
-    background: linear-gradient(90deg, #ff6600 0%, #333333 50%, transparent 100%);
-    background-size: 200% 100%;
-    margin: 30px 0;
-    animation: ttGridSweep 5s infinite linear;
-}
-
-/* ----------------------------------------------------------
-   4. THANH HƯỚNG DẪN BREADCRUMB
-   ---------------------------------------------------------- */
-nav {
-    background-color: #1a1a1a;
-    padding: 10px 18px;
-    border-radius: 4px;
-    border-left: 3px solid #ff6600;
-    border-top: 1px solid #262626;
-    border-right: 1px solid #262626;
-    border-bottom: 1px solid #262626;
-    transition: all 0.3s ease;
-}
-
-nav:hover {
-    background-color: #242424;
-    box-shadow: -4px 0 12px rgba(255, 102, 0, 0.4);
-}
-
-nav a {
-    color: #999999;
-    text-decoration: none;
-    transition: color 0.3s, transform 0.2s ease;
-    display: inline-block;
-}
-
-nav a:hover {
-    color: #ffffff;
-    transform: translateX(2px);
-}
-
-nav p {
-    margin: 0;
-}
-
-/* ----------------------------------------------------------
-   5. LIÊN KẾT (LINKS)
-   ---------------------------------------------------------- */
-a {
-    color: #ff6600;
-    text-decoration: none;
+    padding: 14px 32px;
+    font-size: 0.9rem;
     font-weight: 700;
-    transition: all 0.2s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px var(--orange-glow);
+    transition: all 0.3s;
+}
+.btn-cta:hover { background: #ff771a; transform: translateY(-2px); }
+
+/* 3. LƯỚI THÔNG SỐ XE (3 CỘT NGANG) */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.spec-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.spec-card h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 14px;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 6px;
     display: inline-block;
 }
 
-a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 102, 0, 0.8);
-    transform: translateY(-1px);
-}
-
-/* ----------------------------------------------------------
-   6. HÌNH ẢNH, VIDEO & THẺ CARD XE (CẤU TRÚC 16:9 MỚI)
-   ---------------------------------------------------------- */
-img, video {
-    display: block;
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid #262626;
-    background-color: #141414;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-    margin: 15px 0;
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
-                border-color 0.35s ease, 
-                box-shadow 0.35s ease;
-    will-change: transform;
-}
-
-img:hover, video:hover {
-    transform: scale(1.025) translateY(-3px);
-    border-color: #ff6600;
-    box-shadow: 0 12px 28px rgba(255, 102, 0, 0.45);
-}
-
-.car-card {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border-radius: 4px;
-    border: 1px solid #262626;
-    background-color: #141414;
+.card-media {
+    width: 100%; /* NOTE: Đã sửa từ 200% về 100% để chống vỡ khung card */
+    aspect-ratio: 16 / 9; /* NOTE: Tỷ lệ ảnh/video nhỏ trong card (16/9 nằm ngang chuẩn) */
+    border-radius: 8px;
     overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-    margin: 15px 0;
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
-                border-color 0.35s ease, 
-                box-shadow 0.35s ease;
-    will-change: transform;
+    margin-bottom: 16px;
 }
 
-.car-card:hover {
-    transform: scale(1.025) translateY(-3px);
-    border-color: #ff6600;
-    box-shadow: 0 12px 28px rgba(255, 102, 0, 0.45);
-}
-
-.car-img, 
-.car-video {
+.card-media img, .card-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.35s ease;
 }
 
-.car-video {
-    opacity: 0;
-    pointer-events: none;
+.spec-card ul { list-style: none; }
+.spec-card li { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 8px; }
+.spec-card li strong { color: var(--text); }
+
+/* 4. KHỐI MÔ PHỎNG 3D INTERACTIVE */
+.model-3d-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
 }
 
-.car-card:hover .car-video {
-    opacity: 1;
+.model-3d-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text);
+    border-left: 4px solid var(--orange);
+    padding-left: 12px;
 }
 
-/* ----------------------------------------------------------
-   7. NÚT BẤM & FORM
-   ---------------------------------------------------------- */
-form {
-    margin: 20px 0;
+/* NOTE: Tùy chỉnh Kích thước Khung 3D tại đây */
+.iframe-wrapper {
+    width: 100%;            /* Chiều rộng phủ kín container (100%) */
+    aspect-ratio: 21 / 9;   /* Tỷ lệ dẹt ngang: Muốn cao hơn thì đổi thành 16 / 9 */
+    max-height: 480px;      /* CHỈNH CHIỀU CAO TỐI ĐA CỦA 3D TẠI ĐÂY */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
 }
 
-button {
-    background-color: #ff6600;
-    color: #ffffff;
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
     border: none;
-    padding: 12px 26px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 2px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.35);
-    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-    position: relative;
-    overflow: hidden;
 }
 
-button p {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    font-weight: 800;
-    color: inherit;
-    display: inline-block;
-}
-
-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s ease;
-}
-
-button:hover {
-    background-color: #ff8533;
-    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.7);
-    transform: translateY(-2px);
-    animation: ttOrangeGlowPulse 1.5s infinite ease-in-out;
-}
-
-button:hover::after {
-    left: 100%;
-}
-
-button:active {
-    transform: translateY(0) scale(0.97);
-}
-
-/* ----------------------------------------------------------
-   8. DANH SÁCH & THÔNG SỐ
-   ---------------------------------------------------------- */
-ul {
-    padding-left: 20px;
-    margin: 15px 0 25px 0;
-}
-
-li {
-    margin-bottom: 8px;
-    color: #bbbbbb;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-li:hover {
-    transform: translateX(5px);
-    color: #ffffff;
-}
-
-p strong, li strong {
-    color: #ffffff;
-    transition: color 0.2s ease;
-}
-
-li:hover strong {
-    color: #ff6600;
-}
-
-section {
-    margin: 30px 0;
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .video-wrapper, .iframe-wrapper { aspect-ratio: 16 / 9; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .action-bar { flex-direction: column; gap: 15px; text-align: center; }
 }

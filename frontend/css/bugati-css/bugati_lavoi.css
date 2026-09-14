@@ -1,301 +1,231 @@
 /* ==========================================================
-   THEME BMW i8 ROADSTER - PITCH BLACK & CHROME / SILVER
-   (ADDED: ULTRA-SMOOTH HYBRID LUXURY ANIMATIONS)
+   HYPERCAR BUGATTI BOLIDE - PLATINUM OBSIDIAN THEME
+   (FULL VISUAL EFFECTS - NO LAYOUT BUGS)
    ========================================================== */
 
-/* ----------------------------------------------------------
-   0. KEYFRAMES ANIMATION (HIỆU ỨNG TỰ ĐỘNG CHUYỂN ĐỘNG)
-   ---------------------------------------------------------- */
-
-/* Tải trang mượt chuẩn Ultra-Luxury */
-@keyframes i8PageEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.99);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+/* 
+   0. ANIMATIONS & KEYFRAMES
+    */
+@keyframes pageEntrance {
+  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Ánh Chrome kim loại phát sáng nhịp nhàng */
-@keyframes i8SunsetPulse {
-    0%, 100% {
-        box-shadow: 0 4px 15px rgba(224, 224, 224, 0.25);
-        border-bottom-color: #e0e0e0;
-    }
-    50% {
-        box-shadow: 0 6px 25px rgba(255, 255, 255, 0.6);
-        border-bottom-color: #ffffff;
-    }
+@keyframes laserSweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-/* Dải sáng Chrome Metallic quét qua đường kẻ ngang */
-@keyframes i8GoldSweep {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
 
-/* Nút bấm thở ánh sáng Bạc Chrome */
-@keyframes i8ButtonGlow {
-    0%, 100% {
-        box-shadow: 0 4px 15px rgba(224, 224, 224, 0.3);
-    }
-    50% {
-        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.7);
-    }
+/* 
+   1. TOÀN TRANG (NỀN HYPERCAR MESH GRADIENT)
+    */
+* {
+  box-sizing: border-box;
 }
 
-/* ----------------------------------------------------------
-   1. TOÀN TRANG
-   ---------------------------------------------------------- */
 body {
-    background-color: #050505;
-    color: #b0b0b0;
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.65;
-    margin: 0;
-    padding: 30px 50px;
-    animation: i8PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  background-color: #050608;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 0% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: #cbd5e1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pageEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ----------------------------------------------------------
-   2. CÁC TIÊU ĐỀ
-   ---------------------------------------------------------- */
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+body > * {
+  width: 100%;
+  max-width: 900px;
 }
 
-h1 {
-    font-size: 2.2rem;
-    color: #ffffff;
-    border-bottom: 3px solid #e0e0e0;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    display: inline-block;
-    animation: i8SunsetPulse 3s infinite ease-in-out;
-    transition: all 0.4s ease;
-}
-
-h1:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-}
-
-h2 {
-    font-size: 1.4rem;
-    color: #f0f0f0;
-    border-left: 4px solid #c0c0c0;
-    padding-left: 14px;
-    margin-top: 35px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-h2:hover {
-    padding-left: 20px;
-    border-left-color: #ffffff;
-    text-shadow: 0 0 12px rgba(224, 224, 224, 0.8);
-}
-
-/* ----------------------------------------------------------
-   3. ĐƯỜNG PHÂN CÁCH
-   ---------------------------------------------------------- */
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, #ffffff 0%, #444444 50%, transparent 100%);
-    background-size: 200% 100%;
-    margin: 35px 0;
-    animation: i8GoldSweep 6s infinite linear;
-}
-
-/* ----------------------------------------------------------
-   4. THANH HƯỚNG DẪN BREADCRUMB
-   ---------------------------------------------------------- */
+/* 
+   2. THANH BREADCRUMB (BẢNG KÍNH MỜ GLASSMORPHISM)
+    */
 nav {
-    background-color: #121212;
-    padding: 12px 20px;
-    border-radius: 6px;
-    border: 1px solid #262626;
-    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(18, 20, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  margin-bottom: 24px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 nav:hover {
-    border-color: rgba(224, 224, 224, 0.5);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
-nav a {
-    color: #888888;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+nav a, a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-nav a:hover {
-    color: #ffffff;
-    transform: translateY(-1px);
+nav a:hover, a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
 }
 
-/* ----------------------------------------------------------
-   5. LIÊN KẾT (LINKS)
-   ---------------------------------------------------------- */
-a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: inline-block;
+/* 
+   3. TIÊU ĐỀ METALLIC & ĐƯỜNG LASER SWEEP
+    */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 28px;
+  display: inline-block;
+  transition: all 0.4s ease;
 }
 
-a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    transform: translateY(-1px);
+h1:hover {
+  border-bottom-color: #ffffff;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
 }
 
-/* ----------------------------------------------------------
-   6. HÌNH ẢNH & THẺ CARD XE (VIDEO HOVER CỰC MƯỢT)
-   ---------------------------------------------------------- */
-img {
-    border-radius: 8px;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.95);
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease;
-    will-change: transform;
+h2 {
+  font-size: 1.45rem;
+  color: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding-left: 16px;
+  margin: 36px 0 18px;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-img:hover {
-    transform: scale(1.02) translateY(-4px);
-    border-color: #e0e0e0;
-    box-shadow: 0 15px 35px rgba(224, 224, 224, 0.25);
+h2:hover {
+  border-left-color: #ffffff;
+  transform: translateX(6px);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
 
-/* Thẻ Container phục vụ Video Preview Hover */
-.car-card {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border-radius: 8px;
-    border: 1px solid #2a2a2a;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.95);
-    margin: 20px 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease;
-    will-change: transform;
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #ffffff 50%, transparent 100%);
+  background-size: 200% 100%;
+  margin: 36px 0;
+  animation: laserSweep 6s infinite linear;
+  opacity: 0.6;
 }
 
-.car-card:hover {
-    transform: scale(1.02) translateY(-4px);
-    border-color: #e0e0e0;
-    box-shadow: 0 15px 35px rgba(224, 224, 224, 0.25);
+/* 
+   4. THẺ VIDEO & HÌNH ẢNH (HIỆU ỨNG PHÓNG NỔI VIP)
+    */
+video, .car-video, img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  margin: 20px 0;
+  background-color: #000;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.45s ease,
+              box-shadow 0.45s ease;
+  will-change: transform;
 }
 
-.car-img, 
-.car-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.4s ease;
+video:hover, .car-video:hover, img:hover {
+  transform: scale(1.02) translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
-.car-video {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.car-card:hover .car-video {
-    opacity: 1;
-}
-
-/* ----------------------------------------------------------
-   7. NÚT BẤM (METALLIC CHROME GLOW)
-   ---------------------------------------------------------- */
-button {
-    background: linear-gradient(135deg, #e0e0e0, #8a8a8a);
-    color: #050505;
-    border: none;
-    padding: 13px 30px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(224, 224, 224, 0.3);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Lớp quét ánh kim khi rê chuột */
-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-    transition: left 0.5s ease;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #ffffff, #c0c0c0);
-    color: #000000;
-    transform: translateY(-2px);
-    animation: i8ButtonGlow 1.8s infinite ease-in-out;
-}
-
-button:hover::before {
-    left: 100%;
-}
-
-button:active {
-    transform: translateY(0) scale(0.98);
-}
-
-/* ----------------------------------------------------------
-   8. DANH SÁCH & THÔNG SỐ
-   ---------------------------------------------------------- */
+/* 
+   5. DANH SÁCH THÔNG SỐ (CARD PHÓNG NỔI & TEXT GLOW)
+    */
 ul {
-    padding-left: 20px;
+  background: rgba(18, 20, 26, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px 24px 24px 46px;
+  margin: 20px 0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease;
+}
+
+ul:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.8);
 }
 
 li {
-    margin-bottom: 10px;
-    color: #b0b0b0;
-    transition: transform 0.25s ease, color 0.25s ease;
+  margin-bottom: 12px;
+  color: #94a3b8;
+  font-size: 1.02rem;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+li:last-child {
+  margin-bottom: 0;
 }
 
 li:hover {
-    transform: translateX(6px);
-    color: #ffffff;
+  transform: translateX(8px);
+  color: #ffffff;
 }
 
-p strong, li strong {
-    color: #ffffff;
-    transition: color 0.3s ease;
+li strong, p strong {
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
 li:hover strong {
-    color: #e0e0e0;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+/* 
+   6. NÚT BẤM PLATINUM (NẾU CÓ)
+    */
+button {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  color: #020617;
+  border: none;
+  padding: 14px 32px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+button:hover {
+  background: #ffffff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.35);
 }

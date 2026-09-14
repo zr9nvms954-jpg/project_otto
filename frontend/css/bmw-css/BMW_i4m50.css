@@ -1,211 +1,176 @@
 
-@keyframes i8PageEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.99);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+:root {
+    /* Bảng màu chuẩn siêu xe / xe điện hạng sang */
+    --bg-dark: #0a0c10;
+    --card-bg: rgba(18, 22, 32, 0.75);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-hover-border: rgba(0, 136, 255, 0.5);
+    --accent-blue: #0088ff;
+    --accent-cyan: #00d2ff;
+    --accent-glow: rgba(0, 136, 255, 0.2);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Ánh kim Sunset Gold phát sáng nhịp nhàng */
-@keyframes i8SunsetPulse {
-    0%, 100% {
-        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.35);
-        border-bottom-color: #e08b2d;
-    }
-    50% {
-        box-shadow: 0 6px 25px rgba(252, 163, 56, 0.7);
-        border-bottom-color: #fca338;
-    }
-}
-
-/* Dải sáng LED Sunset chạy qua đường kẻ ngang */
-@keyframes i8GoldSweep {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-
-/* Nút bấm thở ánh kim metallic */
-@keyframes i8ButtonGlow {
-    0%, 100% {
-        box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
-    }
-    50% {
-        box-shadow: 0 8px 30px rgba(252, 163, 56, 0.85);
-    }
-}
-
-/* ----------------------------------------------------------
-   1. TOÀN TRANG
-   ---------------------------------------------------------- */
-body {
-    background-color: #17191c;
-    color: #d2d6dc;
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.65;
+/* 
+   1. RESET & KHUNG BỐ CỤC (CĂN GIỮA, TRÁNH LỆCH TRỐNG MÀN HÌNH)
+    */
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 30px 50px;
-    animation: i8PageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    padding: 0;
 }
 
-/* ----------------------------------------------------------
-   2. CÁC TIÊU ĐỀ
-   ---------------------------------------------------------- */
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 136, 255, 0.08), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(0, 210, 255, 0.03), transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 25px 20px;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Khung bọc nội dung chính: Căn giữa tự động, chống trống bên phải */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 0 60px;
+}
+
+/* 
+   2. TIÊU ĐỀ (HEADINGS)
+    */
 h1 {
     font-size: 2.2rem;
+    font-weight: 700;
     color: #ffffff;
-    border-bottom: 3px solid #e08b2d;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    display: inline-block;
-    animation: i8SunsetPulse 3s infinite ease-in-out;
-    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent-blue);
+    box-shadow: 0 4px 20px -4px var(--accent-glow);
+    transition: all 0.4s var(--ease-luxury);
 }
 
-h1:hover {
-    text-shadow: 0 0 15px rgba(252, 163, 56, 0.6);
+h1::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 24px;
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-blue));
+    border-radius: 2px;
 }
 
 h2 {
-    font-size: 1.4rem;
-    color: #f3f4f6;
-    border-left: 4px solid #e08b2d;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #f1f5f9;
     padding-left: 14px;
-    margin-top: 35px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 3px solid var(--accent-cyan);
+    margin: 35px 0 20px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s var(--ease-luxury);
 }
 
 h2:hover {
-    padding-left: 20px;
-    border-left-color: #fca338;
-    text-shadow: 0 0 12px rgba(224, 139, 45, 0.5);
+    padding-left: 18px;
+    color: var(--accent-cyan);
 }
 
-/* ----------------------------------------------------------
-   3. ĐƯỜNG PHÂN CÁCH
-   ---------------------------------------------------------- */
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, #e08b2d 0%, #2a2e35 50%, transparent 100%);
-    background-size: 200% 100%;
-    margin: 35px 0;
-    animation: i8GoldSweep 6s infinite linear;
-}
-
-/* ----------------------------------------------------------
-   4. THANH HƯỚNG DẪN BREADCRUMB
-   ---------------------------------------------------------- */
+/* 
+   3. THANH ĐIỀU HƯỚNG (BREADCRUMB)
+    */
 nav {
-    background-color: #20242a;
+    background: rgba(18, 22, 32, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
     padding: 12px 20px;
-    border-radius: 6px;
-    border: 1px solid #2e343e;
-    transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-nav:hover {
-    border-color: rgba(224, 139, 45, 0.5);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
 }
 
 nav a {
-    color: #8b93a0;
+    color: var(--text-muted);
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #e08b2d;
-    transform: translateY(-1px);
+    color: var(--accent-cyan);
 }
 
-/* ----------------------------------------------------------
-   5. LIÊN KẾT (LINKS)
-   ---------------------------------------------------------- */
-a {
-    color: #e08b2d;
-    text-decoration: none;
+nav strong {
+    color: var(--text-primary);
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: inline-block;
 }
 
-a:hover {
-    color: #fca338;
-    text-shadow: 0 0 10px rgba(224, 139, 45, 0.6);
-    transform: translateY(-1px);
-}
-
-/* ----------------------------------------------------------
-   6. HÌNH ẢNH & THẺ CARD XE (VIDEO HOVER CỰC MƯỢT)
-   ---------------------------------------------------------- */
-img {
-    border-radius: 8px;
-    border: 1px solid #363d48;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease;
-    will-change: transform;
-}
-
-img:hover {
-    transform: scale(1.02) translateY(-4px);
-    border-color: #e08b2d;
-    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
-}
-
-/* Thẻ Container phục vụ Video Preview Hover */
+/* 
+   4. THẺ XE / VIDEO (SỬA LỖI TỈ LỆ KHUNG HÌNH CHUẨN 16:9)
+    */
 .car-card {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border-radius: 8px;
-    border: 1px solid #363d48;
+    max-width: 960px;          /* Độ rộng tối đa chuẩn điện ảnh */
+    aspect-ratio: 16 / 9;      /* Tỉ lệ vàng 16:9 - tự động co giãn không méo */
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    background-color: #000000;
     overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
-    margin: 20px 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease;
+    margin: 20px 0 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s var(--ease-luxury), 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
     will-change: transform;
 }
 
 .car-card:hover {
-    transform: scale(1.02) translateY(-4px);
-    border-color: #e08b2d;
-    box-shadow: 0 15px 35px rgba(224, 139, 45, 0.3);
+    transform: translateY(-4px);
+    border-color: var(--card-hover-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8),
+                0 0 30px var(--accent-glow);
+}
+
+/* Tự động tối ưu hình ảnh lẻ (img) */
+img {
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    margin: 20px 0;
+    transition: all 0.4s var(--ease-luxury);
+}
+
+img:hover {
+    border-color: var(--card-hover-border);
+    box-shadow: 0 0 25px var(--accent-glow);
 }
 
 .car-img, 
 .car-video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;        /* Luôn phủ kín khung mà không bị co giãn */
+    object-position: center;
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.5s ease, transform 0.7s var(--ease-luxury);
 }
 
 .car-video {
@@ -217,75 +182,65 @@ img:hover {
     opacity: 1;
 }
 
-/* ----------------------------------------------------------
-   7. NÚT BẤM (METALLIC GOLD GLOW)
-   ---------------------------------------------------------- */
-button {
-    background: linear-gradient(135deg, #e08b2d, #b86414);
-    color: #ffffff;
-    border: none;
-    padding: 13px 30px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(224, 139, 45, 0.4);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
+.car-card:hover .car-img,
+.car-card:hover .car-video {
+    transform: scale(1.03);
 }
 
-/* Lớp quét ánh kim khi rê chuột */
-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-    transition: left 0.5s ease;
+/* 
+   5. NÚT BẤM & NỘI DUNG NGHỆ THUẬT
+    */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(255, 255, 255, 0.05) 60%, transparent 100%);
+    margin: 30px 0;
+}
+
+button {
+    background: linear-gradient(135deg, #0088ff, #0055b8);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transition: all 0.3s var(--ease-luxury);
 }
 
 button:hover {
-    background: linear-gradient(135deg, #f59e38, #e08b2d);
+    background: linear-gradient(135deg, #0099ff, #0066d6);
     transform: translateY(-2px);
-    animation: i8ButtonGlow 1.8s infinite ease-in-out;
+    box-shadow: 0 8px 25px rgba(0, 136, 255, 0.4);
 }
 
-button:hover::before {
-    left: 100%;
-}
-
-button:active {
-    transform: translateY(0) scale(0.98);
-}
-
-/* ----------------------------------------------------------
-   8. DANH SÁCH & THÔNG SỐ
-   ---------------------------------------------------------- */
 ul {
     padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 li {
     margin-bottom: 10px;
-    color: #d2d6dc;
-    transition: transform 0.25s ease, color 0.25s ease;
+    color: var(--text-muted);
+    transition: color 0.25s ease;
+}
+
+li strong {
+    color: var(--text-primary);
 }
 
 li:hover {
-    transform: translateX(6px);
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
-p strong, li strong {
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-li:hover strong {
-    color: #fca338;
+/* RESPONSIVE MÀN HÌNH DI ĐỘNG */
+@media (max-width: 768px) {
+    body { padding: 15px; }
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.15rem; }
+    .car-card, img { aspect-ratio: 16 / 10; }
 }

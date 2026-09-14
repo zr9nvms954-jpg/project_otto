@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi RS7 Sportback - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi RS7.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/Audi RS7.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi RS7 Sportback</strong>
-        </p>
-    </nav>
+            <span>Audi RS7 Sportback</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi24.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">PERFORMANCE SPORTBACK</span>
+                    <h1>Audi RS7 Sportback</h1>
+                    <p>Sự kết hợp hoàn hảo giữa vẻ đẹp quyến rũ của dòng Sportback và sức mạnh siêu xe</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi RS7 Sportback</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi24.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi RS7 Sportback width="500">
-            <ul>
-                <li>Dạng Sportback vuốt mượt về phía sau kết hợp vòm bánh xe mở rộng hầm hố.</li>
-                <li>Lưới tản nhiệt Singleframe dạng tổ ong mở rộng, phủ sơn đen bóng đặc trưng RS.</li>
-                <li>Hệ thống đèn pha HD Matrix LED tích hợp công nghệ chiếu sáng Laser tiên tiến.</li>
-                <li>Bộ vành hợp kim 21-22 inch độc quyền đi kèm hệ thống phanh RS hiệu suất cao.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>10.500.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi5.png" alt="Động cơ Audi RS7 Sportback" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V8 4.0L Twin-Turbo tăng áp kép kết hợp Mild-Hybrid 48V.</li>
-                <li><strong>Công suất tối đa:</strong> 591 - 621 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 8 cấp Tiptronic, dẫn động 4 bánh toàn thời gian Quattro.</li>
-                <li><strong>Gia tốc & Tốc độ:</strong> Tăng tốc 0 - 100 km/h trong 3,4 giây, tốc độ tối đa 250 - 305 km/h.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi24.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> Sportback vuốt mượt, vòm bánh xe mở rộng.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Singleframe tổ ong sơn đen bóng RS.</li>
+                    <li><strong>Đèn pha:</strong> HD Matrix LED tích hợp công nghệ Laser.</li>
+                    <li><strong>Mâm & Phanh:</strong> Vành 21-22 inch, phanh RS hiệu suất cao.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/noithat_RS7.jpg" alt="Nội thất Audi RS7 Sportback" width="500">
-            <ul>
-                <li>Ghế thể thao RS bọc da Valcona cao cấp với họa tiết may hình tổ ong ôm sát cơ thể.</li>
-                <li>Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit tích hợp giao diện RS riêng biệt.</li>
-                <li>Vô-lăng đáy phẳng tích hợp lẫy chuyển số và nút chọn chế độ lái nhanh RS Mode.</li>
-                <li>Dàn âm thanh vòm cao cấp Bang & Olufsen 3D mang lại trải nghiệm sống động.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi5.png" alt="Động cơ Audi RS7 Sportback">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 4.0L Twin-Turbo & Mild-Hybrid 48V.</li>
+                    <li><strong>Công suất:</strong> 591 - 621 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 8 cấp Tiptronic, Quattro 4 bánh.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0-100 km/h trong 3,4s, max 305 km/h.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/noithat_RS7.jpg" alt="Nội thất Audi RS7 Sportback">
+                </div>
+                <ul>
+                    <li><strong>Ghế ngồi:</strong> Ghế thể thao RS da Valcona may họa tiết tổ ong.</li>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit giao diện RS riêng biệt.</li>
+                    <li><strong>Vô-lăng:</strong> Đáy phẳng tích hợp lẫy chuyển số & RS Mode.</li>
+                    <li><strong>Âm thanh:</strong> Bang & Olufsen 3D vòm cao cấp sống động.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>10.500.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="2020 Audi TT RS Coupe" 
+                    src="https://sketchfab.com/models/da27b14b346a4ada969bea4cece51423/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

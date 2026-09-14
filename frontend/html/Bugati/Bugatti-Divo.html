@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugatti Divo - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bugati-css/bugati_divo.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/bugati-css/bugati_divo.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
-            <strong>Bugatti Divo</strong>
-        </p>
-    </nav>
+    <div class="page-container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
+                <strong>Bugatti Divo</strong>
+            </p>
+        </nav>
 
-    <hr>
+        <hr>
 
-    <main>
-        <div>
+        <main>
             <h1>Bugatti Divo</h1>        
+            
             <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/bugatti-divo.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Bugatti Divo width="500">
+            <div class="media-box">
+                <video src="../../img/bugatti-divo.mp4" controls autoplay muted loop></video>
+            </div>
+
             <ul>
                 <li>Cánh gió sau cố định kích thước lớn hơn 23% so với Chiron, giúp tối ưu lực ép.</li>
                 <li>Cụm đèn hậu LED dạng vây 3D thiết kế phức tạp và ma mị nhất thế giới.</li>
@@ -32,7 +36,10 @@
             </ul>
 
             <h2>2. Động cơ & Vận hành</h2>
-            <img src="../../img/dongco-bugatti-divo.jpg" alt="Động cơ Bugatti Divo" width="500">
+            <div class="media-box">
+                <img src="../../img/dongco-bugatti-divo.jpg" alt="Động cơ Bugatti Divo">
+            </div>
+
             <ul>
                 <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo.</li>
                 <li><strong>Công suất tối đa:</strong> 1.500 mã lực.</li>
@@ -42,7 +49,10 @@
             </ul>
 
             <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/bugati/noithat/bugati8.png" alt="Nội thất Bugatti Divo" width="500">
+            <div class="media-box">
+                <img src="/img/bugati/noithat/bugati8.png" alt="Nội thất Bugatti Divo">
+            </div>
+
             <ul>
                 <li>Khoang cabin phối 2 tông màu tương phản nổi bật phủ da Alcantara cao cấp.</li>
                 <li>Ghế thể thao thiết kế ôm sát cơ thể với độ bám cực tốt khi ôm cua ở tốc độ cao.</li>
@@ -52,16 +62,15 @@
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <!-- Bộ nút hành động -->
+            <section class="cta-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
-                    <button type="button"><p>150.000.000.000 VNĐ</p></button>
+                    <button type="button" class="buy-btn">150.000.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

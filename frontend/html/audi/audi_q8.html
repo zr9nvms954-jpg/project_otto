@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi Q8 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/audi_q8.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/audi_q8.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi Q8</strong>
-        </p>
-    </nav>
+            <span>Audi Q8</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi22.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">COUPE SUV</span>
+                    <h1>Audi Q8</h1>
+                    <p>Mẫu SUV Coupe đầu bảng, biểu tượng của sức mạnh, phong cách và sự đẳng cấp</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi Q8</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi22.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi Q8 width="500">
-            <ul>
-                <li>Thiết kế SUV Coupe thể thao, khỏe khoắn với đường mái vuốt thấp dần về phía đuôi.</li>
-                <li>Lưới tản nhiệt Singleframe bát giác mở rộng cực kỳ uy nghi và hầm hố.</li>
-                <li>Cụm đèn pha HD Matrix LED đỉnh cao cùng dải đèn hậu LED thiết kế vắt ngang liền mạch.</li>
-                <li>Bộ mâm xe hợp kim thể thao kích thước lớn tô điểm thêm vẻ bề thế và cá tính.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>4.200.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi2.png" alt="Động cơ Audi Q8" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI kết hợp công nghệ Mild-Hybrid 48V.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 335 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 8 cấp Tiptronic, dẫn động 4 bánh toàn thời gian Quattro lừng danh.</li>
-                <li><strong>Cảm giác lái:</strong> Vận hành mạnh mẽ, êm ái vượt trội và duy trì độ ổn định cao ở dải tốc độ lớn.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi22.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> SUV Coupe thể thao, mái vuốt thấp hầm hố.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Singleframe bát giác mở rộng uy nghi.</li>
+                    <li><strong>Đèn chiếu sáng:</strong> HD Matrix LED & dải đèn hậu LED dải ngang.</li>
+                    <li><strong>Mâm xe:</strong> Hợp kim thể thao cỡ lớn bề thế.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/q8-noithat.jpg" alt="Nội thất Audi Q8" width="500">
-            <ul>
-                <li>Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit sắc nét.</li>
-                <li>Hệ thống điều khiển hai màn hình cảm ứng MMI phản hồi lực rung haptic cao cấp.</li>
-                <li>Ghế bọc da cao cấp chỉnh điện đa hướng kèm nhớ vị trí; điều hòa tự động nhiều vùng.</li>
-                <li>Dàn âm thanh vòm cao cấp kết hợp Apple CarPlay và Android Auto không dây.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi2.png" alt="Động cơ Audi Q8">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI & Mild-Hybrid 48V.</li>
+                    <li><strong>Công suất:</strong> Khoảng 335 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 8 cấp Tiptronic, Quattro 4 bánh.</li>
+                    <li><strong>Cảm giác lái:</strong> Vận hành mạnh mẽ, ổn định tốc độ cao.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/q8-noithat.jpg" alt="Nội thất Audi Q8">
+                </div>
+                <ul>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit kỹ thuật số sắc nét.</li>
+                    <li><strong>Màn hình:</strong> Cảm ứng MMI kép phản hồi haptic cao cấp.</li>
+                    <li><strong>Ghế ngồi:</strong> Da cao cấp chỉnh điện đa hướng nhớ vị trí.</li>
+                    <li><strong>Giải trí:</strong> Âm thanh vòm, Apple CarPlay & Android Auto.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>4.200.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="Audi Q8 2019" 
+                    src="https://sketchfab.com/models/0d7222ebe08b484ebdaebb74dd12bafb/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

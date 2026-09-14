@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi TT 20th Anniversary Edition - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi TT.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/Audi TT.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi TT 20th Anniversary Edition</strong>
-        </p>
-    </nav>
+            <span>Audi TT 20th Anniversary Edition</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi4.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">LIMITED EDITION</span>
+                    <h1>Audi TT 20th Anniversary Edition</h1>
+                    <p>Phiên bản kỷ niệm 20 năm, tái hiện đường nét thiết kế biểu tượng từ dòng Concept 1995</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi TT 20th Anniversary Edition</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi4.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi TT 20th Anniversary Edition width="500">
-            <ul>
-                <li>Lấy cảm hứng trực tiếp từ đường nét thiết kế huyền thoại của bản Concept năm 1995.</li>
-                <li>Bộ mâm xe hợp kim 19 inch thiết kế 5 chấu riêng biệt độc quyền.</li>
-                <li>Huy hiệu "20th Anniversary" độc quyền xuất hiện nổi bật ở chắn bùn trước và trong khoang lái.</li>
-                <li>Kiểu dáng xe thể thao Coupe/Roadster nhỏ gọn, mang đậm tính biểu tượng.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>4.500.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi6.png" alt="Động cơ Audi TT 20th Anniversary Edition" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng 4 xi-lanh, dung tích 2.0L tăng áp (TFSI).</li>
-                <li><strong>Công suất tối đa:</strong> 228 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp S-Tronic, dẫn động 4 bánh toàn thời gian Quattro.</li>
-                <li><strong>Gia tốc:</strong> Tăng tốc 0 - 96 km/h trong 5,2 giây (Coupe) hoặc 5,5 giây (Roadster).</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi4.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> Thể thao Coupe/Roadster nhỏ gọn biểu tượng.</li>
+                    <li><strong>Lấy cảm hứng:</strong> Bản Concept năm 1995 huyền thoại.</li>
+                    <li><strong>Mâm xe:</strong> Hợp kim 19 inch 5 chấu riêng biệt độc quyền.</li>
+                    <li><strong>Điểm nhấn:</strong> Huy hiệu "20th Anniversary" ở chắn bùn.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/noithat-TT.jpg" alt="Nội thất Audi TT 20th Anniversary Edition" width="500">
-            <ul>
-                <li>Nội thất bọc da màu nâu Moccasin Brown cao cấp với đường chỉ may hình quả trám màu vàng.</li>
-                <li>Màn hình buồng lái kỹ thuật số Audi Virtual Cockpit tối giản tập trung cho người lái.</li>
-                <li>Hệ thống MMI Navigation Plus, hỗ trợ kết nối không dây Apple CarPlay và Android Auto.</li>
-                <li>Trang bị gói Technology package tích hợp sạc điện thoại không dây hiện đại.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi6.png" alt="Động cơ Audi TT 20th Anniversary Edition">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng 4 xi-lanh 2.0L TFSI tăng áp.</li>
+                    <li><strong>Công suất:</strong> 228 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 7 cấp S-Tronic, Quattro 4 bánh.</li>
+                    <li><strong>Gia tốc:</strong> 0-96 km/h trong 5,2s (Coupe) / 5,5s (Roadster).</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/noithat-TT.jpg" alt="Nội thất Audi TT 20th Anniversary Edition">
+                </div>
+                <ul>
+                    <li><strong>Chất liệu:</strong> Da Moccasin Brown khâu quả trám vàng.</li>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit tập trung cho người lái.</li>
+                    <li><strong>Giải trí:</strong> MMI Navigation Plus, CarPlay & Android Auto.</li>
+                    <li><strong>Tiện ích:</strong> Gói Technology package tích hợp sạc không dây.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>4.500.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="2020 Audi TT RS Coupe" 
+                    src="https://sketchfab.com/models/da27b14b346a4ada969bea4cece51423/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

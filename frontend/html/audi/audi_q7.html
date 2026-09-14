@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi Q7 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/audi_q7.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/audi_q7.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi Q7</strong>
-        </p>
-    </nav>
+            <span>Audi Q7</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi21.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">FULL-SIZE SUV</span>
+                    <h1>Audi Q7</h1>
+                    <p>Mẫu SUV 7 chỗ hoàn hảo cho gia đình, uy nghi, tiện nghi và mạnh mẽ</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi Q7</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi21.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi Q7 width="500">
-            <ul>
-                <li>Kiểu dáng SUV cỡ lớn vững chãi, cơ bắp và tràn đầy vẻ uy nghiêm.</li>
-                <li>Lưới tản nhiệt Singleframe bát giác cỡ lớn với các thanh nan dọc mạ chrome sang trọng.</li>
-                <li>Hệ thống đèn pha HD Matrix LED đỉnh cao tối ưu hóa tầm nhìn ban đêm.</li>
-                <li>Bộ mâm xe hợp kim thể thao kích thước lớn cùng đường nét thân xe chắc chắn.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>3.500.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi1.png" alt="Động cơ Audi Q7" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI kết hợp công nghệ Mild-Hybrid 48V.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 335 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 8 cấp Tiptronic, dẫn động 4 bánh toàn thời gian Quattro lừng danh.</li>
-                <li><strong>Cảm giác lái:</strong> Vận hành cực kỳ mạnh mẽ, êm ái và ổn định trên mọi hành trình dài.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi21.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> SUV cỡ lớn vững chãi, uy nghi.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Singleframe bát giác mạ chrome sang trọng.</li>
+                    <li><strong>Đèn pha:</strong> HD Matrix LED tối ưu tầm nhìn đêm.</li>
+                    <li><strong>Mâm xe:</strong> Hợp kim thể thao kích thước lớn.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/q7-noithat.jpg" alt="Nội thất Audi Q7" width="500">
-            <ul>
-                <li>Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit sắc nét.</li>
-                <li>Hệ thống hai màn hình cảm ứng MMI cho phản hồi thao tác cực nhạy.</li>
-                <li>Cấu hình 7 chỗ linh hoạt, ghế bọc da cao cấp chỉnh điện đa hướng kèm nhớ vị trí.</li>
-                <li>Điều hòa tự động nhiều vùng độc lập, dàn âm thanh vòm đỉnh cao và cốp điện thông minh.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi1.png" alt="Động cơ Audi Q7">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI & Mild-Hybrid 48V.</li>
+                    <li><strong>Công suất:</strong> Khoảng 335 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 8 cấp Tiptronic, Quattro 4 bánh.</li>
+                    <li><strong>Cảm giác lái:</strong> Vận hành cực kỳ mạnh mẽ, êm ái.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/q7-noithat.jpg" alt="Nội thất Audi Q7">
+                </div>
+                <ul>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit kỹ thuật số.</li>
+                    <li><strong>Cấu hình:</strong> 7 chỗ linh hoạt, ghế da cao cấp nhớ vị trí.</li>
+                    <li><strong>Màn hình:</strong> Cảm ứng MMI kép phản hồi cực nhạy.</li>
+                    <li><strong>Tiện ích:</strong> Điều hòa đa vùng, âm thanh vòm, cốp điện.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>3.500.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="Audi Q7 2020" 
+                    src="https://sketchfab.com/models/a64dcf9b72414a8cbc94e4ac988e71dc/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugatti Centodieci - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bugati-css/bugati_cento.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/bugati-css/bugati_cento.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
-            <strong>Bugatti Centodieci</strong>
-        </p>
-    </nav>
+    <div class="page-container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
+                <strong>Bugatti Centodieci</strong>
+            </p>
+        </nav>
 
-    <hr>
+        <hr>
 
-    <main>
-        <div>
+        <main>
             <h1>Bugatti Centodieci</h1>        
+            
             <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/bugatti-centodieci.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Bugatti Centodieci width="500">
+            <div class="media-box">
+                <video src="../../img/bugatti-centodieci.mp4" controls autoplay muted loop></video>
+            </div>
+
             <ul>
                 <li>Lưới tản nhiệt móng ngựa thu nhỏ theo phong cách đặc trưng của huyền thoại EB110.</li>
                 <li>5 hốc gió hình tròn ở hai bên hông xe gợi nhớ trực tiếp đến thiết kế EB110 Super Sport.</li>
@@ -32,7 +36,10 @@
             </ul>
 
             <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/bugati/noithat/bugati5.png" alt="Động cơ Bugatti Centodieci" width="500">
+            <div class="media-box">
+                <img src="/img/bugati/noithat/bugati5.png" alt="Động cơ Bugatti Centodieci">
+            </div>
+
             <ul>
                 <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo được tinh chỉnh hiệu suất.</li>
                 <li><strong>Công suất tối đa:</strong> 1.600 mã lực.</li>
@@ -42,7 +49,10 @@
             </ul>
 
             <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="../../img/noithat-bugatti-centodieci.jpg" alt="Nội thất Bugatti Centodieci" width="500">
+            <div class="media-box">
+                <img src="../../img/noithat-bugatti-centodieci.jpg" alt="Nội thất Bugatti Centodieci">
+            </div>
+
             <ul>
                 <li>Nội thất khâu may thủ công theo họa tiết ô vuông đặc trưng mất hơn 16 tuần chế tác.</li>
                 <li>Logo Centodieci dập nổi tinh tế trên tựa đầu ghế và bệ trung tâm.</li>
@@ -52,16 +62,15 @@
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <!-- Bộ nút hành động -->
+            <section class="cta-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
-                    <button type="button"><p>230.000.000.000 VNĐ</p></button>
+                    <button type="button" class="buy-btn">230.000.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

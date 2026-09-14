@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi A5 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/audi_a5.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/audi_a5.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi A5</strong>
-        </p>
-    </nav>
+            <span>Audi A5</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi15.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">SPORTBACK COUPE</span>
+                    <h1>Audi A5</h1>
+                    <p>Thiết kế quyến rũ, vận hành đỉnh cao cùng công nghệ tiên phong</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi A5</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi15.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi A5 width="500">
-            <ul>
-                <li>Thiết kế Coupe thể thao cuốn hút với đường mái xe vuốt thấp mềm mại về phía sau.</li>
-                <li>Lưới tản nhiệt Singleframe đặc trưng rộng hơn và góc cạnh hơn.</li>
-                <li>Hệ thống đèn pha LED Matrix hiện đại cho khả năng chiếu sáng thông minh và tối ưu.</li>
-                <li>Mâm xe hợp kim thể thao đa chấu xẻ rãnh đầy cá tính.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>2.100.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi2.png" alt="Động cơ Audi A5" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng 2.0L TFSI tăng áp mạnh mẽ.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 245 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp S-Tronic, dẫn động 4 bánh toàn thời gian Quattro lừng danh.</li>
-                <li><strong>Cảm giác lái:</strong> Vận hành mạnh mẽ, ổn định ở tốc độ cao và cực kỳ linh hoạt.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi15.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> Coupe thể thao, mái vuốt thấp mềm mại.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Singleframe góc cạnh sắc sảo.</li>
+                    <li><strong>Đèn pha:</strong> LED Matrix chiếu sáng thông minh.</li>
+                    <li><strong>Mâm xe:</strong> Hợp kim đa chấu xẻ rãnh cá tính.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/a5-noithat.jpg" alt="Nội thất Audi A5" width="500">
-            <ul>
-                <li>Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit hiển thị sắc nét.</li>
-                <li>Màn hình giải trí MMI cảm ứng trung tâm hỗ trợ Apple CarPlay và Android Auto không dây.</li>
-                <li>Ghế bọc da cao cấp ôm sát lưng, thiết kế tối ưu sự thoải mái.</li>
-                <li>Hệ thống âm thanh cao cấp sống động mang lại trải nghiệm tuyệt vời.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi2.png" alt="Động cơ Audi A5">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng 2.0L TFSI tăng áp mạnh mẽ.</li>
+                    <li><strong>Công suất:</strong> Khoảng 245 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 7 cấp S-Tronic, Quattro 4 bánh.</li>
+                    <li><strong>Cảm giác lái:</strong> Vận hành đầm chắc, linh hoạt tốc độ cao.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/a5-noithat.jpg" alt="Nội thất Audi A5">
+                </div>
+                <ul>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit sắc nét.</li>
+                    <li><strong>Màn hình:</strong> MMI cảm ứng, Apple CarPlay & Android Auto.</li>
+                    <li><strong>Ghế ngồi:</strong> Bọc da cao cấp ôm sát lưng thoải mái.</li>
+                    <li><strong>Âm thanh:</strong> Hệ thống vòm sống động chân thực.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>2.100.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="2010 Audi A5 Sportback" 
+                    src="https://sketchfab.com/models/6cc9ad5e96454be29bcd9bac66aa5320/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari 812 Superfast - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_812.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_812.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-            <strong>Ferrari 812 Superfast</strong>
-        </p>
-    </nav>
+    <div class="page-container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
+                <strong>Ferrari 812 Superfast</strong>
+            </p>
+        </nav>
 
-    <hr>
+        <hr>
 
-    <main>
-        <div>
+        <main>
             <h1>Ferrari 812 Superfast</h1>        
+            
             <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/FERRA/ngoaithat/fre5.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Ferrari 812 Superfast width="500">
+            <div class="media-container">
+                <video src="/img/FERRA/ngoaithat/fre5.mp4" controls autoplay muted loop></video>
+            </div>
+
             <ul>
                 <li>Thiết kế Fastback hai khối mạnh mẽ với phần đuôi ngắn và đầu xe kéo dài quyến rũ.</li>
                 <li>Hốc gió chủ động phía trước tự động mở ở tốc độ cao để giảm lực cản không khí.</li>
@@ -31,7 +35,10 @@
             </ul>
 
             <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/FERRA/dongco/frera6.png" alt="Động cơ Ferrari 812 Superfast" width="500">
+            <div class="media-container">
+                <img src="/img/FERRA/dongco/frera6.png" alt="Động cơ Ferrari 812 Superfast">
+            </div>
+
             <ul>
                 <li><strong>Động cơ:</strong> V12 6.5L F140 GA hút khí tự nhiên (Naturally Aspirated).</li>
                 <li><strong>Công suất tối đa:</strong> 800 mã lực tại 8.500 vòng/phút.</li>
@@ -41,7 +48,10 @@
             </ul>
 
             <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/FERRA/noithat/Ferrari_Daytona_SP3_Vietnam.jpg" alt="Nội thất Ferrari 812 Superfast" width="500">
+            <div class="media-container">
+                <img src="/img/FERRA/noithat/Ferrari_Daytona_SP3_Vietnam.jpg" alt="Nội thất Ferrari 812 Superfast">
+            </div>
+
             <ul>
                 <li>Cabin bọc da Poltrona Frau kết hợp chi tiết sợi carbon cao cấp.</li>
                 <li>Màn hình đồng hồ kết hợp giữa đồng hồ vòng tua máy dạng cơ ở giữa và 2 màn hình TFT hai bên.</li>
@@ -50,16 +60,15 @@
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <!-- Bộ nút hành động -->
+            <section class="cta-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
-                    <button type="button"><p>27.000.000.000 VNĐ</p></button>
+                    <button type="button" class="buy-btn">27.000.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

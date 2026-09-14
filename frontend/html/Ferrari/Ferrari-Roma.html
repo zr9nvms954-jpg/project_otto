@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari Roma - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_roma.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_roma.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-            <strong>Ferrari Roma</strong>
-        </p>
-    </nav>
+    <div class="page-container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
+                <strong>Ferrari Roma</strong>
+            </p>
+        </nav>
 
-    <hr>
+        <hr>
 
-    <main>
-        <div>
+        <main>
             <h1>Ferrari Roma Coupe</h1>        
+            
             <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/FERRA/ngoaithat/" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Ferrari Roma Coupe width="500">
+            <div class="media-container">
+                <!-- Nhớ bổ sung thêm tên tệp video chuẩn vào đường dẫn bên dưới nhé (VD: roma.mp4 hoặc fre11.mp4) -->
+                <video src="/img/FERRA/ngoaithat/roma.mp4" controls autoplay muted loop></video>
+            </div>
+
             <ul>
                 <li>Thiết kế tối giản sang trọng lấy cảm hứng từ các dòng xe Grand Tourer thập niên 1960.</li>
                 <li>Lưới tản nhiệt đồng màu với thân xe tạo nét phá cách hiện đại.</li>
@@ -31,7 +36,10 @@
             </ul>
 
             <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/ferrari/ferrari_roma_dongco.jpg" alt="Động cơ Ferrari Roma" width="500">
+            <div class="media-container">
+                <img src="/img/ferrari/ferrari_roma_dongco.jpg" alt="Động cơ Ferrari Roma">
+            </div>
+
             <ul>
                 <li><strong>Động cơ:</strong> V8 3.9L Turbo tăng áp kép đặt trước-giữa.</li>
                 <li><strong>Công suất tối đa:</strong> 620 mã lực.</li>
@@ -41,7 +49,10 @@
             </ul>
 
             <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/ferrari/noithat_Roma.jpg" alt="Nội thất Ferrari Roma" width="500">
+            <div class="media-container">
+                <img src="/img/ferrari/noithat_Roma.jpg" alt="Nội thất Ferrari Roma">
+            </div>
+
             <ul>
                 <li>Nội thất thiết kế 2 khoang riêng biệt (Dual Cockpit) cho người lái và hành khách.</li>
                 <li>Màn hình trung tâm đặt dọc 8,4 inch tích hợp hệ thống giải trí đa phương tiện.</li>
@@ -50,16 +61,15 @@
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
+            <!-- Bộ nút hành động -->
+            <section class="cta-section">
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
                 <form>
-                    <button type="button"><p>15.700.000.000 VNĐ</p></button>
+                    <button type="button" class="buy-btn">15.700.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

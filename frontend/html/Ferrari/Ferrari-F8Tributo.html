@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari F8 Tributo - Chi Tiết Xe</title>
+    <!-- Đã chuyển thẻ link vào trong head -->
+    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_f8tributo.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_f8tributo.css">
 <body>
 
     <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
+    <nav aria-label="Breadcrumb">
         <p>
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
@@ -20,45 +21,55 @@
     <hr>
 
     <main>
-        <div>
+        <article>
             <h1>Ferrari F8 Tributo</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/FERRA/ngoaithat/fre7.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Ferrari F8 Tributo width="500">
-            <ul>
-                <li>Hệ thống ống S-Duct phía trước lấy cảm hứng từ F1 giúp tăng 15% lực ép xuống so với 488 GTB.</li>
-                <li>Nắp động cơ bằng kính Lexan có khe thoát nhiệt gợi nhớ đến mẫu xe kinh điển Ferrari F40.</li>
-                <li>Cụm đèn hậu đôi dạng tròn cổ điển quay trở lại trên thiết kế đuôi xe.</li>
-            </ul>
+            
+            <section>
+                <h2>1. Thiết kế & Ngoại thất</h2>
+                <!-- Sửa lỗi cú pháp video -->
+                <video width="500" controls autoplay muted loop aria-label="Video ngoại thất Ferrari F8 Tributo">
+                    <source src="/img/FERRA/ngoaithat/fre7.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+                <ul>
+                    <li>Hệ thống ống S-Duct phía trước lấy cảm hứng từ F1 giúp tăng 15% lực ép xuống so với 488 GTB.</li>
+                    <li>Nắp động cơ bằng kính Lexan có khe thoát nhiệt gợi nhớ đến mẫu xe kinh điển Ferrari F40.</li>
+                    <li>Cụm đèn hậu đôi dạng tròn cổ điển quay trở lại trên thiết kế đuôi xe.</li>
+                </ul>
+            </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari F8 Tributo" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V8 3.9L Twin-Turbo - Động cơ đoạt giải "Động cơ của năm" nhiều năm liên tiếp.</li>
-                <li><strong>Công suất tối đa:</strong> 720 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,9 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 340 km/h.</li>
-            </ul>
+            <section>
+                <h2>2. Động cơ & Vận hành</h2>
+                <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari F8 Tributo" width="500">
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 3.9L Twin-Turbo - Động cơ đoạt giải "Động cơ của năm" nhiều năm liên tiếp.</li>
+                    <li><strong>Công suất tối đa:</strong> 720 mã lực.</li>
+                    <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,9 giây.</li>
+                    <li><strong>Tốc độ tối đa:</strong> 340 km/h.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/FERRA/noithat/frera2.png" alt="Nội thất Ferrari F8 Tributo" width="500">
-            <ul>
-                <li>Bảng điều khiển thiết kế mới hoàn toàn tròn trịa và đậm chất thể thao.</li>
-                <li>Màn hình cảm ứng 7 inch phụ dành riêng cho hành khách phía trước.</li>
-                <li>Vô-lăng đường kính nhỏ hơn tích hợp núm xoay chuyển chế độ lái Manettino chuẩn đua.</li>
-            </ul>
+            <section>
+                <h2>3. Trang bị & Công nghệ nội thất</h2>
+                <img src="/img/FERRA/noithat/frera2.png" alt="Nội thất Ferrari F8 Tributo" width="500">
+                <ul>
+                    <li>Bảng điều khiển thiết kế mới hoàn toàn tròn trịa và đậm chất thể thao.</li>
+                    <li>Màn hình cảm ứng 7 inch phụ dành riêng cho hành khách phía trước.</li>
+                    <li>Vô-lăng đường kính nhỏ hơn tích hợp núm xoay chuyển chế độ lái Manettino chuẩn đua.</li>
+                </ul>
+            </section>
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
+            <!-- Bộ nút hành động và Tư vấn -->
             <section>
                 <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>19.200.000.000 VNĐ</p></button>
-                </form>
-                <br>
+                <div class="price-action">
+                    <button type="button" class="btn-price">19.200.000.000 VNĐ</button>
+                </div>
             </section>
-        </div>
+        </article>
     </main>
 
 </body>

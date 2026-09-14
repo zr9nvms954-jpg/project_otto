@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi A7 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/audi_a7.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/audi_a7.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi A7</strong>
-        </p>
-    </nav>
+            <span>Audi A7</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi17.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">SPORTBACK COUPE</span>
+                    <h1>Audi A7</h1>
+                    <p>Đột phá thiết kế Sportback, công nghệ tiên phong và trải nghiệm lái vượt trội</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi A7</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi17.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi A7 width="500">
-            <ul>
-                <li>Thiết kế Sportback 5 cửa thể thao với đường mái xe vuốt thấp mượt mà về phía sau.</li>
-                <li>Lưới tản nhiệt Singleframe mở rộng về bề ngang tạo cảm giác trọng tâm xe thấp và bề thế.</li>
-                <li>Cụm đèn pha HD Matrix LED tích hợp hiệu ứng dải ánh sáng chào mừng độc đáo.</li>
-                <li>Bộ mâm xe hợp kim thể thao kích thước lớn hoàn thiện phong cách sang trọng.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>3.200.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi4.png" alt="Động cơ Audi A7" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI kết hợp công nghệ Mild-Hybrid 48V.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 335 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp S-Tronic, dẫn động 4 bánh toàn thời gian Quattro lừng danh.</li>
-                <li><strong>Cảm giác lái:</strong> Tăng tốc mạnh mẽ, vận hành êm ái và ổn định ở dải tốc độ cao.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi17.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> Sportback 5 cửa thể thao, mái vuốt thấp.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Singleframe mở rộng bề ngang bề thế.</li>
+                    <li><strong>Đèn pha:</strong> HD Matrix LED kèm hiệu ứng chào mừng.</li>
+                    <li><strong>Mâm xe:</strong> Hợp kim thể thao kích thước lớn sang trọng.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/a7-noithat.jpg" alt="Nội thất Audi A7" width="500">
-            <ul>
-                <li>Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit hiển thị thông tin trực quan.</li>
-                <li>Hệ thống hai màn hình cảm ứng MMI phản hồi rung haptic hiện đại.</li>
-                <li>Ghế bọc da cao cấp chỉnh điện đa hướng cùng điều hòa tự động đa vùng độc lập.</li>
-                <li>Dàn âm thanh vòm cao cấp kết hợp Apple CarPlay và Android Auto không dây.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi4.png" alt="Động cơ Audi A7">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng V6 3.0L TFSI & Mild-Hybrid 48V.</li>
+                    <li><strong>Công suất:</strong> Khoảng 335 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 7 cấp S-Tronic, Quattro 4 bánh.</li>
+                    <li><strong>Cảm giác lái:</strong> Tăng tốc mạnh mẽ, vận hành êm ái.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/a7-noithat.jpg" alt="Nội thất Audi A7">
+                </div>
+                <ul>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit trực quan.</li>
+                    <li><strong>Màn hình:</strong> Cảm ứng MMI kép phản hồi rung haptic.</li>
+                    <li><strong>Ghế ngồi:</strong> Bọc da cao cấp chỉnh điện đa hướng.</li>
+                    <li><strong>Giải trí:</strong> Âm thanh vòm, Apple CarPlay & Android Auto.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>3.200.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="Audi A7 Sportback 2018 55 TFSI" 
+                    src="https://sketchfab.com/models/8a045bc6d5744992828026d7ff78c735/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

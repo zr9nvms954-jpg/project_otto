@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi R8 V10 Performance - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/Audi-R8.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/Audi-R8.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi R8 V10 Performance</strong>
-        </p>
-    </nav>
+            <span>Audi R8 V10 Performance</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi22.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">SUPERCAR</span>
+                    <h1>Audi R8 V10 Performance</h1>
+                    <p>Biểu tượng siêu xe thể thao đỉnh cao, uy lực động cơ V10 hút khí tự nhiên</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi R8 V10 Performance</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi22.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi R8 V10 Performance width="500">
-            <ul>
-                <li>Thân xe sử dụng công nghệ Audi Space Frame (ASF) kết hợp nhôm và sợi carbon siêu nhẹ.</li>
-                <li>Hệ thống đèn pha LED tích hợp công nghệ chiếu sáng Laser tối ưu tầm nhìn tốc độ cao.</li>
-                <li>Bộ vành hợp kim 20 inch thiết kế độc quyền tô điểm phong cách siêu xe thể thao.</li>
-                <li>Trang bị hệ thống phanh gốm carbon hiệu suất cao đảm bảo an toàn tối đa.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>12.000.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi3.png" alt="Động cơ Audi R8 V10 Performance" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V10 5.2L FSI Hút khí tự nhiên huyền thoại.</li>
-                <li><strong>Công suất tối đa:</strong> 602 - 610 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp S-Tronic, dẫn động 4 bánh toàn thời gian Quattro.</li>
-                <li><strong>Gia tốc & Tốc độ:</strong> Tăng tốc 0 - 100 km/h trong 3,2 giây, tốc độ tối đa 330 km/h.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi22.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Thân xe:</strong> Khung Audi Space Frame (ASF) nhôm & carbon.</li>
+                    <li><strong>Đèn pha:</strong> LED tích hợp công nghệ chiếu sáng Laser.</li>
+                    <li><strong>Mâm xe:</strong> Hợp kim 20 inch thiết kế độc quyền siêu xe.</li>
+                    <li><strong>Phanh:</strong> Hệ thống phanh gốm carbon hiệu suất cao.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/noithat_R8.jpg" alt="Nội thất Audi R8 V10 Performance" width="500">
-            <ul>
-                <li>Triết lý khoang lái Monoposto tập trung hoàn toàn vào người lái đậm chất đua xe.</li>
-                <li>Ghế đua ôm sát cơ thể được bọc da cao cấp chỉnh điện đa hướng.</li>
-                <li>Vô-lăng vát đáy phẳng tích hợp nút khởi động, lẫy chuyển số và Audi Drive Select.</li>
-                <li>Bảng đồng hồ kỹ thuật số sắc nét hiển thị đầy đủ thông số vận hành chuyên sâu.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi3.png" alt="Động cơ Audi R8 V10 Performance">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V10 5.2L FSI Hút khí tự nhiên huyền thoại.</li>
+                    <li><strong>Công suất:</strong> 602 - 610 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 7 cấp S-Tronic, Quattro 4 bánh.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0-100 km/h trong 3,2s, max 330 km/h.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/noithat_R8.jpg" alt="Nội thất Audi R8 V10 Performance">
+                </div>
+                <ul>
+                    <li><strong>Khoang lái:</strong> Monoposto tập trung hoàn toàn vào người lái.</li>
+                    <li><strong>Ghế ngồi:</strong> Ghế đua ôm sát cơ thể, bọc da cao cấp.</li>
+                    <li><strong>Vô-lăng:</strong> Vát đáy phẳng tích hợp Start/Stop & Drive Select.</li>
+                    <li><strong>Đồng hồ:</strong> Kỹ thuật số hiển thị thông số đua chuyên sâu.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>12.000.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="2023 Audi R8 Coupe V10 GT RWD" 
+                    src="https://sketchfab.com/models/0701d14ce550407f900df891316788f0/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>

@@ -4,64 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW X5 M - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_X5m.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/bmw-css/BMW_X5m.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-            <strong>BMW X5 M</strong>
-        </p>
-    </nav>
+    <div class="container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
+                <strong>BMW X5 M</strong>
+            </p>
+        </nav>
 
-    <hr>
-
-    <main>
-        <div>
+        <main>
             <h1>BMW X5 M Competition</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/bmw-x5m.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất BMW X5 M Competition width="500">
-            <ul>
-                <li>Cản trước hầm hố với khe hút gió mở rộng giúp tối ưu làm mát động cơ V8.</li>
-                <li>Lưới tản nhiệt M hình quả thận kép thanh ngang màu đen Shadowline.</li>
-                <li>Ốp gương khí động học M và cánh gió thể thao kéo dài ở phần đuôi mái.</li>
-                <li>Cụm xả kép M thể thao bố trí hai bên cản sau.</li>
-            </ul>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/BMW/dongco/bmw9.png" alt="Động cơ BMW X5 M Competition" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ V8 4.4L TwinPower Turbo kết hợp công nghệ Hybrid nhẹ 48V.</li>
-                <li><strong>Công suất tối đa:</strong> 617 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 8 cấp M Steptronic, hệ dẫn động M xDrive.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,9 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 290 km/h.</li>
-            </ul>
+            <section>
+                <h2>1. Thiết kế & Ngoại thất</h2>
+                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
+                <div class="car-card">
+                    <video class="car-video" src="../../img/bmw-x5m.jpg" controls autoplay muted loop></video>
+                </div>
+                <ul>
+                    <li>Cản trước hầm hố với khe hút gió mở rộng giúp tối ưu làm mát động cơ V8.</li>
+                    <li>Lưới tản nhiệt M hình quả thận kép thanh ngang màu đen Shadowline.</li>
+                    <li>Ốp gương khí động học M và cánh gió thể thao kéo dài ở phần đuôi mái.</li>
+                    <li>Cụm xả kép M thể thao bố trí hai bên cản sau.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/BMW/noithat/bmw4.png" alt="Nội thất BMW X5 M Competition" width="500">
-            <ul>
-                <li>Ghế bọc da Merino cao cấp ôm sát lưng, có chỉnh điện đa hướng và ghi nhớ vị trí.</li>
-                <li>Màn hình cong BMW Curved Display hiện đại hướng về phía người lái.</li>
-                <li>Cần số bọc da M dập nổi logo M phản quang rực rỡ.</li>
-                <li>Cửa sổ trời toàn cảnh Panorama Sky Lounge tích hợp hệ thống đèn LED hàng ngàn điểm sáng.</li>
-            </ul>
+            <section>
+                <h2>2. Động cơ & Vận hành</h2>
+                <img src="/img/BMW/dongco/bmw9.png" alt="Động cơ BMW X5 M Competition">
+                <ul>
+                    <li><strong>Động cơ:</strong> Động cơ V8 4.4L TwinPower Turbo kết hợp công nghệ Hybrid nhẹ 48V.</li>
+                    <li><strong>Công suất tối đa:</strong> 617 mã lực.</li>
+                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 8 cấp M Steptronic, hệ dẫn động M xDrive.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,9 giây.</li>
+                    <li><strong>Tốc độ tối đa:</strong> 290 km/h.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Trang bị & Công nghệ nội thất</h2>
+                <img src="/img/BMW/noithat/bmw4.png" alt="Nội thất BMW X5 M Competition">
+                <ul>
+                    <li>Ghế bọc da Merino cao cấp ôm sát lưng, có chỉnh điện đa hướng và ghi nhớ vị trí.</li>
+                    <li>Màn hình cong BMW Curved Display hiện đại hướng về phía người lái.</li>
+                    <li>Cần số bọc da M dập nổi logo M phản quang rực rỡ.</li>
+                    <li>Cửa sổ trời toàn cảnh Panorama Sky Lounge tích hợp hệ thống đèn LED hàng ngàn điểm sáng.</li>
+                </ul>
+            </section>
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
+            <!-- Bộ nút hành động -->
             <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
+                <h2>Liên Hệ Đặt Mua / Tư Vấn</h2>
                 <form>
-                    <button type="button"><p>6.900.000.000 VNĐ</p></button>
+                    <button type="button">6.900.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

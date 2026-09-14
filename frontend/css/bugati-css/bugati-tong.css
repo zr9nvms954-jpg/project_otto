@@ -1,16 +1,24 @@
-/* Custom variables cho theme sang trọng 3D */
+/* =========================================================
+   PALETTE XÁM KHÓI & HIỆU ỨNG 3D SPRING POP-OUT (BẬT NỔI RÕ RỆT)
+   ========================================================= */
 :root {
-    --bg-main: #06080c;
-    --card-bg: rgba(18, 22, 31, 0.65);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --accent-blue: #0066b1;
-    --accent-cyan: #00d4ff;
+    --bg-main: #08090b;
+    --card-bg: rgba(18, 21, 28, 0.85);
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-smoke: rgba(148, 163, 184, 0.4);
+    
+    --accent-silver: #f1f5f9;
+    --accent-smoke: #94a3b8;
+    
     --text-primary: #ffffff;
-    --text-secondary: #8a99ad;
+    --text-secondary: #828d9a;
+    
+    /* Nhịp nảy lò xo 3D (Spring Pop): Nhanh, mượt và có lực vọt rất rõ */
+    --spring-curve: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Reset chung toàn trang */
-* {
+/* Reset chung */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,8 +27,8 @@
 body {
     background-color: var(--bg-main);
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(0, 102, 177, 0.18) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 50% 0%, rgba(148, 163, 184, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(71, 85, 105, 0.08) 0%, transparent 40%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -31,23 +39,23 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px 50px 20px;
+    padding: 10px 20px 60px 20px;
 }
 
 /* =========================================================
-   LỘT XÁC THANH TRANG CHỦ / BREADCRUMB NỔI 3D GLASS
+   BREADCRUMB NỔI 3D GLASS
    ========================================================= */
 .breadcrumb {
-    background: rgba(15, 20, 30, 0.75);
+    background: var(--card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+    border: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-smoke);
     padding: 12px 24px;
     margin: 20px auto 30px auto;
     max-width: 1200px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -60,45 +68,42 @@ body {
     gap: 10px;
 }
 
-/* Nút bấm "Trang Chủ" dạng Badge phát sáng */
 .breadcrumb a {
-    color: #e1e7f0;
+    color: #d1d5db;
     text-decoration: none;
     padding: 5px 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
     border-radius: 8px;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s var(--spring-curve);
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-size: 0.85rem;
 }
 
-/* Đèn LED cyan nhấp nháy nhẹ trước nút Trang Chủ */
 .breadcrumb a::before {
     content: "";
     width: 6px;
     height: 6px;
-    background-color: var(--accent-cyan);
+    background-color: var(--accent-smoke);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-smoke);
 }
 
 .breadcrumb a:hover {
     color: #ffffff;
-    background: rgba(0, 102, 177, 0.35);
-    border-color: rgba(0, 212, 255, 0.6);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-    transform: translateY(-1px);
+    background: rgba(148, 163, 184, 0.15);
+    border-color: var(--accent-smoke);
+    box-shadow: 0 0 15px rgba(148, 163, 184, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Tag vị trí hiện tại "Thương Hiệu BMW" nổi bật 3D */
 .breadcrumb strong {
     color: #ffffff;
     font-weight: 500;
-    background: linear-gradient(135deg, rgba(0, 102, 177, 0.3), rgba(0, 212, 255, 0.15));
-    border: 1px solid rgba(0, 212, 255, 0.3);
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.35), rgba(148, 163, 184, 0.15));
+    border: 1px solid var(--border-smoke);
     padding: 5px 14px;
     border-radius: 8px;
     letter-spacing: 1px;
@@ -107,13 +112,12 @@ body {
 }
 
 /* =========================================================
-   HEADER TIÊU ĐỀ CHÍNH
+   HEADER TIÊU ĐỀ
    ========================================================= */
 .page-header {
     text-align: center;
     padding: 30px 20px 20px;
     margin-bottom: 35px;
-    position: relative;
 }
 
 .page-header::before {
@@ -122,14 +126,13 @@ body {
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 4px;
-    color: var(--accent-cyan);
-    background: rgba(0, 102, 177, 0.15);
-    border: 1px solid rgba(0, 212, 255, 0.25);
+    color: var(--accent-smoke);
+    background: rgba(148, 163, 184, 0.08);
+    border: 1px solid var(--border-smoke);
     padding: 5px 16px;
     border-radius: 20px;
     margin-bottom: 18px;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .page-header h1 {
@@ -138,7 +141,7 @@ body {
     letter-spacing: 6px;
     text-transform: uppercase;
     margin-bottom: 12px;
-    background: linear-gradient(180deg, #ffffff 30%, #a2b4c7 100%);
+    background: linear-gradient(180deg, #ffffff 35%, #828d9a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
@@ -158,20 +161,20 @@ body {
     content: "";
     display: block;
     width: 80px;
-    height: 2px;
+    height: 1px;
     margin: 25px auto 0;
-    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-    box-shadow: 0 0 10px var(--accent-cyan);
+    background: linear-gradient(90deg, transparent, var(--accent-smoke), transparent);
 }
 
 /* =========================================================
-   LƯỚI DẠNG 3D & THẺ XE
+   LƯỚI DẠNG 3D & THẺ XE (SPRING POP-OUT SYSTEM)
    ========================================================= */
 .car-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 36px;
     perspective: 1200px;
+    padding: 20px 10px; /* Tạo space để khi thẻ nhảy lên không bị khuất */
 }
 
 .car-card {
@@ -179,19 +182,27 @@ body {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: 16px;
-    padding: 12px;
-    border: 1px solid var(--card-border);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transform-style: preserve-3d;
+    padding: 14px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1; /* Mặc định nằm ở tầng dưới */
+    
+    /* Chuyển động lò xo nảy mượt mắt */
+    transition: transform 0.45s var(--spring-curve), 
+                box-shadow 0.45s var(--spring-curve), 
+                border-color 0.45s ease;
+    will-change: transform, box-shadow;
 }
 
+/* KHI HOVER: THẺ NỔI VƯỢT HẲN LÊN TRÊN & LAO VỀ PHÍA MẮT NGUỜI XEM */
 .car-card:hover {
-    transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
-    border-color: rgba(0, 212, 255, 0.35);
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6),
-                0 0 25px rgba(0, 102, 177, 0.25);
+    z-index: 50; /* ĐẨY LÊN TẦNG CAO NHẤT, ĐÈ LÊN TẤT CẢ CÁC THẺ KHÁC */
+    transform: translateY(-16px) scale(1.05) rotateX(2deg); /* Đẩy cao hẳn 16px + Phóng to 105% */
+    border-color: var(--border-smoke);
+    box-shadow: 
+        0 30px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 30px rgba(148, 163, 184, 0.25);
 }
 
 .car-link {
@@ -200,68 +211,65 @@ body {
     display: block;
 }
 
+/* Khung ảnh/video */
 .car-image {
     width: 100%;
-    height: 210px;
-    border-radius: 10px;
+    height: 220px;
+    border-radius: 12px;
     overflow: hidden;
     background-color: #000;
     position: relative;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
+/* Video / Ảnh bên trong xe */
 .car-image img,
 .car-image .hover-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform;
+    transition: transform 0.5s var(--spring-curve), filter 0.5s ease;
 }
 
+/* Hình ảnh/Video bên trong nảy vọt cực mạnh */
 .car-card:hover .car-image img,
 .car-card:hover .car-image .hover-video {
-    transform: scale(1.06);
+    transform: scale(1.22) translateY(-6px); /* Phóng to 122% cực đại */
+    filter: brightness(1.12) contrast(1.08);
 }
 
 .car-info {
-    padding: 16px 10px 8px 10px;
+    padding: 18px 10px 8px 10px;
     display: flex;
     flex-direction: column;
 }
 
 .car-name {
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 6px;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.4s var(--spring-curve);
 }
 
 .car-card:hover .car-name {
-    color: var(--accent-cyan);
+    color: var(--accent-silver);
+    transform: translateX(4px);
 }
 
 .car-price {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 400;
-}
-
-.page-footer {
-    text-align: center;
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 60px;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
     .car-grid {
-        gap: 20px;
+        gap: 24px;
     }
     .car-image {
         height: 190px;

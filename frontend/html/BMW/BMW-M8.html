@@ -4,64 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW M8 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m8.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m8.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-            <strong>BMW M8</strong>
-        </p>
-    </nav>
+    <div class="container">
+        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
+        <nav>
+            <p>
+                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
+                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
+                <strong>BMW M8</strong>
+            </p>
+        </nav>
 
-    <hr>
-
-    <main>
-        <div>
+        <main>
             <h1>BMW M8 Competition Coupe</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/BMW/ngoaithat/bmw9.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất BMW M8 Competition Coupe width="500">
-            <ul>
-                <li>Đường nét thiết kế thuôn dài, quyến rũ đặc trưng của dòng Grand Tourer.</li>
-                <li>Mui xe bằng sợi carbon uốn lượn tinh tế giúp hạ thấp trọng tâm xe.</li>
-                <li>Lưới tản nhiệt M khoác lớp sơn đen bóng Shadowline độc quyền.</li>
-                <li>Cụm đuôi xe bề thế với cụm đèn hậu LED mảnh và bộ khuếch tán gió phía dưới rộng bản.</li>
-            </ul>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/BMW/dongco/bmw8.png" alt="Động cơ BMW M8 Competition Coupe" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V8 4.4L TwinPower Turbo hiệu suất cực cao.</li>
-                <li><strong>Công suất tối đa:</strong> 617 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 8 cấp M Steptronic và hệ dẫn động M xDrive.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,2 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 305 km/h.</li>
-            </ul>
+            <section>
+                <h2>1. Thiết kế & Ngoại thất</h2>
+                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
+                <div class="car-card">
+                    <video class="car-video" src="/img/BMW/ngoaithat/bmw9.mp4" controls autoplay muted loop></video>
+                </div>
+                <ul>
+                    <li>Đường nét thiết kế thuôn dài, quyến rũ đặc trưng của dòng Grand Tourer.</li>
+                    <li>Mui xe bằng sợi carbon uốn lượn tinh tế giúp hạ thấp trọng tâm xe.</li>
+                    <li>Lưới tản nhiệt M khoác lớp sơn đen bóng Shadowline độc quyền.</li>
+                    <li>Cụm đuôi xe bề thế với cụm đèn hậu LED mảnh và bộ khuếch tán gió phía dưới rộng bản.</li>
+                </ul>
+            </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/BMW/noithat/bmw2.png" alt="Nội thất BMW M8 Competition Coupe" width="500">
-            <ul>
-                <li>Khoang lái thiết kế như chuyên cơ với da cao cấp và các chi tiết bằng sợi carbon.</li>
-                <li>Màn hình hiển thị đa thông tin sắc nét cùng giao diện M Mode tối ưu cho người lái.</li>
-                <li>Ghế M Sport thêu họa tiết hình thoi sang trọng kết hợp logo M8 phát sáng.</li>
-                <li>Hệ thống đóng mở cửa hít tự động và chìa khóa thông minh tích hợp màn hình BMW Display Key.</li>
-            </ul>
+            <section>
+                <h2>2. Động cơ & Vận hành</h2>
+                <img src="/img/BMW/dongco/bmw8.png" alt="Động cơ BMW M8 Competition Coupe">
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 4.4L TwinPower Turbo hiệu suất cực cao.</li>
+                    <li><strong>Công suất tối đa:</strong> 617 mã lực.</li>
+                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 8 cấp M Steptronic và hệ dẫn động M xDrive.</li>
+                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,2 giây.</li>
+                    <li><strong>Tốc độ tối đa:</strong> 305 km/h.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Trang bị & Công nghệ nội thất</h2>
+                <img src="/img/BMW/noithat/bmw2.png" alt="Nội thất BMW M8 Competition Coupe">
+                <ul>
+                    <li>Khoang lái thiết kế như chuyên cơ với da cao cấp và các chi tiết bằng sợi carbon.</li>
+                    <li>Màn hình hiển thị đa thông tin sắc nét cùng giao diện M Mode tối ưu cho người lái.</li>
+                    <li>Ghế M Sport thêu họa tiết hình thoi sang trọng kết hợp logo M8 phát sáng.</li>
+                    <li>Hệ thống đóng mở cửa hít tự động và chìa khóa thông minh tích hợp màn hình BMW Display Key.</li>
+                </ul>
+            </section>
 
             <hr>
 
-            <!-- Bộ nút hành động và Quay lại -->
+            <!-- Bộ nút hành động -->
             <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
+                <h2>Liên Hệ Đặt Mua / Tư Vấn</h2>
                 <form>
-                    <button type="button"><p>12.900.000.000 VNĐ</p></button>
+                    <button type="button">12.900.000.000 VNĐ</button>
                 </form>
-                <br>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

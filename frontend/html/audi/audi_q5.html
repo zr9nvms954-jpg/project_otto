@@ -4,62 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi Q5 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/audi-css/audi_q5.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/audi-css/audi_q5.css">
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
             <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
             <a href="audi-tong.html">Danh Sách Xe Audi</a> &gt; 
-            <strong>Audi Q5</strong>
-        </p>
-    </nav>
+            <span>Audi Q5</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/audi/ngoaithat/audi20.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">MID-SIZE SUV</span>
+                    <h1>Audi Q5</h1>
+                    <p>Sự cân bằng hoàn hảo giữa phong cách thể thao, sự đa dụng và công nghệ hiện đại</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Audi Q5</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="/img/audi/ngoaithat/audi20.mp4" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Audi Q5 width="500">
-            <ul>
-                <li>Thiết kế SUV thể thao, cơ bắp nhưng không kém phần thanh lịch.</li>
-                <li>Lưới tản nhiệt Singleframe đặc trưng dạng bát giác mang lại cái nhìn cá tính.</li>
-                <li>Cụm đèn pha Matrix LED hiện đại với khả năng chiếu sáng thông minh.</li>
-                <li>Bộ mâm xe hợp kim thể thao kích thước lớn cùng khoảng sáng gầm tối ưu.</li>
-            </ul>
+        <!-- 2. Action Bar (Giá & Nút Đặt Hàng) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>2.300.000.000 VNĐ</strong>
+            </div>
+            <button class="btn-cta" type="button">Liên Hệ Đặt Mua / Tư Vấn</button>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/audi/dongco/audi7.png" alt="Động cơ Audi Q5" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng 2.0L TFSI tăng áp kết hợp công nghệ Mild-Hybrid.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 249 mã lực (HP).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp S-Tronic, dẫn động 4 bánh toàn thời gian Quattro Ultra lừng danh.</li>
-                <li><strong>Cảm giác lái:</strong> Vận hành mạnh mẽ, ổn định, linh hoạt cả trong đô thị lẫn đường trường.</li>
-            </ul>
+        <!-- 3. Lưới Thông Số Xe (3 Cột) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/audi/ngoaithat/audi20.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li><strong>Kiểu dáng:</strong> SUV thể thao, cơ bắp và thanh lịch.</li>
+                    <li><strong>Lưới tản nhiệt:</strong> Singleframe bát giác đặc trưng cá tính.</li>
+                    <li><strong>Đèn pha:</strong> Matrix LED chiếu sáng thông minh.</li>
+                    <li><strong>Thân xe:</strong> Mâm hợp kim lớn, khoảng sáng gầm tối ưu.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/audi/q5-noithat.jpg" alt="Nội thất Audi Q5" width="500">
-            <ul>
-                <li>Bảng đồng hồ kỹ thuật số Audi Virtual Cockpit sắc nét.</li>
-                <li>Màn hình MMI cảm ứng trung tâm hỗ trợ kết nối không dây Apple CarPlay và Android Auto.</li>
-                <li>Ghế bọc da cao cấp chỉnh điện đa hướng kèm nhớ vị trí cùng khoang hành lý rộng rãi.</li>
-                <li>Dàn âm thanh cao cấp sống động đi cùng cốp sau đóng mở điện thông minh.</li>
-            </ul>
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/audi/dongco/audi7.png" alt="Động cơ Audi Q5">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng 2.0L TFSI tăng áp & Mild-Hybrid.</li>
+                    <li><strong>Công suất:</strong> Khoảng 249 mã lực (HP).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> 7 cấp S-Tronic, Quattro Ultra 4 bánh.</li>
+                    <li><strong>Cảm giác lái:</strong> Vận hành mạnh mẽ, ổn định, linh hoạt.</li>
+                </ul>
+            </article>
 
-            <hr>
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/audi/q5-noithat.jpg" alt="Nội thất Audi Q5">
+                </div>
+                <ul>
+                    <li><strong>Đồng hồ:</strong> Audi Virtual Cockpit kỹ thuật số sắc nét.</li>
+                    <li><strong>Màn hình:</strong> MMI cảm ứng, Apple CarPlay & Android Auto.</li>
+                    <li><strong>Ghế ngồi:</strong> Da cao cấp chỉnh điện nhớ vị trí.</li>
+                    <li><strong>Tiện ích:</strong> Âm thanh vòm sống động, cốp mở điện.</li>
+                </ul>
+            </article>
+        </section>
 
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>2.300.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+        <!-- 4. Khối Mô Hình 3D Interactive -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe 
+                    title="Audi Q5" 
+                    src="https://sketchfab.com/models/73734fc8804544719f557b5e89e712d3/embed?autostart=1"
+                    allowfullscreen 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    allow="autoplay; fullscreen; xr-spatial-tracking" 
+                    xr-spatial-tracking 
+                    execution-while-out-of-viewport 
+                    execution-while-not-rendered 
+                    web-share>
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>
