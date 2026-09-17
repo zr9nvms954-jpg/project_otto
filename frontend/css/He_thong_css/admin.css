@@ -1,26 +1,30 @@
-/* ==========================================================================
-   1. CORE STYLES & VARIABLES (AUTOMOTIVE TECH THEME)
-   ========================================================================== */
+/* 
+   1. KHAI BÁO BIẾN CẤU HÌNH (CSS Variables) & THIẾT LẬP CHUNG (Reset & Layout)
+    */
 :root {
+    /* Màu nền & Bo viền Futuristic */
     --bg-dark: #060913;
     --bg-card: rgba(13, 22, 41, 0.7);
     --border-color: rgba(0, 242, 254, 0.15);
     --border-glow: rgba(0, 242, 254, 0.4);
     
+    /* Bảng màu Neon/Cyberpunk */
     --primary-cyan: #00f2fe;
-    --primary-blue: #4facfe;
     --accent-purple: #7f00ff;
     --accent-pink: #e100ff;
     --accent-green: #00ff87;
     --accent-red: #ff0055;
     
+    /* Màu chữ */
     --text-main: #f1f5f9;
     --text-muted: #64748b;
     
+    /* Kích thước & Hiệu ứng chuyển động */
     --sidebar-width: 260px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Reset mặc định & Cài đặt phông chữ toàn trang */
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +32,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* Nền toàn trang với hiệu ứng dải màu Radial Gradient mờ */
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
@@ -39,25 +44,29 @@ body {
         radial-gradient(circle at 90% 80%, rgba(127, 0, 255, 0.06) 0%, transparent 40%);
 }
 
-/* Custom Scrollbar */
+/* Thanh cuộn (Scrollbar) tùy chỉnh chuẩn Cyberpunk */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-dark); }
 ::-webkit-scrollbar-thumb { background: rgba(0, 242, 254, 0.2); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--primary-cyan); }
 
-/* Futuristic Panel Base */
+/* 
+   2. KHUNG PANEL VÀ TIỆN ÍCH DÙNG CHUNG (Reusable Components & Utility Classes)
+    */
+/* Khung giao diện công nghệ Glassmorphism (Hiệu ứng kính mờ) */
 .tech-panel {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
     transition: var(--transition);
 }
 
+/* Viền phát sáng phía trên mỗi Panel */
 .tech-panel::before {
     content: '';
     position: absolute;
@@ -71,9 +80,32 @@ body {
     box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
 }
 
-/* ==========================================================================
-   2. SIDEBAR NAVIGATION
-   ========================================================================== */
+/* Các Class tiện ích đổi màu văn bản (Text Color Utilities) */
+.text-cyan { color: var(--primary-cyan); }
+.text-purple { color: var(--accent-purple); }
+.text-pink { color: var(--accent-pink); }
+.text-green { color: var(--accent-green); }
+.text-warning { color: #ffc107; }
+.text-muted { color: var(--text-muted); font-size: 11px; }
+
+/* Các Class dải màu nền cho Icon thống kê */
+.icon-cyan { background: rgba(0, 242, 254, 0.1); color: var(--primary-cyan); }
+.icon-purple { background: rgba(127, 0, 255, 0.1); color: var(--accent-purple); }
+.icon-green { background: rgba(0, 255, 135, 0.1); color: var(--accent-green); }
+.icon-pink { background: rgba(225, 0, 255, 0.1); color: var(--accent-pink); }
+
+/* Nút bấm không viền dùng cho Icon Thao tác */
+.btn-action {
+    background: transparent;
+    border: none;
+    color: var(--primary-cyan);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 
+   3. THANH DI CHUYỂN BÊN (Sidebar & Menu)
+    */
 .sidebar {
     width: var(--sidebar-width);
     background: rgba(8, 14, 28, 0.95);
@@ -87,11 +119,12 @@ body {
     height: 100vh;
 }
 
+/* Thương hiệu/Logo */
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 0 30px 0;
+    padding-bottom: 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -111,6 +144,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* Danh sách Menu */
 .nav-menu {
     list-style: none;
     margin-top: 20px;
@@ -139,11 +173,9 @@ body {
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.12);
 }
 
-.nav-item a i {
-    font-size: 18px;
-    width: 20px;
-}
+.nav-item a i { font-size: 18px; width: 20px; }
 
+/* Khối trạng thái hệ thống góc dưới Sidebar */
 .system-status-box {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -159,6 +191,20 @@ body {
     justify-content: space-between;
 }
 
+.status-active {
+    font-size: 13px;
+    color: var(--accent-green);
+    display: block;
+}
+
+.status-detail {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+/* Hiệu ứng chấm xanh lá chớp nháy (Pulse Dot) */
 .pulse-dot {
     width: 8px;
     height: 8px;
@@ -169,14 +215,13 @@ body {
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.7); }
+    0%, 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.7); }
     70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 255, 135, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0); }
 }
 
-/* ==========================================================================
-   3. MAIN CONTENT
-   ========================================================================== */
+/* 
+   4. NỘI DUNG CHÍNH (Main Layout, Header & Profile)
+    */
 .main-wrapper {
     margin-left: var(--sidebar-width);
     flex: 1;
@@ -186,7 +231,7 @@ body {
     gap: 25px;
 }
 
-/* Header Elements */
+/* Header & Ô tìm kiếm */
 header {
     display: flex;
     justify-content: space-between;
@@ -222,6 +267,7 @@ header {
     color: var(--text-muted);
 }
 
+/* Khối tài khoản & Nút thông báo */
 .user-profile {
     display: flex;
     align-items: center;
@@ -248,6 +294,7 @@ header {
     color: var(--primary-cyan);
 }
 
+/* Chấm đỏ thông báo */
 .badge {
     position: absolute;
     top: 2px;
@@ -274,9 +321,12 @@ header {
     box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
-/* ==========================================================================
-   4. METRICS / STATS CARDS
-   ========================================================================== */
+.user-name { font-weight: 700; font-size: 14px; }
+.user-role { font-size: 11px; color: var(--text-muted); }
+
+/* 
+   5. CÁC THẺ THỐNG KÊ (Metric / Stat Cards Grid)
+    */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -313,11 +363,6 @@ header {
     font-size: 18px;
 }
 
-.icon-cyan { background: rgba(0, 242, 254, 0.1); color: var(--primary-cyan); }
-.icon-purple { background: rgba(127, 0, 255, 0.1); color: var(--accent-purple); }
-.icon-green { background: rgba(0, 255, 135, 0.1); color: var(--accent-green); }
-.icon-pink { background: rgba(225, 0, 255, 0.1); color: var(--accent-pink); }
-
 .stat-value {
     font-family: 'Orbitron', sans-serif;
     font-size: 26px;
@@ -332,11 +377,11 @@ header {
 }
 
 .trend-up { color: var(--accent-green); }
-.trend-down { color: var(--accent-red); }
+.trend-down-alert { color: var(--accent-red); }
 
-/* ==========================================================================
-   5. CHARTS & LOGS
-   ========================================================================== */
+/* 
+   6. BIỂU ĐỒ VÀ NHẬT KÝ HOẠT ĐỘNG (Charts & Realtime Logs)
+    */
 .charts-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -346,9 +391,6 @@ header {
 .panel-header {
     padding: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .panel-title {
@@ -367,6 +409,7 @@ header {
     height: 300px;
 }
 
+/* Danh sách nhật ký hoạt động */
 .log-list {
     list-style: none;
     padding: 15px 20px;
@@ -387,9 +430,9 @@ header {
 .log-info { display: flex; align-items: center; gap: 10px; }
 .log-time { color: var(--text-muted); font-size: 11px; }
 
-/* ==========================================================================
-   6. DATA TABLE
-   ========================================================================== */
+/* 
+   7. BẢNG DỮ LIỆU VÀ NHÃN TRẠNG THÁI (Data Table & Status Badges)
+    */
 .table-panel { width: 100%; }
 
 .tech-table {
@@ -417,7 +460,7 @@ header {
 .tech-table tbody tr { transition: var(--transition); }
 .tech-table tbody tr:hover { background: rgba(0, 242, 254, 0.03); }
 
-/* Badges */
+/* Nhãn trạng thái tin đăng (Status Badges) */
 .status-tag {
     padding: 4px 10px;
     border-radius: 20px;
@@ -430,7 +473,9 @@ header {
 .status-warning { background: rgba(255, 200, 0, 0.15); color: #ffc107; border: 1px solid #ffc107; }
 .status-critical { background: rgba(255, 0, 85, 0.15); color: var(--accent-red); border: 1px solid var(--accent-red); }
 
-/* Responsive */
+/* 
+   8. DỰ PHÒNG THIẾT BỊ DI ĐỘNG (Responsive Breakpoints)
+    */
 @media (max-width: 1024px) {
     .charts-container { grid-template-columns: 1fr; }
 }

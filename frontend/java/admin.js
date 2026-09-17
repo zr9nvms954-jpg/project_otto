@@ -1,6 +1,6 @@
-/* ==========================================================================
+/* 
    AUTO-NEXUS - DASHBOARD INTERACTIVE ENGINE
-   ========================================================================== */
+    */
 
 document.addEventListener('DOMContentLoaded', () => {
     initChart();
@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initNotificationSystem();
 });
 
-/* ==========================================================================
+/* 
    1. BIỂU ĐỒ DOANH SỐ & TÌM KIẾM (CHART.JS)
-   ========================================================================== */
+    */
 let salesChart = null;
 
 function initChart() {
@@ -76,9 +76,9 @@ function initChart() {
     });
 }
 
-/* ==========================================================================
+/* 
    2. TÌM KIẾM KẾT QUẢ TRÊN BẢNG (LIVE SEARCH FILTER)
-   ========================================================================== */
+    */
 function initLiveSearch() {
     const searchInput = document.querySelector('.search-bar input');
     const tableRows = document.querySelectorAll('.tech-table tbody tr');
@@ -99,9 +99,9 @@ function initLiveSearch() {
     });
 }
 
-/* ==========================================================================
+/* 
    3. CHUYỂN ĐỔI TAB SIDEBAR & TRẠNG THÁI ACTIVE
-   ========================================================================== */
+    */
 function initSidebarNavigation() {
     const navItems = document.querySelectorAll('.nav-menu .nav-item');
 
@@ -114,9 +114,9 @@ function initSidebarNavigation() {
     });
 }
 
-/* ==========================================================================
+/* 
    4. MÔ PHỎNG HOẠT ĐỘNG NGƯỜI DÙNG THỜI GIAN THỰC (REALTIME FEED)
-   ========================================================================== */
+    */
 function initActivityFeedSimulation() {
     const logList = document.querySelector('.log-list');
     if (!logList) return;
@@ -161,9 +161,9 @@ function initActivityFeedSimulation() {
     }, 7000); // 7 giây thêm 1 hoạt động mới
 }
 
-/* ==========================================================================
+/* 
    5. XỬ LÝ THAO TÁC TRÊN BẢNG (DUYỆT TIN & THÂM ĐỊNH)
-   ========================================================================== */
+    */
 function initTableActions() {
     const editIcons = document.querySelectorAll('.tech-table tbody .fa-pen-to-square');
 
@@ -185,9 +185,9 @@ function initTableActions() {
     });
 }
 
-/* ==========================================================================
+/* 
    6. HỆ THỐNG THÔNG BÁO POPUP KHI CÓ THAO TÁC
-   ========================================================================== */
+    */
 function initNotificationSystem() {
     const bellIcon = document.querySelector('.action-icon .fa-bell');
     if (bellIcon) {
