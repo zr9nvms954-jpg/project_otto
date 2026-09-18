@@ -309,8 +309,10 @@ body {
     font-size: 0.95rem;
     resize: none;
     max-height: 120px;
-    height: 24px;
-    line-height: 24px;
+    height: 38px !important;        /* Tăng height từ 24px lên 38px để không bị đè chữ */
+    line-height: 1.4 !important;     /* Điều chỉnh khoảng cách dòng chuẩn */
+    padding: 6px 0 !important;       /* Căn lề vừa vặn với ô nhập */
+    box-sizing: border-box;
 }
 
 .chat-textarea::placeholder {
