@@ -392,6 +392,23 @@ body {
     color: #62656e;
     font-size: 11.5px;
 }
+/* ================= HIỆU ỨNG NÚT ADMIN ================= */
+.btn-admin {
+background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.btn-admin:hover {
+background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 255, 255, 0.1);
+}
 
 /* ================= RESPONSIVE DI ĐỘNG ================= */
 @media (max-width: 900px) {
