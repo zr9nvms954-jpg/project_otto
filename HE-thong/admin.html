@@ -1,242 +1,833 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUTO-NEXUS // Quản Lý Bán Xe Ô Tô</title>
+
+    <title>AUTO-NEXUS // Tài Khoản Khách Hàng</title>
+
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- External CSS -->
+
+    <!-- GIỮ NGUYÊN ĐƯỜNG DẪN CSS CỦA BẠN -->
     <link rel="stylesheet" href="/frontend/css/He_thong_css/admin.css">
-    <!-- Chart.js CDN -->
+
+    <!-- Giữ nguyên CDN cũ -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar">
-        <div>
-            <div class="brand">
-                <i class="fa-solid fa-car-tunnel"></i>
-                <span>AUTO-NEXUS</span>
-            </div>
+    <!-- =========================================================
+         NAVBAR
+         ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="navbar-container">
+
+            <!-- Logo -->
+            <a href="#" class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+
+                <span class="brand-text">
+                    AUTO-NEXUS
+                </span>
+
+            </a>
+
+
+            <!-- Menu -->
+            <nav class="main-nav">
+
+                <a href="./TRANG-CHU.html" class="nav-link">
+                    Trang chủ
+                </a>
+
+                <div class="car-menu">
             
-            <ul class="nav-menu">
-                <li class="nav-item active">
-                    <a href="#"><i class="fa-solid fa-chart-pie"></i> Tổng Quan</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"><i class="fa-solid fa-car-side"></i> Quản Lý Tin Bán Xe</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"><i class="fa-solid fa-users-gear"></i> Hoạt Động Khách Hàng</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"><i class="fa-solid fa-calendar-check"></i> Đặt Lịch Lái Thử</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"><i class="fa-solid fa-clipboard-check"></i> Thẩm Định & Giá Xe</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"><i class="fa-solid fa-sliders"></i> Cấu Hình Nền Tảng</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="system-status-box">
-            <div class="status-title">
-                <span>HỆ THỐNG GIAO DỊCH</span>
-                <div class="pulse-dot"></div>
-            </div>
-            <div style="font-size: 13px; font-weight: bold; color: var(--accent-green);">HOẠT ĐỘNG BÌNH THƯỜNG</div>
-            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">1,420 Xe đang giao dịch</div>
-        </div>
-    </aside>
-
-    <!-- ================= MAIN CONTENT ================= -->
-    <main class="main-wrapper">
-        
-        <!-- Header -->
-        <header>
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Tìm biển số, người bán, tên dòng xe...">
-            </div>
-
-            <div class="user-profile">
-                <div class="action-icon">
-                    <i class="fa-regular fa-bell"></i>
-                    <div class="badge"></div>
-                </div>
-                <div class="action-icon">
-                    <i class="fa-solid fa-car-battery"></i>
-                </div>
+                    <a href="#" class="nav-link car-menu-trigger">
+                        Xe
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
                 
-                <div class="avatar">
-                    <img src="https://i.pravatar.cc/100?img=33" alt="Admin Avatar">
-                    <div>
-                        <div style="font-weight: 700; font-size: 14px;">Minh Tuấn (Quản lý)</div>
-                        <div style="font-size: 11px; color: var(--text-muted);">Senior Auto Manager</div>
+                    <div class="car-dropdown">
+                
+                        <a href="/frontend/html/BMW/BMW-tong.html">
+                            <i class="fa-solid fa-car-side"></i>
+                            BMW
+                        </a>
+                
+                        <a href="/frontend/html/Bugati/Bugati-tong.html">
+                            <i class="fa-solid fa-car-side"></i>
+                            Bugatti
+                        </a>
+                
+                        <a href="/frontend/html/audi/audi-tong.html">
+                            <i class="fa-solid fa-car-side"></i>
+                            Audi
+                        </a>
+                
+                        <a href="/frontend/html/Lambor/Lambor-tong.html">
+                            <i class="fa-solid fa-car-side"></i>
+                            lamborghini
+                        </a>
+                
+                        <a href="#">
+                            <i class="fa-solid fa-car-side"></i>
+                            Mercedes-Benz
+                        </a>
+                
+                        <a href="/frontend/html/Ferrari/Ferrari-tong.html">
+                            <i class="fa-solid fa-car-side"></i>
+                            ferrari
+                        </a>
+                
                     </div>
+                
                 </div>
-            </div>
-        </header>
 
-        <!-- Metric Cards -->
-        <section class="metrics-grid">
-            <div class="tech-panel stat-card">
-                <div class="stat-header">
-                    <span class="stat-title">Tin Đăng Bán Xe Mới</span>
-                    <div class="stat-icon icon-cyan"><i class="fa-solid fa-car"></i></div>
-                </div>
-                <div class="stat-value">3,420</div>
-                <div class="stat-trend trend-up">
-                    <i class="fa-solid fa-arrow-trend-up"></i> +12.5% tuần này
-                </div>
-            </div>
+                <a href="#" class="nav-link">
+                    Đặt lịch lái thử
+                </a>
 
-            <div class="tech-panel stat-card">
-                <div class="stat-header">
-                    <span class="stat-title">Yêu Cầu Lái Thử</span>
-                    <div class="stat-icon icon-purple"><i class="fa-solid fa-key"></i></div>
-                </div>
-                <div class="stat-value">856</div>
-                <div class="stat-trend trend-up">
-                    <i class="fa-solid fa-arrow-trend-up"></i> +18.2% lượt đặt
-                </div>
-            </div>
+                <a href="#" class="nav-link">
+                    Liên hệ
+                </a>
 
-            <div class="tech-panel stat-card">
-                <div class="stat-header">
-                    <span class="stat-title">Doanh Số Giao Dịch</span>
-                    <div class="stat-icon icon-green"><i class="fa-solid fa-sack-dollar"></i></div>
-                </div>
-                <div class="stat-value">128.5 Tỷ</div>
-                <div class="stat-trend trend-up">
-                    <i class="fa-solid fa-arrow-trend-up"></i> +9.4% so với tháng trước
-                </div>
-            </div>
+            </nav>
 
-            <div class="tech-panel stat-card">
-                <div class="stat-header">
-                    <span class="stat-title">Yêu Cầu Thẩm Định</span>
-                    <div class="stat-icon icon-pink"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                </div>
-                <div class="stat-value">42</div>
-                <div class="stat-trend trend-down" style="color: var(--accent-red);">
-                    <i class="fa-solid fa-clock"></i> 12 hồ sơ chờ duyệt
-                </div>
-            </div>
-        </section>
 
-        <!-- Charts Grid -->
-        <section class="charts-container">
-            <!-- Line Chart Container -->
-            <div class="tech-panel">
-                <div class="panel-header">
-                    <div class="panel-title">
-                        <i class="fa-solid fa-chart-line" style="color: var(--primary-cyan);"></i>
-                        XU HƯỚNG TÌM KIẾM & ĐẶT LỊCH LÁI THỬ (THEO THÁNG)
+            <!-- Account -->
+            <div class="nav-account">
+
+                <button class="notification-button" type="button" id="notificationButton">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                <div class="account-mini">
+
+                    <div class="account-mini-avatar">
+                        <i class="fa-regular fa-user"></i>
                     </div>
-                </div>
-                <div class="chart-body">
-                    <canvas id="carSalesChart"></canvas>
-                </div>
-            </div>
 
-            <!-- User Live Activity Log -->
-            <div class="tech-panel">
-                <div class="panel-header">
-                    <div class="panel-title">
-                        <i class="fa-solid fa-bolt" style="color: var(--accent-purple);"></i>
-                        HOẠT ĐỘNG NGƯỜI DÙNG REALTIME
+                    <div class="account-mini-info">
+
+                        <span class="account-mini-name">
+                            Tài khoản
+                        </span>
+
+                        <span class="account-mini-role">
+                            Khách hàng
+                        </span>
+
                     </div>
-                </div>
-                <ul class="log-list">
-                    <li class="log-item">
-                        <div class="log-info">
-                            <i class="fa-solid fa-calendar-check" style="color: var(--accent-green);"></i>
-                            <span><b>Nguyễn Văn A</b> vừa đặt lịch lái thử <b>VF8</b></span>
-                        </div>
-                        <span class="log-time">2 phút trước</span>
-                    </li>
-                    <li class="log-item">
-                        <div class="log-info">
-                            <i class="fa-solid fa-square-plus" style="color: var(--primary-cyan);"></i>
-                            <span><b>Trần Thị B</b> đăng bán <b>Toyota Camry 2022</b></span>
-                        </div>
-                        <span class="log-time">10 phút trước</span>
-                    </li>
-                    <li class="log-item">
-                        <div class="log-info">
-                            <i class="fa-solid fa-comments-dollar" style="color: #ffc107;"></i>
-                            <span><b>Lê Văn C</b> thương lượng giá <b>Ford Ranger</b></span>
-                        </div>
-                        <span class="log-time">25 phút trước</span>
-                    </li>
-                    <li class="log-item">
-                        <div class="log-info">
-                            <i class="fa-solid fa-shield-halved" style="color: var(--accent-pink);"></i>
-                            <span><b>Hoàng D</b> đăng ký gói bài đăng VIP xe Lux A</span>
-                        </div>
-                        <span class="log-time">1 giờ trước</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
 
-        <!-- Data Table: Car Listings & User Actions -->
-        <section class="tech-panel table-panel">
-            <div class="panel-header">
-                <div class="panel-title">
-                    <i class="fa-solid fa-list-check" style="color: var(--accent-pink);"></i>
-                    DANH SÁCH TIN ĐĂNG & QUẢN LÝ HOẠT ĐỘNG GIAO DỊCH
                 </div>
+
             </div>
-            <table class="tech-table">
-                <thead>
-                    <tr>
-                        <th>Khách Hàng / Chủ Xe</th>
-                        <th>Hành Động</th>
-                        <th>Mẫu Xe / Đời Xe</th>
-                        <th>Giá Niêm Yết</th>
-                        <th>Trạng Thái Tin</th>
-                        <th>Thao Tác</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Phạm Quốc Bảo</strong><br><small style="color: var(--text-muted)">ID: US-9921</small></td>
-                        <td>Đăng tin bán xe</td>
-                        <td><span style="color: var(--primary-cyan)">VinFast VF9 (2023)</span></td>
-                        <td>1.250.000.000 ₫</td>
-                        <td><span class="status-tag status-online">Đã Duyệt</span></td>
-                        <td><i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary-cyan);"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Đặng Thùy Trang</strong><br><small style="color: var(--text-muted)">ID: US-4812</small></td>
-                        <td>Hẹn lái thử tại Showroom</td>
-                        <td><span style="color: var(--primary-cyan)">Mazda CX-5 (2024)</span></td>
-                        <td>830.000.000 ₫</td>
-                        <td><span class="status-tag status-warning">Chờ Xác Nhận</span></td>
-                        <td><i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary-cyan);"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Vũ Đình Trọng</strong><br><small style="color: var(--text-muted)">ID: US-7103</small></td>
-                        <td>Yêu cầu kiểm định kĩ thuật</td>
-                        <td><span style="color: var(--primary-cyan)">Mercedes-Benz C200</span></td>
-                        <td>1.180.000.000 ₫</td>
-                        <td><span class="status-tag status-critical">Cần Kiểm Tra</span></td>
-                        <td><i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary-cyan);"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <main class="account-page">
+
+        <div class="page-container">
+
+
+            <!-- PAGE TITLE -->
+
+            <section class="page-title">
+
+                <div>
+
+                    <span class="page-kicker">
+                        CUSTOMER ACCOUNT
+                    </span>
+
+                    <h1>
+                        Tài khoản của tôi
+                    </h1>
+
+                    <p>
+                        Quản lý thông tin cá nhân, xe đã đặt,
+                        lịch sử đặt cọc và danh sách xe yêu thích.
+                    </p>
+
+                </div>
+
+
+                <a href="#" class="back-to-cars">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Tiếp tục xem xe
+
+                </a>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACCOUNT AREA
+                 ================================================= -->
+
+            <section class="account-layout">
+
+
+                <!-- =================================================
+                     SIDEBAR
+                     ================================================= -->
+
+                <aside class="account-sidebar">
+
+                    <div class="sidebar-menu">
+
+
+                        <!-- Thông tin cá nhân -->
+
+                        <button type="button" class="sidebar-item active" data-target="profile">
+
+                            <span class="sidebar-icon">
+                                <i class="fa-regular fa-user"></i>
+                            </span>
+
+                            <span>
+                                Thông tin cá nhân
+                            </span>
+
+                        </button>
+
+
+                        <!-- Lịch sử đặt cọc -->
+
+                        <button type="button" class="sidebar-item" data-target="deposits">
+
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-receipt"></i>
+                            </span>
+
+                            <span>
+                                Lịch sử đặt cọc
+                            </span>
+
+                        </button>
+
+
+                        <!-- Xe đã đặt -->
+
+                        <button type="button" class="sidebar-item" data-target="ordered-cars">
+
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-car"></i>
+                            </span>
+
+                            <span>
+                                Xe đã đặt
+                            </span>
+
+                        </button>
+
+
+                        <!-- Xe yêu thích -->
+
+                        <button type="button" class="sidebar-item" data-target="favorites">
+
+                            <span class="sidebar-icon">
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+
+                            <span>
+                                Xe yêu thích
+                            </span>
+
+                        </button>
+
+
+                        <!-- Bảo mật -->
+
+                        <button type="button" class="sidebar-item" data-target="security">
+
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+
+                            <span>
+                                Bảo mật
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="sidebar-bottom">
+
+                        <a href="#" class="continue-shopping">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                            Tiếp tục xem xe
+
+                        </a>
+
+                    </div>
+
+                </aside>
+
+
+
+                <!-- =================================================
+                     CONTENT
+                     ================================================= -->
+
+                <section class="account-content">
+
+
+                    <!-- =================================================
+                         PROFILE
+                         ================================================= -->
+
+                    <div class="account-panel active" data-panel="profile">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    PROFILE
+                                </span>
+
+                                <h2>
+                                    Thông tin cá nhân
+                                </h2>
+
+                                <p>
+                                    Cập nhật những thông tin cơ bản
+                                    của tài khoản khách hàng.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="profileForm" class="profile-form">
+
+
+                            <div class="form-grid">
+
+
+                                <!-- Họ tên -->
+
+                                <div class="form-group">
+
+                                    <label for="fullName">
+                                        Họ và tên
+                                    </label>
+
+                                    <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên">
+
+                                </div>
+
+
+                                <!-- Email -->
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email
+                                    </label>
+
+                                    <input type="email" id="email" name="email" placeholder="Email" readonly>
+
+                                </div>
+
+
+                                <!-- Số điện thoại -->
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+                                        Số điện thoại
+                                    </label>
+
+                                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+
+                                </div>
+
+
+                                <!-- Ngày đăng ký -->
+
+                                <div class="form-group">
+
+                                    <label for="createdAt">
+                                        Ngày tham gia
+                                    </label>
+
+                                    <input type="text" id="createdAt" name="createdAt" placeholder="Backend sẽ cung cấp"
+                                        readonly>
+
+                                </div>
+
+
+                                <!-- Địa chỉ -->
+
+                                <div class="form-group full-width">
+
+                                    <label for="address">
+                                        Địa chỉ
+                                    </label>
+
+                                    <input type="text" id="address" name="address" placeholder="Nhập địa chỉ">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-actions">
+
+                                <button type="submit" class="primary-button">
+
+                                    <i class="fa-solid fa-floppy-disk"></i>
+
+                                    Lưu thay đổi
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         DEPOSITS
+                         ================================================= -->
+
+                    <div class="account-panel" data-panel="deposits">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    DEPOSIT HISTORY
+                                </span>
+
+                                <h2>
+                                    Lịch sử đặt cọc
+                                </h2>
+
+                                <p>
+                                    Theo dõi toàn bộ lịch sử đặt cọc xe
+                                    của khách hàng.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="empty-data">
+
+                            <div class="empty-data-icon">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+
+                            <h3>
+                                Chưa có dữ liệu đặt cọc
+                            </h3>
+
+                            <p>
+                                Dữ liệu sẽ được backend lấy từ
+                                cơ sở dữ liệu khách hàng.
+                            </p>
+
+                        </div>
+
+
+                        <!--
+                            BACKEND:
+                            Sau này render lịch sử đặt cọc vào tbody này.
+                        -->
+
+                        <div class="table-wrapper">
+
+                            <table class="customer-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Mã đặt cọc
+                                        </th>
+
+                                        <th>
+                                            Xe
+                                        </th>
+
+                                        <th>
+                                            Ngày đặt
+                                        </th>
+
+                                        <th>
+                                            Số tiền
+                                        </th>
+
+                                        <th>
+                                            Trạng thái
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="depositTableBody">
+
+                                    <!-- BACKEND DATA -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         ORDERED CARS
+                         ================================================= -->
+
+                    <div class="account-panel" data-panel="ordered-cars">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    ORDERED CARS
+                                </span>
+
+                                <h2>
+                                    Xe đã đặt
+                                </h2>
+
+                                <p>
+                                    Theo dõi trạng thái của xe
+                                    mà khách hàng đã đặt.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="empty-data">
+
+                            <div class="empty-data-icon">
+                                <i class="fa-solid fa-car-side"></i>
+                            </div>
+
+                            <h3>
+                                Chưa có xe đã đặt
+                            </h3>
+
+                            <p>
+                                Sau khi khách hàng đặt xe,
+                                trạng thái xe sẽ xuất hiện tại đây.
+                            </p>
+
+                        </div>
+
+
+                        <!--
+                            BACKEND:
+                            Render danh sách xe đã đặt tại đây.
+                        -->
+
+                        <div id="orderedCarsContainer" class="ordered-cars-container">
+
+                            <!-- BACKEND DATA -->
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         FAVORITES
+                         ================================================= -->
+
+                    <div class="account-panel" data-panel="favorites">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    FAVORITES
+                                </span>
+
+                                <h2>
+                                    Xe yêu thích
+                                </h2>
+
+                                <p>
+                                    Danh sách những mẫu xe
+                                    khách hàng đã lưu.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="empty-data">
+
+                            <div class="empty-data-icon">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+
+                            <h3>
+                                Chưa có xe yêu thích
+                            </h3>
+
+                            <p>
+                                Những mẫu xe khách hàng yêu thích
+                                sẽ được hiển thị tại đây.
+                            </p>
+
+
+                            <a href="#" class="secondary-button">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Xem danh sách xe
+
+                            </a>
+
+                        </div>
+
+
+                        <!--
+                            BACKEND:
+                            Render danh sách xe yêu thích tại đây.
+                        -->
+
+                        <div id="favoriteCarsContainer" class="favorite-cars-container">
+
+                            <!-- BACKEND DATA -->
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         SECURITY
+                         ================================================= -->
+
+                    <div class="account-panel" data-panel="security">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    SECURITY
+                                </span>
+
+                                <h2>
+                                    Bảo mật tài khoản
+                                </h2>
+
+                                <p>
+                                    Thay đổi mật khẩu để bảo vệ
+                                    tài khoản khách hàng.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="passwordForm" class="password-form">
+
+
+                            <div class="form-group">
+
+                                <label for="currentPassword">
+                                    Mật khẩu hiện tại
+                                </label>
+
+                                <input type="password" id="currentPassword" name="currentPassword"
+                                    placeholder="Nhập mật khẩu hiện tại">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="newPassword">
+                                    Mật khẩu mới
+                                </label>
+
+                                <input type="password" id="newPassword" name="newPassword"
+                                    placeholder="Nhập mật khẩu mới">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="confirmPassword">
+                                    Xác nhận mật khẩu mới
+                                </label>
+
+                                <input type="password" id="confirmPassword" name="confirmPassword"
+                                    placeholder="Nhập lại mật khẩu mới">
+
+                            </div>
+
+
+                            <div class="password-note">
+
+                                <i class="fa-solid fa-circle-info"></i>
+
+                                <span>
+                                    Phần xử lý đổi mật khẩu hiện để trống
+                                    để backend kết nối API sau.
+                                </span>
+
+                            </div>
+
+
+                            <div class="form-actions">
+
+                                <button type="submit" class="primary-button">
+
+                                    <i class="fa-solid fa-key"></i>
+
+                                    Đổi mật khẩu
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </div>
 
     </main>
 
-    <!-- External JavaScript File -->
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand">
+
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+
+                    <span class="brand-text">
+                        AUTO-NEXUS
+                    </span>
+
+                </div>
+
+                <p>
+                    Nền tảng mua bán và trải nghiệm xe.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Trang chủ
+                </a>
+
+                <a href="#">
+                    Xe
+                </a>
+
+                <a href="#">
+                    Lái thử
+                </a>
+
+                <a href="#">
+                    Liên hệ
+                </a>
+
+            </div>
+
+
+            <div class="footer-copy">
+
+                © <span id="currentYear"></span>
+                AUTO-NEXUS
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast -->
+    <div id="toast" class="toast hidden">
+    </div>
+
+
+    <!-- =========================================================
+         GIỮ NGUYÊN ĐƯỜNG DẪN JS CỦA BẠN
+         ========================================================= -->
+
     <script src="/frontend/java/admin.js"></script>
+
 </body>
+
 </html>
