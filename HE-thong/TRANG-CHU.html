@@ -1,83 +1,74 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CỬA HÀNG Ô TÔ - Otto Luxury</title>
+<!DOCTYPE html> 
+<html lang="vi"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>CỬA HÀNG Ô TÔ - Otto Luxury</title> 
+    
+    <!-- <link>: Thẻ liên kết tài nguyên bên ngoài (File CSS, Font chữ, Favicon) -->
     <link rel="stylesheet" href="/frontend/css/He_thong_css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body> 
 
-    <!-- Thanh điều hướng trên cùng (Header 3D Luxury) -->
+
     <header class="navbar">
+      
         <div class="logo-wrapper">
             <div class="logo-badge">OTTO</div>
             <div class="logo">
+              
                 <h1>CỬA HÀNG Ô TÔ</h1>
+              
                 <p><span class="status-dot"></span>Chuyên các dòng xe hạng sang • Otto Luxury</p>
             </div>
-        </div>
-        
+        </div>   
         <div class="auth-links">
-            <!-- Nút liên kết sang Trang Admin với Icon SVG -->
+            <!-- <a>: Thẻ liên kết (Anchor) dẫn tới trang khác qua thuộc tính href -->
             <a href="/HE-thong/ADMIN.html" class="btn-auth btn-admin" title="Trang quản trị Admin">
                 
                 <span>Admin</span>
             </a>
             <a href="/HE-thong/DANG_KI.html" class="btn-auth btn-register">Account</a>
         </div>
-    </header>
-    
+    </header> 
     <a href="/HE-thong/chat_box.html" class="chatbox-icon" id="chatboxBtn" title="Mở hộp chat">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
     </a>
+    <audio id="carAudioMec" preload="none"><source src="/img/trang_chu/anh/mer1.mp4" type="audio/mpeg"></audio>
+    <audio id="carAudioBMW" preload="none"><source src="/img/trang_chu/anh/bmw1.mp4" type="audio/mpeg"></audio>
+    <audio id="carAudioAudi" preload="none"><source src="/img/trang_chu/anh/audi1.mp4" type="audio/mpeg"></audio>
+    <audio id="carAudioFerrari" preload="none"><source src="/img/trang_chu/anh/fre1 copy.mp4" type="audio/mpeg"></audio>
+    <audio id="carAudioLamborghini" preload="none"><source src="/img/trang_chu/anh/lam1.mp4" type="audio/mpeg"></audio>
+    <audio id="carAudioBugatti" preload="none"><source src="/img/trang_chu/anh/bu1.mp4" type="audio/mpeg"></audio>
 
-    <!-- Audio cho 6 hãng xe -->
-    <audio id="carAudioMec" preload="none">
-        <source src="/img/trang_chu/anh/mer1.mp4" type="audio/mpeg">
-    </audio>
-    <audio id="carAudioBMW" preload="none">
-        <source src="/img/trang_chu/anh/bmw1.mp4" type="audio/mpeg">
-    </audio>
-    <audio id="carAudioAudi" preload="none">
-        <source src="/img/trang_chu/anh/audi1.mp4" type="audio/mpeg">
-    </audio>
-    <audio id="carAudioFerrari" preload="none">
-        <source src="/img/trang_chu/anh/fre1 copy.mp4" type="audio/mpeg">
-    </audio>
-    <audio id="carAudioLamborghini" preload="none">
-        <source src="/img/trang_chu/anh/lam1.mp4" type="audio/mpeg">
-    </audio>
-    <audio id="carAudioBugatti" preload="none">
-        <source src="/img/trang_chu/anh/bu1.mp4" type="audio/mpeg">
-    </audio>
-
-    <!-- Lưới danh sách xe (Grid Cards) -->
+    <!-- <main>: Thẻ ngữ nghĩa đánh dấu nội dung chính duy nhất của trang web -->
     <main class="brand-container">
         <div class="brand-grid">
 
-            <!-- Card: BMW -->
+            <!-- Card xe: BMW -->
             <a href="/frontend/html/BMW/BMW-tong.html" class="car-card" data-audio="carAudioBMW">
                 <div class="card-media">
+                    <!-- <video>: Thẻ phát video HTML5 (loop: lặp lại, playsinline: phát tại chỗ trên mobile, muted: tắt tiếng) -->
                     <video class="hover-video" loop playsinline preload="none" muted>
                         <source src="/img/trang_chu/video/bmw.mp4" type="video/mp4">
                     </video>
                     <div class="card-overlay">
+                        <!-- <h2>: Tiêu đề cấp 2 (Tên thương hiệu) -->
                         <h2 class="brand-title">BMW</h2>
                         <div class="card-footer">
                             <span class="badge">Luxury Sports</span>
-                            <span class="btn-arrow">&rarr;</span>
+                            <span class="btn-arrow">&rarr;</span> <!-- &rarr; là ký tự mã hóa của mũi tên sang phải (→) -->
                         </div>
                     </div>
                 </div>
             </a>
 
-            <!-- Card: Audi -->
+            <!-- Card xe: Audi -->
             <a href="/frontend/html/audi/audi-tong.html" class="car-card" data-audio="carAudioAudi">
                 <div class="card-media">
                     <video class="hover-video" loop playsinline preload="none" muted>
@@ -93,7 +84,7 @@
                 </div>
             </a>
 
-            <!-- Card: Ferrari -->
+            <!-- Card xe: Ferrari -->
             <a href="/frontend/html/Ferrari/Ferrari-tong.html" class="car-card" data-audio="carAudioFerrari">
                 <div class="card-media">
                     <video class="hover-video" loop playsinline preload="none" muted>
@@ -108,8 +99,7 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Card: Lamborghini -->
+            <!-- Card xe: Lamborghini -->
             <a href="/frontend/html/Lambor/Lambor-tong.html" class="car-card" data-audio="carAudioLamborghini">
                 <div class="card-media">
                     <video class="hover-video" loop playsinline preload="none" muted>
@@ -124,8 +114,7 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Card: Bugatti -->
+            <!-- Card xe: Bugatti -->
             <a href="/frontend/html/Bugati/Bugati-tong.html" class="car-card" data-audio="carAudioBugatti">
                 <div class="card-media">
                     <video class="hover-video" loop playsinline preload="none" muted>
@@ -141,7 +130,7 @@
                 </div>
             </a>
 
-            <!-- Card: Mec -->
+            <!-- Card xe: Mec -->
             <a href="/frontend/html/" class="car-card" data-audio="carAudioMec">
                 <div class="card-media">
                     <video class="hover-video" loop playsinline preload="none" muted>
@@ -156,12 +145,13 @@
                     </div>
                 </div>
             </a>
+
         </div>
     </main>
-
-    <!-- Footer 3D Contact Section -->
+    <!-- <footer>: Thẻ ngữ nghĩa đánh dấu phần chân trang (Thông tin liên hệ, bản quyền) -->
     <footer class="footer">
         <div class="footer-top">
+            <!-- <h3>: Tiêu đề cấp 3 -->
             <h3 class="footer-title">THÔNG TIN LIÊN HỆ</h3>
             <p class="footer-subtitle">Showroom trải nghiệm & đăng ký lái thử các dòng siêu xe hàng đầu</p>
         </div>
@@ -171,10 +161,10 @@
                 <div class="contact-icon-box">📍</div>
                 <div class="contact-details">
                     <span class="contact-label">Địa Chỉ Showroom</span>
+                    <!-- <strong>: Thẻ làm đậm văn bản, mang ý nghĩa nhấn mạnh tầm quan trọng (Chuẩn SEO) -->
                     <strong>Cầu Dịch Vọng, Đường Cầu Giấy, Hà Nội</strong>
                 </div>
             </div>
-
             <div class="contact-card">
                 <div class="contact-icon-box">📞</div>
                 <div class="contact-details">
@@ -182,7 +172,6 @@
                     <strong>0348008387</strong>
                 </div>
             </div>
-
             <div class="contact-card">
                 <div class="contact-icon-box">✉️</div>
                 <div class="contact-details">
@@ -191,13 +180,10 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 Otto Luxury Car Store. Tất cả quyền được bảo lưu.</p>
         </div>
     </footer>
-
-    <!-- Nhúng file JavaScript điều khiển hover video ngoài -->
     <script src="/frontend/java/chinhanh.js"></script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+/* =========================================================
+   CHAT APPLICATION INTERFACE CSS
+   ========================================================= */
+
+/* :root - Khai báo các biến CSS toàn cục quản lý bảng màu, bóng đổ (Dark Mode) */
 :root {
     --bg-color: #0f172a;
     --chat-bg: #1e293b;
@@ -13,13 +18,10 @@
     --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
+/* RESET STYLES - Thiết lập quy chuẩn ban đầu cho toàn bộ phần tử */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
+/* BODY - Căn giữa toàn bộ giao diện Chat ra giữa màn hình */
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
@@ -30,7 +32,9 @@ body {
     padding: 20px;
 }
 
-/* Container Chat */
+/* 
+   CONTAINER CHAT (Khung bao ngoài toàn bộ ứng dụng Chat)
+    */
 .chat-wrapper {
     width: 100%;
     max-width: 1100px;
@@ -43,7 +47,9 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Sidebar - Lịch sử chat */
+/* 
+   SIDEBAR (Thanh bên chứa lịch sử Chat & Thông tin User)
+    */
 .sidebar {
     width: 280px;
     background-color: var(--sidebar-bg);
@@ -54,6 +60,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Nút tạo cuộc trò chuyện mới */
 .new-chat-btn {
     background: linear-gradient(135deg, var(--accent-color), #818cf8);
     color: white;
@@ -68,12 +75,9 @@ body {
     transition: all 0.2s ease;
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
+.new-chat-btn:hover { opacity: 0.95; transform: translateY(-1px); }
 
-.new-chat-btn:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
-}
-
+/* Tiêu đề mục lịch sử */
 .history-title {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -83,6 +87,7 @@ body {
     font-weight: 700;
 }
 
+/* Danh sách các đoạn chat cũ */
 .chat-history-list {
     list-style: none;
     overflow-y: auto;
@@ -91,7 +96,6 @@ body {
     flex-direction: column;
     gap: 8px;
 }
-
 .chat-history-item {
     padding: 12px 14px;
     border-radius: 10px;
@@ -106,12 +110,12 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .chat-history-item:hover, .chat-history-item.active {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
 }
 
+/* Thông tin người dùng ở góc dưới Sidebar */
 .user-profile {
     display: flex;
     align-items: center;
@@ -120,7 +124,6 @@ body {
     border-top: 1px solid var(--border-color);
     margin-top: auto;
 }
-
 .avatar {
     width: 40px;
     height: 40px;
@@ -134,7 +137,9 @@ body {
     background-size: cover;
 }
 
-/* Main Chat Area */
+/* 
+   MAIN CHAT AREA (Khu vực hiển thị cuộc trò chuyện chính)
+    */
 .main-chat {
     flex-grow: 1;
     display: flex;
@@ -143,6 +148,7 @@ body {
     position: relative;
 }
 
+/* Header của khung Chat chính */
 .chat-header {
     padding: 20px 28px;
     border-bottom: 1px solid var(--border-color);
@@ -152,13 +158,7 @@ body {
     background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);
 }
-
-.bot-info {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
+.bot-info { display: flex; align-items: center; gap: 14px; }
 .bot-status {
     width: 10px;
     height: 10px;
@@ -167,6 +167,7 @@ body {
     box-shadow: 0 0 8px #10b981;
 }
 
+/* Khung chứa danh sách các tin nhắn */
 .chat-messages {
     flex-grow: 1;
     padding: 28px;
@@ -177,27 +178,22 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Từng dòng tin nhắn */
 .message {
     display: flex;
     gap: 14px;
     max-width: 80%;
     animation: fadeIn 0.3s ease;
 }
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.message.user {
-    align-self: flex-end;
-    flex-direction: row-reverse;
-}
+.message.user { align-self: flex-end; flex-direction: row-reverse; }
+.message.assistant { align-self: flex-start; }
 
-.message.assistant {
-    align-self: flex-start;
-}
-
+/* Avatar đại diện trong tin nhắn */
 .msg-avatar {
     width: 36px;
     height: 36px;
@@ -208,17 +204,10 @@ body {
     flex-shrink: 0;
     font-size: 0.9rem;
 }
+.user .msg-avatar { background: var(--accent-color); color: white; }
+.assistant .msg-avatar { background: #0ea5e9; color: white; }
 
-.user .msg-avatar {
-    background: var(--accent-color);
-    color: white;
-}
-
-.assistant .msg-avatar {
-    background: #0ea5e9;
-    color: white;
-}
-
+/* Bong bóng nội dung tin nhắn */
 .msg-content {
     background: var(--bot-msg-bg);
     padding: 14px 18px;
@@ -228,29 +217,15 @@ body {
     color: var(--text-primary);
     position: relative;
 }
+.user .msg-content { background: var(--user-msg-bg); border-bottom-right-radius: 4px; }
+.assistant .msg-content { border-bottom-left-radius: 4px; }
 
-.user .msg-content {
-    background: var(--user-msg-bg);
-    border-bottom-right-radius: 4px;
-}
+.msg-time { font-size: 0.7rem; color: var(--text-secondary); margin-top: 6px; display: block; }
+.user .msg-time { text-align: right; color: rgba(255, 255, 255, 0.7); }
 
-.assistant .msg-content {
-    border-bottom-left-radius: 4px;
-}
-
-.msg-time {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    margin-top: 6px;
-    display: block;
-}
-
-.user .msg-time {
-    text-align: right;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Typing Indicator */
+/* 
+   TYPING INDICATOR (Hiệu ứng 3 chấm đang soạn tin nhắn)
+    */
 .typing-indicator {
     display: none;
     gap: 5px;
@@ -260,7 +235,6 @@ body {
     width: fit-content;
     border-bottom-left-radius: 4px;
 }
-
 .dot {
     width: 8px;
     height: 8px;
@@ -268,7 +242,6 @@ body {
     border-radius: 50%;
     animation: bounce 1.4s infinite ease-in-out both;
 }
-
 .dot:nth-child(1) { animation-delay: -0.32s; }
 .dot:nth-child(2) { animation-delay: -0.16s; }
 
@@ -277,13 +250,14 @@ body {
     40% { transform: scale(1.0); }
 }
 
-/* Input Container */
+/* 
+   INPUT AREA (Khung nhập liệu & Nút gửi)
+    */
 .chat-input-container {
     padding: 20px 28px;
     background: var(--chat-bg);
     border-top: 1px solid var(--border-color);
 }
-
 .input-box {
     display: flex;
     align-items: center;
@@ -294,12 +268,12 @@ body {
     gap: 12px;
     transition: all 0.2s ease;
 }
-
 .input-box:focus-within {
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
+/* Ô Textarea nhập tin nhắn */
 .chat-textarea {
     flex-grow: 1;
     background: transparent;
@@ -309,16 +283,14 @@ body {
     font-size: 0.95rem;
     resize: none;
     max-height: 120px;
-    height: 38px !important;        /* Tăng height từ 24px lên 38px để không bị đè chữ */
-    line-height: 1.4 !important;     /* Điều chỉnh khoảng cách dòng chuẩn */
-    padding: 6px 0 !important;       /* Căn lề vừa vặn với ô nhập */
+    height: 38px !important;     /* Chiều cao tối thiểu tránh đè chữ */
+    line-height: 1.4 !important;  /* Khoảng cách dòng chuẩn */
+    padding: 6px 0 !important;    /* Căn lề vừa vặn */
     box-sizing: border-box;
 }
+.chat-textarea::placeholder { color: var(--text-secondary); }
 
-.chat-textarea::placeholder {
-    color: var(--text-secondary);
-}
-
+/* Nút gửi tin nhắn */
 .send-btn {
     background: var(--accent-color);
     color: white;
@@ -333,19 +305,12 @@ body {
     transition: all 0.2s ease;
     flex-shrink: 0;
 }
+.send-btn:hover { background: var(--accent-hover); transform: scale(1.05); }
 
-.send-btn:hover {
-    background: var(--accent-hover);
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
+/* 
+   RESPONSIVE DESIGN (Tối ưu giao diện cho thiết bị Mobile)
+    */
 @media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
-    .chat-wrapper {
-        height: 95vh;
-        border-radius: 16px;
-    }
+    .sidebar { display: none; }
+    .chat-wrapper { height: 95vh; border-radius: 16px; }
 }

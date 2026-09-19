@@ -1,6 +1,5 @@
-/* =========================================================
-   CINEMATIC WIDESCREEN LAYOUT (OPTIMIZED & CLEAN)
-   ========================================================= */
+
+/* :root - Khai báo các Biến toàn cục (CSS Variables) để tái sử dụng màu sắc, phông chữ dễ dàng */
 :root {
     --bg-main: #0a0c10;
     --card-bg: rgba(18, 22, 30, 0.7);
@@ -11,64 +10,134 @@
     --text-sub: #8a99ad;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg-main); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 20px 0; }
-.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+/* * - Universal Selector (Chọn tất cả các thẻ): Dùng để Reset Padding/Margin và tính kích thước chuẩn */
+* { 
+    box-sizing: border-box; /* Giúp padding/border không làm tăng kích thước chiều rộng thực tế của phần tử */
+    margin: 0; 
+    padding: 0; 
+}
 
-/* BREADCRUMB */
-.breadcrumb { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 20px; }
-.breadcrumb a { color: var(--text-sub); text-decoration: none; }
-.breadcrumb span { color: var(--text); font-weight: 600; }
+/* body - Thẻ chứa toàn bộ giao diện: Thiết lập màu nền, màu chữ và font mặc định */
+body { 
+    background: var(--bg-main); 
+    color: var(--text); 
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+    padding: 20px 0; 
+}
 
-/* 1. HERO VIDEO BANNER (CINEMATIC) */
-.hero-cinematic { width: 100%; margin-bottom: 25px; }
+/* Container dùng để gom nhóm nội dung vào giữa màn hình với chiều rộng tối đa */
+.container { 
+    max-width: 1280px; 
+    margin: 0 auto; 
+    padding: 0 24px; 
+}
+
+/* 
+   BREADCRUMB (Thanh điều hướng phân cấp vị trí trang)
+    */
+.breadcrumb { 
+    font-size: 0.85rem; 
+    color: var(--text-sub); 
+    margin-bottom: 20px; 
+}
+.breadcrumb a { 
+    color: var(--text-sub); 
+    text-decoration: none; /* Bỏ gạch chân mặc định của thẻ <a> */
+}
+.breadcrumb span { 
+    color: var(--text); 
+    font-weight: 600; 
+}
+
+/* 
+   1. HERO VIDEO BANNER (Khung Video Cinema đầu trang)
+    */
+.hero-cinematic { 
+    width: 100%; 
+    margin-bottom: 25px; 
+}
 
 .video-wrapper {
-    position: relative;
+    position: relative; /* Làm mốc tọa độ cho các phần tử con dùng position: absolute bên trong */
     width: 100%;
-    /* NOTE: Chỉnh tỷ lệ dẹt video Banner (21/9 là chuẩn siêu rộng, 16/9 là vừa) */
-    aspect-ratio: 21 / 9; 
-    max-height: 520px; /* NOTE: Giới hạn chiều cao tối đa của Video chính */
+    aspect-ratio: 21 / 9; /* Tỷ lệ khung hình siêu rộng Cinematic */
+    max-height: 520px; 
     border-radius: 16px;
-    overflow: hidden;
+    overflow: hidden; /* Cắt bỏ các phần thừa tràn ra ngoài góc bo border-radius */
     border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8); /* Đổ bóng tạo độ sâu 3D */
 }
 
 .video-wrapper video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Giúp video lấp đầy khung mà không bị méo/co giãn sai tỷ lệ */
     display: block;
 }
 
 .video-overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,16,0.85) 100%);
+    inset: 0; /* Cách đều 4 cạnh Top, Right, Bottom, Left = 0px (Gọn hơn top:0; left:0; right:0; bottom:0) */
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,16,0.85) 100%); /* Lớp phủ chuyển màu tối dần */
 }
 
-.hero-caption { position: absolute; bottom: 30px; left: 35px; z-index: 2; }
-.badge { background: var(--orange); color: #fff; font-size: 0.65rem; font-weight: 800; letter-spacing: 2px; padding: 4px 10px; border-radius: 4px; }
-.hero-caption h1 { font-size: 3rem; font-weight: 800; letter-spacing: 2px; margin-top: 6px; }
-.hero-caption p { color: var(--text-sub); font-size: 1rem; }
+.hero-caption { 
+    position: absolute; 
+    bottom: 30px; 
+    left: 35px; 
+    z-index: 2; /* Đưa chữ nổi lên trên lớp overlay */
+}
 
-/* 2. THANH GIÁ BÁN & NÚT BẤM */
+/* Badge (Thẻ nhãn nhỏ đánh dấu thuộc tính) */
+.badge { 
+    background: var(--orange); 
+    color: #fff; 
+    font-size: 0.65rem; 
+    font-weight: 800; 
+    letter-spacing: 2px; /* Khoảng cách giữa các chữ cái */
+    padding: 4px 10px; 
+    border-radius: 4px; 
+}
+
+.hero-caption h1 { 
+    font-size: 3rem; 
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    margin-top: 6px; 
+}
+
+.hero-caption p { 
+    color: var(--text-sub); 
+    font-size: 1rem; 
+}
+
+/* 
+   2. THANH GIÁ BÁN & NÚT BẤM (Action Bar)
+    */
 .action-bar {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 18px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Dùng Flexbox để căn chỉnh hàng ngang */
+    justify-content: space-between; /* Đẩy giá xe sang trái, nút bấm sang phải */
+    align-items: center; /* Căn giữa theo trục dọc */
     margin-bottom: 30px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ (Glassmorphism) */
 }
 
-.price-info small { display: block; color: var(--text-sub); font-size: 0.8rem; }
-.price-info strong { font-size: 1.5rem; color: var(--orange); }
+.price-info small { 
+    display: block; 
+    color: var(--text-sub); 
+    font-size: 0.8rem; 
+}
 
+.price-info strong { 
+    font-size: 1.5rem; 
+    color: var(--orange); 
+}
+
+/* Nút kêu gọi hành động (Call To Action) */
 .btn-cta {
     background: var(--orange);
     color: #fff;
@@ -77,17 +146,24 @@ body { background: var(--bg-main); color: var(--text); font-family: -apple-syste
     font-size: 0.9rem;
     font-weight: 700;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay khi di chuột vào */
     box-shadow: 0 6px 20px var(--orange-glow);
-    transition: all 0.3s;
+    transition: all 0.3s; /* Tạo hiệu ứng mượt mà khi Hover */
 }
-.btn-cta:hover { background: #ff771a; transform: translateY(-2px); }
 
-/* 3. LƯỚI THÔNG SỐ XE (3 CỘT NGANG) */
+/* Hover: Trạng thái khi di chuột vào nút */
+.btn-cta:hover { 
+    background: #ff771a; 
+    transform: translateY(-2px); /* Nhấc nhẹ nút lên 2px tạo hiệu ứng nổi 3D */
+}
+
+/* 
+   3. LƯỚI THÔNG SỐ XE (Specs Grid - 3 Cột Ngang)
+    */
 .specs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    display: grid; /* Dùng CSS Grid chia cột */
+    grid-template-columns: repeat(3, 1fr); /* Chia đều thành 3 cột bằng nhau */
+    gap: 24px; /* Khoảng cách giữa các card */
     margin-bottom: 30px;
 }
 
@@ -108,24 +184,38 @@ body { background: var(--bg-main); color: var(--text); font-family: -apple-syste
 }
 
 .card-media {
-    width: 100%; /* NOTE: Đã sửa từ 200% về 100% để chống vỡ khung card */
-    aspect-ratio: 16 / 9; /* NOTE: Tỷ lệ ảnh/video nhỏ trong card (16/9 nằm ngang chuẩn) */
+    width: 100%;
+    aspect-ratio: 16 / 9; 
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 16px;
 }
 
-.card-media img, .card-media video {
+/* Gom nhóm CSS dùng chung cho cả img và video trong card */
+.card-media img, 
+.card-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.spec-card ul { list-style: none; }
-.spec-card li { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 8px; }
-.spec-card li strong { color: var(--text); }
+.spec-card ul { 
+    list-style: none; /* Bỏ dấu chấm đầu dòng mặc định của thẻ <ul> */
+}
 
-/* 4. KHỐI MÔ PHỎNG 3D INTERACTIVE */
+.spec-card li { 
+    font-size: 0.85rem; 
+    color: var(--text-sub); 
+    margin-bottom: 8px; 
+}
+
+.spec-card li strong { 
+    color: var(--text); 
+}
+
+/* 
+   4. KHỐI MÔ PHỎNG 3D INTERACTIVE (Interactive 3D Box)
+    */
 .model-3d-box {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -142,11 +232,10 @@ body { background: var(--bg-main); color: var(--text); font-family: -apple-syste
     padding-left: 12px;
 }
 
-/* NOTE: Tùy chỉnh Kích thước Khung 3D tại đây */
 .iframe-wrapper {
-    width: 100%;            /* Chiều rộng phủ kín container (100%) */
-    aspect-ratio: 21 / 9;   /* Tỷ lệ dẹt ngang: Muốn cao hơn thì đổi thành 16 / 9 */
-    max-height: 480px;      /* CHỈNH CHIỀU CAO TỐI ĐA CỦA 3D TẠI ĐÂY */
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    max-height: 480px;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -155,12 +244,26 @@ body { background: var(--bg-main); color: var(--text); font-family: -apple-syste
 .iframe-wrapper iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: none; /* Bỏ đường viền đen mặc định của iframe */
 }
 
-/* RESPONSIVE */
+/* 
+   5. RESPONSIVE (Tối ưu hiển thị trên Mobile & Tablet)
+    */
+/* @media: Cấu hình giao diện tự động co giãn khi màn hình nhỏ hơn hoặc bằng 992px */
 @media (max-width: 992px) {
-    .video-wrapper, .iframe-wrapper { aspect-ratio: 16 / 9; }
-    .specs-grid { grid-template-columns: 1fr; }
-    .action-bar { flex-direction: column; gap: 15px; text-align: center; }
+    .video-wrapper, 
+    .iframe-wrapper { 
+        aspect-ratio: 16 / 9; /* Chuyển tỷ lệ video/3D về 16:9 để dễ nhìn hơn trên màn hình nhỏ */
+    }
+    
+    .specs-grid { 
+        grid-template-columns: 1fr; /* Chuyển 3 cột thành 1 cột dọc duy nhất */
+    }
+    
+    .action-bar { 
+        flex-direction: column; /* Chuyển hàng ngang thành hàng dọc */
+        gap: 15px; 
+        text-align: center; 
+    }
 }
