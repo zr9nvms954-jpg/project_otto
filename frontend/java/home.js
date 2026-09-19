@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // KỊCH BẢN GIẢ LẬP PHÂN QUYỀN (MOCK AUTH)
 document.addEventListener('DOMContentLoaded', () => {
     // THAY ĐỔI BIẾN NÀY ĐỂ TEST ('guest', 'customer', hoặc 'admin')
-    let currentRole = 'customer'; 
+    let currentRole = 'admin'; 
 
     // Lấy các nút theo ID
     const btnAdminClient = document.getElementById('btn-admin-client');
