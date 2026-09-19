@@ -26,12 +26,18 @@
             </div>
         </div>   
         <div class="auth-links">
-            <!-- <a>: Thẻ liên kết (Anchor) dẫn tới trang khác qua thuộc tính href -->
-            <a href="/HE-thong/ADMIN.html" class="btn-auth btn-admin" title="Trang quản trị Admin">
-                
+            <!-- Nút liên kết sang Trang Admin Client (Đã thêm id="btn-admin-client") -->
+            <a href="/HE-thong/ADMIN.html" id="btn-admin-client" class="btn-auth btn-admin" title="Trang quản trị Admin">
                 <span>Admin</span>
             </a>
-            <a href="/HE-thong/DANG_KI.html" class="btn-auth btn-register">Account</a>
+        
+            <!-- Nút liên kết sang Trang Admin Manager (Bị ẩn mặc định) -->
+            <a href="/HE-thong/admin_manager.html" id="btn-admin-manager" class="btn-auth btn-admin hidden" title="Trang quản lý Admin Manager">
+                <span>Admin Panel</span>
+            </a>
+        
+            <!-- Nút Account (Đã thêm id="btn-account" để sau này JS dễ đổi thành Tên User) -->
+            <a href="/HE-thong/DANG_KI.html" id="btn-account" class="btn-auth btn-register">Account</a>
         </div>
     </header> 
     <a href="/HE-thong/chat_box.html" class="chatbox-icon" id="chatboxBtn" title="Mở hộp chat">
@@ -39,12 +45,13 @@
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
     </a>
-    <audio id="carAudioMec" preload="none"><source src="/img/trang_chu/anh/mer1.mp4" type="audio/mpeg"></audio>
-    <audio id="carAudioBMW" preload="none"><source src="/img/trang_chu/anh/bmw1.mp4" type="audio/mpeg"></audio>
-    <audio id="carAudioAudi" preload="none"><source src="/img/trang_chu/anh/audi1.mp4" type="audio/mpeg"></audio>
-    <audio id="carAudioFerrari" preload="none"><source src="/img/trang_chu/anh/fre1 copy.mp4" type="audio/mpeg"></audio>
-    <audio id="carAudioLamborghini" preload="none"><source src="/img/trang_chu/anh/lam1.mp4" type="audio/mpeg"></audio>
-    <audio id="carAudioBugatti" preload="none"><source src="/img/trang_chu/anh/bu1.mp4" type="audio/mpeg"></audio>
+    <!-- SỬA LẠI ĐOẠN NÀY TRONG FILE TRANG-CHU.html -->
+<audio id="carAudioMec" preload="auto"><source src="/img/trang_chu/anh/mer1.mp4" type="video/mp4"></audio>
+<audio id="carAudioBMW" preload="auto"><source src="/img/trang_chu/anh/bmw1.mp4" type="video/mp4"></audio>
+<audio id="carAudioAudi" preload="auto"><source src="/img/trang_chu/anh/audi1.mp4" type="video/mp4"></audio>
+<audio id="carAudioFerrari" preload="auto"><source src="/img/trang_chu/anh/fre1 copy.mp4" type="video/mp4"></audio>
+<audio id="carAudioLamborghini" preload="auto"><source src="/img/trang_chu/anh/lam1.mp4" type="video/mp4"></audio>
+<audio id="carAudioBugatti" preload="auto"><source src="/img/trang_chu/anh/bu1.mp4" type="video/mp4"></audio>
 
     <!-- <main>: Thẻ ngữ nghĩa đánh dấu nội dung chính duy nhất của trang web -->
     <main class="brand-container">
@@ -184,6 +191,6 @@
             <p>© 2026 Otto Luxury Car Store. Tất cả quyền được bảo lưu.</p>
         </div>
     </footer>
-    <script src="/frontend/java/chinhanh.js"></script>
+    <script src="/frontend/java/home.js"></script>
 </body>
 </html>

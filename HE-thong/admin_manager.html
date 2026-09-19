@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTO-NEXUS // Admin Manager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Link file CSS đã tách -->
+    <link rel="stylesheet" href="/frontend/css/He_thong_css/admin_manager.css">
+
+    <!-- Thư viện Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-icon"><i class="fa-solid fa-car-side"></i></div>
+                <div>
+                    <div class="brand-text">AUTO-NEXUS</div>
+                    <span class="brand-sub">ADMIN MANAGER</span>
+                </div>
+            </div>
+
+            <div class="nav-label">Management</div>
+            <nav class="nav">
+                <button class="nav-item active" data-page="dashboard"><i
+                        class="fa-solid fa-grid-2"></i><span>Dashboard</span></button>
+                <button class="nav-item" data-page="brands"><i
+                        class="fa-solid fa-building"></i><span>Brands</span></button>
+                <button class="nav-item" data-page="cars"><i class="fa-solid fa-car"></i><span>Cars /
+                        Models</span></button>
+                <button class="nav-item" data-page="inventory"><i
+                        class="fa-solid fa-boxes-stacked"></i><span>Inventory</span></button>
+                <button class="nav-item" data-page="orders"><i
+                        class="fa-solid fa-receipt"></i><span>Orders</span></button>
+                <button class="nav-item" data-page="users"><i class="fa-solid fa-users"></i><span>Users</span></button>
+                <button class="nav-item" data-page="reviews"><i
+                        class="fa-solid fa-star"></i><span>Reviews</span></button>
+                <button class="nav-item" data-page="reports"><i
+                        class="fa-solid fa-chart-line"></i><span>Reports</span></button>
+            </nav>
+
+            <div class="nav-label">System</div>
+            <nav class="nav">
+                <a href="/HE-thong/TRANG-CHU.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i><span>Trang chủ</span>
+                </a>
+                <button class="nav-item" data-page="settings"><i
+                        class="fa-solid fa-gear"></i><span>Settings</span></button>
+            </nav>
+
+            <div class="nav-spacer"></div>
+            <div class="admin-mini">
+                <div class="admin-avatar"><i class="fa-regular fa-user"></i></div>
+                <div class="admin-info">
+                    <div class="admin-name">Administrator</div>
+                    <div class="admin-role">System Manager</div>
+                </div>
+            </div>
+            <button class="logout" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> &nbsp; Logout</button>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="mobile-menu" id="mobileMenu"><i class="fa-solid fa-bars"></i></button>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input id="globalSearch" type="search" placeholder="Search cars, orders, users...">
+                </div>
+                <div class="topbar-spacer"></div>
+                <button class="icon-btn" id="notificationBtn" title="Notifications">
+                    <i class="fa-regular fa-bell"></i><span class="dot"></span>
+                </button>
+                <div class="profile">
+                    <div class="profile-avatar"><i class="fa-regular fa-user"></i></div>
+                    <div class="profile-text">
+                        <strong>Admin</strong>
+                        <span>System Manager</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content">
+
+                <!-- DASHBOARD -->
+                <section class="page active" id="dashboard">
+                    <div class="page-head">
+                        <div>
+                            <span class="kicker">OVERVIEW</span>
+                            <h1>Dashboard</h1>
+                            <p>Tổng quan hệ thống quản lý AUTO-NEXUS.</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary"><i class="fa-solid fa-download"></i> Export</button>
+                        </div>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-top"><span class="stat-label">Total Brands</span><span class="stat-icon"><i
+                                        class="fa-solid fa-building"></i></span></div>
+                            <div class="stat-value" id="stat-brands">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-top"><span class="stat-label">Total Cars</span><span class="stat-icon"><i
+                                        class="fa-solid fa-car"></i></span></div>
+                            <div class="stat-value" id="stat-cars">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-top"><span class="stat-label">Available Cars</span><span
+                                    class="stat-icon"><i class="fa-solid fa-circle-check"></i></span></div>
+                            <div class="stat-value" id="stat-available">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-top"><span class="stat-label">Total Orders</span><span class="stat-icon"><i
+                                        class="fa-solid fa-receipt"></i></span></div>
+                            <div class="stat-value" id="stat-orders">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-top"><span class="stat-label">Total Users</span><span class="stat-icon"><i
+                                        class="fa-solid fa-users"></i></span></div>
+                            <div class="stat-value" id="stat-users">0</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-top"><span class="stat-label">Total Revenue</span><span
+                                    class="stat-icon"><i class="fa-solid fa-coins"></i></span></div>
+                            <div class="stat-value" id="stat-revenue">0</div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h2>Sales Overview</h2>
+                                </div>
+                                <select class="control">
+                                    <option>2026</option>
+                                </select>
+                            </div>
+                            <div class="chart-wrap"><canvas id="salesChart"></canvas></div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h2>Popular Cars</h2>
+                                </div>
+                                <button class="btn btn-secondary" onclick="goTo('cars')">View all</button>
+                            </div>
+                            <div class="popular-list" id="popularCarsList">
+                                <!-- Dữ liệu sẽ được render bằng JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel" style="margin-top:18px">
+                        <div class="panel-head">
+                            <div>
+                                <h2>Recent Orders</h2>
+                            </div>
+                            <button class="btn btn-secondary" onclick="goTo('orders')">View all</button>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Car</th>
+                                        <th>Price</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrders">
+                                    <!-- Dữ liệu trống chờ JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BRANDS -->
+                <section class="page" id="brands">
+                    <div class="page-head">
+                        <div><span class="kicker">CATALOG</span>
+                            <h1>Brands</h1>
+                        </div>
+                        <button class="btn btn-primary" onclick="openModal('brandModal')"><i
+                                class="fa-solid fa-plus"></i> Add Brand</button>
+                    </div>
+                    <div class="panel">
+                        <div class="toolbar">
+                            <div class="filters">
+                                <input class="control page-search" data-table="brandsTable"
+                                    placeholder="Search brand...">
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table id="brandsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Logo</th>
+                                        <th>Brand Name</th>
+                                        <th>Country</th>
+                                        <th>Models</th>
+                                        <th>Status</th>
+                                        <th>Created Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARS -->
+                <section class="page" id="cars">
+                    <div class="page-head">
+                        <div><span class="kicker">CATALOG</span>
+                            <h1>Cars / Models</h1>
+                        </div>
+                        <button class="btn btn-primary" onclick="openModal('carModal')"><i class="fa-solid fa-plus"></i>
+                            Add Car</button>
+                    </div>
+                    <div class="panel">
+                        <div class="toolbar">
+                            <div class="filters">
+                                <input class="control page-search" data-table="carsTable" placeholder="Search car...">
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table id="carsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Car</th>
+                                        <th>Brand</th>
+                                        <th>Price</th>
+                                        <th>Year</th>
+                                        <th>Fuel</th>
+                                        <th>Transmission</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- INVENTORY -->
+                <section class="page" id="inventory">
+                    <div class="page-head">
+                        <div><span class="kicker">OPERATIONS</span>
+                            <h1>Inventory</h1>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="toolbar">
+                            <div class="filters">
+                                <input class="control page-search" data-table="inventoryTable"
+                                    placeholder="Search inventory...">
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table id="inventoryTable">
+                                <thead>
+                                    <tr>
+                                        <th>Car</th>
+                                        <th>Brand</th>
+                                        <th>Total</th>
+                                        <th>Available</th>
+                                        <th>Reserved</th>
+                                        <th>Sold</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ORDERS -->
+                <section class="page" id="orders">
+                    <div class="page-head">
+                        <div><span class="kicker">SALES</span>
+                            <h1>Orders</h1>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="toolbar">
+                            <div class="filters">
+                                <input class="control page-search" data-table="ordersTable"
+                                    placeholder="Search order...">
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table id="ordersTable">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Car</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                        <th>Order Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersBody"><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- USERS -->
+                <section class="page" id="users">
+                    <div class="page-head">
+                        <div><span class="kicker">CUSTOMERS</span>
+                            <h1>Users</h1>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="toolbar">
+                            <div class="filters">
+                                <input class="control page-search" data-table="usersTable"
+                                    placeholder="Search users...">
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Orders</th>
+                                        <th>Status</th>
+                                        <th>Created Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- REVIEWS -->
+                <section class="page" id="reviews">
+                    <div class="page-head">
+                        <div><span class="kicker">CONTENT</span>
+                            <h1>Reviews</h1>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="toolbar">
+                            <div class="filters">
+                                <input class="control page-search" data-table="reviewsTable"
+                                    placeholder="Search review...">
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table id="reviewsTable">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Car</th>
+                                        <th>Rating</th>
+                                        <th>Review</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- REPORTS -->
+                <section class="page" id="reports">
+                    <div class="page-head">
+                        <div><span class="kicker">ANALYTICS</span>
+                            <h1>Reports</h1>
+                        </div>
+                    </div>
+                    <div class="report-stats">
+                        <div class="report-stat"><span>Revenue</span><strong id="rep-revenue">0</strong></div>
+                        <div class="report-stat"><span>Orders</span><strong id="rep-orders">0</strong></div>
+                        <div class="report-stat"><span>Cars Sold</span><strong id="rep-cars">0</strong></div>
+                        <div class="report-stat"><span>New Users</span><strong id="rep-users">0</strong></div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h2>Revenue</h2>
+                                </div>
+                            </div>
+                            <div class="chart-wrap"><canvas id="reportRevenueChart"></canvas></div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h2>Orders</h2>
+                                </div>
+                            </div>
+                            <div class="chart-wrap"><canvas id="ordersChart"></canvas></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SETTINGS -->
+                <section class="page" id="settings">
+                    <div class="page-head">
+                        <div><span class="kicker">SYSTEM</span>
+                            <h1>Settings</h1>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="form-grid">
+                            <div class="form-group"><label>System Name</label><input type="text"></div>
+                            <div class="form-group"><label>Admin Email</label><input type="email"></div>
+                        </div>
+                        <div style="margin-top:18px"><button class="btn btn-primary">Save Settings</button></div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODALS -->
+    <!-- BRAND MODAL -->
+    <div class="modal-backdrop" id="brandModal">
+        <div class="modal">
+            <div class="modal-head">
+                <h3>Add Brand</h3><button class="close" onclick="closeModal('brandModal')"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Form will be connected to backend.</p>
+            </div>
+            <div class="modal-foot"><button class="btn btn-secondary" onclick="closeModal('brandModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAR MODAL -->
+    <div class="modal-backdrop" id="carModal">
+        <div class="modal">
+            <div class="modal-head">
+                <h3>Add Car</h3><button class="close" onclick="closeModal('carModal')"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Form will be connected to backend.</p>
+            </div>
+            <div class="modal-foot"><button class="btn btn-secondary" onclick="closeModal('carModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span></span></div>
+
+    <!-- Link file JavaScript đã tách -->
+    <script src="/frontend/java/admin_manager.js"></script>
+</body>
+
+</html>

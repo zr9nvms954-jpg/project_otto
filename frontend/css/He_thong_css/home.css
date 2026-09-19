@@ -525,3 +525,7 @@ background: rgba(255, 255, 255, 0.15);
         height: 50px;
     }
 }
+/* CLASS ẨN PHẦN TỬ DÀNH CHO JAVASCRIPT */
+.hidden {
+    display: none !important;
+}
