@@ -288,3 +288,89 @@ body {
         letter-spacing: 3px;
     }
 }
+.chatbox-icon {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;  /* ← THAY right thành left */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #0b0b0d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 
+        0 8px 25px rgba(212, 175, 55, 0.4),
+        0 0 20px rgba(212, 175, 55, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 999;
+    animation: pulse-chat 2s infinite;
+}
+
+.chatbox-icon:hover {
+    transform: scale(1.12);
+    box-shadow: 
+        0 12px 35px rgba(212, 175, 55, 0.6),
+        0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.chatbox-icon:active {
+    transform: scale(0.95);
+}
+
+.chat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+    border: 2px solid #0b0b0d;
+    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.5);
+    animation: badge-pulse 1.5s infinite;
+}
+
+@keyframes pulse-chat {
+    0% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2); }
+    50% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 0 0 30px rgba(212, 175, 55, 0.3); }
+    100% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2); }
+}
+
+@keyframes badge-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@media (max-width: 768px) {
+    .chatbox-icon {
+        bottom: 20px;
+        left: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    .chat-badge {
+        width: 22px;
+        height: 22px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbox-icon {
+        bottom: 15px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
