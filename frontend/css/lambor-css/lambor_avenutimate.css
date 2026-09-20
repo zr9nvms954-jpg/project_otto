@@ -1,11 +1,3 @@
-/* ==========================================================
-   THEME LAMBORGHINI ULTIMAE - DEEP CARBON & CHAMPAGNE TITANIUM
-   ========================================================== */
-
-/* 
-   1. KEYFRAMES & CHUYỂN ĐỘNG SIÊU XE (60FPS ULTRA-SMOOTH)
-    */
-
 /* Logo chìm tự động thở nhẹ nhàng & di chuyển ambient theo góc nhìn */
 @keyframes lamboLogoAmbient {
     0% {
@@ -34,7 +26,7 @@
 
 /* 
    2. TOÀN TRANG & CHÈN LOGO LAMBORGHINI NỀN
-    */
+*/
 * {
     box-sizing: border-box;
 }
@@ -54,14 +46,14 @@ body {
     line-height: 1.75;
     margin: 0 auto;
     padding: 50px 20px;
-    max-width: 900px;
+    max-width: 1200px; /* Tăng chiều rộng để vừa danh sách card xe */
     animation: lamboLogoAmbient 28s ease-in-out infinite;
     will-change: transform, background-position;
 }
 
 /* 
    3. TIÊU ĐỀ
-    */
+*/
 h1, h2, h3 {
     color: #ffffff;
     font-weight: 700;
@@ -97,12 +89,12 @@ h2:hover {
 h3 {
     font-size: 1.1rem;
     color: #e2e8f0;
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 /* 
    4. PHÂN CÁCH & ĐIỀU HƯỚNG GLASSMORPHISM
-    */
+*/
 hr {
     border: none;
     height: 1px;
@@ -138,9 +130,83 @@ a:hover {
 }
 
 /* 
-   5. HÌNH ẢNH, VIDEO & 3D EMBED (SMOOTH HOVER)
-    */
-img, video, iframe {
+   5. BỔ SUNG: CẤU TRÚC LƯỚI VÀ HIỂN THỊ XE LAMBORGHINI
+*/
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.car-card {
+    background: rgba(18, 22, 31, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(210, 180, 110, 0.4);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(210, 180, 110, 0.12);
+}
+
+.car-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Khung ảnh cố định chuẩn tỷ lệ 16:9 */
+.car-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/* Đảm bảo Video đè chuẩn lên khung chứa và hủy bỏ margin thừa */
+.car-image video.hover-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.car-info {
+    padding: 20px;
+}
+
+.car-name {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.car-price {
+    font-size: 0.95rem;
+    color: #d2b46e;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* 
+   6. HÌNH ẢNH, VIDEO DẠNG THƯỜNG (CÁC PHẦN KHÁC TRÊN TRANG)
+*/
+img, iframe {
     display: block;
     width: 100%;
     height: auto;
@@ -156,7 +222,7 @@ img, video, iframe {
     will-change: transform;
 }
 
-img:hover, video:hover, iframe:hover {
+img:hover, iframe:hover {
     transform: translateY(-4px) scale(1.008);
     border-color: rgba(210, 180, 110, 0.4);
     box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(210, 180, 110, 0.12);
@@ -168,8 +234,8 @@ img:hover, video:hover, iframe:hover {
 }
 
 /* 
-   6. NÚT BẤM CÔNG NGHỆ CAO (TITANIUM GOLD)
-    */
+   7. NÚT BẤM CÔNG NGHỆ CAO (TITANIUM GOLD)
+*/
 button {
     position: relative;
     background: linear-gradient(135deg, #d2b46e 0%, #b89850 100%);
@@ -212,8 +278,8 @@ button:active {
 }
 
 /* 
-   7. DANH SÁCH & THÔNG SỐ
-    */
+   8. DANH SÁCH & THÔNG SỐ
+*/
 ul {
     padding-left: 20px;
     margin-bottom: 35px;
