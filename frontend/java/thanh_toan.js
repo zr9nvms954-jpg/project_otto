@@ -1,66 +1,72 @@
+// Cấu hình ngân hàng VietQR
+const BANK_CONFIG = {
+    BANK_ID: "MB",               // Mã ngân hàng MBBank
+    ACCOUNT_NO: "8888999999",     // Số tài khoản
+    ACCOUNT_NAME: "AUTO NEXUS VIETNAM",
+    AMOUNT: 50000000,             // Số tiền đặt cọc: 50.000.000đ
+    TEMPLATE: "compact2"          // Mẫu hiển thị VietQR
+};
 
-/* 
- XÁC NHẬN THÔNG TIN VÀ TẠO MÃ QR
-*/
+// 1. Chuyển từ Bước 1 sang Bước 2 (Nhập thông tin -> Quét VietQR)
 function goToStep2() {
-    // Lấy nội dung người dùng nhập vào ô "Họ tên" và dùng .trim() để cắt bỏ khoảng trắng thừa (nếu có) ở 2 đầu
-    const name = document.getElementById('buyer-name').value.trim();
-    
-    // Lấy nội dung người dùng nhập vào ô "Số điện thoại" và cũng cắt bỏ khoảng trắng thừa
-    const phone = document.getElementById('buyer-phone').value.trim();
+    const nameInput = document.getElementById('buyer-name');
+    const phoneInput = document.getElementById('buyer-phone');
 
-    // KIỂM TRA NHẬP LIỆU: 
-    // Dấu ! có nghĩa là "Không/Rỗng". 
-    // Nếu chưa nhập Tên BẬT HOẶC (||) chưa nhập Số điện thoại -> Bật thông báo yêu cầu nhập đầy đủ
+    const name = nameInput ? nameInput.value.trim() : "";
+    const phone = phoneInput ? phoneInput.value.trim() : "";
+
     if (!name || !phone) {
-        alert('Vui lòng nhập đầy đủ Họ tên và Số điện thoại!');
-        return; // Dừng hàm lại ngay tại đây, không cho chuyển sang bước tiếp theo
+        alert("Vui lòng nhập đầy đủ Họ tên và Số điện thoại!");
+        return;
     }
 
-    // CHUYỂN GIAO DIỆN (BẬT/TẮT CÁC BƯỚC):
-    // Ẩn màn hình Bước 1 (bằng cách bóc nhãn class 'active' ra)
-    document.getElementById('step-1').classList.remove('active');
-    
-    // Hiện màn hình Bước 2 (bằng cách dán nhãn class 'active' vào)
-    document.getElementById('step-2').classList.remove('active') // (Lưu ý: dòng bên trên trong code gốc dùng add)
-    document.getElementById('step-2').classList.add('active');
+    // Tạo mã chuyển khoản ngẫu nhiên
+    const randomCode = Math.floor(1000 + Math.random() * 9000);
+    const memo = `NEXUS EVEREST ${randomCode}`;
 
-    // THÔNG TIN TÀI KHOẢN NGÂN HÀNG CỐ ĐỊNH NẰM TRONG CODE:
-    const bankId = 'MB';                   // Mã ngân hàng (Ngân hàng Quân Đội MBBank)
-    const accountNo = '8888999999';         // Số tài khoản ngân hàng
-    const amount = '50000000';              // Số tiền cần chuyển (Ví dụ: 50.000.000 VNĐ đặt cọc)
-    const memo = 'NEXUS EVEREST 7731';      // Nội dung chuyển khoản
-
-    // TỰ ĐỘNG TẠO ĐƯỜNG DẪN ẢNH MÃ QR TỪ DỊCH VỤ VIETQR:
-    // encodeURIComponent(memo) giúp chuyển nội dung có khoảng trắng/chữ tiếng Việt thành dạng link hợp lệ
-    const qrApiUrl = `https://img.vietqr.io/image/${bankId}-${accountNo}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(memo)}&accountName=AUTO%20NEXUS%20VIETNAM`;
+    // Cập nhật thông tin lên màn hình Bước 2 & Bước 3
+    const ndVal = document.getElementById('nd-val');
+    const phoneVal = document.getElementById('display-buyer-phone');
     
-    // Gán đường dẫn ảnh vừa tạo vào thẻ <img> có id="vietqr-img" trên trang để hiển thị mã QR ra màn hình
-    document.getElementById('vietqr-img').src = qrApiUrl;
+    if (ndVal) ndVal.innerText = memo;
+    if (phoneVal) phoneVal.innerText = phone;
+
+    // Tạo URL ảnh VietQR tự động từ API
+    const qrUrl = `https://img.vietqr.io/image/${BANK_CONFIG.BANK_ID}-${BANK_CONFIG.ACCOUNT_NO}-${BANK_CONFIG.TEMPLATE}.png?amount=${BANK_CONFIG.AMOUNT}&addInfo=${encodeURIComponent(memo)}&accountName=${encodeURIComponent(BANK_CONFIG.ACCOUNT_NAME)}`;
+    
+    const qrImg = document.getElementById('vietqr-img');
+    if (qrImg) qrImg.src = qrUrl;
+
+    // Hiển thị Bước 2
+    switchStep('step-2');
 }
-/* 
-   2. BƯỚC 2 -> BƯỚC 3: GIẢ LẬP XÁC NHẬN ĐÃ CHUYỂN TIỀN
-*/
+
+// 2. Chuyển từ Bước 2 sang Bước 3 (Xác nhận hoàn tất)
 function simulatePaymentVerification() {
-    // Lấy lại số điện thoại người dùng đã nhập ở Bước 1
-    const phone = document.getElementById('buyer-phone').value; 
-    // Điền số điện thoại đó vào vị trí hiển thị kết quả ở Bước 3 (thẻ có id="display-buyer-phone")
-    document.getElementById('display-buyer-phone').innerText = phone;
-    // CHUYỂN GIAO DIỆN:
-    // Ẩn màn hình Bước 2 (Chuyển khoản)
-    document.getElementById('step-2').classList.remove('active');
-    // Hiện màn hình Bước 3 (Hoàn tất / Thành công)
-    document.getElementById('step-3').classList.add('active');
+    switchStep('step-3');
 }
-/* 
-   3. CHỨC NĂNG SAO CHÉP NHANH (COPY TO CLIPBOARD)
-   Giúp người dùng bấm nút là tự copy Số tài khoản hoặc Nội dung chuyển khoản
-*/
+
+// 3. Hàm ẩn/hiện các bước thanh toán
+function switchStep(stepId) {
+    const steps = document.querySelectorAll('.step-panel');
+    steps.forEach(step => step.classList.remove('active'));
+
+    const targetStep = document.getElementById(stepId);
+    if (targetStep) {
+        targetStep.classList.add('active');
+    }
+}
+
+// 4. Hàm Copy nhanh Số tài khoản & Nội dung chuyển khoản
 function copyValue(elementId) {
-    // Lấy đoạn văn bản nằm bên trong phần tử có ID truyền vào (Ví dụ: Số tài khoản)
-    const text = document.getElementById(elementId).innerText;   
-    // Lệnh của trình duyệt giúp tự động lưu đoạn văn bản đó vào bộ nhớ tạm (Khay nhớ tạm)
-    navigator.clipboard.writeText(text);
-    // Bật thông báo nhỏ cho người dùng biết đã copy thành công
-    alert('Đã sao chép: ' + text);
+    const targetEl = document.getElementById(elementId);
+    if (!targetEl) return;
+
+    const textToCopy = targetEl.innerText;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`Đã sao chép: ${textToCopy}`);
+    }).catch(err => {
+        console.error("Lỗi khi sao chép: ", err);
+    });
 }
