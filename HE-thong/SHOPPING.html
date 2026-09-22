@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom Xe - Trang Mua Sắm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            background-color: #1e293b;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-name {
+            font-size: 16px;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .btn-logout {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-logout:hover {
+            background-color: #dc2626;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #f1f5f9;
+        }
+
+        /* DANH SÁCH SẢN PHẨM (GRID) */
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* CARD XE */
+        .car-card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #334155;
+        }
+
+        .car-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .car-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .car-price {
+            font-size: 18px;
+            color: #38bdf8;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-buy {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-buy:hover {
+            background-color: #0369a1;
+        }
+
+        .loading-text {
+            text-align: center;
+            font-size: 18px;
+            color: #94a3b8;
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-car-side"></i> CAR SHOWROOM
+        </div>
+        <div class="user-info">
+            <span class="user-name" id="user-display">Xin chào, Khách!</span>
+            <button class="btn-logout" id="logout-btn">Đăng xuất</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="page-title">🚗 DANH SÁCH XE DÀNH CHO BẠN</h2>
+
+        <div class="car-grid" id="car-list">
+            <p class="loading-text">Đang tải danh sách xe từ Database...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. LẤY THÔNG TIN NGƯỜI DÙNG TỪ LOCALSTORAGE
+            const user = JSON.parse(localStorage.getItem('user'));
+            const userDisplay = document.getElementById('user-display');
+
+            if (user && user.username) {
+                userDisplay.innerText = `👋 Xin chào, ${user.username}!`;
+            } else {
+                userDisplay.innerText = `👋 Xin chào, Khách!`;
+            }
+
+            // 2. LẤY DANH SÁCH XE TỪ BACKEND DATABASE
+            await fetchCarData();
+
+            // 3. XỬ LÝ ĐĂNG XUẤT
+            const logoutBtn = document.getElementById('logout-btn');
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                alert('Đã đăng xuất tài khoản!');
+                window.location.href = 'DANG_KI.html';
+            });
+        });
+
+        // HÀM GỌI API LẤY DANH SÁCH XE
+        async function fetchCarData() {
+            const carContainer = document.getElementById('car-list');
+            try {
+                const response = await fetch('http://localhost:5000/api/cars');
+                const result = await response.json();
+
+                if (response.ok && (result.data || Array.isArray(result))) {
+                    const carList = result.data || result;
+                    carContainer.innerHTML = '';
+
+                    if (carList.length === 0) {
+                        carContainer.innerHTML = '<p class="loading-text">Chưa có dữ liệu xe trong Database!</p>';
+                        return;
+                    }
+
+                    carList.forEach(car => {
+                        const carId = car.id || car.car_id || 1;
+                        const brand = car.brand || car.car_brand || 'audi';
+                        const name = car.name || car.car_name || 'Xe ô tô';
+                        const rawPrice = car.price || 1000000000;
+                        const formattedPrice = Number(rawPrice).toLocaleString() + ' VNĐ';
+                        const image = car.image_url || car.image || 'https://via.placeholder.com/300x180?text=Car+Image';
+
+                        const carCard = `
+                            <div class="car-card">
+                                <img src="${image}" alt="${name}">
+                                <div class="car-details">
+                                    <div>
+                                        <div class="car-title">${name}</div>
+                                        <div class="car-price">${formattedPrice}</div>
+                                    </div>
+                                    <button class="btn-buy" onclick="buyCar('${brand}', ${carId}, ${rawPrice}, '${name}')">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        carContainer.innerHTML += carCard;
+                    });
+                } else {
+                    carContainer.innerHTML = '<p class="loading-text">Không thể tải danh sách xe!</p>';
+                }
+            } catch (error) {
+                console.error('Lỗi khi fetch xe:', error);
+                carContainer.innerHTML = '<p class="loading-text">Lỗi kết nối tới Server Backend!</p>';
+            }
+        }
+
+        // HÀM CHỌN XE VÀ CHUYỂN HUỚNG SANG TRANG ĐIỀN THÔNG TIN NHẬN XE (CHECKOUT)
+        function buyCar(carBrand, carId, price, carName) {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const userId = user ? (user.id || user.user_id || user.id_user || user.userId) : null;
+
+            if (!user || !userId) {
+                alert('⚠️ Bạn cần đăng nhập để thực hiện mua xe!');
+                window.location.href = 'DANG_KI.html';
+                return;
+            }
+
+            // Lưu thông tin xe vừa chọn vào LocalStorage để trang CHECKOUT.html lấy ra dùng
+            const selectedCar = { carBrand, carId, price, carName };
+            localStorage.setItem('checkout_car', JSON.stringify(selectedCar));
+
+            // Chuyển hướng sang trang điền thông tin nhận xe
+            window.location.href = 'CHECKOUT.html';
+        }
+    </script>
+</body>
+
+</html>

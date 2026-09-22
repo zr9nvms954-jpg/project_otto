@@ -1,6 +1,8 @@
 const API_URL = 'http://localhost:5000/api/auth';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('container');
+
     // --- 1. XỬ LÝ ĐĂNG KÝ (REGISTER) ---
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
@@ -22,7 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     alert('🎉 ' + data.message);
-                    window.location.href = 'login.html'; // Đăng ký xong chuyển sang trang đăng nhập
+                    registerForm.reset();
+
+                    // Đăng ký xong tự trượt giao diện về ô Sign In
+                    if (container) {
+                        container.classList.remove("active");
+                    }
                 } else {
                     alert('⚠️ ' + data.message);
                 }
@@ -54,12 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     alert('🎉 ' + data.message);
 
-                    // Lưu Token và thông tin User vào bộ nhớ trình duyệt (localStorage)
+                    // Lưu Token và thông tin User vào bộ nhớ trình duyệt
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
 
-                    // Chuyển sang Trang Chủ xem xe
-                    window.location.href = 'TRANG-CHU.html';
+                    // Dẫn đúng đường dẫn tương đối vào trang chủ mua sắm cùng thư mục
+                    window.location.href = 'SHOPPING.html';
                 } else {
                     alert('⚠️ ' + data.message);
                 }

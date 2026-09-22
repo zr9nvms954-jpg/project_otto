@@ -66,17 +66,22 @@ exports.login = async (req, res) => {
             return res.status(400).json({ message: 'Tài khoản hoặc mật khẩu không đúng!' });
         }
 
-        // 3. Tạo Token xác thực
+        // 3. Tạo Token xác thực (Dùng cột user_id chuẩn trong MySQL Workbench)
         const token = jwt.sign(
-            { id: user.id, username: user.username },
+            { id: user.user_id, username: user.username },
             process.env.JWT_SECRET || 'car_showroom_secret_key_2026',
             { expiresIn: '24h' }
         );
 
+        // 4. Trả về thông tin User chứa đúng user_id để LocalStorage lưu giữ
         res.json({
             message: 'Đăng nhập thành công!',
             token,
-            user: { id: user.id, username: user.username, email: user.email }
+            user: {
+                id: user.user_id,
+                username: user.username,
+                email: user.email
+            }
         });
 
     } catch (error) {

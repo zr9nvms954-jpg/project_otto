@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Nhận Xe - Car Showroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .checkout-container {
+            background-color: #1e293b;
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .car-summary {
+            background-color: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .car-summary p {
+            margin: 5px 0;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #fff;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            flex: 2;
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0369a1;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            background-color: #475569;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-cancel:hover {
+            background-color: #334155;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="checkout-container">
+        <h2>📋 XÁC NHẬN BÀN GIAO XE</h2>
+
+        <!-- THÔNG TIN XE ĐÃ CHỌN -->
+        <div class="car-summary">
+            <p><strong>Dòng xe:</strong> <span id="summary-car-name">Đang tải...</span></p>
+            <p><strong>Giá xe:</strong> <span id="summary-car-price" style="color: #38bdf8; font-weight: bold;">0
+                    VNĐ</span></p>
+        </div>
+
+        <!-- FORM ĐIỀN THÔNG TIN NHẬN XE -->
+        <form id="checkout-form">
+            <div class="form-group">
+                <label><i class="fa-solid fa-user"></i> Họ và tên người nhận</label>
+                <input type="text" id="fullname" placeholder="Ví dụ: Nguyễn Văn A" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-phone"></i> Số điện thoại liên hệ</label>
+                <input type="tel" id="phone" placeholder="Ví dụ: 0912345678" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-location-dot"></i> Địa chỉ nhận xe / Showroom bàn giao</label>
+                <textarea id="address" rows="3" placeholder="Nhập địa chỉ nhà hoặc Showroom gần bạn..."
+                    required></textarea>
+            </div>
+
+            <div class="btn-group">
+                <a href="SHOPPING.html" class="btn-cancel">Quay lại</a>
+                <button type="submit" class="btn-submit">Xác Nhận Đặt Hàng</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const car = JSON.parse(localStorage.getItem('checkout_car'));
+
+            if (!user) {
+                alert('⚠️ Bạn cần đăng nhập trước!');
+                window.location.href = 'DANG_KI.html';
+                return;
+            }
+
+            if (!car) {
+                alert('⚠️ Vui lòng chọn xe trước khi điền thông tin!');
+                window.location.href = 'SHOPPING.html';
+                return;
+            }
+
+            // Hiển thị thông tin xe vừa chọn
+            document.getElementById('summary-car-name').innerText = car.carName;
+            document.getElementById('summary-car-price').innerText = Number(car.price).toLocaleString() + ' VNĐ';
+
+            // Tự động điền Username nếu có
+            if (user.username) {
+                document.getElementById('fullname').value = user.username;
+            }
+
+            // XỬ LÝ GỬI ĐƠN HÀNG VỀ BACKEND
+            const checkoutForm = document.getElementById('checkout-form');
+            checkoutForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const userId = user.id || user.user_id;
+                const fullname = document.getElementById('fullname').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+
+                try {
+                    const response = await fetch('http://localhost:5000/api/orders', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            userId: userId,
+                            carBrand: car.carBrand,
+                            carId: car.carId,
+                            price: car.price,
+                            fullname: fullname,
+                            phone: phone,
+                            address: address
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert('🎉 Đặt hàng thành công! Bộ phận bàn giao xe sẽ liên hệ tới bạn sớm nhất.');
+                        localStorage.removeItem('checkout_car'); // Xóa dữ liệu xe tạm
+                        window.location.href = 'SHOPPING.html'; // Quay lại trang chủ
+                    } else {
+                        alert('⚠️ ' + (data.message || 'Đặt hàng thất bại!'));
+                    }
+                } catch (error) {
+                    console.error('Lỗi gửi đơn hàng:', error);
+                    alert('❌ Lỗi kết nối tới Server!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
