@@ -1,0 +1,93 @@
+[
+  {
+    "id": "ferrari_12cilindri",
+    "brand": "Ferrari",
+    "model": "Ferrari 12Cilindri",
+    "keywords": ["ferrari 12cilindri", "xe ferrari 12cilindri", "12cilindri"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari_12Cilindri.html"
+  },
+  {
+    "id": "ferrari_296_gtb",
+    "brand": "Ferrari",
+    "model": "Ferrari 296 GTB",
+    "keywords": ["ferrari 296 gtb", "xe ferrari 296", "296 gtb"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari_296_GTB.html"
+  },
+  {
+    "id": "ferrari_sf90_stradale",
+    "brand": "Ferrari",
+    "model": "Ferrari SF90 Stradale",
+    "keywords": ["ferrari sf90", "sf90 stradale", "xe ferrari sf90"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari_SF90 Stradale.html"
+  },
+  {
+    "id": "ferrari_488_pista",
+    "brand": "Ferrari",
+    "model": "Ferrari 488 Pista",
+    "keywords": ["ferrari 488", "488 pista", "xe ferrari 488 pista"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-488Pista.html"
+  },
+  {
+    "id": "ferrari_812_superfast",
+    "brand": "Ferrari",
+    "model": "Ferrari 812 Superfast",
+    "keywords": ["ferrari 812", "812 superfast", "xe ferrari 812"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-812Superfast.html"
+  },
+  {
+    "id": "ferrari_daytona_sp3",
+    "brand": "Ferrari",
+    "model": "Ferrari Daytona SP3",
+    "keywords": ["ferrari daytona", "daytona sp3", "xe daytona"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-DaytonaSP3.html"
+  },
+  {
+    "id": "ferrari_f8_tributo",
+    "brand": "Ferrari",
+    "model": "Ferrari F8 Tributo",
+    "keywords": ["ferrari f8", "f8 tributo", "xe ferrari f8"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-F8Tributo.html"
+  },
+  {
+    "id": "ferrari_laferrari",
+    "brand": "Ferrari",
+    "model": "Ferrari LaFerrari",
+    "keywords": ["ferrari laferrari", "laferrari", "xe laferrari"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-LaFerrari.html"
+  },
+  {
+    "id": "ferrari_monza_sp2",
+    "brand": "Ferrari",
+    "model": "Ferrari Monza SP2",
+    "keywords": ["ferrari monza", "monza sp2", "xe ferrari monza"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-MonzaSP2.html"
+  },
+  {
+    "id": "ferrari_portofino_m",
+    "brand": "Ferrari",
+    "model": "Ferrari Portofino M",
+    "keywords": ["ferrari portofino", "portofino m", "xe portofino"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-PortofinoM.html"
+  },
+  {
+    "id": "ferrari_purosangue",
+    "brand": "Ferrari",
+    "model": "Ferrari Purosangue",
+    "keywords": ["ferrari purosangue", "purosangue", "suv ferrari"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-Purosangue.html"
+  },
+  {
+    "id": "ferrari_roma",
+    "brand": "Ferrari",
+    "model": "Ferrari Roma",
+    "keywords": ["ferrari roma", "xe ferrari roma", "roma"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-Roma.html"
+  },
+  {
+    "id": "ferrari_tong",
+    "brand": "Ferrari",
+    "model": "Tất cả các dòng xe Ferrari",
+    "keywords": ["ferrari", "tất cả xe ferrari", "các dòng xe ferrari", "danh sách xe ferrari", "ferrari tổng", "hãng ferrari"],
+    "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-tong.html"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "lamborghini_asterion",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Asterion",
+    "keywords": ["lamborghini asterion", "xe asterion", "asterion", "lambor asterion"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-Asterion.html"
+  },
+  {
+    "id": "lamborghini_aventador_ultimae",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Aventador Ultimae",
+    "keywords": ["lamborghini aventador ultimae", "aventador ultimae", "lambor aventador"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-AventadorUltimae.html"
+  },
+  {
+    "id": "lamborghini_centenario",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Centenario",
+    "keywords": ["lamborghini centenario", "centenario", "lambor centenario"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-Centenario.html"
+  },
+  {
+    "id": "lamborghini_countach_lpi800",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Countach LPI 800",
+    "keywords": ["lamborghini countach", "countach", "countach lpi800"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-CountachLPI800.html"
+  },
+  {
+    "id": "lamborghini_huracan_sterrato",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Huracan Sterrato",
+    "keywords": ["lamborghini huracan sterrato", "huracan sterrato", "sterrato"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-HuracanSterrato.html"
+  },
+  {
+    "id": "lamborghini_huracan_tecnica",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Huracan Tecnica",
+    "keywords": ["lamborghini huracan tecnica", "huracan tecnica", "tecnica"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-HuracanTecnica.html"
+  },
+  {
+    "id": "lamborghini_sesto_elemento",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Sesto Elemento",
+    "keywords": ["lamborghini sesto elemento", "sesto elemento", "sesto"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-SestoElemento.html"
+  },
+  {
+    "id": "lamborghini_sian_fkp37",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Sian FKP 37",
+    "keywords": ["lamborghini sian", "sian fkp37", "sian"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-SianFKP37.html"
+  },
+  {
+    "id": "lamborghini_veneno",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Veneno",
+    "keywords": ["lamborghini veneno", "veneno", "lambor veneno"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-Veneno.html"
+  },
+  {
+    "id": "lamborghini_huracan_sto",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Huracan STO",
+    "keywords": ["lamborghini huracan sto", "huracan sto", "xe huracan sto"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lamborghini Huracan STO.html"
+  },
+  {
+    "id": "lamborghini_aventador_svj",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Aventador SVJ",
+    "keywords": ["lamborghini aventador svj", "aventador svj", "svj"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lamborghini_Aventador_SVJ.html"
+  },
+  {
+    "id": "lamborghini_revuelto",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Revuelto",
+    "keywords": ["lamborghini revuelto", "revuelto", "lambor revuelto"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lamborghini_Revuelto.html"
+  },
+  {
+    "id": "lamborghini_urus_se",
+    "brand": "Lamborghini",
+    "model": "Lamborghini Urus SE",
+    "keywords": ["lamborghini urus se", "urus se", "urus", "suv lamborghini"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lamborghini_Urus_SE.html"
+  },
+  {
+    "id": "lamborghini_tong",
+    "brand": "Lamborghini",
+    "model": "Tất cả các dòng xe Lamborghini",
+    "keywords": ["lamborghini", "lambo", "lambor", "tất cả xe lamborghini", "danh sách xe lamborghini", "hãng lamborghini"],
+    "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-tong.html"
+  }
+]

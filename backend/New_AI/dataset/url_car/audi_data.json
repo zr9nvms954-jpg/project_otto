@@ -1,0 +1,107 @@
+[
+  {
+    "id": "audi_a3",
+    "brand": "Audi",
+    "model": "Audi A3",
+    "keywords": ["audi a3", "xe audi a3", "a3"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_a3.html"
+  },
+  {
+    "id": "audi_a4",
+    "brand": "Audi",
+    "model": "Audi A4",
+    "keywords": ["audi a4", "xe audi a4", "a4"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_A4.html"
+  },
+  {
+    "id": "audi_a5",
+    "brand": "Audi",
+    "model": "Audi A5",
+    "keywords": ["audi a5", "xe audi a5", "a5"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_a5.html"
+  },
+  {
+    "id": "audi_a6",
+    "brand": "Audi",
+    "model": "Audi A6",
+    "keywords": ["audi a6", "xe audi a6", "a6"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_a6.html"
+  },
+  {
+    "id": "audi_a7",
+    "brand": "Audi",
+    "model": "Audi A7",
+    "keywords": ["audi a7", "xe audi a7", "a7"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_a7.html"
+  },
+  {
+    "id": "audi_a8",
+    "brand": "Audi",
+    "model": "Audi A8",
+    "keywords": ["audi a8", "xe audi a8", "a8"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_A8.html"
+  },
+  {
+    "id": "audi_q3",
+    "brand": "Audi",
+    "model": "Audi Q3",
+    "keywords": ["audi q3", "xe audi q3", "q3", "suv q3"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_q3.html"
+  },
+  {
+    "id": "audi_q5",
+    "brand": "Audi",
+    "model": "Audi Q5",
+    "keywords": ["audi q5", "xe audi q5", "q5", "suv q5"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_q5.html"
+  },
+  {
+    "id": "audi_q7",
+    "brand": "Audi",
+    "model": "Audi Q7",
+    "keywords": ["audi q7", "xe audi q7", "q7", "suv q7"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_q7.html"
+  },
+  {
+    "id": "audi_q8",
+    "brand": "Audi",
+    "model": "Audi Q8",
+    "keywords": ["audi q8", "xe audi q8", "q8", "suv q8"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi_q8.html"
+  },
+  {
+    "id": "audi_r8_v10",
+    "brand": "Audi",
+    "model": "Audi R8 V10 Performance",
+    "keywords": ["audi r8", "xe audi r8", "r8 v10", "r8 performance"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_R8_V10_Performance.html"
+  },
+  {
+    "id": "audi_rs6",
+    "brand": "Audi",
+    "model": "Audi RS6",
+    "keywords": ["audi rs6", "xe audi rs6", "rs6"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_RS6.html"
+  },
+  {
+    "id": "audi_rs7",
+    "brand": "Audi",
+    "model": "Audi RS7 Sportback",
+    "keywords": ["audi rs7", "xe audi rs7", "rs7", "rs7 sportback"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_RS7_Sportback.html"
+  },
+  {
+    "id": "audi_tt_20th",
+    "brand": "Audi",
+    "model": "Audi TT 20th Anniversary Edition",
+    "keywords": ["audi tt", "xe audi tt", "audi tt 20th", "tt 20th anniversary"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_TT_20th_Anniversary_Edition.html"
+  },
+  {
+    "id": "audi_tong",
+    "brand": "Audi",
+    "model": "Tất cả các dòng xe Audi",
+    "keywords": ["audi", "tất cả xe audi", "các dòng xe audi", "danh sách xe audi", "audi tổng", "hãng audi"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/audi-tong.html"
+  }
+]
