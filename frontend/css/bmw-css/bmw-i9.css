@@ -30,10 +30,10 @@ body {
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
+    line-height: 1.6; 
     min-height: 100vh;
-    padding: 25px 20px;
-    -webkit-font-smoothing: antialiased;
+    padding: 25px 20px; 
+    -webkit-font-smoothing: antialiased; /* làm nét mượt chữ */
 }
 
 /* Khung bọc nội dung chính: Căn giữa tự động, chống trống bên phải */
@@ -101,7 +101,7 @@ nav {
     color: var(--text-muted);
 }
 
-nav a {
+nav a { /*  điều hướng*/
     color: var(--text-muted);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -117,9 +117,7 @@ nav strong {
     font-weight: 600;
 }
 
-/* 
-   4. THẺ XE / VIDEO (SỬA LỖI TỈ LỆ KHUNG HÌNH CHUẨN 16:9)
-    */
+/*  4. THẺ XE / VIDEO */
 .car-card {
     position: relative;
     width: 100%;
@@ -149,7 +147,7 @@ img {
     width: 100%;
     max-width: 960px;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    object-fit: cover; /* làm thẻ ko bị phá vữa  */
     border-radius: 14px;
     border: 1px solid var(--card-border);
     margin: 20px 0;
@@ -237,7 +235,6 @@ li:hover {
     color: var(--text-primary);
 }
 
-/* RESPONSIVE MÀN HÌNH DI ĐỘNG */
 @media (max-width: 768px) {
     body { padding: 15px; }
     h1 { font-size: 1.7rem; }
