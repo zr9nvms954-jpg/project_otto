@@ -529,3 +529,16 @@ background: rgba(255, 255, 255, 0.15);
 .hidden {
     display: none !important;
 }
+/* Bỏ gạch chân và giữ nguyên màu chữ cho toàn bộ contact-card */
+a.contact-card,
+.contact-card a,
+.contact-card {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Đảm bảo các thành phần bên trong thẻ cũng không bị gạch chân hay đổi màu */
+.contact-card * {
+    text-decoration: none !important;
+    color: inherit !important;
+}
