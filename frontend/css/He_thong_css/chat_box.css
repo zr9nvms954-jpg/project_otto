@@ -314,3 +314,15 @@ body {
     .sidebar { display: none; }
     .chat-wrapper { height: 95vh; border-radius: 16px; }
 }
+/* Khắc phục lỗi thụt lề quá sâu của danh sách do Markdown sinh ra */
+.msg-content ul,
+.msg-content ol {
+    margin: 0;
+    padding-left: 20px;
+    /* Thuộc tính này điều chỉnh độ thụt lề theo ý muốn */
+}
+
+.msg-content li {
+    margin-bottom: 4px;
+    /* Tạo khoảng cách nhỏ giữa các dòng cho thoáng */
+}

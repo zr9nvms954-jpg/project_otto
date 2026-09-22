@@ -1,0 +1,86 @@
+[
+  {
+    "id": "bugatti_bolide",
+    "brand": "Bugatti",
+    "model": "Bugatti Bolide",
+    "keywords": ["bugatti bolide", "xe bugatti bolide", "bolide"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti_Bolide.html"
+  },
+  {
+    "id": "bugatti_chiron_super_sport",
+    "brand": "Bugatti",
+    "model": "Bugatti Chiron Super Sport",
+    "keywords": ["bugatti chiron super sport", "chiron super sport", "chiron ss"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti_Chiron_Super_Sport.html"
+  },
+  {
+    "id": "bugatti_mistral",
+    "brand": "Bugatti",
+    "model": "Bugatti Mistral",
+    "keywords": ["bugatti mistral", "xe bugatti mistral", "mistral"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti_Mistral.html"
+  },
+  {
+    "id": "bugatti_tourbillon",
+    "brand": "Bugatti",
+    "model": "Bugatti Tourbillon",
+    "keywords": ["bugatti tourbillon", "xe bugatti tourbillon", "tourbillon"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/bugati_Tourbillon.html"
+  },
+  {
+    "id": "bugatti_centodieci",
+    "brand": "Bugatti",
+    "model": "Bugatti Centodieci",
+    "keywords": ["bugatti centodieci", "xe bugatti centodieci", "centodieci"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-Centodieci.html"
+  },
+  {
+    "id": "bugatti_chiron",
+    "brand": "Bugatti",
+    "model": "Bugatti Chiron",
+    "keywords": ["bugatti chiron", "xe bugatti chiron", "chiron"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-Chiron.html"
+  },
+  {
+    "id": "bugatti_chiron_pur_sport",
+    "brand": "Bugatti",
+    "model": "Bugatti Chiron Pur Sport",
+    "keywords": ["bugatti chiron pur sport", "chiron pur sport", "pur sport"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-ChironPurSport.html"
+  },
+  {
+    "id": "bugatti_divo",
+    "brand": "Bugatti",
+    "model": "Bugatti Divo",
+    "keywords": ["bugatti divo", "xe bugatti divo", "divo"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-Divo.html"
+  },
+  {
+    "id": "bugatti_eb110ss",
+    "brand": "Bugatti",
+    "model": "Bugatti EB110 SS",
+    "keywords": ["bugatti eb110", "bugatti eb110 ss", "eb110", "eb110ss"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-EB110SS.html"
+  },
+  {
+    "id": "bugatti_la_voiture_noire",
+    "brand": "Bugatti",
+    "model": "Bugatti La Voiture Noire",
+    "keywords": ["bugatti la voiture noire", "la voiture noire"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/bugatti-LaVoitureNoire.html"
+  },
+  {
+    "id": "bugatti_veyron",
+    "brand": "Bugatti",
+    "model": "Bugatti Veyron",
+    "keywords": ["bugatti veyron", "xe bugatti veyron", "veyron"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-Veyron.html"
+  },
+  {
+    "id": "bugatti_tong",
+    "brand": "Bugatti",
+    "model": "Tất cả các dòng xe Bugatti",
+    "keywords": ["bugatti", "tất cả xe bugatti", "các dòng xe bugatti", "danh sách xe bugatti", "bugatti tổng", "hãng bugatti"],
+    "url": "http://127.0.0.1:5500/frontend/html/Bugati/bugati-tong.html"
+  }
+]

@@ -77,16 +77,16 @@
 
             <!-- Input Box -->
             <footer class="chat-input-container">
-                <form id="chatForm" onsubmit="event.preventDefault(); sendMessage();">
-                    <div class="input-box">
-                        <textarea id="userInput" class="chat-textarea"
-                            placeholder="Nhập câu hỏi tư vấn (ví dụ: Showroom có xe gì, giá dưới 10 tỷ...)..." rows="1"
-                            onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); }"></textarea>
-                        <button type="submit" id="sendBtn" class="send-btn">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </form>
+                <div class="input-box">
+                    <!-- Đã xóa thẻ form -->
+                    <textarea id="userInput" class="chat-textarea"
+                        placeholder="Nhập câu hỏi tư vấn (ví dụ: Showroom có xe gì, giá dưới 10 tỷ...)..." rows="1"></textarea>
+            
+                    <!-- Bắt buộc dùng type="button" để nút không bao giờ submit web -->
+                    <button type="button" id="sendBtn" class="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
             </footer>
         </main>
     </div>

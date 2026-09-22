@@ -30,9 +30,33 @@ function extractPronoun(text) {
 }
 
 // Format văn bản Markdown đẹp mắt
+// Cấu hình thư viện Markdown hỗ trợ chuẩn mọi phiên bản marked.js
+if (typeof marked !== 'undefined') {
+    const renderer = new marked.Renderer();
+    
+    renderer.link = function(arg1, arg2, arg3) {
+        let href = '', text = '';
+        
+        // Kiểm tra nếu marked.js truyền dạng Object (phiên bản mới)
+        if (typeof arg1 === 'object' && arg1 !== null) {
+            href = arg1.href || '';
+            text = arg1.text || href;
+        } else { // Phiên bản cũ
+            href = arg1 || '';
+            text = arg3 || arg1;
+        }
+        
+        return `<a target="_blank" rel="noopener noreferrer" href="${href}">${text}</a>`;
+    };
+    
+    marked.setOptions({ breaks: true, gfm: true, renderer: renderer });
+}
+
+// Format văn bản Markdown đẹp mắt
 function formatMarkdown(text) {
     if (typeof marked !== 'undefined' && typeof DOMPurify !== 'undefined') {
-        return DOMPurify.sanitize(marked.parse(text));
+        const rawHtml = marked.parse(text);
+        return DOMPurify.sanitize(rawHtml, { ADD_ATTR: ['target', 'rel'] });
     }
     return escapeHtml(text).replace(/\n/g, '<br>');
 }
@@ -136,4 +160,16 @@ function resetChat() {
 // Khởi chạy lời chào khi vừa vào trang web
 document.addEventListener('DOMContentLoaded', () => {
     resetChat();
+});
+// Bắt sự kiện khi click chuột vào nút Gửi
+document.getElementById('sendBtn').addEventListener('click', function() {
+    sendMessage();
+});
+
+// Bắt sự kiện khi ấn phím Enter trên bàn phím
+document.getElementById('userInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault(); // Chỉ chặn việc nhảy xuống dòng
+        sendMessage();
+    }
 });

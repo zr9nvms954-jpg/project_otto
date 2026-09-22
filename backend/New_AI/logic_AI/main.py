@@ -7,8 +7,11 @@ from catalog_manager import (
     format_vehicle_list_response,
     get_available_brands,
     is_vehicle_list_request,
+    is_brand_list_request,
 )
 from db_cache import SemanticCache
+from memory_manager import MemoryManager
+from conversation_logger import ConversationLogger
 
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "0"
 
@@ -25,6 +28,8 @@ _tokenizer = None
 _generate_fn = None
 _make_sampler_fn = None
 _cache_instance = None
+_memory_instance = None
+_logger_instance = None
 
 
 def _get_cache() -> SemanticCache:
@@ -32,6 +37,20 @@ def _get_cache() -> SemanticCache:
     if _cache_instance is None:
         _cache_instance = SemanticCache()
     return _cache_instance
+
+
+def _get_memory() -> MemoryManager:
+    global _memory_instance
+    if _memory_instance is None:
+        _memory_instance = MemoryManager()
+    return _memory_instance
+
+
+def _get_logger() -> ConversationLogger:
+    global _logger_instance
+    if _logger_instance is None:
+        _logger_instance = ConversationLogger()
+    return _logger_instance
 
 
 def _get_model():
@@ -71,6 +90,18 @@ def should_bypass_cache(prompt: str) -> bool:
         "hp",
         "0-100",
         "tăng tốc",
+        "tên",
+        "là",
+        "chào",
+        "tôi là",
+        "anh là",
+        "chị là",
+        "mình là",
+        "hãng xe",
+        "danh sách",
+        "có những xe gì",
+        "có các mẫu xe nào",
+        "những hãng nào",
     ]
     return any(kw in p for kw in keywords) or len(p.split()) > 6
 
@@ -78,37 +109,36 @@ def should_bypass_cache(prompt: str) -> bool:
 SYSTEM_PROMPT_TEMPLATE = """\
 **VAI TRÒ VÀ PHONG CÁCH TÁC PHONG**
 Bạn là Chuyên viên Tư vấn Khách hàng VIP tại Showroom Ô tô Cao cấp. 
-- Phong cách: Tinh tế, lịch sự, chuyên nghiệp và luôn tôn trọng khách hàng (xưng "em" và gọi "Anh/Chị" hoặc theo danh xưng khách đã cung cấp).
-- Mục tiêu: Hỗ trợ giải đáp thông tin xe, so sánh thông số, tư vấn giải pháp phù hợp với nhu cầu và thúc đẩy khách hàng đặt lịch trải nghiệm/lái thử tại showroom.
-- Danh sách thương hiệu hiện có dữ liệu tại showroom: {available_brands}.
+- Phong cách: Tinh tế, lịch sự, chuyên nghiệp, bắt tai và thuyết phục. Xưng "em" và gọi "Anh/Chị".
+- Danh sách thương hiệu hiện có tại showroom: {available_brands}.
 
-**NGUYÊN TẮC XỬ LÝ TRÍ THỨC (GROUNDING & TRUTH PROTOCOLS)**
-1. Tính Trung Thực Tuyệt Đối Với Dữ Liệu (Strict Factuality):
-   - Chỉ trả lời dựa trên thông tin có trong phần [DỮ LIỆU SẢN PHẨM] được cấp. 
-   - Không tự ý thêm bớt, suy đoán hoặc bịa đặt thông số kỹ thuật, giá bán, hoặc tính năng không được đề cập trong dữ liệu.
-2. Xử Lý Khách Hàng Hỏi Sản Phẩm/Thương Hiệu Nằm Ngoài Dữ Liệu:
-   - Nếu khách hàng hỏi về các thương hiệu, dòng xe hoặc dịch vụ KHÔNG CÓ trong phần dữ liệu được cấp, hãy khéo léo thông báo hiện tại showroom chưa phân phối/chưa có dữ liệu về dòng xe đó, sau đó gợi ý các mẫu xe tương đương hiện đang có sẵn trong kho.
-3. Nguyên Tắc Trả Lời Về Chi Phí Bảo Dưỡng & Dịch Vụ Sau Bán Hàng:
-   - Do chi phí bảo dưỡng biến động theo từng cấp độ kỹ thuật và tình trạng xe, tuyệt đối không đưa ra con số ước tính cụ thể trừ khi dữ liệu ghi rõ. Hãy hướng dẫn khách hàng mang xe qua xưởng dịch vụ chính hãng để nhận báo giá chi tiết.
-4. Tôn Trọng Bản Quyền Công Nghệ & Thương Hiệu:
-   - Giữ nguyên các tên gọi công nghệ bản quyền của từng hãng (ví dụ: Quattro của Audi, 4MATIC của Mercedes-Benz, xDrive của BMW). Không tự ý gộp hoặc gán nhầm tên công nghệ giữa các hãng khác nhau.
+**NGUYÊN TẮC XỬ LÝ TRÍ THỨC (GROUNDING CỰC KỲ TUYỆT ĐỐI)**
+1. Thông số xe, giá bán, công suất BẮT BUỘC chỉ được lấy từ [DỮ LIỆU SẢN PHẨM].
+2. TUYỆT ĐỐI KHÔNG tự bịa thông số kỹ thuật nếu trong dữ liệu không có.
+3. TUYỆT ĐỐI KHÔNG hướng dẫn khách hàng tìm kiếm trên các website bên ngoài (như bmw.com, audi.com, google...). Chỉ sử dụng dữ liệu nội bộ của Showroom.
+4. Trường hợp không tìm thấy xe khách yêu cầu: Lịch sự báo Showroom hiện chưa cập nhật mẫu xe này, sau đó chủ động gợi ý 1-2 mẫu xe cùng phân khúc hoặc cùng tầm giá hiện có tại Showroom.
 
-**QUY TẮC XỬ LÝ CON SỐ VÀ LOGIC BẢO VỆ**
-- Đối với các yêu cầu lọc ngân sách, so sánh tốc độ hoặc tính toán mã lực: Bắt buộc sử dụng trực tiếp các bảng thứ tự và kết quả đã được hệ thống tính toán sẵn trong phần [DỮ LIỆU SẢN PHẨM]. Không tự tính toán lại các phép toán phức tạp.
-- Thời gian tăng tốc (0-100 km/h) số giây nhỏ hơn có nghĩa là xe tăng tốc nhanh hơn.
+**QUY TẮC HIỂN THỊ ĐƯỜNG DẪN (URL) BẮT BUỘC**
+1. Mỗi khi giới thiệu hoặc tư vấn về một mẫu xe cụ thể, nếu trong [DỮ LIỆU SẢN PHẨM] có thông tin "URL" (và URL khác "N/A"), bạn BẮT BUỘC phải chèn một đường link dạng Markdown ở ngay cuối đoạn tư vấn xe đó.
+2. Cú pháp bắt buộc: `[Xem chi tiết xe tại đây](URL_TỪ_DỮ_LIỆU)`
+   - Ví dụ đúng: `[Xem chi tiết xe tại đây](http://127.0.0.1:5500/frontend/html/BMW/BMW-X5M.html)`
+3. KHÔNG BAO GIỜ in ra các chuỗi chữ như "URL:", "Đường dẫn:", hay để trống URL. Nếu URL là "N/A" thì bỏ qua, không chèn link.
+**
+Khi khách hàng hỏi xem các mẫu xe của một hãng, hãy liệt kê tên xe, giá bán và đường dẫn chi tiết một cách ngắn gọn, súc tích, tuyệt đối không tự ý liệt kê dài dòng các thông số động cơ/công suất trừ khi khách chủ động hỏi chi tiết.
 
-**ĐỊNH DẠNG ĐẦU RA (OUTPUT FORMATTING)**
-- Trình bày câu trả lời ngắn gọn, rõ ràng, ưu tiên sử dụng danh sách gạch đầu dòng hoặc bảng so sánh nhẹ để khách hàng dễ theo dõi.
-- Kết thúc mỗi câu trả lời bằng một lời mời trải nghiệm hoặc câu hỏi gợi mở lịch thiệp để tiếp tục cuộc trò chuyện.
+[THÔNG TIN KHÁCH HÀNG (MEMORY RAG)]
+{customer_memory}
 
 [DỮ LIỆU SẢN PHẨM CUNG CẤP CHO LẦN HỎI NÀY]
 {context_data}"""
 
 
 def generate_car_advice(
-    user_prompt: str, conversation_history: Optional[list[dict[str, str]]] = None
+    user_prompt: str,
+    conversation_history: Optional[list[dict[str, str]]] = None,
+    user_id: str = "customer_001",  # Abstraction User ID
 ) -> str:
-    if is_vehicle_list_request(user_prompt):
+    if is_brand_list_request(user_prompt) or is_vehicle_list_request(user_prompt):
         return format_vehicle_list_response(user_prompt)
 
     bypass = should_bypass_cache(user_prompt)
@@ -118,11 +148,22 @@ def generate_car_advice(
             return cached_res["response"]
 
     model, tokenizer, generate_fn, make_sampler_fn = _get_model()
+
+    # 1. Thu thập dữ liệu (Catalog & Memory)
     available_brands_str = ", ".join(get_available_brands())
     context_data = format_catalog_context(user_prompt)
 
+    customer_memory = _get_memory().get_relevant_memories(user_id, user_prompt)
+    if not customer_memory:
+        customer_memory = (
+            "Không có thông tin lịch sử nổi bật. Hãy tư vấn theo câu hỏi hiện tại."
+        )
+
+    # 2. Xây dựng Prompt
     system_content = SYSTEM_PROMPT_TEMPLATE.format(
-        available_brands=available_brands_str, context_data=context_data
+        available_brands=available_brands_str,
+        customer_memory=customer_memory,
+        context_data=context_data,
     )
 
     messages = [{"role": "system", "content": system_content}]
@@ -134,6 +175,7 @@ def generate_car_advice(
         messages, tokenize=False, add_generation_prompt=True, enable_thinking=False
     )
 
+    # 3. Gọi LLM sinh phản hồi
     response = generate_fn(
         model,
         tokenizer,
@@ -143,7 +185,21 @@ def generate_car_advice(
         verbose=False,
     )
 
+    # 4. Lưu Cache (nếu đủ điều kiện)
     if not bypass:
         _get_cache().add(user_prompt, response)
+
+    # 5. Cập nhật Memory (Background task hoặc Async nếu có thể, ở đây chạy đồng bộ)
+    _get_memory().extract_and_save_memories(
+        user_id, user_prompt, model, tokenizer, generate_fn, make_sampler_fn
+    )
+
+    # 6. Ghi Log
+    _get_logger().log_interaction(
+        user_id=user_id,
+        user_msg=user_prompt,
+        bot_response=response,
+        metadata={"memory_used": bool(customer_memory), "cache_bypassed": bypass},
+    )
 
     return response
