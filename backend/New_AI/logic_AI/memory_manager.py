@@ -115,7 +115,7 @@ Các loại thông tin (memory_type) được phép: "budget" (ngân sách), "br
                 verbose=False,
             )
 
-            # Parse JSON từ response (tìm chuỗi JSON trong output)
+            # Parse JSON từ response
             json_match = re.search(r"\[.*\]", response, re.DOTALL)
             if json_match:
                 extracted = json.loads(json_match.group(0))
@@ -124,7 +124,7 @@ Các loại thông tin (memory_type) được phép: "budget" (ngân sách), "br
                     m_value = item.get("value")
 
                     if m_type and m_value:
-                        # Dùng ID = user_id + memory_type để TỰ ĐỘNG GHI ĐÈ nếu khách thay đổi sở thích (TEST 5)
+                        # Dùng ID
                         doc_id = f"{user_id}_{m_type}"
                         text_content = f"Khách hàng {user_id} có {m_type} là {m_value}"
 

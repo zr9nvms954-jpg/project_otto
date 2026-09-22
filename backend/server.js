@@ -7,7 +7,7 @@ const server = app.listen(PORT, () => {
     console.log(`🚀 Server đang chạy tại: http://localhost:${PORT}`);
 });
 
-// Lắng nghe lỗi ngầm không để Node.js tự động thoát (Crash)
+// check lỗi ngầm, không để Node.js tự động thoát
 process.on('unhandledRejection', (reason, promise) => {
     console.error('❌ Lỗi Unhandled Rejection:', reason);
 });

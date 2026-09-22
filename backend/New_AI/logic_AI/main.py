@@ -136,7 +136,7 @@ Khi khách hàng hỏi xem các mẫu xe của một hãng, hãy liệt kê tên
 def generate_car_advice(
     user_prompt: str,
     conversation_history: Optional[list[dict[str, str]]] = None,
-    user_id: str = "customer_001",  # Abstraction User ID
+    user_id: str = "customer_001",  # Abstraction
 ) -> str:
     if is_brand_list_request(user_prompt) or is_vehicle_list_request(user_prompt):
         return format_vehicle_list_response(user_prompt)
@@ -149,7 +149,7 @@ def generate_car_advice(
 
     model, tokenizer, generate_fn, make_sampler_fn = _get_model()
 
-    # 1. Thu thập dữ liệu (Catalog & Memory)
+    # 1. Thu thập dữ liệu
     available_brands_str = ", ".join(get_available_brands())
     context_data = format_catalog_context(user_prompt)
 
@@ -185,11 +185,11 @@ def generate_car_advice(
         verbose=False,
     )
 
-    # 4. Lưu Cache (nếu đủ điều kiện)
+    # 4. Lưu Cache
     if not bypass:
         _get_cache().add(user_prompt, response)
 
-    # 5. Cập nhật Memory (Background task hoặc Async nếu có thể, ở đây chạy đồng bộ)
+    # 5. Cập nhật Memory
     _get_memory().extract_and_save_memories(
         user_id, user_prompt, model, tokenizer, generate_fn, make_sampler_fn
     )

@@ -1,7 +1,6 @@
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
-// Tạo Connection Pool để giữ kết nối liên tục với MySQL
 const db = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
@@ -12,7 +11,7 @@ const db = mysql.createPool({
     queueLimit: 0
 });
 
-// Test kết nối khi khởi động
+// Test 
 db.getConnection()
     .then(connection => {
         console.log('✅ Đã kết nối thành công tới Database MySQL!');

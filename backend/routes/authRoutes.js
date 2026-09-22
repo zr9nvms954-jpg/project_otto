@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
-
-// Route Đăng ký: POST /api/auth/register
+// đk
+// Route: /api/auth/register
 router.post('/register', authController.register);
-
-// Route Đăng nhập: POST /api/auth/login
+// ĐN
+// Route: /api/auth/login
 router.post('/login', authController.login);
 
 module.exports = router;
