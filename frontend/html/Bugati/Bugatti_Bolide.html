@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="vi">
+    <!-- chưa có ảnh  -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugatti Bolide - Chi Tiết Xe | Otto Luxury</title>
-    <link rel="stylesheet" href="/frontend/css/bugati-css/bugati-bolide.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi -->
-    <nav class="breadcrumb">
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
-            <strong>Bugatti Bolide</strong>
-        </p>
-    </nav>
-
     <main class="container">
-        <!-- Header tên xe -->
-        <header class="detail-header">
-            <h1>Bugatti Bolide</h1>
-        </header>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt;
+            <span>Bugatti Bolide</span>
+        </nav>
 
-        <!-- Section 1: Ngoại thất & Kính động học -->
-        <section class="detail-section">
-            <div class="media-box">
-                <video src="/img/bugati/ngoaitha/" controls autoplay muted loop playsinline></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/bugati/ngoaitha/" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">TRACK HYPERCAR</span>
+                    <h1>Bugatti Bolide</h1>
+                    <p>Quái thú đường đua thuần chất với thiết kế siêu nhẹ và động cơ W16 uy lực</p>
+                </div>
             </div>
-            <div class="info-box">
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <ul class="spec-list">
+        </section>
+
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>115.000.000.000 VND</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/bugati/ngoaitha/" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
                     <li>Thiết kế xe đua với thân xe cực thấp, rộng và hàng loạt chi tiết khí động học.</li>
                     <li>Cánh gió phía trước và phía sau kích thước lớn giúp tạo lực ép xuống mặt đường.</li>
                     <li>Thân xe sử dụng nhiều vật liệu carbon nhằm giảm trọng lượng tối đa.</li>
-                    <li>Bộ mâm và hệ thống phanh hiệu suất cao được phát triển phục vụ đường đua.</li>
+                    <li>Bộ mâm và hệ thống phanh hiệu suất cao phục vụ đường đua.</li>
                 </ul>
-            </div>
-        </section>
+            </article>
 
-        <!-- Section 2: Động cơ & Vận hành -->
-        <section class="detail-section reverse">
-            <div class="media-box">
-                <img src="/img/bugati/dongco/bu1.png" alt="Động cơ Bugatti Bolide">
-            </div>
-            <div class="info-box">
-                <h2>2. Động cơ & Vận hành</h2>
-                <ul class="spec-list highlight">
+            <!-- Thẻ 2: Động cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/dongco/bu1.png" alt="Động cơ Bugatti Bolide">
+                </div>
+                <ul>
                     <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo tăng áp 4 turbo.</li>
                     <li><strong>Công suất tối đa:</strong> Khoảng 1.578 mã lực.</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số tuần tự 7 cấp kết hợp hệ dẫn động bốn bánh.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> Khoảng 2,17 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> Trên 500 km/h theo công bố thiết kế.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số tuần tự 7 cấp, dẫn động 4 bánh.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0-100 km/h trong 2,17s, max >500 km/h.</li>
                 </ul>
-            </div>
-        </section>
+            </article>
 
+<<<<<<< Updated upstream
         <!-- Section 3: Nội thất & Công nghệ -->
         <section class="detail-section">
             <div class="media-box">
@@ -68,12 +86,22 @@
                     <li>Bảng điều khiển tập trung vào các thông tin vận hành quan trọng trên đường đua.</li>
                     <li>Vô-lăng thể thao tháo rời theo phong cách xe đua chuyên nghiệp .</li>
                     <li>Hệ thống an toàn và trang bị vận hành được thiết kế ưu tiên cho khả năng chạy đường đua.</li>
+=======
+            <!-- Thẻ 3: Nội thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/noithat/bugati1.png" alt="Nội thất Bugatti Bolide">
+                </div>
+                <ul>
+                    <li>Khoang lái tối giản theo phong cách xe đua với ghế ngồi trọng lượng thấp.</li>
+                    <li>Bảng điều khiển tập trung vào các thông tin vận hành quan trọng.</li>
+                    <li>Vô-lăng thể thao tháo rời theo phong cách xe đua chuyên nghiệp.</li>
+                    <li>Hệ thống an toàn được thiết kế ưu tiên cho khả năng chạy đường đua.</li>
+>>>>>>> Stashed changes
                 </ul>
-            </div>
+            </article>
         </section>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
     </main>
 
     <!-- Thẻ Audio và Script điều khiển -->
@@ -81,4 +109,5 @@
     <script src="/frontend/java/chinhanh.js"></script>
 
 </body>
+
 </html>

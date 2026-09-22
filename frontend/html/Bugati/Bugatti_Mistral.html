@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugatti Mistral - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bugati-css/bugati-mistral.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
-                <strong>Bugatti Mistral</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt;
+            <span>Bugatti Mistral</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Bugatti W16 Mistral</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-box">
-                <video src="../../img/bugatti-mistral.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/bugatti-mistral.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ROADSTER</span>
+                    <h1>Bugatti W16 Mistral</h1>
+                    <p>Tuyệt phẩm mui trần cuối cùng sở hữu khối động cơ W16 huyền thoại</p>
+                </div>
             </div>
-            
-            <ul>
-                <li>Thiết kế roadster 2 chỗ ngồi với mui trần, thân xe thấp và rộng đầy mạnh mẽ.</li>
-                <li>Lưới tản nhiệt hình móng ngựa đặc trưng kết hợp cụm đèn LED hiện đại.</li>
-                <li>Phần thân xe sử dụng nhiều chi tiết carbon nhằm giảm trọng lượng và tăng độ cứng.</li>
-                <li>Bộ mâm hợp kim thể thao kết hợp hệ thống phanh hiệu suất cao.</li>
-            </ul>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-box">
-                <img src="/img/bugati/dongco/bu3.png" alt="Động cơ Bugatti Mistral">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>98.000.000.000 VND</strong>
             </div>
-            
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo tăng áp 4 turbo.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 1.578 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số ly hợp kép 7 cấp kết hợp hệ dẫn động bốn bánh.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> Khoảng 2,4 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> Khoảng 420 km/h.</li>
-            </ul>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-box">
-                <img src="/img/bugati/noithat/bugati3.png" alt="Nội thất Bugatti Mistral">
-            </div>
-            
-            <ul>
-                <li>Nội thất 2 chỗ ngồi được hoàn thiện bằng da cao cấp, sợi carbon và nhiều vật liệu sang trọng.</li>
-                <li>Bảng điều khiển được thiết kế tập trung vào người lái với các chi tiết cơ khí tinh xảo.</li>
-                <li>Vô-lăng thể thao tích hợp các nút điều khiển và lẫy chuyển số.</li>
-                <li>Hệ thống âm thanh cao cấp cùng nhiều trang bị tiện nghi hiện đại.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/bugatti-mistral.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thiết kế roadster 2 chỗ mui trần, thân xe thấp và rộng đầy mạnh mẽ.</li>
+                    <li>Lưới tản nhiệt móng ngựa đặc trưng kết hợp cụm đèn LED hiện đại.</li>
+                    <li>Sử dụng nhiều chi tiết carbon nhằm giảm trọng lượng và tăng độ cứng.</li>
+                    <li>Bộ mâm hợp kim thể thao kết hợp hệ thống phanh hiệu suất cao.</li>
+                </ul>
+            </article>
 
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/dongco/bu3.png" alt="Động cơ Bugatti Mistral">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo tăng áp 4 turbo.</li>
+                    <li><strong>Công suất tối đa:</strong> Khoảng 1.578 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số ly hợp kép 7 cấp, dẫn động 4 bánh.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0-100 km/h trong 2,4s, max 420 km/h.</li>
+                </ul>
+            </article>
+
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/noithat/bugati3.png" alt="Nội thất Bugatti Mistral">
+                </div>
+                <ul>
+                    <li>Nội thất 2 chỗ hoàn thiện bằng da cao cấp, sợi carbon và chi tiết sang trọng.</li>
+                    <li>Bảng điều khiển hướng về người lái với các chi tiết cơ khí tinh xảo.</li>
+                    <li>Vô-lăng thể thao tích hợp các nút điều khiển và lẫy chuyển số.</li>
+                    <li>Hệ thống âm thanh cao cấp cùng nhiều trang bị tiện nghi hiện đại.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

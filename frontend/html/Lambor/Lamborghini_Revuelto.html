@@ -1,76 +1,102 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamborghini Revuelto - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/lambor-css/lambor-revu.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-        <a href="/frontend/html/Lambor/Lambor-tong.html">Danh Sách Xe Lamborghini</a> &gt; 
-        <strong>Lamborghini Revuelto</strong>
-    </nav>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="/frontend/html/Lambor/Lambor-tong.html">Danh Sách Xe Lamborghini</a> &gt;
+            <span>Lamborghini Revuelto</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/LAMBOR/ngoaithat/lambor8.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">V12 HPEV HYBRID</span>
+                    <h1>Lamborghini Revuelto</h1>
+                    <p>Siêu xe Plug-in Hybrid 1.015 mã lực đầu tiên mở ra kỷ nguyên mới cho Lamborghini</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <h1>Lamborghini Revuelto</h1>        
-        
-        <h2>1. Thiết kế & Ngoại thất</h2>
-        <video src="/img/LAMBOR/ngoaithat/lambor8.mp4" controls autoplay muted loop></video>
-        <ul>
-            <li>Thiết kế góc cạnh đặc trưng với tỷ lệ thân xe thấp, rộng và các đường gân khí động học.</li>
-            <li>Hệ thống đèn LED ban ngày (DRL) hình chữ Y nổi bật ở đầu và đuôi xe.</li>
-            <li>Thân xe và khung gầm "Monofuselage" làm hoàn toàn từ sợi carbon tái chế và sợi carbon siêu nhẹ.</li>
-            <li>Bộ mâm hợp kim thể thao kích thước lớn kết hợp hệ thống phanh gốm carbon CCB Plus.</li>
-        </ul>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>44.000.000.000 VNĐ</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-        <h2>2. Động cơ & Vận hành</h2>
-        <img src="/img/LAMBOR/dongco/lambo1.png" alt="Động cơ Lamborghini Revuelto">
-        <ul>
-            <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên (N/A) cải tiến kết hợp cùng 3 mô-tơ điện.</li>
-            <li><strong>Công suất tối đa:</strong> 1.015 mã lực (Tổng kết hợp).</li>
-            <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số ly hợp kép 8 cấp đặt ngang phía sau, dẫn động 4 bánh toàn thời gian điện tử e-AWD.</li>
-            <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,5 giây.</li>
-            <li><strong>Tốc độ tối đa:</strong> Tối đa trên 350 km/h.</li>
-        </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/LAMBOR/ngoaithat/lambor8.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thiết kế góc cạnh đặc trưng với tỷ lệ thân xe thấp, rộng và đường gân khí động học.</li>
+                    <li>Hệ thống đèn LED ban ngày (DRL) hình chữ Y nổi bật ở đầu và đuôi xe.</li>
+                    <li>Thân xe và khung gầm "Monofuselage" làm từ sợi carbon tái chế siêu nhẹ.</li>
+                    <li>Bộ mâm hợp kim thể thao lớn kết hợp hệ thống phanh gốm carbon CCB Plus.</li>
+                </ul>
+            </article>
 
-        <h2>3. Trang bị & Công nghệ nội thất</h2>
-        <img src="/img/LAMBOR/noithat/lambo4.png" alt="Nội thất Lamborghini Revuelto">
-        <ul>
-            <li>Nội thất lấy cảm hứng từ máy bay chiến đấu, kết hợp da cao cấp, sợi carbon và da Corsa-Tex.</li>
-            <li>Hệ thống 3 màn hình: Màn hình lái 12,3 inch, màn hình trung tâm 8,4 inch và màn hình phụ 9,1 inch.</li>
-            <li>Vô-lăng thể thao tích hợp 4 núm xoay điều khiển 13 chế độ lái khác nhau.</li>
-            <li>Hệ thống Lamborghini Infotainment System (LIS) cập nhật OTA và tích hợp Amazon Alexa.</li>
-        </ul>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/LAMBOR/dongco/lambo1.png" alt="Động cơ Lamborghini Revuelto">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên (N/A) kết hợp cùng 3 mô-tơ điện.</li>
+                    <li><strong>Công suất tối đa:</strong> 1.015 mã lực (Tổng kết hợp).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 8 cấp đặt ngang, dẫn động 4 bánh e-AWD.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 2,5 giây, max > 350 km/h.</li>
+                </ul>
+            </article>
 
-        <hr>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/LAMBOR/noithat/lambo4.png" alt="Nội thất Lamborghini Revuelto">
+                </div>
+                <ul>
+                    <li>Nội thất máy bay chiến đấu, kết hợp da cao cấp, sợi carbon và Corsa-Tex.</li>
+                    <li>Hệ thống 3 màn hình: Màn hình lái 12,3", trung tâm 8,4" và màn hình phụ 9,1".</li>
+                    <li>Vô-lăng thể thao tích hợp 4 núm xoay điều khiển 13 chế độ lái khác nhau.</li>
+                    <li>Hệ thống Infotainment System (LIS) cập nhật OTA và tích hợp Amazon Alexa.</li>
+                </ul>
+            </article>
+        </section>
 
-        <div class="sketchfab-embed-wrapper">
-            <iframe 
-                title="Lamborghini Revuelto" 
-                frameborder="0" 
-                allowfullscreen 
-                mozallowfullscreen="true" 
-                webkitallowfullscreen="true" 
-                allow="autoplay; fullscreen; xr-spatial-tracking" 
-                xr-spatial-tracking 
-                execution-while-out-of-viewport 
-                execution-while-not-rendered 
-                web-share 
-                width="100%" 
-                height="480" 
-                src="https://sketchfab.com/models/4258ff5b559c45f2a470344f0e04c8cd/embed?autostart=1">
-            </iframe>
-        </div>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
+        <!-- 4. Interactive 3D Model -->
+        <section class="model-3d-box">
+            <h2>Trải Nghiệm Mô Hình 3D Interactive</h2>
+            <div class="iframe-wrapper">
+                <iframe title="Lamborghini Revuelto"
+                    src="https://sketchfab.com/models/4258ff5b559c45f2a470344f0e04c8cd/embed?autostart=1"
+                    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking">
+                </iframe>
+            </div>
+        </section>
     </main>
 
 </body>
+
 </html>

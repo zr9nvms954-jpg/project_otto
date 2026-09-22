@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugatti Tourbillon - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bugati-css/bugati-tourbilon.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
-                <strong>Bugatti Tourbillon</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt;
+            <span>Bugatti Tourbillon</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Bugatti Tourbillon</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-box">
-                <video src="../../img/bugatti-tourbillon.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/bugatti-tourbillon.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">V16 HYBRID</span>
+                    <h1>Bugatti Tourbillon</h1>
+                    <p>Kỷ nguyên mới của siêu xe với động cơ V16 hút khí tự nhiên kết hợp ba mô-tơ điện</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Thiết kế hypercar thấp và rộng với những đường nét sắc sảo, kết hợp các chi tiết đặc trưng của Bugatti.</li>
-                <li>Lưới tản nhiệt hình móng ngựa lớn kết hợp khe hút gió trung tâm tạo diện mạo mạnh mẽ.</li>
-                <li>Phần thân xe được tối ưu khí động học với nhiều chi tiết làm từ sợi carbon.</li>
-                <li>Bộ mâm hợp kim thiết kế đặc biệt kết hợp hệ thống phanh hiệu suất cao.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-box">
-                <img src="../../img/dongco-bugatti-tourbillon.jpg" alt="Động cơ Bugatti Tourbillon">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong></strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ V16 8.3L hút khí tự nhiên kết hợp ba mô-tơ điện.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 1.800 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số ly hợp kép 8 cấp kết hợp hệ dẫn động bốn bánh.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> Khoảng 2 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> Khoảng 445 km/h khi sử dụng Speed Key.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/bugatti-tourbillon.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thiết kế hypercar thấp và rộng với đường nét sắc sảo độc bản.</li>
+                    <li>Lưới tản nhiệt móng ngựa lớn kết hợp khe hút gió trung tâm hầm hố.</li>
+                    <li>Phần thân xe tối ưu khí động học làm từ sợi carbon nguyên khối.</li>
+                    <li>Mâm hợp kim thiết kế đặc biệt kết hợp hệ thống phanh hiệu suất cao.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-box">
-                <img src="/img/bugati/dongco/bu4.png" alt="Nội thất Bugatti Tourbillon">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="../../img/dongco-bugatti-tourbillon.jpg" alt="Động cơ Bugatti Tourbillon">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V16 8.3L hút khí tự nhiên kết hợp 3 mô-tơ điện.</li>
+                    <li><strong>Công suất tối đa:</strong> Khoảng 1.800 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 8 cấp, dẫn động 4 bánh.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0-100 km/h trong ~2s, max 445 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Nội thất kết hợp sợi carbon, da cao cấp và nhiều chi tiết kim loại được chế tác thủ công.</li>
-                <li>Bảng đồng hồ cơ khí được chế tác theo phong cách đồng hồ cao cấp, kết hợp màn hình kỹ thuật số.</li>
-                <li>Vô-lăng thiết kế đặc biệt với cơ cấu điều khiển hiện đại.</li>
-                <li>Khoang lái tập trung vào người lái với nhiều công nghệ hỗ trợ vận hành.</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/dongco/bu4.png" alt="Nội thất Bugatti Tourbillon">
+                </div>
+                <ul>
+                    <li>Nội thất kết hợp sợi carbon, da cao cấp và kim loại chế tác thủ công.</li>
+                    <li>Bảng đồng hồ cơ khí chế tác theo phong cách đồng hồ Thụy Sĩ sang trọng.</li>
+                    <li>Vô-lăng thiết kế đặc biệt với cơ cấu điều khiển hiện đại.</li>
+                    <li>Khoang lái tập trung vào người lái với công nghệ hỗ trợ đỉnh cao.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

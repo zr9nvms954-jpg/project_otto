@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bugatti Chiron Pur Sport - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bugati-css/bugati_chiron_pursport.css">
+    <title>Bugatti La Voiture Noire - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt; 
-                <strong>Bugatti Chiron Pur Sport</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="/frontend/html/Bugati/Bugati-tong.html">Danh Sách Xe Bugatti</a> &gt;
+            <span>Bugatti La Voiture Noire</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Bugatti Chiron Pur Sport</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-box">
-                <video src="../../img/bugatti-chironpursport.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/bugatti-lavoiturenoire.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ONE-OFF MASTERPIECE</span>
+                    <h1>Bugatti La Voiture Noire</h1>
+                    <p>Đỉnh cao độc bản thế giới - "Chiếc xe màu đen" mang giá trị nghệ thuật vĩnh cửu</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Cánh gió cố định phía sau rộng 1,9 mét giúp tạo ra lực ép cực lớn xuống mặt đường.</li>
-                <li>Mâm xe Aero bằng Magie tích hợp cánh gạt carbon giúp tản nhiệt phanh và tối ưu khí động học.</li>
-                <li>Ống xả kép được sản xuất bằng công nghệ in 3D từ chất liệu Titanium siêu nhẹ và chịu nhiệt.</li>
-                <li>Thân xe sơn phối màu tương phản giữa sơn ngoại thất và sợi carbon trần phần dưới.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-box">
-                <img src="/img/bugati/dongco/bu7.png" alt="Động cơ Bugatti Chiron Pur Sport">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>Độc bản độc quyền</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo tăng giới hạn vòng tua thêm 200 vòng/phút.</li>
-                <li><strong>Công suất tối đa:</strong> 1.500 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 7 cấp được tinh chỉnh tỷ số truyền ngắn hơn 15%.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,3 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 350 km/h (giới hạn để tối ưu lực kéo và gia tốc).</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/bugatti-lavoiturenoire.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thân xe carbon làm thủ công màu đen bóng mượt không vệt nối.</li>
+                    <li>Đuôi xe choáng ngợp với cụm 6 ống xả đặt ngang uốn lượn.</li>
+                    <li>Đường vây sống lưng chạy dài từ nắp capo qua trần đến đuôi xe.</li>
+                    <li>Mâm đúc thiết kế nối liền họa tiết bánh xe lên tận lốp.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-box">
-                <img src="../../img/noithat-bugatti-chironpursport.jpg" alt="Nội thất Bugatti Chiron Pur Sport">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/dongco/bu10.png" alt="Động cơ Bugatti La Voiture Noire">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Động cơ W16 8.0L Quad-Turbo.</li>
+                    <li><strong>Công suất tối đa:</strong> 1.500 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 7 cấp, dẫn động 4 bánh toàn thời gian.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0-100 km/h trong 2,4s, max 420 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Khoang nội thất bọc hoàn toàn bằng Alcantara cao cấp giúp giảm trọng lượng và tăng độ bám.</li>
-                <li>Các hoa văn trên bảng điều khiển và cửa xe được khắc bằng laser tỉ mỉ.</li>
-                <li>Vô-lăng thể thao bọc da Alcantara tích hợp điểm tựa ngón tay M-line chuẩn xe đua.</li>
-                <li>Trang bị hệ thống lái Sport+ hoàn toàn mới cho phép rê đuôi xe (drift) kiểm soát.</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/bugati/noithat/bugati10.png" alt="Nội thất Bugatti La Voiture Noire">
+                </div>
+                <ul>
+                    <li>Khoang nội thất bọc da Havana nâu quý phái chế tác độc quyền.</li>
+                    <li>Nút bấm và núm xoay chế tác từ nhôm nguyên khối đánh bóng thủ công.</li>
+                    <li>Hệ thống âm thanh và các tiện nghi Gran Turismo êm ái hàng đầu.</li>
+                    <li>Không gian nội thất sang trọng mang đậm dấu ấn cá nhân hóa.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>
