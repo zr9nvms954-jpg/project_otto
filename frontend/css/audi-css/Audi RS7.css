@@ -1,5 +1,4 @@
 
-/* :root - Khai báo các Biến toàn cục (CSS Variables) để tái sử dụng màu sắc, phông chữ dễ dàng */
 :root {
     --bg-main: #0a0c10;
     --card-bg: rgba(18, 22, 30, 0.7);
@@ -10,14 +9,22 @@
     --text-sub: #8a99ad;
 }
 
-/* * - Universal Selector (Chọn tất cả các thẻ): Dùng để Reset Padding/Margin và tính kích thước chuẩn */
+/* 
+   * - Universal Selector
+   LIÊN KẾT: Tất cả các thẻ HTML trên trang
+   TÁC DỤNG: Reset căn lề mặc định và bắt buộc tính kích thước bao gồm cả padding/border (chống phình khung)
+*/
 * { 
-    box-sizing: border-box; /* Giúp padding/border không làm tăng kích thước chiều rộng thực tế của phần tử */
+    box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
 }
 
-/* body - Thẻ chứa toàn bộ giao diện: Thiết lập màu nền, màu chữ và font mặc định */
+/* 
+   body - Thẻ nền toàn trang
+   LIÊN KẾT: Thẻ <body>
+   TÁC DỤNG: Đặt màu nền tối, màu chữ trắng và phông chữ chuẩn cho toàn bộ trang web
+*/
 body { 
     background: var(--bg-main); 
     color: var(--text); 
@@ -25,7 +32,10 @@ body {
     padding: 20px 0; 
 }
 
-/* Container dùng để gom nhóm nội dung vào giữa màn hình với chiều rộng tối đa */
+/* 
+   .container - Khung gom nội dung
+   TÁC DỤNG: Giới hạn độ rộng tối đa 1280px và tự động căn giữa màn hình
+*/
 .container { 
     max-width: 1280px; 
     margin: 0 auto; 
@@ -33,72 +43,88 @@ body {
 }
 
 /* 
-   BREADCRUMB (Thanh điều hướng phân cấp vị trí trang)
-    */
+   BREADCRUMB - Thanh đường dẫn vị trí
+   LIÊN KẾT: Thẻ <nav class="breadcrumb"> hoặc <div class="breadcrumb">
+   TÁC DỤNG: Đặt kích thước chữ xám nhỏ cho thanh phân cấp trang (Trang chủ > Chi tiết xe)
+*/
 .breadcrumb { 
     font-size: 0.85rem; 
     color: var(--text-sub); 
     margin-bottom: 20px; 
 }
+/* LIÊN KẾT: Thẻ <a> nằm trong breadcrumb | TÁC DỤNG: Xóa gạch chân mặc định của đường link */
 .breadcrumb a { 
     color: var(--text-sub); 
-    text-decoration: none; /* Bỏ gạch chân mặc định của thẻ <a> */
+    text-decoration: none; 
 }
+/* LIÊN KẾT: Thẻ <span> cuối trong breadcrumb | TÁC DỤNG: Làm nổi bật tên trang hiện tại */
 .breadcrumb span { 
     color: var(--text); 
     font-weight: 600; 
 }
 
 /* 
-   1. HERO VIDEO BANNER (Khung Video Cinema đầu trang)
-    */
+   1. HERO VIDEO BANNER - Khung Video Cinema đầu trang
+   LIÊN KẾT: Thẻ chứa video banner chính
+   TÁC DỤNG: Đặt độ rộng 100% và tạo khoảng cách với phần bên dưới
+*/
 .hero-cinematic { 
     width: 100%; 
     margin-bottom: 25px; 
 }
 
+/* LIÊN KẾT: Khung <div class="video-wrapper"> bọc trực tiếp video */
+/* TÁC DỤNG: Ép tỷ lệ màn ảnh rộng 21:9, bo góc 16px, đổ bóng 3D và làm mốc tọa độ cho lớp phủ chữ */
 .video-wrapper {
-    position: relative; /* Làm mốc tọa độ cho các phần tử con dùng position: absolute bên trong */
+    position: relative; 
     width: 100%;
-    aspect-ratio: 21 / 9; /* Tỷ lệ khung hình siêu rộng Cinematic */
+    aspect-ratio: 21 / 9; 
     max-height: 520px; 
     border-radius: 16px;
-    overflow: hidden; /* Cắt bỏ các phần thừa tràn ra ngoài góc bo border-radius */
+    overflow: hidden; 
     border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8); /* Đổ bóng tạo độ sâu 3D */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8); 
 }
 
+/* LIÊN KẾT: Thẻ <video> bên trong .video-wrapper */
+/* TÁC DỤNG: Bắt video phủ kín 100% khung chứa mà không bị méo/móp hình */
 .video-wrapper video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Giúp video lấp đầy khung mà không bị méo/co giãn sai tỷ lệ */
+    object-fit: cover; 
     display: block;
 }
 
+/* LIÊN KẾT: Thẻ <div class="video-overlay"> nằm đè lên video */
+/* TÁC DỤNG: Phủ dải màu chuyển tối dần từ trên xuống dưới để làm nổi chữ đè lên trên */
 .video-overlay {
     position: absolute;
-    inset: 0; /* Cách đều 4 cạnh Top, Right, Bottom, Left = 0px (Gọn hơn top:0; left:0; right:0; bottom:0) */
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,16,0.85) 100%); /* Lớp phủ chuyển màu tối dần */
+    inset: 0; 
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,16,0.85) 100%); 
 }
 
+/* LIÊN KẾT: Thẻ <div class="hero-caption"> chứa chữ tiêu đề trên video */
+/* TÁC DỤNG: Ghim chữ nằm ở góc dưới bên trái video và đẩy nổi đè lên trên lớp overlay (z-index: 2) */
 .hero-caption { 
     position: absolute; 
     bottom: 30px; 
     left: 35px; 
-    z-index: 2; /* Đưa chữ nổi lên trên lớp overlay */
+    z-index: 2; 
 }
 
-/* Badge (Thẻ nhãn nhỏ đánh dấu thuộc tính) */
+/* LIÊN KẾT: Thẻ nhãn <span class="badge"> */
+/* TÁC DỤNG: Tạo ô nhãn nhỏ màu cam góc trên tiêu đề (vd: "NEW 2026" hoặc "LIMITED") */
 .badge { 
     background: var(--orange); 
     color: #fff; 
     font-size: 0.65rem; 
     font-weight: 800; 
-    letter-spacing: 2px; /* Khoảng cách giữa các chữ cái */
+    letter-spacing: 2px; 
     padding: 4px 10px; 
     border-radius: 4px; 
 }
 
+/* LIÊN KẾT: Thẻ <h1> trong hero-caption | TÁC DỤNG: Định dạng tên xe cỡ chữ siêu lớn 3rem */
 .hero-caption h1 { 
     font-size: 3rem; 
     font-weight: 800; 
@@ -106,6 +132,7 @@ body {
     margin-top: 6px; 
 }
 
+/* LIÊN KẾT: Thẻ <p> trong hero-caption | TÁC DỤNG: Định dạng đoạn mô tả ngắn màu xám dưới tên xe */
 .hero-caption p { 
     color: var(--text-sub); 
     font-size: 1rem; 
@@ -113,31 +140,36 @@ body {
 
 /* 
    2. THANH GIÁ BÁN & NÚT BẤM (Action Bar)
-    */
+   LIÊN KẾT: Thẻ <div class="action-bar">
+   TÁC DỤNG: Dùng Flexbox dàn hàng ngang giá xe (trái) & nút bấm (phải), kèm hiệu ứng kính mờ Glassmorphism
+*/
 .action-bar {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 18px 30px;
-    display: flex; /* Dùng Flexbox để căn chỉnh hàng ngang */
-    justify-content: space-between; /* Đẩy giá xe sang trái, nút bấm sang phải */
-    align-items: center; /* Căn giữa theo trục dọc */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
     margin-bottom: 30px;
-    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ (Glassmorphism) */
+    backdrop-filter: blur(10px); 
 }
 
+/* LIÊN KẾT: Thẻ <small> trong khối giá | TÁC DỤNG: Chữ xám nhỏ phụ đề "Giá niêm yết" */
 .price-info small { 
     display: block; 
     color: var(--text-sub); 
     font-size: 0.8rem; 
 }
 
+/* LIÊN KẾT: Thẻ <strong> trong khối giá | TÁC DỤNG: Chữ số giá tiền nổi bật màu cam nổi 1.5rem */
 .price-info strong { 
     font-size: 1.5rem; 
     color: var(--orange); 
 }
 
-/* Nút kêu gọi hành động (Call To Action) */
+/* LIÊN KẾT: Thẻ <button class="btn-cta"> */
+/* TÁC DỤNG: Định dạng nút kêu gọi hành động ("Đặt cọc ngay"), màu cam phát sáng, con trỏ hình bàn tay */
 .btn-cta {
     background: var(--orange);
     color: #fff;
@@ -146,27 +178,32 @@ body {
     font-size: 0.9rem;
     font-weight: 700;
     border-radius: 8px;
-    cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay khi di chuột vào */
+    cursor: pointer; 
     box-shadow: 0 6px 20px var(--orange-glow);
-    transition: all 0.3s; /* Tạo hiệu ứng mượt mà khi Hover */
+    transition: all 0.3s; 
 }
 
-/* Hover: Trạng thái khi di chuột vào nút */
+/* LIÊN KẾT: Trạng thái di chuột vào nút (.btn-cta:hover) */
+/* TÁC DỤNG: Đổi màu cam sáng hơn và nhấc nút nổi lên 2px tạo hiệu ứng 3D */
 .btn-cta:hover { 
     background: #ff771a; 
-    transform: translateY(-2px); /* Nhấc nhẹ nút lên 2px tạo hiệu ứng nổi 3D */
+    transform: translateY(-2px); 
 }
 
 /* 
-   3. LƯỚI THÔNG SỐ XE (Specs Grid - 3 Cột Ngang)
-    */
+   3. LƯỚI THÔNG SỐ XE (Specs Grid)
+   LIÊN KẾT: Thẻ khung ngoài <div class="specs-grid">
+   TÁC DỤNG: Dùng CSS Grid tự động chia khu vực thành 3 cột bằng nhau
+*/
 .specs-grid {
-    display: grid; /* Dùng CSS Grid chia cột */
-    grid-template-columns: repeat(3, 1fr); /* Chia đều thành 3 cột bằng nhau */
-    gap: 24px; /* Khoảng cách giữa các card */
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px; 
     margin-bottom: 30px;
 }
 
+/* LIÊN KẾT: Từng thẻ card con <div class="spec-card"> */
+/* TÁC DỤNG: Tạo khung kính chứa thông số từng phần (Động cơ, Nội thất, Công nghệ) */
 .spec-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -174,6 +211,7 @@ body {
     padding: 20px;
 }
 
+/* LIÊN KẾT: Tiêu đề <h3> trong từng card thông số | TÁC DỤNG: Tạo vạch cam gạch chân dưới tiêu đề */
 .spec-card h3 {
     font-size: 1.1rem;
     color: var(--text);
@@ -183,6 +221,8 @@ body {
     display: inline-block;
 }
 
+/* LIÊN KẾT: Khung chứa ảnh/video nhỏ <div class="card-media"> nằm trong card */
+/* TÁC DỤNG: Cố định tỷ lệ ảnh/video trong card chuẩn 16:9 */
 .card-media {
     width: 100%;
     aspect-ratio: 16 / 9; 
@@ -191,7 +231,8 @@ body {
     margin-bottom: 16px;
 }
 
-/* Gom nhóm CSS dùng chung cho cả img và video trong card */
+/* LIÊN KẾT: Tất cả <img> và <video> nằm trong .card-media */
+/* TÁC DỤNG: Đảm bảo cả ảnh và video đều phủ kín khung mà không bị méo */
 .card-media img, 
 .card-media video {
     width: 100%;
@@ -199,23 +240,28 @@ body {
     object-fit: cover;
 }
 
+/* LIÊN KẾT: Thẻ <ul> trong card thông số | TÁC DỤNG: Bỏ dấu chấm tròn đầu dòng mặc định */
 .spec-card ul { 
-    list-style: none; /* Bỏ dấu chấm đầu dòng mặc định của thẻ <ul> */
+    list-style: none; 
 }
 
+/* LIÊN KẾT: Các thẻ <li> danh sách thông số | TÁC DỤNG: Chữ xám nhỏ mô tả thông số */
 .spec-card li { 
     font-size: 0.85rem; 
     color: var(--text-sub); 
     margin-bottom: 8px; 
 }
 
+/* LIÊN KẾT: Thẻ <strong> trong <li> | TÁC DỤNG: Làm nổi bật tên thông số (vd: "Công suất:") màu trắng */
 .spec-card li strong { 
     color: var(--text); 
 }
 
 /* 
-   4. KHỐI MÔ PHỎNG 3D INTERACTIVE (Interactive 3D Box)
-    */
+   4. KHỐI MÔ PHỎNG 3D INTERACTIVE
+   LIÊN KẾT: Khung <div class="model-3d-box">
+   TÁC DỤNG: Khung kính bọc khu vực trải nghiệm mô hình xe 3D
+*/
 .model-3d-box {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -224,6 +270,7 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* LIÊN KẾT: Tiêu đề <h2> trong khối 3D | TÁC DỤNG: Tạo vạch màu cam đứng bên trái tiêu đề */
 .model-3d-box h2 {
     font-size: 1.2rem;
     margin-bottom: 16px;
@@ -232,6 +279,8 @@ body {
     padding-left: 12px;
 }
 
+/* LIÊN KẾT: Khung <div class="iframe-wrapper"> bọc ngoài thẻ iframe nhúng 3D */
+/* TÁC DỤNG: Ép tỷ lệ khung nhúng 3D chuẩn màn ảnh rộng 21:9 */
 .iframe-wrapper {
     width: 100%;
     aspect-ratio: 21 / 9;
@@ -241,28 +290,34 @@ body {
     border: 1px solid var(--border);
 }
 
+/* LIÊN KẾT: Thẻ <iframe> nhúng mô hình 3D bên ngoài vào */
+/* TÁC DỤNG: Mở rộng 100% khung chứa và xóa đường viền đen mặc định của iframe */
 .iframe-wrapper iframe {
     width: 100%;
     height: 100%;
-    border: none; /* Bỏ đường viền đen mặc định của iframe */
+    border: none; 
 }
 
 /* 
-   5. RESPONSIVE (Tối ưu hiển thị trên Mobile & Tablet)
-    */
-/* @media: Cấu hình giao diện tự động co giãn khi màn hình nhỏ hơn hoặc bằng 992px */
+   5. RESPONSIVE - Tối ưu màn hình nhỏ
+   LIÊN KẾT: Áp dụng tự động khi màn hình có độ rộng <= 992px (Điện thoại, Máy tính bảng)
+   TÁC DỤNG: Điều chỉnh lại giao diện để không bị tràn hay vỡ khung trên thiết bị di động
+*/
 @media (max-width: 992px) {
+    /* LIÊN KẾT: Khung video & Khung 3D | TÁC DỤNG: Đổi từ tỷ lệ 21:9 sang 16:9 đứng hơn cho di động */
     .video-wrapper, 
     .iframe-wrapper { 
-        aspect-ratio: 16 / 9; /* Chuyển tỷ lệ video/3D về 16:9 để dễ nhìn hơn trên màn hình nhỏ */
+        aspect-ratio: 16 / 9; 
     }
     
+    /* LIÊN KẾT: Lưới thông số .specs-grid | TÁC DỤNG: Đổi từ 3 cột ngang thành 1 cột dọc duy nhất */
     .specs-grid { 
-        grid-template-columns: 1fr; /* Chuyển 3 cột thành 1 cột dọc duy nhất */
+        grid-template-columns: 1fr; 
     }
     
+    /* LIÊN KẾT: Thanh action-bar | TÁC DỤNG: Đổi từ hàng ngang thành hàng dọc, căn giữa chữ */
     .action-bar { 
-        flex-direction: column; /* Chuyển hàng ngang thành hàng dọc */
+        flex-direction: column; 
         gap: 15px; 
         text-align: center; 
     }
