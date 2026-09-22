@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới Thiệu Thành Viên Nhóm</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f0f2f5;
+      color: #333;
+      padding: 20px;
+    }
+    .header-title {
+      text-align: center;
+      margin: 40px 0;
+      color: #1a252f;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .team-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding-bottom: 50px;
+    }
+    
+    /* Style cho từng thẻ thành viên */
+    .member-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* Khu vực ảnh */
+    .member-img-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background-color: #e1e1e1; /* Màu nền khi chưa có ảnh */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .member-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Giúp ảnh không bị méo */
+    }
+    
+    /* Khu vực thông tin */
+    .member-info {
+      padding: 20px 15px;
+    }
+    .member-name {
+      font-size: 20px;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .member-id {
+      font-size: 14px;
+      color: #e74c3c;
+      font-weight: 600;
+      background: #fdf2f2;
+      padding: 3px 10px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    .member-hobbies {
+      font-size: 14px;
+      color: #7f8c8d;
+      line-height: 1.6;
+      text-align: left;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+    .hobbies-title {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="header-title">Thành Viên Nhóm Phát Triển</h1>
+
+  <div class="team-container">
+    
+    <!-- THÀNH VIÊN 1: BÁCH -->
+    <div class="member-card">
+      <div class="member-img-container">
+        <!-- Thay 'bach.jpg' bằng tên file ảnh thật của Bách -->
+        <img src="bach.jpg" alt="Nguyễn Văn Bách" class="member-img" onerror="this.src='https://via.placeholder.com/300x250?text=Anh+Bach'">
+      </div>
+      <div class="member-info">
+        <h3 class="member-name">Nguyễn Văn Bách</h3>
+        <span class="member-id">MSV: 2500xxxx</span>
+        <div class="member-hobbies">
+          <span class="hobbies-title">Sở thích: ăn ngủ nghỉ ỉa</span>
+          - Lập trình Web (HTML, CSS)<br>
+          - Đá bóng, xem phim hành động<br>
+          - Tìm hiểu công nghệ ô tô mới
+        </div>
+      </div>
+    </div>
+
+    <!-- THÀNH VIÊN 2: MINH -->
+    <div class="member-card">
+      <div class="member-img-container">
+        <!-- Thay 'minh.jpg' bằng tên file ảnh thật của Minh -->
+        <img src="/img/trang_chu/anh/minh.jpg" alt="Trần Đức Minh" class="member-img" onerror="this.src='https://via.placeholder.com/300x250?text=Anh+Minh'">
+      </div>
+      <div class="member-info">
+        <h3 class="member-name">Phạm Quang Tuấn</h3>
+        <span class="member-id">MSV: 25001369</span>
+        <div class="member-hobbies">
+          <span class="hobbies-title">Sở thích:được sống </span>
+          - Lập trình Web (HTML, CSS)<br>
+          - Chơi game, nghe nhạc EDM<br>
+          - Đọc truyện tranh
+        </div>
+      </div>
+    </div>
+
+    <!-- THÀNH VIÊN 3: HẢI ANH -->
+    <div class="member-card">
+      <div class="member-img-container">
+        <!-- Thay 'haianh.jpg' bằng tên file ảnh thật của Hải Anh -->
+        <img src="/img/trang_chu/anh/haianh.jpg" alt="Lê Hải Anh" class="member-img" onerror="this.src='https://via.placeholder.com/300x250?text=Anh+Hai+Anh'">
+      </div>
+      <div class="member-info">
+        <h3 class="member-name">Nguyễn Hải Anh</h3>
+        <span class="member-id">MSV: 25001346</span>
+        <div class="member-hobbies">
+          <span class="hobbies-title">Sở thích:</span>
+          - Viết code JavaScript<br>
+          - Đi phượt, chụp ảnh phong cảnh<br>
+          - Nuôi thú cưng
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

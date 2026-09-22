@@ -1,7 +1,4 @@
-/*
-*/
 
-// Sự kiện này đảm bảo: Chờ cho toàn bộ giao diện HTML tải xong xuôi 
 // thì mới bắt đầu chạy các đoạn code JavaScript bên dưới (tránh lỗi không tìm thấy giao diện).
 document.addEventListener("DOMContentLoaded", () => {
     initAccountTabs();  // Kích hoạt chức năng chuyển tab (Hồ sơ, Mật khẩu, v.v.)
@@ -47,8 +44,6 @@ function initAccountTabs() {
         });
     });
 }
-
-
 /* 
    2. CHỨC NĂNG LƯU THÔNG TIN CÁ NHÂN (PROFILE FORM)
 */
