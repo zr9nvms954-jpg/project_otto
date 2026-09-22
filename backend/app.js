@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const authRoutes = require('./routes/authRoutes');
-const db = require('./config/db'); // Kết nối Database từ file db.js
+const db = require('./config/db');
 
 const app = express();
 
@@ -11,10 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Dang ky Routes
+//ĐK
 app.use('/api/auth', authRoutes);
 
-// --- 1. API LẤY AN TOÀN TOÀN BỘ XE TỪ CÁC BẢNG ---
+// lấy API
 app.get('/api/cars', async (req, res) => {
     try {
         const tables = [
@@ -23,7 +23,7 @@ app.get('/api/cars', async (req, res) => {
             { name: 'cars_bugatti', brand: 'bugatti' },
             { name: 'cars_ferrari', brand: 'ferrari' },
             { name: 'cars_lamborghini', brand: 'lamborghini' },
-            { name: 'cars_mec', brand: 'mec' } // ✅ Tên bảng cars_mec chuẩn MySQL Workbench
+            { name: 'cars_mec', brand: 'mec' }
         ];
 
         let allCars = [];
@@ -31,7 +31,7 @@ app.get('/api/cars', async (req, res) => {
         for (const tbl of tables) {
             try {
                 const [rows] = await db.query(`SELECT * FROM ${tbl.name}`);
-                // Chuẩn hóa dữ liệu trả về cho Frontend
+                // Chuẩn hóa dữ liệu
                 const formattedRows = rows.map(item => ({
                     id: item.id || item.car_id,
                     brand: tbl.brand,
@@ -52,17 +52,14 @@ app.get('/api/cars', async (req, res) => {
     }
 });
 
-// --- 2. API TẠO ĐƠN HÀNG LƯU VÀO MYSQL (BẢNG orders VÀ order_items) ---
 app.post('/api/orders', async (req, res) => {
     try {
-        // Lấy thêm fullname, phone, address gửi từ CHECKOUT.html
         const { userId, carBrand, carId, price, fullname, phone, address } = req.body;
 
         if (!userId || !carId) {
             return res.status(400).json({ message: 'Thiếu thông tin mua hàng!' });
         }
 
-        // Tạo đơn hàng chính trong bảng orders (Đã bổ sung lưu fullname, phone, address)
         const [orderResult] = await db.query(
             'INSERT INTO orders (user_id, fullname, phone, address, total_amount, status) VALUES (?, ?, ?, ?, ?, ?)',
             [
@@ -77,7 +74,6 @@ app.post('/api/orders', async (req, res) => {
 
         const orderId = orderResult.insertId;
 
-        // Lưu chi tiết xe được mua vào bảng order_items
         await db.query(
             'INSERT INTO order_items (order_id, car_brand, car_id, quantity, price_at_purchase) VALUES (?, ?, ?, ?, ?)',
             [orderId, carBrand || 'unknown', carId, 1, price]
@@ -93,7 +89,7 @@ app.post('/api/orders', async (req, res) => {
     }
 });
 
-// Test Route
+// Test 
 app.get('/', (req, res) => {
     res.send('Backend Server is running!');
 });

@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW M5 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m5.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW M5</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW M5</span>
         </nav>
 
-        <main>
-            <h1>BMW M5 Sedan</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw8.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">EXECUTIVE ATHLETE</span>
+                    <h1>BMW M5 Sedan</h1>
+                    <p>Sự kết hợp hoàn hảo giữa vẻ sang trọng doanh nhân và sức mạnh siêu xe</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw8.mp4" controls autoplay muted loop></video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>6.200.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw8.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
-                    <li>Thiết kế tổng thể lịch lãm nhưng ẩn chứa sự hầm hố với khe thoát gió bên hông đặc trưng.</li>
+                    <li>Thiết kế tổng thể lịch lãm nhưng ẩn chứa sự hầm hố với khe thoát gió đặc trưng.</li>
                     <li>Cụm đèn chiếu sáng Laserlight hiện đại với tầm chiếu xa ấn tượng.</li>
                     <li>Gương chiếu hậu khí động học thiết kế riêng cho các dòng M.</li>
                     <li>Mâm xe hợp kim 20 inch siêu nhẹ đi cùng hệ thống phanh gốm M Carbon.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw7.png" alt="Động cơ BMW M5 Sedan">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw7.png" alt="Động cơ BMW M5 Sedan">
+                </div>
                 <ul>
                     <li><strong>Động cơ:</strong> Động cơ V8 4.4L TwinPower Turbo cực kỳ mạnh mẽ.</li>
                     <li><strong>Công suất tối đa:</strong> 617 mã lực (bản Competition).</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 8 cấp M Steptronic, dẫn động M xDrive thông minh (chuyển đổi RWD/AWD).</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,3 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> 305 km/h.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số 8 cấp M Steptronic, dẫn động M xDrive thông minh.
+                    </li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 3,3 giây, max 305 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw4.png" alt="Nội thất BMW M5 Sedan">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw4.png" alt="Nội thất BMW M5 Sedan">
+                </div>
                 <ul>
                     <li>Nội thất bọc da Merino cao cấp bao phủ toàn bộ khoang cabin.</li>
                     <li>Ghế M Multifunction có tính năng sấy, thông gió và massage.</li>
                     <li>Hệ thống âm thanh vòm Bowers & Wilkins Diamond đẳng cấp nhất.</li>
-                    <li>Cần số thiết kế M độc quyền tích hợp nút điều chỉnh tốc độ chuyển số Drivelogic.</li>
+                    <li>Cần số thiết kế M độc quyền tích hợp nút điều chỉnh tốc độ Drivelogic.</li>
                 </ul>
+<<<<<<< HEAD
             </section>
 
             <hr>
@@ -64,6 +91,12 @@
 </a>
         </main>
     </div>
+=======
+            </article>
+        </section>
+    </main>
+>>>>>>> c80369cac04305910499621dd1b61d908007ab08
 
 </body>
+
 </html>

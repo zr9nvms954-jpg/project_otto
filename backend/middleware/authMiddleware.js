@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 module.exports = (req, res, next) => {
     // Lấy token từ header Authorization
     const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Định dạng: "Bearer <TOKEN>"
+    const token = authHeader && authHeader.split(' ')[1];
 
     if (!token) {
         return res.status(401).json({
@@ -12,9 +12,9 @@ module.exports = (req, res, next) => {
     }
 
     try {
-        // Xác thực token hợp lệ
+        // check hợp lệ
         const verified = jwt.verify(token, process.env.JWT_SECRET || 'car_showroom_secret_key_2026');
-        req.user = verified; // Lưu thông tin user đã đăng nhập vào request
+        req.user = verified; //Lưu
         next(); // Cho phép tiếp tục đi vào lấy dữ liệu xe
     } catch (error) {
         res.status(403).json({ message: 'Token không hợp lệ hoặc đã hết hạn. Vui lòng đăng nhập lại!' });

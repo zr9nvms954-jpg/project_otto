@@ -1,61 +1,87 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW i4 M50 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_i4m50.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW i4 M50</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW i4 M50</span>
         </nav>
 
-        <main>
-            <h1>BMW i4 M50 (Xe Điện Thể Thao)</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw4.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ELECTRIC PERFORMANCE</span>
+                    <h1>BMW i4 M50</h1>
+                    <p>Mẫu Gran Coupe thuần điện đầu tiên sở hữu dải công suất M đầy uy lực</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw4.mp4" controls autoplay muted loop></video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>3.759.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw4.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
                     <li>Kiểu dáng Gran Coupe 4 cửa thuôn mượt, thanh lịch nhưng vô cùng thể thao.</li>
                     <li>Lưới tản nhiệt kín nguyên khối tích hợp radar và các cảm biến thông minh.</li>
                     <li>Các chi tiết trang trí M màu xám Cerium Grey nổi bật ở cản trước và gương.</li>
-                    <li>Bộ mâm M khí động học thiết kế riêng cho xe điện giúp giảm tối đa lực cản không khí.</li>
+                    <li>Bộ mâm M khí động học thiết kế riêng cho xe điện giúp giảm tối đa lực cản.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw3.png" alt="Động cơ BMW i4 M50">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw3.png" alt="Động cơ BMW i4 M50">
+                </div>
                 <ul>
                     <li><strong>Động cơ:</strong> 2 Mô-tơ điện đặt ở cầu trước và cầu sau (Thuần điện).</li>
                     <li><strong>Công suất tối đa:</strong> 536 mã lực (chế độ Sport Boost).</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số đơn cấp, dẫn động 4 bánh toàn thời gian xDrive điện tử.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,9 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> Khoảng 225 km/h.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số đơn cấp, dẫn động 4 bánh xDrive điện tử.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 3,9 giây, max 225 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw4.png" alt="Nội thất BMW i4 M50">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw4.png" alt="Nội thất BMW i4 M50">
+                </div>
                 <ul>
-                    <li>Hệ thống giả lập âm thanh BMW IconicSounds Electric soạn thảo bởi nhà soạn nhạc Hans Zimmer.</li>
+                    <li>Âm thanh BMW IconicSounds Electric soạn thảo bởi nhà soạn nhạc Hans Zimmer.</li>
                     <li>Màn hình cong BMW Curved Display hiện đại với giao diện điện iDrive độc quyền.</li>
                     <li>Ghế bọc da Vernasca cao cấp ôm sát cơ thể.</li>
-                    <li>Hệ thống treo thích ứng M Adaptive Suspension cho khả năng phản hồi mặt đường cực nhạy.</li>
+                    <li>Hệ thống treo thích ứng M Adaptive Suspension phản hồi mặt đường cực nhạy.</li>
                 </ul>
+<<<<<<< HEAD
             </section>
 
             <hr>
@@ -63,6 +89,12 @@
     Đặt Mua Ngay
 </a>
     </div>
+=======
+            </article>
+        </section>
+    </main>
+>>>>>>> c80369cac04305910499621dd1b61d908007ab08
 
 </body>
+
 </html>

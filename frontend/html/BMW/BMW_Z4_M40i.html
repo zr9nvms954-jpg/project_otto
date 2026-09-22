@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW Z4 M40i - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-z4.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW Z4 M40i</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW Z4 M40i</span>
         </nav>
 
-        <main>
-            <h1>BMW Z4 M40i Roadster</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw3.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ROADSTER</span>
+                    <h1>BMW Z4 M40i Roadster</h1>
+                    <p>Trải nghiệm tự do và phóng khoáng với thiết kế mui trần quyến rũ</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw3.mp4" controls autoplay muted loop></video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>3.500.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw3.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
-                    <li>Kiểu dáng roadster 2 chỗ ngồi với phần đầu xe thấp, thân xe gọn và thiết kế đậm chất thể thao.</li>
+                    <li>Kiểu dáng roadster 2 chỗ ngồi với phần đầu xe thấp, thân xe gọn và đậm chất thể thao.</li>
                     <li>Lưới tản nhiệt hình quả thận đặc trưng kết hợp cụm đèn LED sắc nét tạo diện mạo mạnh mẽ.</li>
                     <li>Mui mềm mở bằng điện giúp linh hoạt giữa trải nghiệm lái thể thao và phong cách mui trần.</li>
                     <li>Bộ mâm hợp kim M kích thước lớn kết hợp cản trước, cản sau và các chi tiết thể thao.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw3.png" alt="Động cơ BMW Z4 M40i Roadster">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw3.png" alt="Động cơ BMW Z4 M40i Roadster">
+                </div>
                 <ul>
-                    <li><strong>Động cơ:</strong> Động cơ xăng 3.0L 6 xi-lanh thẳng hàng BMW M TwinPower Turbo tăng áp.</li>
+                    <li><strong>Động cơ:</strong> Động cơ xăng 3.0L 6 xi-lanh thẳng hàng BMW M TwinPower Turbo.</li>
                     <li><strong>Công suất tối đa:</strong> Khoảng 382 mã lực.</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số tự động 8 cấp Sport Steptronic, dẫn động cầu sau.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> Khoảng 4,5 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> 250 km/h.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số tự động 8 cấp Sport Steptronic, dẫn động cầu sau.
+                    </li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,5 giây, max 250 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw3.png" alt="Nội thất BMW Z4 M40i Roadster">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw3.png" alt="Nội thất BMW Z4 M40i Roadster">
+                </div>
                 <ul>
-                    <li>Khoang lái 2 chỗ ngồi hướng về người lái với ghế thể thao M và các chi tiết hoàn thiện cao cấp.</li>
-                    <li>Bảng đồng hồ kỹ thuật số kết hợp màn hình trung tâm hiển thị thông tin vận hành và giải trí.</li>
-                    <li>Vô-lăng thể thao M tích hợp lẫy chuyển số và các nút điều khiển chế độ vận hành.</li>
+                    <li>Khoang lái 2 chỗ ngồi hướng về người lái với ghế thể thao M và hoàn thiện cao cấp.</li>
+                    <li>Bảng đồng hồ kỹ thuật số kết hợp màn hình trung tâm hiển thị thông tin vận hành.</li>
+                    <li>Vô-lăng thể thao M tích hợp lẫy chuyển số và nút điều khiển chế độ vận hành.</li>
                     <li>Hệ thống âm thanh cao cấp, kết nối thông minh và nhiều công nghệ hỗ trợ người lái.</li>
                 </ul>
+<<<<<<< HEAD
             </section>
 
             <hr>
@@ -64,6 +91,12 @@
 </a>
         </main>
     </div>
+=======
+            </article>
+        </section>
+    </main>
+>>>>>>> c80369cac04305910499621dd1b61d908007ab08
 
 </body>
+
 </html>

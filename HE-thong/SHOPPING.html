@@ -79,9 +79,38 @@
 
         .page-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 28px;
             color: #f1f5f9;
+        }
+
+        /* BRAND FILTER MENU */
+        .brand-menu {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .brand-btn {
+            background-color: #1e293b;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .brand-btn:hover,
+        .brand-btn.active {
+            background-color: #0284c7;
+            color: #ffffff;
+            border-color: #38bdf8;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
         }
 
         /* DANH SÁCH SẢN PHẨM (GRID) */
@@ -181,12 +210,25 @@
     <div class="container">
         <h2 class="page-title">🚗 DANH SÁCH XE DÀNH CHO BẠN</h2>
 
+        <!-- MENU LỌC THEO HÃNG XE -->
+        <div class="brand-menu">
+            <button class="brand-btn active" onclick="filterCars('all', this)">Tất cả</button>
+            <button class="brand-btn" onclick="filterCars('audi', this)">Audi</button>
+            <button class="brand-btn" onclick="filterCars('bmw', this)">BMW</button>
+            <button class="brand-btn" onclick="filterCars('mec', this)">Mercedes</button>
+            <button class="brand-btn" onclick="filterCars('bugatti', this)">Bugatti</button>
+            <button class="brand-btn" onclick="filterCars('lamborghini', this)">Lamborghini</button>
+            <button class="brand-btn" onclick="filterCars('ferrari', this)">Ferrari</button>
+        </div>
+
         <div class="car-grid" id="car-list">
             <p class="loading-text">Đang tải danh sách xe từ Database...</p>
         </div>
     </div>
 
     <script>
+        let allCarsData = []; // Lưu danh sách tất cả các xe từ server
+
         document.addEventListener('DOMContentLoaded', async () => {
             // 1. LẤY THÔNG TIN NGƯỜI DÙNG TỪ LOCALSTORAGE
             const user = JSON.parse(localStorage.getItem('user'));
@@ -219,38 +261,8 @@
                 const result = await response.json();
 
                 if (response.ok && (result.data || Array.isArray(result))) {
-                    const carList = result.data || result;
-                    carContainer.innerHTML = '';
-
-                    if (carList.length === 0) {
-                        carContainer.innerHTML = '<p class="loading-text">Chưa có dữ liệu xe trong Database!</p>';
-                        return;
-                    }
-
-                    carList.forEach(car => {
-                        const carId = car.id || car.car_id || 1;
-                        const brand = car.brand || car.car_brand || 'audi';
-                        const name = car.name || car.car_name || 'Xe ô tô';
-                        const rawPrice = car.price || 1000000000;
-                        const formattedPrice = Number(rawPrice).toLocaleString() + ' VNĐ';
-                        const image = car.image_url || car.image || 'https://via.placeholder.com/300x180?text=Car+Image';
-
-                        const carCard = `
-                            <div class="car-card">
-                                <img src="${image}" alt="${name}">
-                                <div class="car-details">
-                                    <div>
-                                        <div class="car-title">${name}</div>
-                                        <div class="car-price">${formattedPrice}</div>
-                                    </div>
-                                    <button class="btn-buy" onclick="buyCar('${brand}', ${carId}, ${rawPrice}, '${name}')">
-                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                        carContainer.innerHTML += carCard;
-                    });
+                    allCarsData = result.data || result;
+                    renderCars(allCarsData);
                 } else {
                     carContainer.innerHTML = '<p class="loading-text">Không thể tải danh sách xe!</p>';
                 }
@@ -260,7 +272,75 @@
             }
         }
 
-        // HÀM CHỌN XE VÀ CHUYỂN HUỚNG SANG TRANG ĐIỀN THÔNG TIN NHẬN XE (CHECKOUT)
+        // HÀM HIỂN THỊ DANH SÁCH XE RA GIAO DIỆN
+        function renderCars(carList) {
+            const carContainer = document.getElementById('car-list');
+            carContainer.innerHTML = '';
+
+            if (!carList || carList.length === 0) {
+                carContainer.innerHTML = '<p class="loading-text">Không tìm thấy xe nào thuộc hãng này!</p>';
+                return;
+            }
+
+            carList.forEach(car => {
+                const carId = car.id || car.car_id || 1;
+                const brand = car.brand || car.car_brand || 'audi';
+                const name = car.name || car.car_name || 'Xe ô tô';
+                const rawPrice = car.price || 1000000000;
+                const formattedPrice = Number(rawPrice).toLocaleString() + ' VNĐ';
+
+                // XỬ LÝ ĐƯỜNG DẪN ẢNH VỀ THƯ MỤC LOCAL '../../img/'
+                let rawImg = car.image_url || car.image || car.picture || car.img || '';
+                let finalImg = '';
+
+                if (rawImg.startsWith('http://') || rawImg.startsWith('https://')) {
+                    finalImg = rawImg;
+                } else if (rawImg) {
+                    let cleanPath = rawImg.replace(/^\/?(img\/)?/, '');
+                    finalImg = `../../img/${cleanPath}`;
+                } else {
+                    finalImg = 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop';
+                }
+
+                const carCard = `
+                    <div class="car-card">
+                        <img src="${finalImg}" alt="${name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop';">
+                        <div class="car-details">
+                            <div>
+                                <div class="car-title">${name}</div>
+                                <div class="car-price">${formattedPrice}</div>
+                            </div>
+                            <button class="btn-buy" onclick="buyCar('${brand}', ${carId}, ${rawPrice}, '${name}')">
+                                <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                            </button>
+                        </div>
+                    </div>
+                `;
+                carContainer.innerHTML += carCard;
+            });
+        }
+
+        // HÀM LỌC XE THEO HÃNG KHÔNG CẦN LOAD TRANG
+        function filterCars(brand, element) {
+            // Đổi hiệu ứng active cho nút
+            document.querySelectorAll('.brand-btn').forEach(btn => btn.classList.remove('active'));
+            if (element) element.classList.add('active');
+
+            if (brand === 'all') {
+                renderCars(allCarsData);
+            } else {
+                const filtered = allCarsData.filter(car => {
+                    const carBrand = (car.brand || car.car_brand || '').toLowerCase();
+                    const carName = (car.name || car.car_name || '').toLowerCase();
+                    const searchKey = brand.toLowerCase();
+
+                    return carBrand.includes(searchKey) || carName.includes(searchKey);
+                });
+                renderCars(filtered);
+            }
+        }
+
+        // HÀM CHỌN XE VÀ CHUYỂN HUỚNG SANG CHECKOUT
         function buyCar(carBrand, carId, price, carName) {
             const user = JSON.parse(localStorage.getItem('user'));
             const userId = user ? (user.id || user.user_id || user.id_user || user.userId) : null;
@@ -271,11 +351,8 @@
                 return;
             }
 
-            // Lưu thông tin xe vừa chọn vào LocalStorage để trang CHECKOUT.html lấy ra dùng
             const selectedCar = { carBrand, carId, price, carName };
             localStorage.setItem('checkout_car', JSON.stringify(selectedCar));
-
-            // Chuyển hướng sang trang điền thông tin nhận xe
             window.location.href = 'CHECKOUT.html';
         }
     </script>

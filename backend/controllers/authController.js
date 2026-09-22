@@ -2,7 +2,7 @@ const db = require('../config/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// ĐĂNG KÝ
+// ĐK
 exports.register = async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -11,7 +11,7 @@ exports.register = async (req, res) => {
             return res.status(400).json({ message: 'Vui lòng điền đầy đủ thông tin!' });
         }
 
-        // 1. Kiểm tra xem username hoặc email đã tồn tại chưa
+        // check tồn tại
         const [existingUsers] = await db.query(
             'SELECT * FROM users WHERE username = ? OR email = ?',
             [username, email]
@@ -25,7 +25,7 @@ exports.register = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        // 3. Thêm tài khoản mới vào DB
+        // 3. Thêm tài khoản vào ĐB
         await db.query(
             'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
             [username, email, hashedPassword]
@@ -39,7 +39,7 @@ exports.register = async (req, res) => {
     }
 };
 
-// ĐĂNG NHẬP
+// ĐN
 exports.login = async (req, res) => {
     try {
         const { username, password } = req.body;
@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
             return res.status(400).json({ message: 'Vui lòng nhập tài khoản và mật khẩu!' });
         }
 
-        // 1. Tìm user theo username hoặc email
+        //Tìm user theo username hoặc email
         const [users] = await db.query(
             'SELECT * FROM users WHERE username = ? OR email = ?',
             [username, username]
@@ -60,20 +60,20 @@ exports.login = async (req, res) => {
 
         const user = users[0];
 
-        // 2. So sánh mật khẩu
+        //So sánh mật khẩu
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ message: 'Tài khoản hoặc mật khẩu không đúng!' });
         }
 
-        // 3. Tạo Token xác thực (Dùng cột user_id chuẩn trong MySQL Workbench)
+        // Tạo Token xác thực
         const token = jwt.sign(
             { id: user.user_id, username: user.username },
             process.env.JWT_SECRET || 'car_showroom_secret_key_2026',
             { expiresIn: '24h' }
         );
 
-        // 4. Trả về thông tin User chứa đúng user_id để LocalStorage lưu giữ
+        // Trả thông tin
         res.json({
             message: 'Đăng nhập thành công!',
             token,

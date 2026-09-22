@@ -27,7 +27,7 @@ def load_all_catalogs() -> list[dict[str, Any]]:
     url_dir = CATALOG_DIR.parent / "url_car"
     url_mapping = {}
 
-    # 1. Đọc dữ liệu URL từ thư mục url_car
+    # 1. Đọc dữ liệu 
     if url_dir.exists():
         for url_file in url_dir.glob("*.json"):
             try:
@@ -54,7 +54,7 @@ def load_all_catalogs() -> list[dict[str, Any]]:
             except Exception as e:
                 print(f"[Cảnh báo]: Không thể đọc file URL {url_file.name}: {e}")
 
-    # 2. Ghép URL vào đúng mẫu xe trong Dataset
+    # 2 Ghép URL vào đúng mẫu xe
     for json_file in CATALOG_DIR.glob("*.json"):
         try:
             data = json.loads(json_file.read_text(encoding="utf-8"))
@@ -162,7 +162,7 @@ def format_catalog_context(user_prompt: str) -> str:
 
     candidate_vehicles = []
 
-    # Lọc xe theo từ khóa người dùng nhập (Tên xe, Model, ID hoặc Brand)
+    # Lọc xe
     clean_p = _clean_str(p)
     for v in vehicles:
         v_name = _clean_str(v.get("name") or v.get("model"))
@@ -245,7 +245,7 @@ def format_vehicle_list_response(user_prompt: str) -> str:
     if not vehicles:
         return "Dạ, hiện tại showroom bên em chưa cập nhật dữ liệu xe ạ."
 
-    # Xử lý trường hợp khách hỏi Hãng xe
+    # Xử lý trường hợp 
     if is_brand_list_request(user_prompt):
         available_brands = get_available_brands()
         lines = [
@@ -258,7 +258,6 @@ def format_vehicle_list_response(user_prompt: str) -> str:
         )
         return "\n".join(lines)
 
-    # Xử lý trường hợp khách hỏi Danh sách chi tiết các xe
     lines = ["Dạ, em gửi danh sách các mẫu xe hiện có tại showroom ạ:\n"]
     for idx, v in enumerate(vehicles, 1):
         price = v.get("price_vnd")
