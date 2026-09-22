@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari Daytona SP3 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_daytone.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-                <strong>Ferrari Daytona SP3</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari Daytona SP3</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Ferrari Daytona SP3</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-container">
-                <video src="/img/FERRA/ngoaithat/fre6.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre6.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ICONA SERIES</span>
+                    <h1>Ferrari Daytona SP3</h1>
+                    <p>Tuyệt phẩm giới hạn tri ân huyền thoại chiến thắng giải 24 Hours of Daytona 1967</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Thân xe kiểu dáng Targa mui trần với kính chắn gió uốn cong ôm trọn khoang lái.</li>
-                <li>Đuôi xe gây ấn tượng mạnh với các dải khe gió nằm ngang xếp tầng vô cùng độc đáo.</li>
-                <li>Đèn pha mắt lươn đóng/mở cơ học mô phỏng phong cách các dòng xe đua cổ điển.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/dongco/frera7.png" alt="Động cơ Ferrari Daytona SP3">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>55.000.000.000 VNĐ</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> V12 6.5L F140HC Hút khí tự nhiên đặt giữa-sau.</li>
-                <li><strong>Công suất tối đa:</strong> 840 mã lực tại 9.250 vòng/phút.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,85 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 340 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre6.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thân xe kiểu dáng Targa mui trần với kính chắn gió uốn cong ôm trọn cabin.</li>
+                    <li>Đuôi xe gây ấn tượng với dải khe gió nằm ngang xếp tầng độc đáo.</li>
+                    <li>Đèn pha mắt lươn đóng/mở mô phỏng xe đua cổ điển.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/noithat/frera2.png" alt="Nội thất Ferrari Daytona SP3">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/dongco/frera7.png" alt="Động cơ Ferrari Daytona SP3">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V12 6.5L F140HC Hút khí tự nhiên đặt giữa-sau.</li>
+                    <li><strong>Công suất tối đa:</strong> 840 mã lực tại 9.250 vòng/phút.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 2,85 giây, max 340 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Ghế ngồi bọc da màu xanh đặc trưng liền khối với khung gầm carbon.</li>
-                <li>Bảng điều khiển bọc da Alcantara tối giản kết hợp các phím chức năng cảm ứng.</li>
-                <li>Hệ thống kiểm soát trượt ngang SSC 6.1 tiên tiến nhất của Ferrari.</li>
-            </ul>
-
-            <hr>
-
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/noithat/frera2.png" alt="Nội thất Ferrari Daytona SP3">
+                </div>
+                <ul>
+                    <li>Ghế ngồi bọc da màu xanh liền khối với khung gầm carbon.</li>
+                    <li>Bảng điều khiển bọc Alcantara tối giản kết hợp phím chức năng cảm ứng.</li>
+                    <li>Hệ thống kiểm soát trượt ngang SSC 6.1 tiên tiến nhất của Ferrari.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

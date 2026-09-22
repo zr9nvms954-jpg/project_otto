@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes-Maybach S680 4MATIC - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/mec-css/Mec-s680.css">
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt; 
-            <strong>Mercedes-Maybach S680</strong>
-        </p>
-    </nav>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt;
+            <span>Mercedes-Maybach S680</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/maybach-s680.jpg" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">V12 FLAGSHIP</span>
+                    <h1>Mercedes-Maybach S680 4MATIC</h1>
+                    <p>Đỉnh cao xa xỉ tuyệt đối kết hợp khối động cơ V12 6.0L BiTurbo chế tác thủ công</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Mercedes-Maybach S680 4MATIC</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/maybach-s680.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Mercedes-Maybach S680 4MATIC width="500">
-            <ul>
-                <li>Lưới tản nhiệt mạ chrome nan dọc Maybach đặc trưng và viền chrome tinh tế.</li>
-                <li>Tùy chọn sơn hai tông màu tương phản chế tác thủ công xa xỉ.</li>
-                <li>Logo Maybach phát sáng trên cột C cùng đèn chiếu sáng thông minh DIGITAL LIGHT.</li>
-                <li>Bộ mâm hợp kim mạ chrome đúc nguyên khối độc quyền.</li>
-            </ul>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>15.990.000.000 VNĐ</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/MEC/dongco/mec10.png" alt="Động cơ Mercedes-Maybach S680 4MATIC" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> Xăng V12 6.0L BiTurbo chế tác thủ công.</li>
-                <li><strong>Công suất tối đa:</strong> 612 mã lực (621 hp) tại 5.000 - 5.500 vòng/phút.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 9 cấp 9G-TRONIC, dẫn động 4 bánh toàn thời gian biến thiên 4MATIC.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,5 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 250 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/maybach-s680.jpg" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Lưới tản nhiệt mạ chrome nan dọc Maybach đặc trưng và viền chrome tinh tế.</li>
+                    <li>Tùy chọn sơn hai tông màu tương phản chế tác thủ công xa xỉ.</li>
+                    <li>Logo Maybach phát sáng trên cột C cùng đèn chiếu sáng DIGITAL LIGHT.</li>
+                    <li>Bộ mâm hợp kim mạ chrome đúc nguyên khối độc quyền.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="../../img/noithat-maybach-s680.jpg" alt="Nội thất Mercedes-Maybach S680 4MATIC" width="500">
-            <ul>
-                <li>Ghế Executive bọc da Nappa Exclusive với bệ đỡ chân, massage đá nóng và sưởi bắp chân.</li>
-                <li>Màn hình trung tâm OLED 12.8 inch cùng hệ thống MBUX High-End hàng ghế sau.</li>
-                <li>Âm thanh vòm Burmester® High-End 4D Surround 31 loa với công nghệ chống ồn chủ động.</li>
-                <li>Hệ thống cửa sau đóng/mở tự động bằng điện (Comfort Door) và tủ lạnh chứa Champagne.</li>
-            </ul>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/MEC/dongco/mec10.png" alt="Động cơ Mercedes-Maybach S680 4MATIC">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> Xăng V12 6.0L BiTurbo chế tác thủ công.</li>
+                    <li><strong>Công suất tối đa:</strong> 612 mã lực (621 hp) tại 5.000 - 5.500 vòng/phút.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Tự động 9 cấp 9G-TRONIC, dẫn động 4 bánh 4MATIC.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,5 giây, max 250 km/h.</li>
+                </ul>
+            </article>
 
-            <hr>
-
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>15.990.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="../../img/noithat-maybach-s680.jpg" alt="Nội thất Mercedes-Maybach S680 4MATIC">
+                </div>
+                <ul>
+                    <li>Ghế Executive bọc da Nappa Exclusive với bệ đỡ chân, massage đá nóng.</li>
+                    <li>Màn hình trung tâm OLED 12.8 inch cùng MBUX High-End hàng ghế sau.</li>
+                    <li>Âm thanh vòm Burmester® High-End 4D Surround 31 loa chống ồn chủ động.</li>
+                    <li>Hệ thống cửa sau đóng/mở tự động bằng điện (Comfort Door) và tủ lạnh Champagne.</li>
+                </ul>
+            </article>
+        </section>
     </main>
 
 </body>
+
 </html>

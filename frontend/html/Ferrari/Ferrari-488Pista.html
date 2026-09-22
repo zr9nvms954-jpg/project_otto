@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari 488 Pista Spider - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_488.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-                <strong>Ferrari 488 Pista Spider</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari 488 Pista Spider</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Ferrari 488 Pista Spider</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-container">
-                <video src="/img/FERRA/ngoaithat/fre4.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre4.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">TRACK SPECIAL</span>
+                    <h1>Ferrari 488 Pista Spider</h1>
+                    <p>Phiên bản siêu xe mui trần thừa hưởng trực tiếp công nghệ đua xe thể thao F1</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Ống khí động học S-Duct phía trước giúp tăng 20% lực ép xuống mặt đường.</li>
-                <li>Dải decal thể thao chạy dọc từ nắp capo đến đuôi xe tạo điểm nhấn đặc trưng.</li>
-                <li>Mâm xe bằng sợi carbon siêu nhẹ tùy chọn giúp cắt giảm đáng kể trọng lượng.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/dongco/frera3.png" alt="Động cơ Ferrari 488 Pista Spider">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>30.000.000.000 VNĐ</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> V8 3.9L Twin-Turbo tăng áp kép tinh chỉnh chuẩn xe đua.</li>
-                <li><strong>Công suất tối đa:</strong> 720 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,85 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 340 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre4.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Ống khí động học S-Duct phía trước giúp tăng 20% lực ép mặt đường.</li>
+                    <li>Dải decal thể thao chạy dọc nắp capo đến đuôi xe tạo điểm nhấn đặc trưng.</li>
+                    <li>Mâm xe bằng sợi carbon siêu nhẹ tùy chọn giúp cắt giảm trọng lượng.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/noithat/frera3.png" alt="Nội thất Ferrari 488 Pista Spider">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/dongco/frera3.png" alt="Động cơ Ferrari 488 Pista Spider">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 3.9L Twin-Turbo tinh chỉnh chuẩn xe đua.</li>
+                    <li><strong>Công suất tối đa:</strong> 720 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 2,85 giây, max 340 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Toàn bộ khoang cabin bọc da Alcantara và ốp sợi carbon nhám nhẹ trọng lượng.</li>
-                <li>Loại bỏ hộc đựng đồ phía trước để cắt giảm tối đa khối lượng xe.</li>
-                <li>Hệ thống kiểm soát góc trượt ngang SSC 6.0 tích hợp tính năng Ferrari Dynamic Enhancer (FDE).</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/noithat/frera3.png" alt="Nội thất Ferrari 488 Pista Spider">
+                </div>
+                <ul>
+                    <li>Khoang cabin bọc da Alcantara và ốp sợi carbon nhám siêu nhẹ.</li>
+                    <li>Loại bỏ hộc đựng đồ phía trước để cắt giảm tối đa khối lượng.</li>
+                    <li>Kiểm soát góc trượt SSC 6.0 tích hợp Ferrari Dynamic Enhancer (FDE).</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari SF90 Stradale - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/Ferrari-sf90.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-                <strong>Ferrari SF90 Stradale</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari SF90 Stradale</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Ferrari SF90 Stradale</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-container">
-                <video src="/img/FERRA/ngoaithat/fre3.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre3.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">HYBRID SUPERCAR</span>
+                    <h1>Ferrari SF90 Stradale</h1>
+                    <p>Siêu xe PHEV đầu tiên đạt ngưỡng 1.000 mã lực với dẫn động 4 bánh toàn thời gian</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Thiết kế siêu xe khí động học với thân xe thấp, rộng và nhiều đường nét sắc sảo.</li>
-                <li>Cụm đèn pha LED hiện đại kết hợp các khe hút gió lớn giúp tối ưu khả năng làm mát.</li>
-                <li>Thân xe được thiết kế tập trung vào hiệu quả khí động học và khả năng vận hành ở tốc độ cao.</li>
-                <li>Bộ mâm hợp kim thể thao kết hợp hệ thống phanh hiệu suất cao và các chi tiết carbon.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/dongco/frera4.png" alt="Động cơ Ferrari SF90 Stradale">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>34.000.000.000 VNĐ</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> Động cơ V8 4.0L Twin-Turbo kết hợp ba mô-tơ điện.</li>
-                <li><strong>Công suất tối đa:</strong> Khoảng 986 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số ly hợp kép 8 cấp kết hợp hệ dẫn động bốn bánh.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> Khoảng 2,5 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> Khoảng 340 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre3.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thiết kế siêu xe khí động học với thân thấp, rộng và nhiều đường nét sắc sảo.</li>
+                    <li>Cụm đèn pha LED hiện đại kết hợp khe hút gió làm mát tối ưu.</li>
+                    <li>Tập trung vào hiệu quả khí động học và vận hành tốc độ cao.</li>
+                    <li>Mâm hợp kim thể thao kết hợp hệ thống phanh hiệu suất cao và carbon.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/noithat/frera4.png" alt="Nội thất Ferrari SF90 Stradale">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/dongco/frera4.png" alt="Động cơ Ferrari SF90 Stradale">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 4.0L Twin-Turbo kết hợp 3 mô-tơ điện.</li>
+                    <li><strong>Công suất tối đa:</strong> Khoảng 986 mã lực (Gần 1.000 hp).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 8 cấp, dẫn động 4 bánh AWD.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 2,5 giây, max 340 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Nội thất thể thao tập trung vào người lái với ghế thể thao và nhiều vật liệu cao cấp.</li>
-                <li>Bảng đồng hồ kỹ thuật số hiển thị nhiều thông tin vận hành và các chế độ lái.</li>
-                <li>Vô-lăng thể thao tích hợp nhiều nút điều khiển và lẫy chuyển số.</li>
-                <li>Hệ thống giải trí và các công nghệ hỗ trợ người lái hiện đại.</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/noithat/frera4.png" alt="Nội thất Ferrari SF90 Stradale">
+                </div>
+                <ul>
+                    <li>Nội thất tập trung vào người lái với ghế thể thao và vật liệu cao cấp.</li>
+                    <li>Bảng đồng hồ kỹ thuật số hiển thị thông tin vận hành và chế độ lái.</li>
+                    <li>Vô-lăng thể thao tích hợp nhiều phím điều khiển cảm ứng và lẫy chuyển số.</li>
+                    <li>Hệ thống giải trí và công nghệ hỗ trợ người lái hiện đại.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

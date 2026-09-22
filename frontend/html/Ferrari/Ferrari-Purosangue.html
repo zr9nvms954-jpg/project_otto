@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari Purosangue - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_purosang.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-                <strong>Ferrari Purosangue</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari Purosangue</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Ferrari Purosangue</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-container">
-                <!-- Bạn nhớ bổ sung thêm tên tệp video vào cuối đường dẫn bên dưới nhé (VD: fre8.mp4) -->
-                <video src="/img/FERRA/ngoaithat/fre8.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre8.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">FOUR-DOOR V12</span>
+                    <h1>Ferrari Purosangue</h1>
+                    <p>Mẫu xe 4 cửa 4 chỗ đầu tiên mang linh hồn siêu xe V12 hút khí tự nhiên thuần túy</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Cửa sau mở ngược dạng Welcome Doors (Cửa tựa như Rolls-Royce) đóng mở bằng điện độc đáo.</li>
-                <li>Mui xe bằng sợi carbon giúp hạ thấp trọng tâm và giảm trọng lượng tối đa.</li>
-                <li>Kiểu dáng SUV Coupé mạnh mẽ, hệ thống cản và khuếch tán gió tối ưu khí động học.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/dongco/frera4.png" alt="Động cơ Ferrari Purosangue">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>39.000.000.000 VNĐ</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên huyền thoại đặt giữa-trước.</li>
-                <li><strong>Công suất tối đa:</strong> 725 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Ly hợp kép 8 cấp F1 DCT, hệ dẫn động 4 bánh thông minh 4RM-S EVO.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,3 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 310 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre8.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Cửa sau mở ngược Welcome Doors đóng mở bằng điện độc đáo.</li>
+                    <li>Mui xe bằng sợi carbon giúp hạ thấp trọng tâm và giảm trọng lượng tối đa.</li>
+                    <li>Kiểu dáng SUV Coupé mạnh mẽ, hệ thống cản tối ưu khí động học.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/noithat/frera4.png" alt="Nội thất Ferrari Purosangue">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/dongco/frera4.png" alt="Động cơ Ferrari Purosangue">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên huyền thoại đặt giữa-trước.</li>
+                    <li><strong>Công suất tối đa:</strong> 725 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 8 cấp F1 DCT, AWD 4RM-S EVO.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 3,3 giây, max 310 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>4 ghế thể thao độc lập có chức năng sưởi và massage cao cấp.</li>
-                <li>Hệ thống treo chủ động Ferrari Active Suspension công nghệ True Active Spool Valve đầu tiên trên thế giới.</li>
-                <li>Màn hình 10,2 inch riêng biệt dành riêng cho hành khách phía trước.</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/noithat/frera4.png" alt="Nội thất Ferrari Purosangue">
+                </div>
+                <ul>
+                    <li>4 ghế thể thao độc lập tích hợp chức năng sưởi và massage cao cấp.</li>
+                    <li>Treo chủ động Active Suspension công nghệ True Active Spool Valve.</li>
+                    <li>Màn hình 10,2 inch riêng biệt dành riêng cho hành khách phía trước.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

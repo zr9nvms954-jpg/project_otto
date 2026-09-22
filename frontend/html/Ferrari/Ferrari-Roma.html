@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari Roma - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_roma.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-                <strong>Ferrari Roma</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari Roma</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Ferrari Roma Coupe</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-container">
-                <!-- Nhớ bổ sung thêm tên tệp video chuẩn vào đường dẫn bên dưới nhé (VD: roma.mp4 hoặc fre11.mp4) -->
-                <video src="/img/FERRA/ngoaithat/fre10.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre10.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">LA NUOVA DOLCE VITA</span>
+                    <h1>Ferrari Roma Coupe</h1>
+                    <p>Vẻ đẹp thanh lịch, sang trọng lấy cảm hứng từ phong cách sống Rome thập niên 1960</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Thiết kế tối giản sang trọng lấy cảm hứng từ các dòng xe Grand Tourer thập niên 1960.</li>
-                <li>Lưới tản nhiệt đồng màu với thân xe tạo nét phá cách hiện đại.</li>
-                <li>Cánh gió sau chủ động 3 vị trí tự động kích hoạt theo tốc độ xe.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-container">
-                <img src="/img/ferrari/ferrari_roma_dongco.jpg" alt="Động cơ Ferrari Roma">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>15.700.000.000 VNĐ</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> V8 3.9L Turbo tăng áp kép đặt trước-giữa.</li>
-                <li><strong>Công suất tối đa:</strong> 620 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Ly hợp kép 8 cấp (kế thừa từ mẫu SF90 Stradale), dẫn động cầu sau.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,4 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 320 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre10.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thiết kế tối giản sang trọng lấy cảm hứng từ các dòng Grand Tourer thập niên 60.</li>
+                    <li>Lưới tản nhiệt đồng màu với thân xe tạo nét phá cách hiện đại.</li>
+                    <li>Cánh gió sau chủ động 3 vị trí tự động kích hoạt theo tốc độ.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-container">
-                <img src="/img/ferrari/noithat_Roma.jpg" alt="Nội thất Ferrari Roma">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/ferrari/ferrari_roma_dongco.jpg" alt="Động cơ Ferrari Roma">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 3.9L Turbo tăng áp kép đặt trước-giữa.</li>
+                    <li><strong>Công suất tối đa:</strong> 620 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 8 cấp kế thừa từ SF90, dẫn động cầu sau.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 3,4 giây, max 320 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Nội thất thiết kế 2 khoang riêng biệt (Dual Cockpit) cho người lái và hành khách.</li>
-                <li>Màn hình trung tâm đặt dọc 8,4 inch tích hợp hệ thống giải trí đa phương tiện.</li>
-                <li>Cần số dạng gạt hoài cổ mô phỏng cổng số sàn huyền thoại của Ferrari.</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/ferrari/noithat_Roma.jpg" alt="Nội thất Ferrari Roma">
+                </div>
+                <ul>
+                    <li>Nội thất 2 khoang riêng biệt (Dual Cockpit) cho người lái và hành khách.</li>
+                    <li>Màn hình trung tâm đặt dọc 8,4 inch tích hợp hệ thống giải trí đa phương tiện.</li>
+                    <li>Cần số dạng gạt hoài cổ mô phỏng cổng số sàn huyền thoại của Ferrari.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari F8 Tributo - Chi Tiết Xe</title>
-    <!-- Đã chuyển thẻ link vào trong head -->
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_f8tributo.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav aria-label="Breadcrumb">
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-            <strong>Ferrari F8 Tributo</strong>
-        </p>
-    </nav>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari F8 Tributo</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre7.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">V8 TRIBUTE</span>
+                    <h1>Ferrari F8 Tributo</h1>
+                    <p>Lời tri ân dành cho khối động cơ V8 tăng áp xuất sắc nhất trong lịch sử Ferrari</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <article>
-            <h1>Ferrari F8 Tributo</h1>        
-            
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Sửa lỗi cú pháp video -->
-                <video width="500" controls autoplay muted loop aria-label="Video ngoại thất Ferrari F8 Tributo">
-                    <source src="/img/FERRA/ngoaithat/fre7.mp4" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ thẻ video.
-                </video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>19.200.000.000 VNĐ</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre7.mp4" autoplay muted loop playsinline></video>
+                </div>
                 <ul>
-                    <li>Hệ thống ống S-Duct phía trước lấy cảm hứng từ F1 giúp tăng 15% lực ép xuống so với 488 GTB.</li>
-                    <li>Nắp động cơ bằng kính Lexan có khe thoát nhiệt gợi nhớ đến mẫu xe kinh điển Ferrari F40.</li>
+                    <li>Ống S-Duct phía trước lấy cảm hứng F1 tăng 15% lực ép xuống so với 488 GTB.</li>
+                    <li>Nắp động cơ bằng kính Lexan có khe thoát nhiệt gợi nhớ đến chiếc F40 kinh điển.</li>
                     <li>Cụm đèn hậu đôi dạng tròn cổ điển quay trở lại trên thiết kế đuôi xe.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari F8 Tributo" width="500">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari F8 Tributo">
+                </div>
                 <ul>
-                    <li><strong>Động cơ:</strong> V8 3.9L Twin-Turbo - Động cơ đoạt giải "Động cơ của năm" nhiều năm liên tiếp.</li>
+                    <li><strong>Động cơ:</strong> V8 3.9L Twin-Turbo - Động cơ đoạt nhiều giải thưởng danh giá.</li>
                     <li><strong>Công suất tối đa:</strong> 720 mã lực.</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,9 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> 340 km/h.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 7 cấp F1, dẫn động cầu sau RWD.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 2,9 giây, max 340 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/FERRA/noithat/frera2.png" alt="Nội thất Ferrari F8 Tributo" width="500">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/noithat/frera2.png" alt="Nội thất Ferrari F8 Tributo">
+                </div>
                 <ul>
                     <li>Bảng điều khiển thiết kế mới hoàn toàn tròn trịa và đậm chất thể thao.</li>
                     <li>Màn hình cảm ứng 7 inch phụ dành riêng cho hành khách phía trước.</li>
-                    <li>Vô-lăng đường kính nhỏ hơn tích hợp núm xoay chuyển chế độ lái Manettino chuẩn đua.</li>
+                    <li>Vô-lăng đường kính nhỏ tích hợp núm xoay Manettino chuẩn đua.</li>
                 </ul>
-            </section>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </article>
+            </article>
+        </section>
     </main>
 
 </body>
+
 </html>

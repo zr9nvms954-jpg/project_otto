@@ -1,67 +1,91 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes-Benz EQS 580 4MATIC - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/mec-css/mec_eqs580.css">
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt; 
-            <strong>Mercedes-Benz EQS 580 4MATIC</strong>
-        </p>
-    </nav>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt;
+            <span>Mercedes-Benz EQS 580 4MATIC</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/mercedes/eqs_580_chinh.jpg" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ELECTRIC FLAGSHIP</span>
+                    <h1>Mercedes-Benz EQS 580 4MATIC</h1>
+                    <p>Mẫu sedan thuần điện đỉnh cao tích hợp màn hình vô cực MBUX Hyperscreen 56 inch</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Mercedes-Benz EQS 580 4MATIC</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/mercedes/eqs_580_chinh.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Mercedes-Benz EQS 580 4MATIC width="500">
-            <ul>
-                <li>Kiểu dáng One-Bow giọt nước tối ưu khí động học vượt thời đại.</li>
-                <li>Mặt tản nhiệt Black Panel phủ họa tiết ngôi sao 3D độc đáo.</li>
-                <li>Dải LED Lightband nối liền cụm đèn pha DIGITAL LIGHT hiện đại.</li>
-                <li>Bộ mâm khí động học 21 inch tối ưu khả năng di chuyển.</li>
-            </ul>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>5.959.000.000 VNĐ</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/MEC/dongco/mec6.png" alt="Động cơ Mercedes-Benz EQS 580 4MATIC" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> 2 Mô-tơ điện đồng bộ kích thích vĩnh cửu (PSM) - Cầu trước & Cầu sau.</li>
-                <li><strong>Công suất tối đa:</strong> 516 mã lực (385 kW).</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động đơn cấp, dẫn động 2 cầu chủ động toàn thời gian biến thiên (4MATIC).</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,3 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 210 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/mercedes/eqs_580_chinh.jpg" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Kiểu dáng One-Bow giọt nước tối ưu khí động học vượt thời đại.</li>
+                    <li>Mặt tản nhiệt Black Panel phủ họa tiết ngôi sao 3D độc đáo.</li>
+                    <li>Dải LED Lightband nối liền cụm đèn pha DIGITAL LIGHT hiện đại.</li>
+                    <li>Bộ mâm khí động học 21 inch tối ưu khả năng di chuyển.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="../../img/mercedes/noithat_eqs_580.jpg" alt="Nội thất Mercedes-Benz EQS 580 4MATIC" width="500">
-            <ul>
-                <li>Màn hình vô cực MBUX Hyperscreen cong kính liền khối rộng 56 inch.</li>
-                <li>Hệ thống lọc không khí HEPA loại bỏ 99,65% vi khuẩn và bụi mịn.</li>
-                <li>Hệ thống đánh lái bánh sau lên tới 10 độ giúp di chuyển linh hoạt.</li>
-                <li>Chất liệu da cao cấp kết hợp gỗ tự nhiên phủ họa tiết lỗ kim kim loại.</li>
-            </ul>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/MEC/dongco/mec6.png" alt="Động cơ Mercedes-Benz EQS 580 4MATIC">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> 2 Mô-tơ điện đồng bộ kích thích vĩnh cửu (PSM) - Cầu trước & Cầu sau.
+                    </li>
+                    <li><strong>Công suất tối đa:</strong> 516 mã lực (385 kW).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Tự động đơn cấp, dẫn động 2 cầu chủ động 4MATIC.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,3 giây, max 210 km/h.</li>
+                </ul>
+            </article>
 
-            <hr>
-
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>5.959.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="../../img/mercedes/noithat_eqs_580.jpg" alt="Nội thất Mercedes-Benz EQS 580 4MATIC">
+                </div>
+                <ul>
+                    <li>Màn hình vô cực MBUX Hyperscreen cong kính liền khối rộng 56 inch.</li>
+                    <li>Hệ thống lọc không khí HEPA loại bỏ 99,65% vi khuẩn và bụi mịn.</li>
+                    <li>Hệ thống đánh lái bánh sau lên tới 10 độ giúp di chuyển linh hoạt.</li>
+                    <li>Chất liệu da cao cấp kết hợp gỗ tự nhiên phủ họa tiết lỗ kim kim loại.</li>
+                </ul>
+            </article>
+        </section>
     </main>
 
 </body>
+
 </html>

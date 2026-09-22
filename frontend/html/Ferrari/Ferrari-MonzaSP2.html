@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferrari Monza SP2 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/ferrari-css/ferrari_monza.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="page-container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt; 
-                <strong>Ferrari Monza SP2</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Ferrari-tong.html">Danh Sách Xe Ferrari</a> &gt;
+            <span>Ferrari Monza SP2</span>
         </nav>
 
-        <hr>
-
-        <main>
-            <h1>Ferrari Monza SP2</h1>        
-            
-            <h2>1. Thiết kế & Ngoại thất</h2>
-            <div class="media-container">
-                <video src="/img/FERRA/ngoaithat/fre9.mp4" controls autoplay muted loop></video>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/FERRA/ngoaithat/fre9.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">PURE SPEEDSTER</span>
+                    <h1>Ferrari Monza SP2</h1>
+                    <p>Thiết kế Speedster 2 chỗ mở không kính chắn gió, mang trải nghiệm tự do khoáng đạt</p>
+                </div>
             </div>
+        </section>
 
-            <ul>
-                <li>Thiết kế Speedster 2 chỗ ngồi loại bỏ hoàn toàn kính chắn gió và mui xe.</li>
-                <li>Công nghệ kính chắn gió ảo "Virtual Wind Shield" giúp điều hướng luồng không khí qua đầu người lái.</li>
-                <li>Thân xe chế tạo hoàn toàn từ sợi carbon giúp tối ưu hóa trọng lượng.</li>
-            </ul>
-
-            <h2>2. Động cơ & Vận hành</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari Monza SP2">
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>42.000.000.000 VNĐ</strong>
             </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <ul>
-                <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên (Naturally Aspirated).</li>
-                <li><strong>Công suất tối đa:</strong> 810 mã lực.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Ly hợp kép 7 cấp F1 DCT, dẫn động cầu sau RWD.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 2,9 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> Trên 300 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/FERRA/ngoaithat/fre9.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Thiết kế Speedster 2 chỗ ngồi loại bỏ hoàn toàn kính chắn gió và mui.</li>
+                    <li>Công nghệ kính chắn gió ảo "Virtual Wind Shield" điều hướng luồng gió.</li>
+                    <li>Thân xe chế tạo hoàn toàn từ sợi carbon giúp tối ưu trọng lượng.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <div class="media-container">
-                <img src="/img/FERRA/noithat/Ferrari_Daytona_SP3_Vietnam.jpg" alt="Nội thất Ferrari Monza SP2">
-            </div>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/dongco/frera2.png" alt="Động cơ Ferrari Monza SP2">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V12 6.5L Hút khí tự nhiên (Naturally Aspirated).</li>
+                    <li><strong>Công suất tối đa:</strong> 810 mã lực.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Ly hợp kép 7 cấp F1 DCT, dẫn động cầu sau RWD.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 2,9 giây, max > 300 km/h.</li>
+                </ul>
+            </article>
 
-            <ul>
-                <li>Khoang lái thiết kế riêng biệt tối giản với ghế đua bọc da thuộc cao cấp.</li>
-                <li>Bảng điều khiển trung tâm bằng sợi carbon tích hợp các phím bấm cơ học tối ưu thao tác.</li>
-                <li>Đi kèm bộ phụ kiện thời trang độc quyền phối hợp sản xuất cùng Loro Piana và Berluti.</li>
-            </ul>
-
-            <hr>
-  <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn">
-    Đặt Mua Ngay
-</a>
-        </main>
-    </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/FERRA/noithat/Ferrari_Daytona_SP3_Vietnam.jpg" alt="Nội thất Ferrari Monza SP2">
+                </div>
+                <ul>
+                    <li>Khoang lái thiết kế riêng biệt tối giản với ghế đua bọc da cao cấp.</li>
+                    <li>Bảng điều khiển trung tâm bằng sợi carbon tích hợp phím bấm cơ học.</li>
+                    <li>Bộ phụ kiện thời trang độc quyền hợp tác sản xuất cùng Loro Piana & Berluti.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

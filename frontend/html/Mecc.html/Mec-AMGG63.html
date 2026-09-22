@@ -1,67 +1,91 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes-AMG G63 - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/mec-css/mac_amggsl63.css">
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt; 
-            <strong>Mercedes-AMG G63</strong>
-        </p>
-    </nav>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt;
+            <span>Mercedes-AMG G63</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/mercedes/amg_g63_chinh.jpg" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">OFF-ROAD KING</span>
+                    <h1>Mercedes-AMG G63</h1>
+                    <p>Huyền thoại địa hình biểu tượng với sức mạnh động cơ V8 4.0L BiTurbo thủ công</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Mercedes-AMG G63</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/mercedes/amg_g63_chinh.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Mercedes-AMG G63 width="500">
-            <ul>
-                <li>Kiểu dáng hộp vuông độc bản với tiếng đóng cửa cơ khí đặc trưng.</li>
-                <li>Lưới tản nhiệt Panamericana nan dọc kết hợp ống xả kép hông xe uy lực.</li>
-                <li>Đèn pha MULTIBEAM LED tròn cổ điển và bánh dự phòng treo cửa sau.</li>
-                <li>Khả năng lội nước lên tới 700 mm cùng bộ mâm hợp kim thể thao.</li>
-            </ul>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>11.750.000.000 VNĐ</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/MEC/dongco/mec1.png" alt="Động cơ Mercedes-AMG G63" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V8 4.0L BiTurbo AMG chế tác thủ công ("One Man, One Engine").</li>
-                <li><strong>Công suất tối đa:</strong> 585 mã lực tại 6.000 vòng/phút.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 9 cấp AMG SPEEDSHIFT TCT 9G, dẫn động 4 bánh toàn thời gian AMG Performance 4MATIC.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,5 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 220 - 240 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/mercedes/amg_g63_chinh.jpg" autoplay muted loop playsinline></video>
+                </div>
+                <ul>
+                    <li>Kiểu dáng hộp vuông độc bản với tiếng đóng cửa cơ khí đặc trưng.</li>
+                    <li>Lưới tản nhiệt Panamericana nan dọc kết hợp ống xả kép hông xe uy lực.</li>
+                    <li>Đèn pha MULTIBEAM LED tròn cổ điển và bánh dự phòng treo cửa sau.</li>
+                    <li>Khả năng lội nước lên tới 700 mm cùng bộ mâm hợp kim thể thao.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="/img/MEC/noithat/" alt="Nội thất Mercedes-AMG G63" width="500">
-            <ul>
-                <li>Cặp màn hình kép Widescreen Cockpit 12.3 inch trải dài trên bảng điều khiển.</li>
-                <li>Ghế bọc da Nappa cao cấp cá nhân hóa, ốp sợi carbon thể thao.</li>
-                <li>Vô-lăng AMG Performance bọc da DINAMICA tích hợp cụm phím xoay tùy chỉnh.</li>
-                <li>Hệ thống âm thanh vòm Burmester® 15 loa công suất 590W.</li>
-            </ul>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/MEC/dongco/mec1.png" alt="Động cơ Mercedes-AMG G63">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 4.0L BiTurbo AMG chế tác thủ công ("One Man, One Engine").</li>
+                    <li><strong>Công suất tối đa:</strong> 585 mã lực tại 6.000 vòng/phút.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> AMG SPEEDSHIFT TCT 9G, dẫn động 4 bánh AMG Performance
+                        4MATIC.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,5 giây, max 220 - 240 km/h.</li>
+                </ul>
+            </article>
 
-            <hr>
-
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>11.750.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/MEC/noithat/" alt="Nội thất Mercedes-AMG G63">
+                </div>
+                <ul>
+                    <li>Cặp màn hình kép Widescreen Cockpit 12.3 inch trải dài trên bảng điều khiển.</li>
+                    <li>Ghế bọc da Nappa cao cấp cá nhân hóa, ốp sợi carbon thể thao.</li>
+                    <li>Vô-lăng AMG Performance bọc da DINAMICA tích hợp cụm phím xoay tùy chỉnh.</li>
+                    <li>Hệ thống âm thanh vòm Burmester® 15 loa công suất 590W.</li>
+                </ul>
+            </article>
+        </section>
     </main>
 
 </body>
+
 </html>

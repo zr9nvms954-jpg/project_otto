@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes-Maybach Haute Voiture - Chi Tiết Xe</title>
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
-<link rel="stylesheet" href="/frontend/css/mec-css/mec_haute.css">
+
 <body>
 
-    <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-    <nav>
-        <p>
-            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt; 
-            <strong>Mercedes-Maybach Haute Voiture</strong>
-        </p>
-    </nav>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="Mec-tong.html">Danh Sách Xe Mercedes-Maybach</a> &gt;
+            <span>Mercedes-Maybach Haute Voiture</span>
+        </nav>
 
-    <hr>
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="../../img/mercedes/maybach_haute_voiture_chinh.jpg" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">LIMITED 1 OF 150</span>
+                    <h1>Mercedes-Maybach Haute Voiture</h1>
+                    <p>Tuyệt tác nghệ thuật thời trang cao cấp trên mẫu sedan siêu sang giới hạn 150 chiếc toàn cầu</p>
+                </div>
+            </div>
+        </section>
 
-    <main>
-        <div>
-            <h1>Mercedes-Maybach Haute Voiture</h1>        
-            <h2>1. Thiết kế & Ngoại thất</h2>
-             <video src="../../img/mercedes/maybach_haute_voiture_chinh.jpg" width="500" controls autoplay muted loop></video> <alt=Ngoại thất Mercedes-Maybach Haute Voiture width="500">
-            <ul>
-                <li>Sơn ngoại thất độc bản phối 2 tông màu thủ công Xanh Nautical Blue và Vàng Rose Gold.</li>
-                <li>Mâm đúc Maybach phay bóng sơn xanh Nautical Blue đồng bộ.</li>
-                <li>Hệ thống đèn chiếu chớp phản chiếu họa tiết Maybach xuống mặt đất khi mở cửa.</li>
-                <li>Phiên bản giới hạn siêu hiếm chỉ 150 chiếc trên toàn thế giới.</li>
-            </ul>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>22.000.000.000 VNĐ</strong>
+            </div>
+            <a href="/HE-thong/DANG_KI.html" class="btn-cta buy-btn" style="text-decoration: none; text-align: center;">
+                Đặt Mua Ngay
+            </a>
+        </section>
 
-            <h2>2. Động cơ & Vận hành</h2>
-            <img src="/img/MEC/dongco/mec8.png" alt="Động cơ Mercedes-Maybach Haute Voiture" width="500">
-            <ul>
-                <li><strong>Động cơ:</strong> V12 6.0L BiTurbo đỉnh cao huyền thoại của Mercedes-Benz.</li>
-                <li><strong>Công suất tối đa:</strong> 612 mã lực tại 4.000 - 5.500 vòng/phút.</li>
-                <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 9 cấp 9G-TRONIC, dẫn động 4 bánh toàn thời gian biến thiên 4MATIC.</li>
-                <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,5 giây.</li>
-                <li><strong>Tốc độ tối đa:</strong> 250 km/h.</li>
-            </ul>
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="../../img/mercedes/maybach_haute_voiture_chinh.jpg" autoplay muted loop
+                        playsinline></video>
+                </div>
+                <ul>
+                    <li>Sơn ngoại thất độc bản phối 2 tông màu thủ công Xanh Nautical Blue & Vàng Rose Gold.</li>
+                    <li>Mâm đúc Maybach phay bóng sơn xanh Nautical Blue đồng bộ.</li>
+                    <li>Hệ thống đèn chiếu chớp phản chiếu họa tiết Maybach xuống mặt đất khi mở cửa.</li>
+                    <li>Phiên bản giới hạn siêu hiếm chỉ 150 chiếc trên toàn thế giới.</li>
+                </ul>
+            </article>
 
-            <h2>3. Trang bị & Công nghệ nội thất</h2>
-            <img src="../../img/mercedes/noithat_maybach_haute_voiture.jpg" alt="Nội thất Mercedes-Maybach Haute Voiture" width="500">
-            <ul>
-                <li>Chất liệu vải dệt Bouclé cao cấp phong cách thời trang Pháp phối trên vách cửa và ghế ngồi.</li>
-                <li>Thảm sàn làm từ lông thú nhân tạo màu trắng muốt cực kỳ xa xỉ.</li>
-                <li>Giao diện MBUX tùy chỉnh hiệu ứng đồ họa bong bóng hoa lấp lánh độc quyền.</li>
-                <li>Hệ thống Burmester® High-End 4D Surround 31 loa công suất 1.750W với Dolby Atmos.</li>
-            </ul>
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/MEC/dongco/mec8.png" alt="Động cơ Mercedes-Maybach Haute Voiture">
+                </div>
+                <ul>
+                    <li><strong>Động cơ:</strong> V12 6.0L BiTurbo đỉnh cao huyền thoại của Mercedes-Benz.</li>
+                    <li><strong>Công suất tối đa:</strong> 612 mã lực tại 4.000 - 5.500 vòng/phút.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Tự động 9 cấp 9G-TRONIC, dẫn động 4 bánh toàn thời gian
+                        4MATIC.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,5 giây, max 250 km/h.</li>
+                </ul>
+            </article>
 
-            <hr>
-
-            <!-- Bộ nút hành động và Quay lại -->
-            <section>
-                <h3>Liên Hệ Đặt Mua / Tư Vấn</h3>
-                <form>
-                    <button type="button"><p>22.000.000.000 VNĐ</p></button>
-                </form>
-                <br>
-            </section>
-        </div>
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="../../img/mercedes/noithat_maybach_haute_voiture.jpg"
+                        alt="Nội thất Mercedes-Maybach Haute Voiture">
+                </div>
+                <ul>
+                    <li>Chất liệu vải dệt Bouclé cao cấp phong cách thời trang Pháp phối trên vách cửa và ghế.</li>
+                    <li>Thảm sàn làm từ lông thú nhân tạo màu trắng muốt cực kỳ xa xỉ.</li>
+                    <li>Giao diện MBUX tùy chỉnh hiệu ứng đồ họa bong bóng hoa lấp lánh độc quyền.</li>
+                    <li>Hệ thống Burmester® High-End 4D Surround 31 loa công suất 1.750W tích hợp Dolby Atmos.</li>
+                </ul>
+            </article>
+        </section>
     </main>
 
 </body>
+
 </html>
