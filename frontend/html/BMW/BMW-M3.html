@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW M3 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m3.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW M3</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW M3</span>
         </nav>
 
-        <main>
-            <h1>BMW M3 Sedan</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw7.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">ICONIC SEDAN</span>
+                    <h1>BMW M3 Sedan</h1>
+                    <p>Biểu tượng Sedan thể thao huyền thoại kết hợp hoàn hảo giữa công nghệ đua và tiện nghi</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw7.mp4" controls autoplay muted loop></video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>1.500.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw7.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
                     <li>Lưới tản nhiệt kép dạng dọc kích thước lớn đầy uy lực và thể thao.</li>
@@ -33,37 +55,36 @@
                     <li>Hệ thống 4 ống xả M đặc trưng phía sau phát ra âm thanh gầm rú ấn tượng.</li>
                     <li>Hốc gió khí động học cản trước và cánh gió nhỏ phía sau giúp tối ưu lực ép.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw6.png" alt="Động cơ BMW M3 Sedan">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw6.png" alt="Động cơ BMW M3 Sedan">
+                </div>
                 <ul>
                     <li><strong>Động cơ:</strong> 3.0L M TwinPower Turbo 6 xi-lanh thẳng hàng.</li>
                     <li><strong>Công suất tối đa:</strong> 503 mã lực (bản Competition).</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số 8 cấp M Steptronic, dẫn động 4 bánh M xDrive.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 3,5 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> 290 km/h (với gói M Driver's Package).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số 8 cấp M Steptronic, dẫn động 4 bánh M xDrive.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 3,5 giây, max 290 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw2.png" alt="Nội thất BMW M3 Sedan">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw2.png" alt="Nội thất BMW M3 Sedan">
+                </div>
                 <ul>
                     <li>Ghế đua M Carbon bucket (tùy chọn) vừa nhẹ vừa bám người cực tốt.</li>
                     <li>Giao diện điều khiển iDrive mới nhất tích hợp chế độ hiển thị M Setup.</li>
                     <li>Các chi tiết ốp carbon cao cấp trên bảng điều khiển và vô-lăng.</li>
                     <li>Hệ thống hiển thị thông tin trên kính lái HUD chuẩn M.</li>
                 </ul>
-            </section>
-
-            <hr>
-<button type="button" class="buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
-    Đặt Mua Ngay - 1.500.000.000 VNĐ
-</button>
-        </main>
-    </div>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

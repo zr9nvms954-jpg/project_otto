@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW i9 - Chi Tiết Xe Concept</title>
     <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW i9</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW i9</span>
         </nav>
 
-        <main>
-            <h1>BMW i9 (Concept)</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw1.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">CONCEPT CAR</span>
+                    <h1>BMW i9 (Concept)</h1>
+                    <p>Siêu xe điện thể thao tương lai với đường nét khí động học đỉnh cao</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw1.mp4" controls autoplay muted loop></video>
+        <!-- 2. Thanh Giá Bán & Nút Bấm (Action Bar) -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>1.500.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Lưới Thông Số Xe (3 Cột Ngang) -->
+        <section class="specs-grid">
+            <!-- Thẻ 1: Ngoại Thất -->
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw1.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
-                    <li>Thiết kế coupe thể thao với những đường nét khí động học, thân xe thấp và phong cách tương lai.</li>
-                    <li>Lưới tản nhiệt hình quả thận đặc trưng của BMW được thiết kế hiện đại, kết hợp hệ thống đèn LED sắc nét.</li>
-                    <li>Thân xe sử dụng các đường nét tối ưu khí động học nhằm giảm lực cản và tăng hiệu quả vận hành.</li>
-                    <li>Bộ vành hợp kim thể thao kích thước lớn kết hợp các chi tiết ngoại thất mang phong cách BMW M.</li>
+                    <li>Thiết kế coupe thể thao với đường nét khí động học và phong cách tương lai.</li>
+                    <li>Lưới tản nhiệt quả thận đặc trưng kết hợp hệ thống đèn LED sắc nét.</li>
+                    <li>Thân xe tối ưu khí động học nhằm giảm lực cản và tăng hiệu quả vận hành.</li>
+                    <li>Bộ vành hợp kim thể thao kích thước lớn kết hợp các chi tiết mang phong cách BMW M.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw1.png" alt="Động cơ BMW i9">
+            <!-- Thẻ 2: Động Cơ -->
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw1.png" alt="Động cơ BMW i9">
+                </div>
                 <ul>
-                    <li><strong>Động cơ:</strong> Hệ thống truyền động hoàn toàn bằng điện sử dụng mô-tơ điện hiệu suất cao.</li>
-                    <li><strong>Công suất tối đa:</strong> Chưa có thông số chính thức vì BMW i9 hiện không phải mẫu xe thương mại.</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Truyền động điện kết hợp hệ dẫn động bốn bánh xDrive giả định.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> Chưa có thông số chính thức.</li>
-                    <li><strong>Tốc độ tối đa:</strong> Chưa có thông số chính thức.</li>
+                    <li><strong>Động cơ:</strong> Hệ thống truyền động hoàn toàn bằng điện mô-tơ hiệu suất cao.</li>
+                    <li><strong>Công suất:</strong> Chưa có thông số chính thức (Mẫu xe Concept).</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Truyền động điện kết hợp hệ dẫn động bốn bánh xDrive.</li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> Đang cập nhật thông số thử nghiệm.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw1.png" alt="Nội thất BMW i9">
+            <!-- Thẻ 3: Nội Thất -->
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw1.png" alt="Nội thất BMW i9">
+                </div>
                 <ul>
-                    <li>Khoang nội thất mang phong cách tối giản và hiện đại, tập trung vào người lái và trải nghiệm công nghệ.</li>
-                    <li>Màn hình kỹ thuật số lớn kết hợp bảng điều khiển điện tử và hệ thống thông tin giải trí hiện đại.</li>
-                    <li>Vô-lăng thể thao tích hợp các nút điều khiển và công nghệ hỗ trợ người lái.</li>
-                    <li>Hệ thống âm thanh cao cấp cùng nhiều công nghệ kết nối và hỗ trợ lái xe thông minh.</li>
+                    <li>Khoang nội thất mang phong cách tối giản và hiện đại, tập trung vào người lái.</li>
+                    <li>Màn hình kỹ thuật số lớn kết hợp bảng điều khiển điện tử thông minh.</li>
+                    <li>Vô-lăng thể thao tích hợp các nút điều khiển và công nghệ hỗ trợ lái.</li>
+                    <li>Hệ thống âm thanh cao cấp cùng nhiều công nghệ kết nối tiên tiến.</li>
                 </ul>
-            </section>
+            </article>
+        </section>
 
-            <hr>
-           <button type="button" class="buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
-    Đặt Mua Ngay - 1.500.000.000 VNĐ
-</button>
-        </main>
-    </div>
-
+    </main>
 </body>
+
 </html>

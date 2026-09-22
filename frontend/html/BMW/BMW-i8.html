@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW i8 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i8.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW i8</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW i8</span>
         </nav>
 
-        <main>
-            <h1>BMW i8 Coupe</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw5.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">HYBRID SUPERCAR</span>
+                    <h1>BMW i8 Coupe</h1>
+                    <p>Biểu tượng thiết kế tương lai với mui bướm độc đáo và động cơ Hybrid</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw5.mp4" controls autoplay muted loop></video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>1.500.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw5.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
-                    <li>Kiểu dáng khí động học Futuristic với cửa mở dạng cánh bướm (Swan-wing / Butterfly doors) cực kỳ ấn tượng.</li>
-                    <li>Hệ thống đèn pha LED hiện đại, tích hợp tùy chọn công nghệ chiếu sáng Laser (BMW Laserlight).</li>
-                    <li>Bộ mâm xe hợp kim siêu nhẹ 20 inch thiết kế tối ưu khí động học đi kèm thân xe làm từ sợi carbon (CFRP).</li>
+                    <li>Kiểu dáng khí động học Futuristic với cửa mở dạng cánh bướm ấn tượng.</li>
+                    <li>Hệ thống đèn pha LED hiện đại, tích hợp tùy chọn công nghệ Laserlight.</li>
+                    <li>Bộ mâm xe hợp kim siêu nhẹ 20 inch tối ưu khí động học cùng thân xe sợi carbon.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw4.png" alt="Động cơ BMW i8 Coupe">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw4.png" alt="Động cơ BMW i8 Coupe">
+                </div>
                 <ul>
-                    <li><strong>Động cơ:</strong> Động cơ xăng 1.5L 3-cylinder tăng áp kết hợp mô-tơ điện Plug-in Hybrid.</li>
+                    <li><strong>Động cơ:</strong> Xăng 1.5L 3-cylinder tăng áp kết hợp mô-tơ điện Plug-in Hybrid.</li>
                     <li><strong>Công suất tối đa:</strong> Tổng công suất kết hợp 369 mã lực.</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Tự động 6 cấp cho động cơ xăng + 2 cấp cho mô-tơ điện, hệ dẫn động 4 bánh xDrive thông minh.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,4 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> 250 km/h.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Tự động 6 cấp + 2 cấp cho mô-tơ điện, xDrive thông minh.
+                    </li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,4 giây, max 250 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw5.png" alt="Nội thất BMW i8 Coupe">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw5.png" alt="Nội thất BMW i8 Coupe">
+                </div>
                 <ul>
-                    <li>Nội thất thiết kế hiện đại, hướng về người lái với chất liệu da cao cấp và nhựa tái chế thân thiện môi trường.</li>
-                    <li>Màn hình kỹ thuật số hiển thị đa thông tin kết hợp hệ thống màn hình giải trí iDrive 8.8 inch.</li>
-                    <li>Vô-lăng bọc da thể thao tích hợp lẫy chuyển số và hệ thống âm thanh vòm cao cấp Harman Kardon.</li>
+                    <li>Nội thất hướng về người lái với da cao cấp và chất liệu thân thiện môi trường.</li>
+                    <li>Màn hình kỹ thuật số đa thông tin kết hợp hệ thống màn hình giải trí iDrive 8.8 inch.</li>
+                    <li>Vô-lăng thể thao bọc da tích hợp lẫy chuyển số và âm thanh vòm Harman Kardon.</li>
                 </ul>
-            </section>
-
-            <hr>
-<button type="button" class="buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
-    Đặt Mua Ngay - 1.500.000.000 VNĐ
-</button>
-        </main>
-    </div>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>

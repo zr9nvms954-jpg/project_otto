@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW M2 - Chi Tiết Xe</title>
-    <link rel="stylesheet" href="/frontend/css/bmw-css/BMW_m2.css">
+    <link rel="stylesheet" href="/frontend/css/bmw-css/bmw-i9.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Thanh hướng dẫn đường đi (Breadcrumb) -->
-        <nav>
-            <p>
-                <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt; 
-                <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt; 
-                <strong>BMW M2</strong>
-            </p>
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="/HE-thong/TRANG-CHU.html">Trang Chủ</a> &gt;
+            <a href="BMW-tong.html">Danh Sách Xe BMW</a> &gt;
+            <span>BMW M2</span>
         </nav>
 
-        <main>
-            <h1>BMW M2 Coupe</h1>        
+        <!-- 1. Hero Video Banner -->
+        <section class="hero-cinematic">
+            <div class="video-wrapper">
+                <video src="/img/BMW/ngoaithat/bmw6.mp4" autoplay muted loop playsinline></video>
+                <div class="video-overlay"></div>
+                <div class="hero-caption">
+                    <span class="badge">COMPACT ATHLETE</span>
+                    <h1>BMW M2 Coupe</h1>
+                    <p>Mẫu Coupe nhỏ gọn với cảm giác lái thuần chất và sức mạnh vượt trội</p>
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <h2>1. Thiết kế & Ngoại thất</h2>
-                <!-- Khung Video tỉ lệ 16:9 điện ảnh -->
-                <div class="car-card">
-                    <video class="car-video" src="/img/BMW/ngoaithat/bmw6.mp4" controls autoplay muted loop></video>
+        <!-- 2. Action Bar -->
+        <section class="action-bar">
+            <div class="price-info">
+                <small>Giá niêm yết từ</small>
+                <strong>1.500.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="btn-cta buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
+                Đặt Mua Ngay
+            </button>
+        </section>
+
+        <!-- 3. Specs Grid -->
+        <section class="specs-grid">
+            <article class="spec-card">
+                <h3>1. Thiết Kế & Ngoại Thất</h3>
+                <div class="card-media">
+                    <video src="/img/BMW/ngoaithat/bmw6.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <ul>
-                    <li>Lưới tản nhiệt thiết kế vuông vức, hầm hố riêng biệt không đụng hàng với các dòng xe khác.</li>
+                    <li>Lưới tản nhiệt thiết kế vuông vức, hầm hố riêng biệt đầy ấn tượng.</li>
                     <li>Vòm bánh xe mở rộng đáng kể tạo nên phom dáng cơ bắp, đầm chắc.</li>
-                    <li>Hệ thống đèn chiếu sáng LED sắc nét kết hợp khe gió khí động học lớn ở cản trước.</li>
+                    <li>Hệ thống đèn chiếu sáng LED sắc nét kết hợp khe gió khí động học ở cản trước.</li>
                     <li>Bộ vành M hợp kim thể thao 19 inch (trước) và 20 inch (sau) thiết kế đa chấu.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>2. Động cơ & Vận hành</h2>
-                <img src="/img/BMW/dongco/bmw5.png" alt="Động cơ BMW M2 Coupe">
+            <article class="spec-card">
+                <h3>2. Động Cơ & Vận Hành</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/dongco/bmw5.png" alt="Động cơ BMW M2 Coupe">
+                </div>
                 <ul>
                     <li><strong>Động cơ:</strong> Động cơ 3.0L 6 xi-lanh thẳng hàng TwinPower Turbo.</li>
                     <li><strong>Công suất tối đa:</strong> 453 mã lực.</li>
-                    <li><strong>Hộp số & Hệ dẫn động:</strong> Hộp số tự động 8 cấp M Steptronic, dẫn động cầu sau RWD.</li>
-                    <li><strong>Tăng tốc (0 - 100 km/h):</strong> 4,1 giây.</li>
-                    <li><strong>Tốc độ tối đa:</strong> 250 - 285 km/h.</li>
+                    <li><strong>Hộp số & Dẫn động:</strong> Hộp số tự động 8 cấp M Steptronic, dẫn động cầu sau RWD.
+                    </li>
+                    <li><strong>Gia tốc & Tốc độ:</strong> 0 - 100 km/h trong 4,1 giây, max 285 km/h.</li>
                 </ul>
-            </section>
+            </article>
 
-            <section>
-                <h2>3. Trang bị & Công nghệ nội thất</h2>
-                <img src="/img/BMW/noithat/bmw1.png" alt="Nội thất BMW M2 Coupe">
+            <article class="spec-card">
+                <h3>3. Trang Bị Nội Thất</h3>
+                <div class="card-media">
+                    <img src="/img/BMW/noithat/bmw1.png" alt="Nội thất BMW M2 Coupe">
+                </div>
                 <ul>
                     <li>Ghế thể thao M bọc da Vernasca cao cấp ôm sát người lái.</li>
-                    <li>Màn hình cong BMW Curved Display hợp nhất bảng đồng hồ 12.3 inch và màn hình giải trí 14.9 inch.</li>
-                    <li>Vô-lăng bọc da M Sport tích hợp các nút tùy chỉnh chế độ lái M1/M2 màu đỏ nổi bật.</li>
+                    <li>Màn hình cong BMW Curved Display hợp nhất bảng đồng hồ và màn hình giải trí.</li>
+                    <li>Vô-lăng bọc da M Sport tích hợp các nút tùy chỉnh chế độ lái M1/M2 màu đỏ.</li>
                     <li>Hệ thống âm thanh Harman Kardon vòm cao cấp mang lại trải nghiệm đỉnh cao.</li>
                 </ul>
-            </section>
-
-            <hr>
-<button type="button" class="buy-btn" onclick="window.location.href='/HE-thong/thanh_toan.html'">
-    Đặt Mua Ngay - 1.500.000.000 VNĐ
-</button>
-        </main>
-    </div>
+            </article>
+        </section>
+    </main>
 
 </body>
+
 </html>
