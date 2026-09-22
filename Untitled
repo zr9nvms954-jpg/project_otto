@@ -1,0 +1,10 @@
+{
+  "terminal.integrated.cwd": "${workspaceFolder}/backend/New_AI/logic_AI",
+  "liveServer.settings.ignoreFiles": [
+        "logs/**",
+        "vector_db/**",
+        "dataset/**",
+        "**/*.jsonl",
+        "**/*.py"
+    ]
+}
