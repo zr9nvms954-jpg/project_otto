@@ -37,19 +37,11 @@
             <nav class="nav">
                 <button class="nav-item active" data-page="dashboard"><i
                         class="fa-solid fa-grid-2"></i><span>Dashboard</span></button>
-                <button class="nav-item" data-page="brands"><i
-                        class="fa-solid fa-building"></i><span>Brands</span></button>
+
                 <button class="nav-item" data-page="cars"><i class="fa-solid fa-car"></i><span>Cars /
                         Models</span></button>
-                <button class="nav-item" data-page="inventory"><i
-                        class="fa-solid fa-boxes-stacked"></i><span>Inventory</span></button>
                 <button class="nav-item" data-page="orders"><i
                         class="fa-solid fa-receipt"></i><span>Orders</span></button>
-                <button class="nav-item" data-page="users"><i class="fa-solid fa-users"></i><span>Users</span></button>
-                <button class="nav-item" data-page="reviews"><i
-                        class="fa-solid fa-star"></i><span>Reviews</span></button>
-                <button class="nav-item" data-page="reports"><i
-                        class="fa-solid fa-chart-line"></i><span>Reports</span></button>
             </nav>
 
             <div class="nav-label">System</div>
@@ -126,7 +118,7 @@
                         <div class="stat">
                             <div class="stat-top"><span class="stat-label">Total Orders</span><span class="stat-icon"><i
                                         class="fa-solid fa-receipt"></i></span></div>
-                            <div class="stat-value" id="stat-orders">0</div>
+                            <div class="stat-value" id="stat-orders">6</div>
                         </div>
                         <div class="stat">
                             <div class="stat-top"><span class="stat-label">Total Users</span><span class="stat-icon"><i
@@ -136,7 +128,7 @@
                         <div class="stat">
                             <div class="stat-top"><span class="stat-label">Total Revenue</span><span
                                     class="stat-icon"><i class="fa-solid fa-coins"></i></span></div>
-                            <div class="stat-value" id="stat-revenue">0</div>
+                            <div class="stat-value" id="stat-revenue">3,775,000,000 VNĐ</div>
                         </div>
                     </div>
 
@@ -179,14 +171,33 @@
                                     <tr>
                                         <th>Order ID</th>
                                         <th>Customer</th>
-                                        <th>Car</th>
-                                        <th>Price</th>
-                                        <th>Date</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                        <th>Total Amount</th>
                                         <th>Status</th>
+                                        <th>Date</th>
                                     </tr>
                                 </thead>
                                 <tbody id="recentOrders">
-                                    <!-- Dữ liệu trống chờ JS -->
+                                    <!-- Nguyên mẫu khớp dữ liệu DB Workbench -->
+                                    <tr>
+                                        <td>#1</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>12,000,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:36:49</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#2</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>60,000,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:41:33</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -315,16 +326,91 @@
                                 <thead>
                                     <tr>
                                         <th>Order ID</th>
-                                        <th>Customer</th>
-                                        <th>Car</th>
-                                        <th>Quantity</th>
-                                        <th>Total Price</th>
-                                        <th>Order Date</th>
+                                        <th>User ID</th>
+                                        <th>Fullname</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                        <th>Total Amount</th>
                                         <th>Status</th>
+                                        <th>Order Date</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody id="ordersBody"><!-- JS sẽ đổ dữ liệu vào đây --></tbody>
+                                <tbody id="ordersBody">
+                                    <!-- Nguyên mẫu 6 bản ghi dựa trên dữ liệu thật trong MySQL -->
+                                    <tr>
+                                        <td>#1</td>
+                                        <td>6</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>12,000,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:36:49</td>
+                                        <td><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa-solid fa-eye"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#2</td>
+                                        <td>6</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>60,000,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:41:33</td>
+                                        <td><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa-solid fa-eye"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#3</td>
+                                        <td>5</td>
+                                        <td>hellotest23864</td>
+                                        <td>0367823165</td>
+                                        <td>Hà Nội</td>
+                                        <td>465,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:44:17</td>
+                                        <td><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa-solid fa-eye"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#4</td>
+                                        <td>7</td>
+                                        <td>checkmuasam12</td>
+                                        <td>0399217441</td>
+                                        <td>Xuân Phương, Hà Nội</td>
+                                        <td>2,500,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:47:23</td>
+                                        <td><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa-solid fa-eye"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#5</td>
+                                        <td>2</td>
+                                        <td>Test123467890</td>
+                                        <td>1234567890</td>
+                                        <td>Tp.HCM</td>
+                                        <td>450,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 00:52:31</td>
+                                        <td><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa-solid fa-eye"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#6</td>
+                                        <td>5</td>
+                                        <td>hellotest23864</td>
+                                        <td>0399217661</td>
+                                        <td>Nghệ An</td>
+                                        <td>560,000,000 VNĐ</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-09-23 01:42:30</td>
+                                        <td><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa-solid fa-eye"></i></button></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -400,20 +486,21 @@
                 <section class="page" id="reports">
                     <div class="page-head">
                         <div><span class="kicker">ANALYTICS</span>
-                            <h1>Reports</h1>
+                            <h1>Reports & Revenue</h1>
                         </div>
                     </div>
                     <div class="report-stats">
-                        <div class="report-stat"><span>Revenue</span><strong id="rep-revenue">0</strong></div>
-                        <div class="report-stat"><span>Orders</span><strong id="rep-orders">0</strong></div>
-                        <div class="report-stat"><span>Cars Sold</span><strong id="rep-cars">0</strong></div>
-                        <div class="report-stat"><span>New Users</span><strong id="rep-users">0</strong></div>
+                        <div class="report-stat"><span>Revenue</span><strong id="rep-revenue">75,975,000,000
+                                VNĐ</strong></div>
+                        <div class="report-stat"><span>Orders</span><strong id="rep-orders">6</strong></div>
+                        <div class="report-stat"><span>Completed Orders</span><strong id="rep-cars">6</strong></div>
+                        <div class="report-stat"><span>Customers</span><strong id="rep-users">4</strong></div>
                     </div>
                     <div class="grid-2">
                         <div class="panel">
                             <div class="panel-head">
                                 <div>
-                                    <h2>Revenue</h2>
+                                    <h2>Revenue Streams</h2>
                                 </div>
                             </div>
                             <div class="chart-wrap"><canvas id="reportRevenueChart"></canvas></div>
@@ -421,7 +508,7 @@
                         <div class="panel">
                             <div class="panel-head">
                                 <div>
-                                    <h2>Orders</h2>
+                                    <h2>Orders Analytics</h2>
                                 </div>
                             </div>
                             <div class="chart-wrap"><canvas id="ordersChart"></canvas></div>

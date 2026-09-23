@@ -45,10 +45,22 @@ app.get('/api/cars', async (req, res) => {
             }
         }
 
-        res.json({ success: true, data: allCars });
+        // Đã sửa: Trả về mảng trực tiếp để frontend admin_manager.js đọc được
+        res.json(allCars);
     } catch (error) {
         console.error('Lỗi tổng thể khi lấy danh sách xe:', error);
         res.status(500).json({ message: 'Lỗi server khi lấy dữ liệu xe' });
+    }
+});
+
+// Đã thêm: API lấy danh sách đơn hàng cho file admin_manager.js
+app.get('/api/orders', async (req, res) => {
+    try {
+        const [orders] = await db.query('SELECT * FROM orders ORDER BY order_id DESC');
+        res.json(orders);
+    } catch (error) {
+        console.error('Lỗi khi lấy danh sách đơn hàng:', error);
+        res.status(500).json({ message: 'Lỗi server khi lấy dữ liệu đơn hàng' });
     }
 });
 

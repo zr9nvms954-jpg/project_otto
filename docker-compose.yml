@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: car_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: car_showroom
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      # Thư mục chứa file init.sql để tự động tạo bảng cho team
+      - ./mysql-init:/docker-entrypoint-initdb.d
+
+  backend:
+    build: ./backend
+    container_name: car_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+      - DB_NAME=car_showroom
+      - PORT=5000
+    depends_on:
+      - db
+
+volumes:
+  db_data:
