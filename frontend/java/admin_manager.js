@@ -304,6 +304,16 @@ function initNavigation() {
             goTo(item.getAttribute('data-page'));
         });
     });
+
+    // Xử lý sự kiện bấm Logout -> Xóa bộ nhớ tạm và quay về Trang Chủ
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.href = '/HE-thong/TRANG-CHU.html';
+        });
+    }
 }
 
 function goTo(pageId) {
