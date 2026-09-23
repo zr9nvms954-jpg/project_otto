@@ -326,3 +326,35 @@ body {
     margin-bottom: 4px;
     /* Tạo khoảng cách nhỏ giữa các dòng cho thoáng */
 }
+/* Styling trực tiếp cho thẻ a href Trang chủ */
+a.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    text-decoration: none !important; /* Xóa gạch chân mặc định của thẻ a */
+    
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào thẻ a */
+a.home-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
