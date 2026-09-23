@@ -185,7 +185,7 @@
                 document.getElementById('fullname').value = user.username;
             }
 
-            // XỬ LÝ GỬI ĐƠN HÀNG VỀ BACKEND
+            // XỬ LÝ GỬI ĐƠN HÀNG VỀ BACKEND (Đã đổi port sang 5001)
             const checkoutForm = document.getElementById('checkout-form');
             checkoutForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
@@ -196,7 +196,7 @@
                 const address = document.getElementById('address').value;
 
                 try {
-                    const response = await fetch('http://localhost:5000/api/orders', {
+                    const response = await fetch('http://localhost:5001/api/orders', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
