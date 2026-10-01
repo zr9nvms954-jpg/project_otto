@@ -18,7 +18,7 @@ def _clean_str(text: str) -> str:
     return text
 
 
-@lru_cache(maxsize=1)
+# @lru_cache(maxsize=1)
 def load_all_catalogs() -> list[dict[str, Any]]:
     all_vehicles = []
     if not CATALOG_DIR.exists():
@@ -31,7 +31,7 @@ def load_all_catalogs() -> list[dict[str, Any]]:
     if url_dir.exists():
         for url_file in url_dir.glob("*.json"):
             try:
-                data = json.loads(url_file.read_text(encoding="utf-8"))
+                data = json.loads(url_file.read_text(encoding="utf-8-sig"))
                 items = data if isinstance(data, list) else data.get("vehicles", [])
                 for item in items:
                     url = item.get("url")
@@ -57,7 +57,7 @@ def load_all_catalogs() -> list[dict[str, Any]]:
     # 2 Ghép URL vào đúng mẫu xe
     for json_file in CATALOG_DIR.glob("*.json"):
         try:
-            data = json.loads(json_file.read_text(encoding="utf-8"))
+            data = json.loads(json_file.read_text(encoding="utf-8-sig"))
             brand_from_file = json_file.stem.capitalize()
             vehicles_list = data.get("vehicles", []) if isinstance(data, dict) else data
 
@@ -112,10 +112,17 @@ def parse_budget_range(prompt: str) -> Optional[tuple[float, float]]:
             float(range_match.group(2)) * 1_000_000_000,
         )
 
-    single_match = re.search(r"(?:tầm|khoảng|mức|dưới)\s*(\d+(?:\.\d+)?)\s*tỷ", p)
+    single_match = re.search(
+        r"(?:tầm|khoảng|mức|dưới|trên|hơn)\s*(\d+(?:\.\d+)?)\s*tỷ", p
+    )
     if single_match:
         val = float(single_match.group(1)) * 1_000_000_000
-        return (0.0, val) if "dưới" in p else (val * 0.8, val * 1.2)
+        if "dưới" in p:
+            return (0.0, val)
+        elif "trên" in p or "hơn" in p:
+            return (val, float("inf"))  # Mức giá từ val đến vô cực
+        else:
+            return (val * 0.8, val * 1.2)
 
     return None
 
@@ -148,12 +155,10 @@ def format_catalog_context(user_prompt: str) -> str:
         "audi",
         "bugatti",
     ]
+    
+    available_brands_lower = [br.lower() for br in available_brands]
     for b in common_brands:
-        if (
-            b in p
-            and b.capitalize() not in available_brands
-            and b.upper() not in available_brands
-        ):
+        if b in p and not any(b in avail for avail in available_brands_lower):
             unsupported_requested.append(b.capitalize())
 
     brand_warning = ""
@@ -169,14 +174,18 @@ def format_catalog_context(user_prompt: str) -> str:
         v_brand = _clean_str(v.get("brand"))
         v_id = _clean_str(v.get("id"))
 
+        raw_name = str(v.get("name") or v.get("model")).lower()
+        raw_brand = str(v.get("brand")).lower()
+
         if (
-            (v_name and v_name in clean_p)
-            or (v_id and v_id in clean_p)
+            (v_name and (v_name in clean_p or clean_p in v_name))
             or (v_brand and v_brand in clean_p)
+            or (raw_brand and raw_brand.split("-")[0] in p)
+            or (raw_name and any(w in p for w in raw_name.split() if len(w) > 2))
         ):
             candidate_vehicles.append(v)
 
-    # Nếu không lọc được xe cụ thể, lấy danh sách xe theo ngân sách hoặc danh sách chung
+    # Nếu không lọc được xe cụ thể, kiểm tra xem khách có đang hỏi câu ngoài lề không
     if not candidate_vehicles:
         budget_range = parse_budget_range(user_prompt)
         if budget_range:
@@ -188,7 +197,12 @@ def format_catalog_context(user_prompt: str) -> str:
                 and min_b <= v.get("price_vnd") <= max_b
             ]
         else:
-            candidate_vehicles = vehicles
+            brands_list = ", ".join(get_available_brands())
+            return (
+                brand_warning
+                + "HỆ THỐNG: Khách hàng hỏi vấn đề ngoài lề (không phải mua/tìm xe). "
+                + f"Hãy lịch sự từ chối các dịch vụ ngoài lề đó, sau đó giới thiệu rằng showroom của chúng ta hiện đang phân phối các hãng xe cao cấp sau để khách lựa chọn: {brands_list}."
+            )
 
     if not candidate_vehicles:
         return (
@@ -213,7 +227,11 @@ def format_catalog_context(user_prompt: str) -> str:
 
 
 def is_brand_list_request(text: str) -> bool:
-    """Xác định xem khách có đang hỏi danh sách HÃNG XE không."""
+
+    text_lower = text.lower()
+    if "tỷ" in text_lower or "giá" in text_lower or "vài xe" in text_lower:
+        return False
+
     kws = [
         "hãng xe",
         "hãng nào",
@@ -223,8 +241,7 @@ def is_brand_list_request(text: str) -> bool:
         "có hãng xe nào",
         "những hãng xe nào",
     ]
-    return any(kw in text.lower() for kw in kws)
-
+    return any(kw in text_lower for kw in kws)
 
 def is_vehicle_list_request(text: str) -> bool:
     """Xác định xem khách có đang hỏi danh sách TẤT CẢ XE không."""

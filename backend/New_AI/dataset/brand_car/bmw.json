@@ -1,93 +1,184 @@
 {
+  "source": "Info BMW.docx",
   "brand": "BMW",
+  "currency": "VND",
+  "note": "Giá bán niêm yết quy đổi và thông số kỹ thuật trích xuất từ nguồn BMW, cần xác nhận lại với đại lý trước khi tư vấn chốt mua.",
   "vehicles": [
     {
-      "name": "M4 Coupe",
+      "name": "BMW M4 Coupe",
       "price_vnd": 5600000000,
+      "body_type": "Coupe thể thao hiệu suất cao",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "4 ghế",
       "powertrain": "3.0L 6 xi-lanh thẳng hàng TwinPower Turbo",
       "power_hp": 510,
       "transmission": "Tự động 8 cấp M Steptronic",
-      "acceleration_0_100_kmh": "3.5s",
+      "drivetrain": "M xDrive / RWD",
+      "acceleration_0_100_kmh": "3,5 giây",
       "top_speed_kmh": 290,
-      "seats": 4,
-      "drivetrain": "M xDrive / RWD"
+      "highlights": [
+        "Động cơ 3.0L TwinPower Turbo 510 HP",
+        "Lưới tản nhiệt kép dạng dọc đặc trưng M",
+        "Hệ dẫn động M xDrive thông minh",
+        "Màn hình cong BMW Curved Display & Ghế M Sport bọc da Merino"
+      ],
+      "description": "Mẫu coupe thể thao hiệu suất cao biểu tượng của BMW M, mang lại cảm giác lái phấn khích và tốc độ vượt trội.",
+      "detailed_description": "BMW M4 Coupe sở hữu thiết kế ngoại thất táo bạo với lưới tản nhiệt hình quả thận kép kéo dài theo chiều dọc, cản trước khí động học và mâm xe M thể thao. Khối động cơ 3.0L 6 xi-lanh thẳng hàng TwinPower Turbo sản sinh công suất 510 mã lực, kết hợp hộp số 8 cấp M Steptronic giúp xe tăng tốc 0-100 km/h chỉ trong 3,5 giây."
     },
     {
-      "name": "Z4 M40i Roadster",
+      "name": "BMW Z4 M40i Roadster",
       "price_vnd": 3500000000,
+      "body_type": "Mui trần thể thao 2 cửa Roadster",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "2 ghế",
       "powertrain": "3.0L 6 xi-lanh thẳng hàng BMW M TwinPower Turbo",
       "power_hp": 382,
       "transmission": "Tự động 8 cấp Sport Steptronic",
-      "acceleration_0_100_kmh": "4.5s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "4,5 giây",
       "top_speed_kmh": 250,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Mui xếp mềm mở điện trong 10 giây",
+        "Động cơ 3.0L 6 xi-lanh 382 HP",
+        "Phân bổ trọng lượng 50:50 hoàn hảo",
+        "Dàn âm thanh vòm Harman Kardon đỉnh cao"
+      ],
+      "description": "Mẫu roadster mui trần quyến rũ, mang đến trải nghiệm lái tự do, phóng khoáng cùng hiệu năng vận hành ấn tượng.",
+      "detailed_description": "BMW Z4 M40i Roadster thu hút mọi ánh nhìn với phom dáng roadster cổ điển, mui vải xếp đóng mở điện linh hoạt. Xe trang bị động cơ 3.0L TwinPower Turbo 382 HP, dẫn động cầu sau RWD cho phản hồi chân ga nhạy bén và khả năng ôm cua đầm chắc."
     },
     {
-      "name": "i8 Coupe",
+      "name": "BMW i8 Coupe",
       "price_vnd": 7800000000,
+      "body_type": "Siêu xe thể thao Plug-in Hybrid",
+      "model_year": "2020 - 2026",
+      "status": "Nhập khẩu / Xe sưu tầm",
+      "seats": "4 ghế, cấu hình 2+2",
       "powertrain": "1.5L 3-cylinder Tăng áp + Mô-tơ điện Plug-in Hybrid",
       "power_hp": 369,
       "transmission": "Tự động 6 cấp + 2 cấp mô-tơ điện",
-      "acceleration_0_100_kmh": "4.4s",
+      "drivetrain": "4 bánh xDrive",
+      "acceleration_0_100_kmh": "4,4 giây",
       "top_speed_kmh": 250,
-      "seats": 4,
-      "drivetrain": "xDrive"
+      "highlights": [
+        "Cửa mở kiểu cánh bướm Butterfly doors",
+        "Khung gầm sợi carbon LifeDrive siêu nhẹ",
+        "Hệ động lực Plug-in Hybrid tiên phong",
+        "Thiết kế tương lai viễn tưởng"
+      ],
+      "description": "Mẫu siêu xe thể thao Hybrid biểu tượng của BMW với thiết kế cửa cánh bướm viễn tưởng và công nghệ xanh tiên phong.",
+      "detailed_description": "BMW i8 Coupe là sự kết hợp giữa thiết kế vượt thời gian và công nghệ Plug-in Hybrid tiên tiến. Khung gầm nhôm kết hợp cabin bằng sợi carbon siêu nhẹ giúp tối ưu hiệu suất, trong khi động cơ 1.5L tăng áp kết hợp mô-tơ điện cho tổng công suất 369 HP."
     },
     {
-      "name": "M2 Coupe",
+      "name": "BMW M2 Coupe",
       "price_vnd": 4299000000,
+      "body_type": "Coupe thể thao cỡ nhỏ hiệu suất cao",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "4 ghế",
       "powertrain": "3.0L 6 xi-lanh thẳng hàng TwinPower Turbo",
       "power_hp": 453,
       "transmission": "Tự động 8 cấp M Steptronic",
-      "acceleration_0_100_kmh": "4.1s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "4,1 giây",
       "top_speed_kmh": 285,
-      "seats": 4,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Thiết kế góc cạnh cơ bắp hầm hố",
+        "Động cơ 3.0L TwinPower Turbo 453 HP",
+        "Dẫn động cầu sau RWD thuần chất đua",
+        "Màn hình cong BMW Curved Display OS 8"
+      ],
+      "description": "Mẫu coupe nhỏ gọn mang DNA đua thuần túy của dòng M, dành cho những tín đồ đam mê cảm giác lái chân thực.",
+      "detailed_description": "BMW M2 Coupe sở hữu kích thước nhỏ gọn nhưng mang sức mạnh bùng nổ từ khối động cơ 3.0L TwinPower Turbo 453 HP. Dẫn động cầu sau RWD cùng vi sai M Sport giúp M2 trở thành cỗ máy rê đuôi và ôm cua đầy phấn khích."
     },
     {
-      "name": "M3 Sedan",
+      "name": "BMW M3 Sedan",
       "price_vnd": 5500000000,
+      "body_type": "Sedan thể thao hiệu suất cao",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "5 ghế",
       "powertrain": "3.0L M TwinPower Turbo 6 xi-lanh thẳng hàng",
       "power_hp": 503,
       "transmission": "Tự động 8 cấp M Steptronic",
-      "acceleration_0_100_kmh": "3.5s",
+      "drivetrain": "M xDrive",
+      "acceleration_0_100_kmh": "3,5 giây",
       "top_speed_kmh": 290,
-      "seats": 5,
-      "drivetrain": "M xDrive"
+      "highlights": [
+        "Lưới tản nhiệt M cỡ lớn bề thế",
+        "Động cơ 3.0L M TwinPower Turbo 503 HP",
+        "Dẫn động M xDrive linh hoạt",
+        "Khung gầm gia cường thể thao M"
+      ],
+      "description": "Mẫu sedan thể thao 4 cửa biểu tượng, kết hợp hoàn hảo giữa tính đa dụng hàng ngày và sức mạnh đường đua.",
+      "detailed_description": "BMW M3 Sedan mang tới sự dung hòa giữa sự tiện nghi của một chiếc sedan 5 chỗ gia đình và hiệu năng bứt tốc của siêu xe. Khối động cơ 3.0L 503 HP cùng hệ dẫn động M xDrive thông minh giúp M3 tăng tốc 0-100 km/h trong 3,5 giây."
     },
     {
-      "name": "M5 Sedan",
+      "name": "BMW M5 Sedan",
       "price_vnd": 8900000000,
+      "body_type": "Sedan cỡ trung hiệu suất cao",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "5 ghế",
       "powertrain": "V8 4.4L TwinPower Turbo",
       "power_hp": 617,
       "transmission": "Tự động 8 cấp M Steptronic",
-      "acceleration_0_100_kmh": "3.3s",
+      "drivetrain": "M xDrive",
+      "acceleration_0_100_kmh": "3,3 giây",
       "top_speed_kmh": 305,
-      "seats": 5,
-      "drivetrain": "M xDrive"
+      "highlights": [
+        "Động cơ V8 4.4L TwinPower Turbo 617 HP",
+        "Hệ thống M xDrive có chế độ 2WD thuần cầu sau",
+        "Mái xe bằng sợi carbon siêu nhẹ",
+        "Nội thất da Merino cao cấp"
+      ],
+      "description": "Mẫu sedan doanh nhân siêu hiệu năng, sở hữu sức mạnh V8 bộc phát và sự sang trọng đỉnh cao.",
+      "detailed_description": "BMW M5 Sedan là hung thần tốc độ khoác áo sedan lịch lãm. Động cơ V8 4.4L BiTurbo tạo ra công suất 617 HP, kết hợp hệ dẫn động M xDrive cho phép chuyển đổi linh hoạt giữa 4WD và 2WD thuần cầu sau."
     },
     {
-      "name": "M8 Competition Coupe",
-      "price_vnd": 12900000000,
+      "name": "BMW M8 Competition Coupe",
+      "price_vnd": 12999000000,
+      "body_type": "Coupe siêu sang hiệu suất cao flagship",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "4 ghế",
       "powertrain": "V8 4.4L TwinPower Turbo",
       "power_hp": 617,
       "transmission": "Tự động 8 cấp M Steptronic",
-      "acceleration_0_100_kmh": "3.2s",
+      "drivetrain": "M xDrive",
+      "acceleration_0_100_kmh": "3,2 giây",
       "top_speed_kmh": 305,
-      "seats": 4,
-      "drivetrain": "M xDrive"
+      "highlights": [
+        "Động cơ V8 4.4L TwinPower Turbo 617 HP",
+        "Đèn pha BMW Laserlight chiếu xa 600m",
+        "Nội thất da BMW Individual chế tác thủ công",
+        "Dàn âm thanh vòm Bowers & Wilkins Diamond"
+      ],
+      "description": "Mẫu coupe đầu bảng của BMW, kết hợp sự xa xỉ bậc nhất cùng hiệu năng vận hành bùng nổ.",
+      "detailed_description": "BMW M8 Competition Coupe đại diện cho đỉnh cao thiết kế và công nghệ của BMW M. Trái tim V8 4.4L 617 HP đưa mẫu coupe siêu sang này tăng tốc từ 0-100 km/h chỉ trong 3,2 giây."
     },
     {
-      "name": "X5 M Competition",
+      "name": "BMW X5 M Competition",
       "price_vnd": 6900000000,
+      "body_type": "SUV thể thao hiệu suất cao (SAV)",
+      "model_year": "2024 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "5 ghế",
       "powertrain": "V8 4.4L TwinPower Turbo + Hybrid nhẹ 48V",
       "power_hp": 617,
       "transmission": "Tự động 8 cấp M Steptronic",
-      "acceleration_0_100_kmh": "3.9s",
+      "drivetrain": "M xDrive",
+      "acceleration_0_100_kmh": "3,9 giây",
       "top_speed_kmh": 290,
-      "seats": 5,
-      "drivetrain": "M xDrive"
+      "highlights": [
+        "Động cơ V8 4.4L Hybrid nhẹ 48V 617 HP",
+        "Hệ dẫn động 4 bánh M xDrive địa hình",
+        "Treo thích ứng M Professional",
+        "Không gian 5 chỗ rộng rãi tiện nghi"
+      ],
+      "description": "Mẫu SUV gầm cao mạnh mẽ bậc nhất, kết hợp không gian gia đình đa dụng cùng ADN đua bùng nổ.",
+      "detailed_description": "BMW X5 M Competition là sự lựa chọn hoàn hảo cho những ai tìm kiếm chiếc SUV gầm cao đa dụng nhưng sở hữu sức mạnh ngang ngửa siêu xe. Động cơ V8 4.4L kết hợp công nghệ Mild-Hybrid 48V cho tổng công suất 617 HP."
     }
   ]
 }

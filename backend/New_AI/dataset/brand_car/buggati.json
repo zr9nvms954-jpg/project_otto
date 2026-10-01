@@ -1,126 +1,250 @@
 {
+  "source": "Info Bugatti.docx",
   "brand": "Bugatti",
+  "currency": "VND",
+  "note": "Giá bán niêm yết quy đổi và thông số siêu xe Bugatti, cần liên hệ đại lý nhập khẩu tư nhân để xác nhận trước khi tư vấn chốt mua.",
   "vehicles": [
     {
-      "name": "Bolide",
+      "name": "Bugatti Bolide",
       "price_vnd": 115000000000,
+      "body_type": "Siêu xe thuần đường đua (Track-Only Hypercar)",
+      "model_year": "2024 - 2026",
+      "status": "Phiên bản giới hạn (40 chiếc toàn thế giới)",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1578,
       "transmission": "Hộp số tuần tự 7 cấp",
-      "acceleration_0_100_kmh": "2.17s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,17 giây",
       "top_speed_kmh": 500,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Sức mạnh 1.578 HP từ động cơ W16 Quad-Turbo",
+        "Tốc độ tối đa lý thuyết đạt 500 km/h",
+        "Thân xe sợi carbon nguyên khối siêu nhẹ",
+        "Thiết kế khí động học cực hạn cho đường đua"
+      ],
+      "description": "Quái thú đường đua cực hạn của Bugatti, tối ưu hóa tối đa trọng lượng và khí động học để đạt vận tốc kỷ lục.",
+      "detailed_description": "Bugatti Bolide là mẫu Hypercar chuyên dụng cho đường đua với tỉ lệ công suất/trọng lượng đáng kinh ngạc. Khối động cơ W16 8.0L Quad-Turbo sản sinh 1.578 mã lực kết hợp khung gầm carbon siêu nhẹ giúp xe xé gió với tốc độ lên tới 500 km/h."
     },
     {
-      "name": "Chiron Super Sport",
+      "name": "Bugatti Chiron Super Sport",
       "price_vnd": 98000000000,
+      "body_type": "Siêu xe thể thao tốc độ cao (Hypercar)",
+      "model_year": "2022 - 2026",
+      "status": "Nhập khẩu nguyên chiếc / Giới hạn",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1578,
       "transmission": "Ly hợp kép 7 cấp",
-      "acceleration_0_100_kmh": "2.4s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,4 giây",
       "top_speed_kmh": 440,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Thiết kế đui xe Longtail kéo dài khí động học",
+        "Động cơ W16 1.578 mã lực bứt tốc xé gió",
+        "Tốc độ tối đa giới hạn điện tử 440 km/h",
+        "Nội thất xa xỉ bọc da cao cấp và nhôm nguyên khối"
+      ],
+      "description": "Biểu tượng tốc độ của thế giới ô tô, dung hòa giữa khả năng bứt tốc xé gió và sự xa xỉ chuẩn thượng lưu.",
+      "detailed_description": "Bugatti Chiron Super Sport sở hữu thân xe Longtail dài hơn 25 cm giúp duy trì sự ổn định ở dải tốc độ trên 400 km/h. Khối động cơ W16 8.0L 1.578 HP đưa cỗ máy xa xỉ này đạt 100 km/h trong 2,4 giây."
     },
     {
-      "name": "W16 Mistral",
+      "name": "Bugatti W16 Mistral",
       "price_vnd": 130000000000,
+      "body_type": "Siêu xe mui trần Roadster (Few-Off Hypercar)",
+      "model_year": "2024 - 2026",
+      "status": "Phiên bản giới hạn (99 chiếc toàn thế giới)",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1578,
       "transmission": "Ly hợp kép 7 cấp",
-      "acceleration_0_100_kmh": "2.4s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,4 giây",
       "top_speed_kmh": 420,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Mẫu mui trần cuối cùng sử dụng động cơ W16 huyền thoại",
+        "Công suất 1.578 HP, tốc độ tối đa 420 km/h",
+        "Ống hốc gió đặt ngay sau tựa đầu ghế ngồi",
+        "Giới hạn chỉ 99 chiếc trên toàn thế giới"
+      ],
+      "description": "Tuyệt phẩm mui trần cuối cùng mang trái tim W16 huyền thoại của Bugatti, kết hợp sự tự do mui trần và tốc độ xé gió.",
+      "detailed_description": "Bugatti W16 Mistral được thiết kế để trở thành chiếc Roadster nhanh nhất thế giới. Xe sở hữu hai hốc hút gió lớn đặt phía sau tựa đầu bọc sợi carbon, truyền trực tiếp âm thanh động cơ W16 1.578 HP vào cabin."
     },
     {
-      "name": "Tourbillon",
+      "name": "Bugatti Tourbillon",
       "price_vnd": 105000000000,
+      "body_type": "Siêu xe Hybrid thế hệ mới (Next-Gen Hypercar)",
+      "model_year": "2026",
+      "status": "Mới ra mắt / Đặt hàng trước",
+      "seats": "2 ghế",
       "powertrain": "V16 8.3L Hút khí tự nhiên + 3 Mô-tơ điện",
       "power_hp": 1800,
       "transmission": "Ly hợp kép 8 cấp",
-      "acceleration_0_100_kmh": "2.0s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,0 giây",
       "top_speed_kmh": 445,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Hệ động lực V16 Hybrid hoàn toàn mới 1.800 mã lực",
+        "Đồng hồ trung tâm thiết kế cơ khí dạng Tourbillon Thụy Sĩ",
+        "Cửa mở dạng cánh chim dihedral doors",
+        "Tăng tốc 0-100 km/h chỉ trong 2,0 giây"
+      ],
+      "description": "Kỷ nguyên mới của Bugatti với động cơ V12/V16 Hybrid 1.800 HP và bảng đồng hồ cơ khí tinh xảo như đồng hồ Thụy Sĩ.",
+      "detailed_description": "Bugatti Tourbillon thay thế huyền thoại Chiron bằng cỗ máy V16 8.3L Hút khí tự nhiên kết hợp 3 mô-tơ điện cho tổng công suất 1.800 HP. Điểm nhấn đặc biệt nằm ở cụm đồng hồ cơ khí hoàn toàn tác chế bởi các nghệ nhân chế tác đồng hồ Thụy Sĩ."
     },
     {
-      "name": "Centodieci",
+      "name": "Bugatti Centodieci",
       "price_vnd": 230000000000,
+      "body_type": "Siêu xe độc bản kỷ niệm (Few-Off Hypercar)",
+      "model_year": "2022 - 2026",
+      "status": "Siêu hiếm (Chỉ 10 chiếc toàn thế giới)",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1600,
       "transmission": "Tự động ly hợp kép 7 cấp",
-      "acceleration_0_100_kmh": "2.4s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,4 giây",
       "top_speed_kmh": 380,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Thiết kế tri ân huyền thoại EB110 thập niên 90",
+        "Sản xuất cực hiếm đúng 10 chiếc toàn cầu",
+        "Động cơ W16 tinh chỉnh 1.600 mã lực",
+        "Trọng lượng nhẹ hơn Chiron 20 kg"
+      ],
+      "description": "Mẫu siêu xe độc bản hồi sinh thiết kế của huyền thoại EB110, dành cho những nhà sưu tập tầm cỡ nhất thế giới.",
+      "detailed_description": "Bugatti Centodieci tái hiện lại các đường nét kinh điển của chiếc EB110 với 5 hốc gió tròn bên hông và lưới tản nhiệt hình móng ngựa thu nhỏ. Động cơ W16 1.600 HP giúp xe đạt 100 km/h trong 2,4 giây."
     },
     {
-      "name": "Chiron",
+      "name": "Bugatti Chiron",
       "price_vnd": 78000000000,
+      "body_type": "Siêu xe thể thao (Hypercar)",
+      "model_year": "2016 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1500,
       "transmission": "Ly hợp kép 7 cấp",
-      "acceleration_0_100_kmh": "2.4s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,4 giây",
       "top_speed_kmh": 420,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Đường nét C-line biểu tượng bên hông xe",
+        "Động cơ W16 8.0L Quad-Turbo 1.500 HP",
+        "Khung gầm Monocoque sợi carbon độ cứng cực cao",
+        "Nội thất chế tác thủ công đỉnh cao"
+      ],
+      "description": "Ông vua siêu xe đương đại, định hình lại mọi tiêu chuẩn về sức mạnh và sự sang trọng trong ngành ô tô.",
+      "detailed_description": "Bugatti Chiron là định nghĩa hoàn hảo cho khái niệm Hypercar. Sức mạnh 1.500 mã lực đến từ khối động cơ W16 4 tăng áp kết hợp dẫn động 4 bánh AWD giúp chiếc xe đạt tốc độ tối đa 420 km/h một cách mượt mà."
     },
     {
-      "name": "Chiron Pur Sport",
+      "name": "Bugatti Chiron Pur Sport",
       "price_vnd": 93000000000,
+      "body_type": "Siêu xe tối ưu ôm cua (Handling-Focused Hypercar)",
+      "model_year": "2020 - 2026",
+      "status": "Phiên bản giới hạn (60 chiếc)",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1500,
       "transmission": "7 cấp tỉ số truyền ngắn",
-      "acceleration_0_100_kmh": "2.3s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,3 giây",
       "top_speed_kmh": 350,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Cánh gió cố định 1,9 mét tạo lực ép mặt đường cực lớn",
+        "Hộp số tỉ số truyền ngắn hơn 15% tăng tốc bùng nổ",
+        "Mâm xe Magnesium khí động học siêu nhẹ",
+        "Lốp Michelin Sport Cup 2R thửa riêng"
+      ],
+      "description": "Biến thể tập trung vào khả năng ôm cua và tăng tốc dải tốc độ thấp của Chiron với cánh gió thể thao khổng lồ.",
+      "detailed_description": "Bugatti Chiron Pur Sport được sinh ra cho các đường đua ngoằn ngoèo. Nhờ tỉ số truyền ngắn hơn 15% và cánh gió sau cố định 1,9m, Pur Sport bứt tốc từ 60-120 km/h nhanh hơn bản tiêu tưởng 2 giây."
     },
     {
-      "name": "Divo",
+      "name": "Bugatti Divo",
       "price_vnd": 150000000000,
+      "body_type": "Siêu xe thể thao độc bản (Coachbuilt Hypercar)",
+      "model_year": "2018 - 2026",
+      "status": "Phiên bản giới hạn (40 chiếc toàn thế giới)",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1500,
       "transmission": "Ly hợp kép 7 cấp",
-      "acceleration_0_100_kmh": "2.4s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,4 giây",
       "top_speed_kmh": 380,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Lực ép xuống mặt đường cao hơn Chiron 90 kg",
+        "Gia tốc trọng trường khi ôm cua đạt 1,6G",
+        "Thiết kế cụm đèn hậu LED 3D dạng vây cá độc đáo",
+        "Giới hạn chỉ 40 chiếc toàn thế giới"
+      ],
+      "description": "Kiệt tác thiết kế thửa riêng, tối ưu hóa lực ép mặt đường và gia tốc ôm cua đường đua.",
+      "detailed_description": "Bugatti Divo mang thiết kế khí động học hoàn toàn mới giúp tăng 90 kg lực ép xuống mặt đường so với Chiron. Đèn hậu thiết kế 3D từ 44 vây sáng tạo nên diện mạo không thể nhầm lẫn."
     },
     {
-      "name": "EB110 Super Sport",
+      "name": "Bugatti EB110 Super Sport",
       "price_vnd": 80000000000,
+      "body_type": "Siêu xe cổ điển (Classic Supercar)",
+      "model_year": "1992 - 1995",
+      "status": "Xe cổ sưu tầm",
+      "seats": "2 ghế",
       "powertrain": "V12 3.5L Quad-Turbo",
       "power_hp": 603,
       "transmission": "Số sàn 6 cấp",
-      "acceleration_0_100_kmh": "3.2s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "3,2 giây",
       "top_speed_kmh": 355,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Động cơ V12 Quad-Turbo đầu tiên trên thế giới",
+        "Khung gầm sợi carbon do Aerospatiale chế tạo",
+        "Hộp số sàn 6 cấp thuần chất thể thao",
+        "Biểu tượng siêu xe thập niên 90"
+      ],
+      "description": "Huyền thoại đặt nền móng cho sự hồi sinh của Bugatti trong kỷ nguyên hiện đại, mục tiêu săn đón của các nhà sưu tập.",
+      "detailed_description": "Bugatti EB110 Super Sport là siêu xe đột phá của thập niên 90 với động cơ V12 3.5L tích hợp 4 bộ tăng áp Quad-Turbo sản sinh 603 mã lực, kết hợp khung gầm sợi carbon và hệ dẫn động 4 bánh."
     },
     {
-      "name": "La Voiture Noire",
+      "name": "Bugatti La Voiture Noire",
       "price_vnd": 480000000000,
+      "body_type": "Siêu xe độc bản 1/1 (One-off Hypercar)",
+      "model_year": "2019 - 2026",
+      "status": "Độc bản duy nhất toàn thế giới (1/1)",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1500,
       "transmission": "Ly hợp kép 7 cấp",
-      "acceleration_0_100_kmh": "2.4s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,4 giây",
       "top_speed_kmh": 420,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Mẫu xe độc bản 1/1 đắt giá nhất lịch sử Bugatti",
+        "Tri ân chiếc Type 57 SC Atlantic bị thất lạc của Jean Bugatti",
+        "6 ống xả bố trí phía sau cực kỳ hầm hố",
+        "Thân xe carbon làm hoàn toàn bằng tay"
+      ],
+      "description": "Chiếc xe độc bản 'Chiếc xe màu đen' duy nhất trên thế giới, tái hiện lại huyền thoại Type 57 SC Atlantic bị mất tích.",
+      "detailed_description": "Bugatti La Voiture Noire là chiếc xe độc bản siêu đắt giá. Thân xe carbon màu đen bóng được chế tác thủ công hoàn toàn, nổi bật với 6 ống xả phía sau và dải đèn LED uốn lượn tràn chiều rộng đuôi xe."
     },
     {
-      "name": "Veyron 16.4 Grand Sport Vitesse",
+      "name": "Bugatti Veyron 16.4 Grand Sport Vitesse",
       "price_vnd": 50000000000,
+      "body_type": "Siêu xe mui trần tốc độ kỷ lục",
+      "model_year": "2012 - 2015",
+      "status": "Xe sưu tầm",
+      "seats": "2 ghế",
       "powertrain": "W16 8.0L Quad-Turbo",
       "power_hp": 1200,
       "transmission": "Ly hợp kép 7 cấp DSG",
-      "acceleration_0_100_kmh": "2.5s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,5 giây",
       "top_speed_kmh": 431,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Từng giữ kỷ lục mui trần nhanh nhất thế giới (408,84 km/h)",
+        "Động cơ W16 1.200 mã lực cực đại",
+        "Khung gầm gia cường chống xoắn cho bản mui trần",
+        "Hệ thống phanh gốm carbon siêu bền"
+      ],
+      "description": "Tượng đài siêu xe mui trần tốc độ kỷ lục thế giới mở ra kỷ nguyên 1.000+ mã lực của tập đoàn Volkswagen.",
+      "detailed_description": "Bugatti Veyron Grand Sport Vitesse kết hợp sức mạnh 1.200 HP của bản Super Sport với thiết kế mui trần. Xe đạt kỷ lục tốc độ thế giới cho xe mui trần ở mức 408,84 km/h vào năm 2013."
     }
   ]
 }

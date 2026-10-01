@@ -9,15 +9,15 @@
   {
     "id": "bmw_m4",
     "brand": "BMW",
-    "model": "BMW M4",
-    "keywords": ["bmw m4", "xe bmw m4", "m4"],
+    "model": "BMW M4 Coupe",
+    "keywords": ["bmw m4", "xe bmw m4", "m4", "m4 coupe"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW_M4.html"
   },
   {
     "id": "bmw_z4_m40i",
     "brand": "BMW",
-    "model": "BMW Z4 M40i",
-    "keywords": ["bmw z4", "xe bmw z4", "z4", "z4 m40i"],
+    "model": "BMW Z4 M40i Roadster",
+    "keywords": ["bmw z4", "xe bmw z4", "z4", "z4 m40i", "roadster"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW_Z4_M40i.html"
   },
   {
@@ -30,43 +30,43 @@
   {
     "id": "bmw_i8",
     "brand": "BMW",
-    "model": "BMW i8",
-    "keywords": ["bmw i8", "xe bmw i8", "i8"],
+    "model": "BMW i8 Coupe",
+    "keywords": ["bmw i8", "xe bmw i8", "i8", "i8 coupe"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW-i8.html"
   },
   {
     "id": "bmw_m2",
     "brand": "BMW",
-    "model": "BMW M2",
-    "keywords": ["bmw m2", "xe bmw m2", "m2"],
+    "model": "BMW M2 Coupe",
+    "keywords": ["bmw m2", "xe bmw m2", "m2", "m2 coupe"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW-M2.html"
   },
   {
     "id": "bmw_m3",
     "brand": "BMW",
-    "model": "BMW M3",
-    "keywords": ["bmw m3", "xe bmw m3", "m3"],
+    "model": "BMW M3 Sedan",
+    "keywords": ["bmw m3", "xe bmw m3", "m3", "m3 sedan"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW-M3.html"
   },
   {
     "id": "bmw_m5",
     "brand": "BMW",
-    "model": "BMW M5",
-    "keywords": ["bmw m5", "xe bmw m5", "m5"],
+    "model": "BMW M5 Sedan",
+    "keywords": ["bmw m5", "xe bmw m5", "m5", "m5 sedan"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW-M5.html"
   },
   {
     "id": "bmw_m8",
     "brand": "BMW",
-    "model": "BMW M8",
-    "keywords": ["bmw m8", "xe bmw m8", "m8"],
+    "model": "BMW M8 Competition Coupe",
+    "keywords": ["bmw m8", "xe bmw m8", "m8", "m8 competition"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW-M8.html"
   },
   {
     "id": "bmw_x5m",
     "brand": "BMW",
-    "model": "BMW X5M",
-    "keywords": ["bmw x5m", "xe bmw x5m", "x5m", "x5"],
+    "model": "BMW X5 M Competition",
+    "keywords": ["bmw x5m", "xe bmw x5m", "x5m", "x5", "x5 m competition"],
     "url": "http://127.0.0.1:5500/frontend/html/BMW/BMW_X5M.html"
   },
   {

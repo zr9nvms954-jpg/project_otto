@@ -1,126 +1,250 @@
 {
+  "source": "Info Ferrari.docx",
   "brand": "Ferrari",
+  "currency": "VND",
+  "note": "Giá niêm yết quy đổi và thông số kỹ thuật siêu xe Ferrari, cần xác nhận lại với đại lý chính hãng trước khi đặt cọc tư vấn.",
   "vehicles": [
     {
-      "name": "12Cilindri",
+      "name": "Ferrari 12Cilindri",
       "price_vnd": 21000000000,
+      "body_type": "Super GT động cơ V12 đặt trước",
+      "model_year": "2024 - 2026",
+      "status": "Mới ra mắt / Đặt hàng trước",
+      "seats": "2 ghế",
       "powertrain": "V12 6.5L Hút khí tự nhiên",
       "power_hp": 819,
       "transmission": "Ly hợp kép 8 cấp",
-      "acceleration_0_100_kmh": "2.9s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,9 giây",
       "top_speed_kmh": 340,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Động cơ V12 Hút khí tự nhiên quay đến 9.500 vòng/phút",
+        "Thiết kế lấy cảm hứng từ cỗ máy 365 GTB/4 Daytona huyền thoại",
+        "Hệ thống đánh lái độc lập 4 bánh 4WS",
+        "Màn hình hiển thị riêng biệt cho hành khách"
+      ],
+      "description": "Mẫu Super GT V12 thế hệ mới kế thừa dòng máu 812 Superfast, tôn vinh động cơ V12 hút khí tự nhiên thuần túy.",
+      "detailed_description": "Ferrari 12Cilindri sở hữu dải đen vắt ngang đầu xe gợi nhớ chiếc 365 GTB/4 Daytona kinh điển. Khối động cơ V12 6.5L không sử dụng tăng áp hay mô-tơ điện sản sinh 819 mã lực, mang lại âm thanh phấn khích tột độ."
     },
     {
-      "name": "296 GTB",
+      "name": "Ferrari 296 GTB",
       "price_vnd": 21000000000,
+      "body_type": "Siêu xe Berlinetta Plug-in Hybrid",
+      "model_year": "2022 - 2026",
+      "status": "Nhập khẩu chính hãng",
+      "seats": "2 ghế",
       "powertrain": "V6 3.0L Twin-Turbo + Mô-tơ điện",
       "power_hp": 819,
       "transmission": "Ly hợp kép 8 cấp",
-      "acceleration_0_100_kmh": "2.9s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,9 giây",
       "top_speed_kmh": 330,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Động cơ V6 góc nghiêng 120 độ 'Piccolo V12'",
+        "Hệ động lực Plug-in Hybrid PHEV 819 HP",
+        "Khả năng di chuyển thuần điện 25 km",
+        "Thiết kế gọn gàng khí động học đỉnh cao"
+      ],
+      "description": "Kỷ nguyên mới của siêu xe động cơ đặt giữa Ferrari với hệ động lực V6 Hybrid bùng nổ và linh hoạt.",
+      "detailed_description": "Ferrari 296 GTB định hình lại khái niệm niềm vui cầm lái. Động cơ V6 3.0L Turbo kết hợp mô-tơ điện cho tổng công suất 819 mã lực truyền tới cầu sau, giúp xe ôm cua chính xác và bứt tốc tức thì."
     },
     {
-      "name": "SF90 Stradale",
+      "name": "Ferrari SF90 Stradale",
       "price_vnd": 34000000000,
+      "body_type": "Siêu xe flagship PHEV 4 bánh toàn thời gian",
+      "model_year": "2020 - 2026",
+      "status": "Nhập khẩu nguyên chiếc",
+      "seats": "2 ghế",
       "powertrain": "V8 4.0L Twin-Turbo + 3 Mô-tơ điện",
       "power_hp": 986,
       "transmission": "Ly hợp kép 8 cấp",
-      "acceleration_0_100_kmh": "2.5s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "2,5 giây",
       "top_speed_kmh": 340,
-      "seats": 2,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Mẫu siêu xe thương mại tiệm cận 1.000 mã lực đầu tiên của hãng",
+        "Dẫn động 4 bánh AWD nhờ 2 mô-tơ điện cầu trước",
+        "Cánh gió gầm shut-off Gurney độc quyền",
+        "Vô-lăng cảm ứng HMI hiện đại"
+      ],
+      "description": "Flagship đỉnh cao công nghệ đua F1 áp dụng lên siêu xe thương mại của Ferrari với sức mạnh gần 1.000 mã lực.",
+      "detailed_description": "Ferrari SF90 Stradale là chiếc PHEV đầu bảng của thương hiệu 'Ngựa chồm'. Động cơ V8 Twin-Turbo kết hợp 3 mô-tơ điện tạo ra công suất 986 HP, giúp xe bứt tốc từ 0-100 km/h chỉ trong 2,5 giây."
     },
     {
-      "name": "488 Pista Spider",
+      "name": "Ferrari 488 Pista Spider",
       "price_vnd": 31000000000,
+      "body_type": "Siêu xe mui xếp hiệu suất cao (Track-Focused Convertible)",
+      "model_year": "2019 - 2026",
+      "status": "Xe sưu tầm / Nhập khẩu",
+      "seats": "2 ghế",
       "powertrain": "V8 3.9L Twin-Turbo",
       "power_hp": 720,
       "transmission": "Ly hợp kép 7 cấp F1",
-      "acceleration_0_100_kmh": "2.85s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,85 giây",
       "top_speed_kmh": 340,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Động cơ V8 mạnh nhất lịch sử dòng xe thương mại Ferrari",
+        "Mũi xe S-Duct khí động học từ đua xe F1",
+        "Giảm 18 kg so với bản 488 Spider tiêu chuẩn",
+        "Mui cứng đóng mở điện trong 14 giây"
+      ],
+      "description": "Mẫu xe mui trần thứ 50 trong lịch sử Ferrari, mang sức mạnh đường đua thuần túy dưới phom dáng mở mui.",
+      "detailed_description": "Ferrari 488 Pista Spider ứng dụng hàng loạt công nghệ từ giải đua Challenge và GTE. Động cơ V8 3.9L Twin-Turbo đoạt nhiều giải thưởng quốc tế sản sinh 720 mã lực, đem lại cảm giác lái gắt gao."
     },
     {
-      "name": "Daytona SP3",
+      "name": "Ferrari Daytona SP3",
       "price_vnd": 60000000000,
+      "body_type": "Siêu xe độc bản Icona Series (Few-Off Hypercar)",
+      "model_year": "2022 - 2026",
+      "status": "Phiên bản giới hạn (599 chiếc toàn thế giới)",
+      "seats": "2 ghế",
       "powertrain": "V12 6.5L F140HC Hút khí tự nhiên",
       "power_hp": 840,
       "transmission": "Ly hợp kép 7 cấp F1",
-      "acceleration_0_100_kmh": "2.85s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,85 giây",
       "top_speed_kmh": 340,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Thuộc dải sản phẩm đặc biệt Icona Series",
+        "Động cơ V12 Hút khí tự nhiên 840 HP mạnh nhất của Ferrari",
+        "Thân xe Targa kính chắn gió bao bọc kiểu phi cơ",
+        "Thiết kế các nếp gấp ngang ở đuôi xe siêu độc đáo"
+      ],
+      "description": "Tuyệt tác thuộc dòng Icona tri ân cú đúp chiến thắng huyền thoại tại giải 24 Hours of Daytona năm 1967.",
+      "detailed_description": "Ferrari Daytona SP3 sở hữu thiết kế uốn lượn gợi nhớ các mẫu xe đua Sports Prototype thập niên 60. Động cơ V12 6.5L Hút khí tự nhiên quay tới 9.500 vòng/phút tạo nên công suất 840 mã lực mà không cần dùng Turbo."
     },
     {
-      "name": "F8 Tributo",
+      "name": "Ferrari F8 Tributo",
       "price_vnd": 19200000000,
+      "body_type": "Siêu xe Berlinetta động cơ đặt giữa",
+      "model_year": "2020 - 2026",
+      "status": "Nhập khẩu chính hãng",
+      "seats": "2 ghế",
       "powertrain": "V8 3.9L Twin-Turbo",
       "power_hp": 720,
       "transmission": "Ly hợp kép 7 cấp F1",
-      "acceleration_0_100_kmh": "2.9s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,9 giây",
       "top_speed_kmh": 340,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Mẫu xe tôn vinh động cơ V8 huyền thoại của Ferrari",
+        "Nắp động cơ Lexan có khe thoát nhiệt kiểu F40",
+        "Hệ thống kiểm soát góc trượt SSC 6.1",
+        "Nhẹ hơn 488 GTB 40 kg"
+      ],
+      "description": "Mẫu Berlinetta tôn vinh khối động cơ V8 tăng áp xuất sắc nhất của thương hiệu Ngựa chồm.",
+      "detailed_description": "Ferrari F8 Tributo kế thừa sức mạnh 720 mã lực từ 488 Pista nhưng mang thiết kế êm ái hơn cho nhu cầu vận hành hàng ngày. Mũi xe tích hợp khe gió S-Duct tăng 15% lực ép mặt đường."
     },
     {
-      "name": "LaFerrari",
+      "name": "Ferrari LaFerrari",
       "price_vnd": 85000000000,
+      "body_type": "Siêu xe đĩnh cao HY-KERS (Flagship Hypercar)",
+      "model_year": "2013 - 2018",
+      "status": "Xe cổ sưu tầm / Giới hạn 499 chiếc",
+      "seats": "2 ghế",
       "powertrain": "V12 6.3L Hút khí tự nhiên + HY-KERS",
       "power_hp": 963,
       "transmission": "Ly hợp kép 7 cấp F1",
-      "acceleration_0_100_kmh": "2.6s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,6 giây",
       "top_speed_kmh": 350,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "1 trong bộ ba 'Holy Trinity' siêu xe thế kỷ 21",
+        "Hệ thống hồi phục năng lượng HY-KERS từ xe đua F1",
+        "Khung gầm nguyên khối carbon chế tác tại xưởng F1",
+        "Sản xuất giới hạn đúng 499 chiếc"
+      ],
+      "description": "Huyền thoại đỉnh cao đại diện cho năng lực công nghệ tối thượng của Ferrari trong thập kỷ 2010.",
+      "detailed_description": "LaFerrari kết hợp động cơ V12 6.3L (800 HP) với mô-tơ điện HY-KERS (163 HP) cho tổng công suất 963 mã lực. Đây là mẫu xe cắm cờ cho năng lực chế tạo siêu xe đỉnh cao của Maranello."
     },
     {
-      "name": "Monza SP2",
+      "name": "Ferrari Monza SP2",
       "price_vnd": 45000000000,
+      "body_type": "Siêu xe Barchetta không kính chắn gió",
+      "model_year": "2019 - 2026",
+      "status": "Phiên bản giới hạn (499 chiếc cùng SP1)",
+      "seats": "2 ghế",
       "powertrain": "V12 6.5L Hút khí tự nhiên",
       "power_hp": 810,
       "transmission": "Ly hợp kép 7 cấp F1 DCT",
-      "acceleration_0_100_kmh": "2.9s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "2,9 giây",
       "top_speed_kmh": 300,
-      "seats": 2,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Thiết kế Barchetta hoàn toàn không có kính chắn gió",
+        "Công nghệ 'Virtual Wind Shield' điều hướng luồng gió",
+        "Thân xe hoàn toàn bằng sợi carbon siêu nhẹ",
+        "Sản xuất giới hạn cực hiếm"
+      ],
+      "description": "Kiệt tác Barchetta 2 chỗ không kính chắn gió thuộc dòng Icona, mang lại trải nghiệm tốc độ thuần khiết.",
+      "detailed_description": "Ferrari Monza SP2 loại bỏ hoàn toàn kính chắn gió truyền thống, sử dụng tấm hướng gió Virtual Wind Shield trước bảng đồng hồ để chẻ luồng khí qua đầu người lái. Động cơ V12 810 mã lực đem lại cảm giác như lái xe đua F1 cổ điển."
     },
     {
-      "name": "Portofino M",
+      "name": "Ferrari Portofino M",
       "price_vnd": 16500000000,
+      "body_type": "GT mui xếp cứng 2+2 (Convertible GT)",
+      "model_year": "2021 - 2026",
+      "status": "Nhập khẩu chính hãng",
+      "seats": "4 ghế, cấu hình 2+2",
       "powertrain": "V8 3.9L Twin-Turbo",
       "power_hp": 620,
       "transmission": "Ly hợp kép 8 cấp",
-      "acceleration_0_100_kmh": "3.45s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "3,45 giây",
       "top_speed_kmh": 320,
-      "seats": 4,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Mui xếp cứng RHT biến đổi Coupe thành Spider trong 14s",
+        "Động cơ V8 620 mã lực bổ sung chế độ lái Race",
+        "Hộp số 8 cấp mới gọn nhẹ hơn",
+        "Nội thất 2+2 tiện dụng hàng ngày"
+      ],
+      "description": "Mẫu GT mui xếp cứng đa dụng (M = Modificata), cân bằng giữa sự sang trọng dạo phố và thể thao.",
+      "detailed_description": "Ferrari Portofino M là bản nâng cấp hiệu năng của Portofino. Động cơ V8 Twin-Turbo được tăng thêm 20 mã lực lên mức 620 HP, kết hợp hộp số 8 cấp ly hợp kép hoàn toàn mới."
     },
     {
-      "name": "Purosangue",
+      "name": "Ferrari Purosangue",
       "price_vnd": 39000000000,
+      "body_type": "Super SUV / Crossover 4 cửa 4 chỗ",
+      "model_year": "2023 - 2026",
+      "status": "Nhập khẩu chính hãng / Đặt hàng trước",
+      "seats": "4 ghế độc lập",
       "powertrain": "V12 6.5L Hút khí tự nhiên",
       "power_hp": 725,
       "transmission": "Ly hợp kép 8 cấp (4RM-S EVO)",
-      "acceleration_0_100_kmh": "3.3s",
+      "drivetrain": "4 bánh toàn thời gian (AWD)",
+      "acceleration_0_100_kmh": "3,3 giây",
       "top_speed_kmh": 310,
-      "seats": 4,
-      "drivetrain": "AWD"
+      "highlights": [
+        "Mẫu xe 4 cửa 4 chỗ đầu tiên trong lịch sử Ferrari",
+        "Cửa sau mở ngược kiểu Welcome Door",
+        "Động cơ V12 Hút khí tự nhiên 725 mã lực đặt giữa-trước",
+        "Hệ thống treo chủ động FAST giảm nghiêng thân xe"
+      ],
+      "description": "Mẫu xe 4 cửa 4 chỗ đầu tiên của Ferrari, giữ nguyên DNA thể thao với động cơ V12 hút khí tự nhiên.",
+      "detailed_description": "Ferrari Purosangue ('Ngựa thuần chủng') mở ra phân khúc hoàn toàn mới. Xe sở hữu cấu trúc cửa sau mở ngược, 4 ghế thương gia độc lập và động cơ V12 6.5L 725 HP đặt lùi sau trục trước giúp phân bổ trọng lượng 49:51 hoàn hảo."
     },
     {
-      "name": "Roma Coupe",
+      "name": "Ferrari Roma Coupe",
       "price_vnd": 15700000000,
+      "body_type": "Coupe 2+2 phong cách La Nuova Dolce Vita",
+      "model_year": "2020 - 2026",
+      "status": "Nhập khẩu chính hãng",
+      "seats": "4 ghế, cấu hình 2+2",
       "powertrain": "V8 3.9L Twin-Turbo",
       "power_hp": 620,
       "transmission": "Ly hợp kép 8 cấp",
-      "acceleration_0_100_kmh": "3.4s",
+      "drivetrain": "Cầu sau (RWD)",
+      "acceleration_0_100_kmh": "3,4 giây",
       "top_speed_kmh": 320,
-      "seats": 4,
-      "drivetrain": "RWD"
+      "highlights": [
+        "Thiết kế tối giản thanh lịch tôn vinh nước Ý thập niên 50-60",
+        "Động cơ V8 Twin-Turbo 620 HP",
+        "Màn hình trung tâm đặt dọc 8,4 inch",
+        "Cánh gió sau chủ động tích hợp vào kính lưng"
+      ],
+      "description": "Mẫu Coupe mang phong cách sống thanh lịch 'La Nuova Dolce Vita', kết hợp đường nét cổ điển và công nghệ hiện đại.",
+      "detailed_description": "Ferrari Roma đại diện cho sự tinh tế và tối giản. Khác với vẻ hầm hố của các dòng Berlinetta, Roma mang phom dáng uốn lượn mềm mại nhưng vẫn sở hữu động cơ V8 620 HP bứt tốc từ 0-100 km/h trong 3,4 giây."
     }
   ]
 }

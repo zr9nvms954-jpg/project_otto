@@ -23,8 +23,8 @@
   {
     "id": "ferrari_488_pista",
     "brand": "Ferrari",
-    "model": "Ferrari 488 Pista",
-    "keywords": ["ferrari 488", "488 pista", "xe ferrari 488 pista"],
+    "model": "Ferrari 488 Pista Spider",
+    "keywords": ["ferrari 488", "488 pista", "xe ferrari 488 pista", "pista spider"],
     "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-488Pista.html"
   },
   {
@@ -79,8 +79,8 @@
   {
     "id": "ferrari_roma",
     "brand": "Ferrari",
-    "model": "Ferrari Roma",
-    "keywords": ["ferrari roma", "xe ferrari roma", "roma"],
+    "model": "Ferrari Roma Coupe",
+    "keywords": ["ferrari roma", "xe ferrari roma", "roma", "roma coupe"],
     "url": "http://127.0.0.1:5500/frontend/html/Ferrari/Ferrari-Roma.html"
   },
   {

@@ -37,8 +37,8 @@
   {
     "id": "audi_a8",
     "brand": "Audi",
-    "model": "Audi A8",
-    "keywords": ["audi a8", "xe audi a8", "a8"],
+    "model": "Audi A8L",
+    "keywords": ["audi a8", "xe audi a8", "a8", "a8l"],
     "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_A8.html"
   },
   {

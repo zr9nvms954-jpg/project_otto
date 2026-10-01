@@ -16,8 +16,8 @@
   {
     "id": "bugatti_mistral",
     "brand": "Bugatti",
-    "model": "Bugatti Mistral",
-    "keywords": ["bugatti mistral", "xe bugatti mistral", "mistral"],
+    "model": "Bugatti W16 Mistral",
+    "keywords": ["bugatti mistral", "xe bugatti mistral", "mistral", "w16 mistral"],
     "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti_Mistral.html"
   },
   {
@@ -58,8 +58,8 @@
   {
     "id": "bugatti_eb110ss",
     "brand": "Bugatti",
-    "model": "Bugatti EB110 SS",
-    "keywords": ["bugatti eb110", "bugatti eb110 ss", "eb110", "eb110ss"],
+    "model": "Bugatti EB110 Super Sport",
+    "keywords": ["bugatti eb110", "bugatti eb110 ss", "eb110", "eb110ss", "super sport"],
     "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-EB110SS.html"
   },
   {
@@ -72,8 +72,8 @@
   {
     "id": "bugatti_veyron",
     "brand": "Bugatti",
-    "model": "Bugatti Veyron",
-    "keywords": ["bugatti veyron", "xe bugatti veyron", "veyron"],
+    "model": "Bugatti Veyron 16.4 Grand Sport Vitesse",
+    "keywords": ["bugatti veyron", "xe bugatti veyron", "veyron", "grand sport vitesse"],
     "url": "http://127.0.0.1:5500/frontend/html/Bugati/Bugatti-Veyron.html"
   },
   {

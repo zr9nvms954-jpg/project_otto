@@ -37,8 +37,8 @@
   {
     "id": "lamborghini_huracan_tecnica",
     "brand": "Lamborghini",
-    "model": "Lamborghini Huracan Tecnica",
-    "keywords": ["lamborghini huracan tecnica", "huracan tecnica", "tecnica"],
+    "model": "Lamborghini Huracán Tecnica",
+    "keywords": ["lamborghini huracan tecnica", "huracan tecnica", "tecnica", "huracan"],
     "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-HuracanTecnica.html"
   },
   {
@@ -51,21 +51,21 @@
   {
     "id": "lamborghini_sian_fkp37",
     "brand": "Lamborghini",
-    "model": "Lamborghini Sian FKP 37",
+    "model": "Lamborghini Sián FKP 37",
     "keywords": ["lamborghini sian", "sian fkp37", "sian"],
     "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-SianFKP37.html"
   },
   {
     "id": "lamborghini_veneno",
     "brand": "Lamborghini",
-    "model": "Lamborghini Veneno",
-    "keywords": ["lamborghini veneno", "veneno", "lambor veneno"],
+    "model": "Lamborghini Veneno Coupe",
+    "keywords": ["lamborghini veneno", "veneno", "lambor veneno", "veneno coupe"],
     "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lambor-Veneno.html"
   },
   {
     "id": "lamborghini_huracan_sto",
     "brand": "Lamborghini",
-    "model": "Lamborghini Huracan STO",
+    "model": "Lamborghini Huracán STO",
     "keywords": ["lamborghini huracan sto", "huracan sto", "xe huracan sto"],
     "url": "http://127.0.0.1:5500/frontend/html/Lambor/Lamborghini Huracan STO.html"
   },
