@@ -1,12 +1,12 @@
-/* Custom variables cho theme sang trọng 3D */
+/* Custom variables cho theme sang trọng 3D (Tím Cyber Nhẹ Nhàng) */
 :root {
-    --bg-main: #06080c;
-    --card-bg: rgba(18, 22, 31, 0.65);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --accent-blue: #0066b1;
-    --accent-cyan: #00d4ff;
+    --bg-main: #060508;
+    --card-bg: rgba(22, 18, 32, 0.65);
+    --card-border: rgba(168, 85, 247, 0.15);
+    --accent-blue: #7e22ce;
+    --accent-cyan: #c084fc;
     --text-primary: #ffffff;
-    --text-secondary: #8a99ad;
+    --text-secondary: #a89bbd;
 }
 
 /* Reset chung toàn trang */
@@ -19,8 +19,8 @@
 body {
     background-color: var(--bg-main);
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(0, 102, 177, 0.18) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(192, 132, 252, 0.05) 0%, transparent 40%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -38,17 +38,17 @@ body {
    LỘT XÁC THANH TRANG CHỦ / BREADCRUMB NỔI 3D GLASS
    ========================================================= */
 .breadcrumb {
-    background: rgba(15, 20, 30, 0.75);
+    background: rgba(20, 16, 30, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-bottom: 1px solid rgba(192, 132, 252, 0.25);
     padding: 12px 24px;
     margin: 20px auto 30px auto;
     max-width: 1200px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .breadcrumb p {
@@ -62,11 +62,11 @@ body {
 
 /* Nút bấm "Trang Chủ" dạng Badge phát sáng */
 .breadcrumb a {
-    color: #e1e7f0;
+    color: #ebdcfc;
     text-decoration: none;
     padding: 5px 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(168, 85, 247, 0.06);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: inline-flex;
@@ -75,7 +75,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* Đèn LED cyan nhấp nháy nhẹ trước nút Trang Chủ */
+/* Đèn LED nhấp nháy nhẹ trước nút Trang Chủ */
 .breadcrumb a::before {
     content: "";
     width: 6px;
@@ -87,9 +87,9 @@ body {
 
 .breadcrumb a:hover {
     color: #ffffff;
-    background: rgba(0, 102, 177, 0.35);
-    border-color: rgba(0, 212, 255, 0.6);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    background: rgba(168, 85, 247, 0.25);
+    border-color: rgba(192, 132, 252, 0.5);
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.25);
     transform: translateY(-1px);
 }
 
@@ -97,13 +97,13 @@ body {
 .breadcrumb strong {
     color: #ffffff;
     font-weight: 500;
-    background: linear-gradient(135deg, rgba(0, 102, 177, 0.3), rgba(0, 212, 255, 0.15));
-    border: 1px solid rgba(0, 212, 255, 0.3);
+    background: linear-gradient(135deg, rgba(126, 34, 206, 0.25), rgba(192, 132, 252, 0.12));
+    border: 1px solid rgba(192, 132, 252, 0.25);
     padding: 5px 14px;
     border-radius: 8px;
     letter-spacing: 1px;
     font-size: 0.85rem;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* =========================================================
@@ -123,12 +123,12 @@ body {
     font-weight: 600;
     letter-spacing: 4px;
     color: var(--accent-cyan);
-    background: rgba(0, 102, 177, 0.15);
-    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.2);
     padding: 5px 16px;
     border-radius: 20px;
     margin-bottom: 18px;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.12);
     backdrop-filter: blur(5px);
 }
 
@@ -138,7 +138,7 @@ body {
     letter-spacing: 6px;
     text-transform: uppercase;
     margin-bottom: 12px;
-    background: linear-gradient(180deg, #ffffff 30%, #a2b4c7 100%);
+    background: linear-gradient(180deg, #ffffff 30%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
@@ -182,16 +182,16 @@ body {
     padding: 12px;
     border: 1px solid var(--card-border);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform-style: preserve-3d;
 }
 
 .car-card:hover {
     transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
-    border-color: rgba(0, 212, 255, 0.35);
+    border-color: rgba(192, 132, 252, 0.35);
     box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6),
-                0 0 25px rgba(0, 102, 177, 0.25);
+                0 0 25px rgba(168, 85, 247, 0.2);
 }
 
 .car-link {
@@ -252,7 +252,7 @@ body {
 .page-footer {
     text-align: center;
     padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(168, 85, 247, 0.1);
     margin-top: 60px;
     color: var(--text-secondary);
     font-size: 0.85rem;
@@ -280,24 +280,28 @@ body {
         letter-spacing: 3px;
     }
 }
+
+/* =========================================================
+   CHATBOX ICON - TÍM CYBER NHẸ NHÀNG
+   ========================================================= */
 .chatbox-icon {
     position: fixed;
     bottom: 30px;
-    left: 30px;  /* ← THAY right thành left */
+    left: 30px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #0b0b0d;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     box-shadow: 
-        0 8px 25px rgba(212, 175, 55, 0.4),
-        0 0 20px rgba(212, 175, 55, 0.2);
+        0 8px 25px rgba(168, 85, 247, 0.3),
+        0 0 20px rgba(168, 85, 247, 0.15);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 999;
     animation: pulse-chat 2s infinite;
@@ -306,8 +310,8 @@ body {
 .chatbox-icon:hover {
     transform: scale(1.12);
     box-shadow: 
-        0 12px 35px rgba(212, 175, 55, 0.6),
-        0 0 30px rgba(212, 175, 55, 0.4);
+        0 12px 35px rgba(168, 85, 247, 0.45),
+        0 0 30px rgba(192, 132, 252, 0.3);
 }
 
 .chatbox-icon:active {
@@ -320,7 +324,7 @@ body {
     right: -5px;
     width: 24px;
     height: 24px;
-    background: #ff4444;
+    background: #ec4899;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -328,15 +332,15 @@ body {
     justify-content: center;
     font-size: 12px;
     font-weight: 900;
-    border: 2px solid #0b0b0d;
-    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.5);
+    border: 2px solid #060508;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
     animation: badge-pulse 1.5s infinite;
 }
 
 @keyframes pulse-chat {
-    0% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2); }
-    50% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 0 0 30px rgba(212, 175, 55, 0.3); }
-    100% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2); }
+    0% { box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3), 0 0 20px rgba(168, 85, 247, 0.15); }
+    50% { box-shadow: 0 8px 25px rgba(168, 85, 247, 0.45), 0 0 30px rgba(192, 132, 252, 0.25); }
+    100% { box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3), 0 0 20px rgba(168, 85, 247, 0.15); }
 }
 
 @keyframes badge-pulse {

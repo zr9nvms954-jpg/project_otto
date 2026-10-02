@@ -1,178 +1,365 @@
-/* ==========================================================
-   MERCEDES-BENZ & MAYBACH OBSIDIAN & TAN LEATHER THEME
-   (mec-tong.css)
-   ========================================================== */
+/* =========================================================
+   1. MÀU SẮC ĐẬM ĐÀ & NỔI BẬT HƠN (CYBER PURPLE FINTECH THEME)
+   ========================================================= */
+:root {
+    /* Nền đen sâu thăm thẫm để màu neon phản quang nổi bật hơn */
+    --bg-main: #060508; 
+    
+    /* Nền Card tối đậm đà hơn, hiệu ứng Kính Mờ Glassmorphism sâu hơn */
+    --card-bg: rgba(18, 14, 28, 0.85);
+    --card-hover: rgba(28, 22, 42, 0.95);
+    
+    /* Viền phản quang sắc nét */
+    --border: rgba(168, 85, 247, 0.25);
+    --border-glow: rgba(168, 85, 247, 0.6);
 
-/* Tùy chỉnh chung toàn trang */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* Tông màu Neon chính (Đồng bộ theo hình mẫu Cryptocurrency) */
+    --purple-primary: #a855f7;
+    --purple-glow: rgba(168, 85, 247, 0.5);
+    
+    /* Mệnh giá & Điểm nhấn - Đồng bộ tông Neon Tím/Trắng Sáng */
+    --price-text: #c084fc; 
+    --price-glow: rgba(192, 132, 252, 0.4);
+
+    /* Chữ đậm đà sắc nét */
+    --text: #ffffff;
+    --text-sub: #a89bbd;
+    
+    /* Gradient cao cấp Tím Cyber */
+    --grad-purple: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
+    --grad-price: linear-gradient(135deg, #ffffff 0%, #c084fc 60%, #8b5cf6 100%);
 }
 
-body {
-    background-color: #0b0b0d; /* Đen Obsidian huyền bí */
-    color: #e5e5e5;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
+/* RESET CƠ BẢN */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+body { 
+    background: var(--bg-main); 
+    /* Ánh sáng Tím Neon ảo diệu như ảnh mẫu */
+    background-image: 
+        radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 10% 85%, rgba(138, 43, 226, 0.15) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text); 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    padding: 30px 0; 
+    min-height: 100vh;
 }
 
-/* Breadcrumb & Header */
-.breadcrumb {
-    padding: 16px 24px;
-    background-color: #121215;
-    border-bottom: 1px solid #282119;
+.container { 
+    max-width: 1280px; 
+    margin: 0 auto; 
+    padding: 0 24px; 
 }
 
-.breadcrumb a, .page-footer a {
-    color: #a3988e;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* =========================================================
+   2. BREADCRUMB
+   ========================================================= */
+.breadcrumb { 
+    font-size: 0.85rem; 
+    color: var(--text-sub); 
+    margin-bottom: 24px; 
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(168, 85, 247, 0.08);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+}
+.breadcrumb a { 
+    color: var(--text-sub); 
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+.breadcrumb a:hover {
+    color: #c084fc;
+}
+.breadcrumb span { 
+    color: var(--text); 
+    font-weight: 700; 
 }
 
-.breadcrumb a:hover, .page-footer a:hover {
-    color: #c9935a; /* Nâu da bò sáng (Tan Highlight) */
+/* =========================================================
+   3. HERO VIDEO BANNER (ĐẬM VÀ SẮC NÉT)
+   ========================================================= */
+.hero-cinematic { 
+    width: 100%; 
+    margin-bottom: 30px; 
 }
 
-.page-header {
-    text-align: center;
-    margin-bottom: 45px;
+.video-wrapper {
+    position: relative; 
+    width: 100%;
+    aspect-ratio: 21 / 9; 
+    max-height: 520px; 
+    border-radius: 24px; 
+    overflow: hidden; 
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.95), 0 0 35px rgba(168, 85, 247, 0.25);
 }
 
-.page-header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    /* Gradient ánh kim nâu da bò & champagne xa xỉ */
-    background: linear-gradient(135deg, #ffffff 0%, #d4a373 50%, #8a5a2b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.page-header p {
-    color: #a3988e;
-    font-size: 1.05rem;
-}
-
-/* Lưới hiển thị danh sách xe (Grid 2 cột) */
-.car-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-}
-
-/* Thẻ sản phẩm Obsidian & Saddle Tan */
-.car-card {
-    background: linear-gradient(145deg, #161517, #0f0e10);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #2a221b; /* Viền nâu đồng ấm áp */
-    position: relative;
-}
-
-.car-card:hover {
-    transform: translateY(-8px);
-    border-color: #b87d4b; /* Viền nâu da bò nổi bật khi hover */
-    /* Hiệu ứng hắt sáng màu da bò sang trọng */
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.9), 0 0 20px rgba(184, 125, 75, 0.18);
-}
-
-.car-link {
-    text-decoration: none;
-    color: inherit;
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
     display: block;
 }
 
-/* Khung chứa video / hình ảnh */
-.car-image {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    background-color: #050506;
+.video-overlay {
+    position: absolute;
+    inset: 0; 
+    background: linear-gradient(180deg, rgba(6,5,8,0.15) 0%, rgba(6,5,8,0.95) 100%); 
+}
+
+.hero-caption { 
+    position: absolute; 
+    bottom: 40px; 
+    left: 40px; 
+    z-index: 2; 
+}
+
+.badge { 
+    background: var(--grad-purple); 
+    color: #fff; 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    padding: 6px 16px; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 20px var(--purple-glow);
+    display: inline-block;
+}
+
+.hero-caption h1 { 
+    font-size: 3.2rem; 
+    font-weight: 900; 
+    letter-spacing: -0.5px; 
+    margin-top: 10px; 
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-caption p { 
+    color: var(--text-sub); 
+    font-size: 1.05rem; 
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   4. ACTION BAR & MỆNH GIÁ (TRÙNG TÔNG NỀN TRADING)
+   ========================================================= */
+.action-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 22px 36px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 35px;
+    backdrop-filter: blur(24px); 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
     position: relative;
 }
 
-/* Định dạng Ảnh & Video Hover */
-.car-image img,
-.car-image .hover-video {
+/* Đường viền ánh sáng phía trên thanh */
+.action-bar::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.8), transparent);
+}
+
+.price-info small { 
+    display: block; 
+    color: var(--text-sub); 
+    font-size: 0.82rem; 
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+/* Chỉnh mệnh giá màu Tím Neon đồng bộ chuẩn giao diện */
+.price-info strong { 
+    font-size: 1.9rem; 
+    background: var(--grad-price);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    filter: drop-shadow(0 0 12px var(--price-glow));
+}
+
+/* Nút CTA dạng Pill tròn mượt - Nút Tím Electric */
+.btn-cta {
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 38px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 50px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 25px var(--purple-glow);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-cta:hover { 
+    background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.7);
+}
+
+/* =========================================================
+   5. SPECS GRID - THẺ XE & CÁC CON SỐ MỆNH GIÁ
+   ========================================================= */
+.specs-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 28px; 
+    margin-bottom: 35px;
+}
+
+.spec-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.spec-card:hover {
+    background: var(--card-hover);
+    border-color: var(--border-glow);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px var(--purple-glow);
+}
+
+.spec-card h3 {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--purple-primary);
+    padding-bottom: 8px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.card-media img, 
+.card-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     transition: transform 0.5s ease;
 }
 
-/* Phóng to khi Hover */
-.car-card:hover .car-image img,
-.car-card:hover .car-image .hover-video {
+.spec-card:hover .card-media img,
+.spec-card:hover .card-media video {
     transform: scale(1.06);
 }
 
-/* Thông tin tên và giá xe */
-.car-info {
-    padding: 22px 24px;
-    position: relative;
+.spec-card ul { 
+    list-style: none; 
 }
 
-/* Đường chỉ may nội thất da bò khi Hover */
-.car-info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 24px;
-    right: 24px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #c9935a, transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.spec-card li { 
+    font-size: 0.88rem; 
+    color: var(--text-sub); 
+    margin-bottom: 10px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(168, 85, 247, 0.15);
+    padding-bottom: 8px;
 }
 
-.car-card:hover .car-info::before {
-    opacity: 1;
+/* Các thông số / Mệnh giá bên trong từng Card */
+.spec-card li strong { 
+    color: var(--price-text); 
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
 }
 
-.car-name {
+/* =========================================================
+   6. INTERACTIVE 3D BOX
+   ========================================================= */
+.model-3d-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+}
+
+.model-3d-box h2 {
     font-size: 1.3rem;
-    font-weight: 600;
-    color: #f5f5f7;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
+    margin-bottom: 20px;
+    color: var(--text);
+    border-left: 4px solid var(--purple-primary);
+    padding-left: 14px;
+    font-weight: 800;
 }
 
-.car-card:hover .car-name {
-    color: #e0ab76; /* Chuyển màu tên xe sang tone Tan xa xỉ */
+.iframe-wrapper {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    max-height: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.9);
 }
 
-.car-price {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #a3988e;
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none; 
 }
 
-/* Footer Trang */
-.page-footer {
-    text-align: center;
-    padding: 45px 0;
-    border-top: 1px solid #282119;
-    margin-top: 60px;
-}
-
-/* Responsive Điện Thoại */
-@media (max-width: 768px) {
-    .car-grid {
-        grid-template-columns: 1fr;
+/* =========================================================
+   7. RESPONSIVE
+   ========================================================= */
+@media (max-width: 992px) {
+    .video-wrapper, 
+    .iframe-wrapper { 
+        aspect-ratio: 16 / 9; 
     }
     
-    .car-image {
-        height: 230px;
+    .specs-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .action-bar { 
+        flex-direction: column; 
+        gap: 20px;
+        text-align: center; 
+    }
+
+    .hero-caption h1 {
+        font-size: 2.2rem;
     }
 }

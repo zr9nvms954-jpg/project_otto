@@ -1,235 +1,316 @@
-/* ==========================================================
-   THEME LAMBORGHINI ULTIMAE - DEEP CARBON & CHAMPAGNE TITANIUM
-   ========================================================== */
-
-/* 
-   1. KEYFRAMES & CHUYỂN ĐỘNG SIÊU XE (60FPS ULTRA-SMOOTH)
-    */
-
-/* Logo chìm tự động thở nhẹ nhàng & di chuyển ambient theo góc nhìn */
-@keyframes lamboLogoAmbient {
-    0% {
-        background-position: center 35%;
-        transform: scale(1);
-    }
-    50% {
-        background-position: center 42%;
-        transform: scale(1.03);
-    }
-    100% {
-        background-position: center 35%;
-        transform: scale(1);
-    }
+/* :root - Khai báo các Biến toàn cục (CSS Variables) - Cập nhật chính xác theo bảng màu LUXORA GOLD sang trọng */
+:root {
+    --bg-main: #0c0a07;                        /* Nền đen nâu trầm tối thượng lưu */
+    --card-bg: rgba(22, 18, 14, 0.85);          /* Nền thẻ đen ánh đồng mờ */
+    --border: rgba(212, 163, 89, 0.25);         /* Viền màu vàng kim đồng mờ nhẹ */
+    --orange: #c89951;                         /* Màu nhấn chính: Vàng Champagne Gold / Metallic Gold */
+    --orange-glow: rgba(200, 153, 81, 0.35);    /* Hiệu ứng tỏa ánh kim vàng ấm */
+    --text: #f4eae1;                           /* Màu chữ chính Trắng Kem Thượng Lưu */
+    --text-sub: #a19182;                       /* Màu chữ phụ Xám Đồng Cổ */
 }
 
-/* Ánh kim quét nhẹ qua nút bấm khi hover */
-@keyframes luxuryShimmer {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 200%;
-    }
-}
-
-/* 
-   2. TOÀN TRANG & CHÈN LOGO LAMBORGHINI NỀN
-    */
+/* * - Universal Selector (Chọn tất cả các thẻ): Dùng để Reset Padding/Margin và tính kích thước chuẩn */
 * {
     box-sizing: border-box;
+    /* Giúp padding/border không làm tăng kích thước chiều rộng thực tế của phần tử */
+    margin: 0;
+    padding: 0;
 }
 
+/* body - Thẻ chứa toàn bộ giao diện: Thiết lập màu nền và hiệu ứng ánh sáng vàng ấm sang trọng */
 body {
-    background-color: #0b0d12;
-    /* Phối Gradient tối kết hợp watermark SVG biểu tượng khiên Lamborghini chìm sang trọng */
+    background: var(--bg-main);
     background-image: 
-        radial-gradient(circle at 50% 20%, rgba(210, 180, 110, 0.04) 0%, transparent 65%),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" opacity="0.03"><path fill="%23ffffff" d="M100 0 L195 40 L170 200 L100 240 L30 200 L5 40 Z M100 20 L20 52 L42 188 L100 220 L158 188 L180 52 Z M100 50 L140 160 L60 160 Z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center 35%;
-    background-size: cover, 600px auto;
+        radial-gradient(circle at 80% 15%, rgba(200, 153, 81, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 20% 50%, rgba(140, 98, 40, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(200, 153, 81, 0.12) 0%, transparent 45%);
     background-attachment: fixed;
-    color: #94a3b8;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-    line-height: 1.75;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 20px 0;
+}
+
+/* Container dùng để gom nhóm nội dung vào giữa màn hình với chiều rộng tối đa */
+.container {
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 50px 20px;
-    max-width: 900px;
-    animation: lamboLogoAmbient 28s ease-in-out infinite;
-    will-change: transform, background-position;
+    padding: 0 24px;
 }
 
 /* 
-   3. TIÊU ĐỀ
-    */
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-top: 0;
+   BREADCRUMB (Thanh điều hướng phân cấp vị trí trang)
+*/
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 2.1rem;
-    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 1px solid rgba(210, 180, 110, 0.3);
-    padding-bottom: 16px;
-    margin-bottom: 35px;
+.breadcrumb a {
+    color: var(--text-sub);
+    text-decoration: none;
+    /* Bỏ gạch chân mặc định của thẻ <a> */
+    transition: color 0.3s ease;
 }
 
-h2 {
-    font-size: 1.3rem;
-    color: #f8fafc;
-    border-left: 2px solid #d2b46e;
-    padding-left: 14px;
-    margin-top: 45px;
-    margin-bottom: 22px;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+.breadcrumb a:hover {
+    color: #e5b975;
 }
 
-h2:hover {
-    transform: translateX(5px);
-    border-left-color: #ffffff;
-}
-
-h3 {
-    font-size: 1.1rem;
-    color: #e2e8f0;
-    margin-top: 30px;
-}
-
-/* 
-   4. PHÂN CÁCH & ĐIỀU HƯỚNG GLASSMORPHISM
-    */
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(210, 180, 110, 0.3) 50%, transparent 100%);
-    margin: 45px 0;
-}
-
-nav {
-    background: rgba(18, 22, 31, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 14px 22px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    font-size: 0.88rem;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-nav strong {
-    color: #d2b46e;
+.breadcrumb span {
+    color: var(--text);
     font-weight: 600;
 }
 
-a {
-    color: #94a3b8;
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
-
-a:hover {
-    color: #d2b46e;
-}
-
 /* 
-   5. HÌNH ẢNH, VIDEO & 3D EMBED (SMOOTH HOVER)
-    */
-img, video, iframe {
-    display: block;
+   1. HERO VIDEO BANNER (Khung Video Cinema đầu trang)
+*/
+.hero-cinematic {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
-    margin: 24px 0;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.5s ease, 
-                box-shadow 0.5s ease;
-    will-change: transform;
+    margin-bottom: 25px;
 }
 
-img:hover, video:hover, iframe:hover {
-    transform: translateY(-4px) scale(1.008);
-    border-color: rgba(210, 180, 110, 0.4);
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(210, 180, 110, 0.12);
-}
-
-.sketchfab-embed-wrapper iframe {
-    height: 480px;
-    aspect-ratio: auto;
-}
-
-/* 
-   6. NÚT BẤM CÔNG NGHỆ CAO (TITANIUM GOLD)
-    */
-button {
+.video-wrapper {
     position: relative;
-    background: linear-gradient(135deg, #d2b46e 0%, #b89850 100%);
-    color: #0b0d12;
-    border: none;
-    padding: 15px 36px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: 6px;
-    cursor: pointer;
+    /* Làm mốc tọa độ cho các phần tử con dùng position: absolute bên trong */
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    /* Tỷ lệ khung hình siêu rộng Cinematic */
+    max-height: 520px;
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-    box-shadow: 0 8px 24px rgba(210, 180, 110, 0.2);
+    /* Cắt bỏ các phần thừa tràn ra ngoài góc bo border-radius */
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95), 0 0 25px rgba(200, 153, 81, 0.18);
+    /* Đổ bóng tạo độ sâu 3D kết hợp ánh vàng kim mờ */
 }
 
-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
+.video-wrapper video {
+    width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transform: skewX(-25deg);
-    pointer-events: none;
+    object-fit: cover;
+    /* Giúp video lấp đầy khung mà không bị méo/co giãn sai tỷ lệ */
+    display: block;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(210, 180, 110, 0.35);
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    /* Cách đều 4 cạnh Top, Right, Bottom, Left = 0px */
+    background: linear-gradient(180deg, rgba(12, 10, 7, 0.2) 0%, rgba(12, 10, 7, 0.9) 100%);
+    /* Lớp phủ chuyển màu tối dần */
 }
 
-button:hover::before {
-    animation: luxuryShimmer 0.75s ease-in-out;
+.hero-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 35px;
+    z-index: 2;
+    /* Đưa chữ nổi lên trên lớp overlay */
 }
 
-button:active {
-    transform: translateY(0);
+/* Badge (Thẻ nhãn nhỏ đánh dấu thuộc tính) - Màu Vàng Champagne Gold */
+.badge {
+    background: linear-gradient(135deg, #d4a359 0%, #a17332 100%);
+    color: #0c0a07;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    /* Khoảng cách giữa các chữ cái */
+    padding: 4px 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px var(--orange-glow);
+}
+
+.hero-caption h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    color: var(--text);
+}
+
+.hero-caption p {
+    color: var(--text-sub);
+    font-size: 1rem;
 }
 
 /* 
-   7. DANH SÁCH & THÔNG SỐ
-    */
-ul {
-    padding-left: 20px;
-    margin-bottom: 35px;
+   2. THANH GIÁ BÁN & NÚT BẤM (Action Bar)
+*/
+.action-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 30px;
+    display: flex;
+    /* Dùng Flexbox để căn chỉnh hàng ngang */
+    justify-content: space-between;
+    /* Đẩy giá xe sang trái, nút bấm sang phải */
+    align-items: center;
+    /* Căn giữa theo trục dọc */
+    margin-bottom: 30px;
+    backdrop-filter: blur(12px);
+    /* Hiệu ứng kính mờ (Glassmorphism) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(200, 153, 81, 0.08);
 }
 
-li {
-    margin-bottom: 12px;
-    color: #94a3b8;
-    transition: color 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.price-info small {
+    display: block;
+    color: var(--text-sub);
+    font-size: 0.8rem;
 }
 
-li:hover {
-    color: #e2e8f0;
-    transform: translateX(4px);
+.price-info strong {
+    font-size: 1.5rem;
+    color: #e5b975;
 }
 
-li strong {
-    color: #f1f5f9;
+/* Nút kêu gọi hành động (Call To Action) - Nút Vàng Kim Thượng Lưu */
+.btn-cta {
+    background: linear-gradient(135deg, #e5b975 0%, #b8863b 100%);
+    color: #0c0a07;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 32px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Đổi con trỏ chuột thành hình bàn tay khi di chuột vào */
+    box-shadow: 0 6px 20px var(--orange-glow);
+    transition: all 0.3s;
+    /* Tạo hiệu ứng mượt mà khi Hover */
+}
+
+/* Hover: Trạng thái khi di chuột vào nút */
+.btn-cta:hover {
+    background: linear-gradient(135deg, #f0ca8c 0%, #c89548 100%);
+    box-shadow: 0 8px 25px rgba(229, 185, 117, 0.5);
+    transform: translateY(-2px);
+    /* Nhấc nhẹ nút lên 2px tạo hiệu ứng nổi 3D */
+}
+
+/* 
+   3. LƯỚI THÔNG SỐ XE (Specs Grid - 3 Cột Ngang)
+*/
+.specs-grid {
+    display: grid;
+    /* Dùng CSS Grid chia cột */
+    grid-template-columns: repeat(3, 1fr);
+    /* Chia đều thành 3 cột bằng nhau */
+    gap: 24px;
+    /* Khoảng cách giữa các card */
+    margin-bottom: 30px;
+}
+
+.spec-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.spec-card:hover {
+    border-color: rgba(212, 163, 89, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(200, 153, 81, 0.2);
+}
+
+.spec-card h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 14px;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+
+/* Gom nhóm CSS dùng chung cho cả img và video trong card */
+.card-media img,
+.card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spec-card ul {
+    list-style: none;
+    /* Bỏ dấu chấm đầu dòng mặc định của thẻ <ul> */
+}
+
+.spec-card li {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin-bottom: 8px;
+}
+
+.spec-card li strong {
+    color: var(--text);
+}
+
+/* 
+   4. KHỐI MÔ PHỎNG 3D INTERACTIVE (Interactive 3D Box)
+*/
+.model-3d-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+.model-3d-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text);
+    border-left: 4px solid var(--orange);
+    padding-left: 12px;
+}
+
+.iframe-wrapper {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    max-height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Bỏ đường viền đen mặc định của iframe */
+}
+
+/* 
+   5. RESPONSIVE (Tối ưu hiển thị trên Mobile & Tablet)
+*/
+@media (max-width: 992px) {
+
+    .video-wrapper,
+    .iframe-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }

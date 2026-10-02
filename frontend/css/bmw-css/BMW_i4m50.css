@@ -1,41 +1,67 @@
-/* 
-   :root - Biến toàn cục CSS Variables
-   LIÊN KẾT: Toàn bộ website
-   TÁC DỤNG: Lưu bảng màu siêu xe/xe điện hạng sang (xanh cyan, xanh dương, nền tối) để quản lý màu sắc tập trung
-*/
 :root {
-    --bg-dark: #0a0c10;
-    --card-bg: rgba(18, 22, 32, 0.75);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-hover-border: rgba(0, 136, 255, 0.5);
-    --accent-blue: #0088ff;
-    --accent-cyan: #00d2ff;
-    --accent-glow: rgba(0, 136, 255, 0.2);
-    --text-primary: #f8fafc;
-    --text-muted: #94a3b8;
-    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1); /* Công thức chuyển động mượt luxury */
+    /* Bảng màu Neon Red Glass UI dựa theo ảnh mẫu */
+    --bg-dark: #07070a;
+    --card-bg: rgba(18, 18, 26, 0.75);
+    --card-border: rgba(255, 255, 255, 0.12);
+    
+    /* Tông đỏ Neon rực rỡ từ ảnh */
+    --accent-red: #ff2a5f;
+    --accent-red-bright: #ff0033;
+    --red-glow: rgba(255, 0, 51, 0.5);
+    --red-glow-soft: rgba(255, 42, 95, 0.2);
+    
+    --text-primary: #ffffff;
+    --text-muted: #8e8ea0;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 
+/* =========================================================
+   0. CÁC HIỆU ỨNG CHUYỂN ĐỘNG TỰ ĐỘNG (KEYFRAME ANIMATIONS)
+   ========================================================= */
+
+/* Hiệu ứng nhịp thở phát sáng Đỏ Neon tự động */
+@keyframes autoGlowPulse {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 
+                    0 0 15px rgba(255, 0, 51, 0.25),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 42, 95, 0.3);
+    }
+    50% {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 
+                    0 0 30px rgba(255, 0, 51, 0.55),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+        border-color: rgba(255, 0, 51, 0.7);
+    }
+}
+
+/* Hiệu ứng tia sáng đỏ tự động chạy qua bên dưới thanh/tiêu đề */
+@keyframes autoScanline {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Hiệu ứng bồng bềnh nhẹ nhàng tự động */
+@keyframes autoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* =========================================================
    1. RESET & KHUNG BỐ CỤC
-   LIÊN KẾT: Tất cả các thẻ HTML trên trang (*)
-   TÁC DỤNG: Ép tính kích thước khung bao gồm cả padding/border, không làm phình vỡ giao diện
-*/
+   ========================================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* 
-   LIÊN KẾT: Thẻ <body>
-   TÁC DỤNG: Tạo nền tối kết hợp 2 vệt màu dạ quang hình tròn cố định ở góc (radial-gradient & fixed), làm mượt phông chữ
-*/
 body {
     background-color: var(--bg-dark);
+    /* Nền đen sâu với vệt sáng đỏ Neon mờ ảo ở đáy như ảnh */
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(0, 136, 255, 0.08), transparent 60%),
-        radial-gradient(circle at 100% 100%, rgba(0, 210, 255, 0.03), transparent 40%);
+        radial-gradient(circle at 50% 100%, rgba(255, 0, 51, 0.15), transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(255, 42, 95, 0.08), transparent 50%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -45,21 +71,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* 
-   LIÊN KẾT: Thẻ khung bọc <div class="container">
-   TÁC DỤNG: Giới hạn độ rộng tối đa 1140px, tự động căn giữa chống lệch hoặc trống bên phải màn hình
-*/
 .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 10px 0 60px;
 }
 
-/* 
+/* =========================================================
    2. TIÊU ĐỀ (HEADINGS)
-   LIÊN KẾT: Thẻ <h1> (Tiêu đề chính của trang)
-   TÁC DỤNG: Định dạng tiêu đề lớn có gạch chân phát sáng màu xanh dương
-*/
+   ========================================================= */
 h1 {
     font-size: 2.2rem;
     font-weight: 700;
@@ -70,57 +90,69 @@ h1 {
     gap: 12px;
     padding-bottom: 12px;
     margin-bottom: 30px;
-    border-bottom: 2px solid var(--accent-blue);
-    box-shadow: 0 4px 20px -4px var(--accent-glow);
+    position: relative;
+    border-bottom: 2px solid var(--accent-red);
+    box-shadow: 0 4px 20px -4px var(--red-glow);
     transition: all 0.4s var(--ease-luxury);
 }
 
-/* LIÊN KẾT: Phần tử ảo đứng trước <h1> (h1::before) | TÁC DỤNG: Tạo vạch trang trí màu gradient xanh cyan bọc bên trái tiêu đề */
 h1::before {
     content: '';
     display: inline-block;
     width: 8px;
     height: 24px;
-    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-blue));
-    border-radius: 2px;
+    background: linear-gradient(180deg, #ff6b8b, var(--accent-red-bright));
+    border-radius: 4px;
+    box-shadow: 0 0 12px var(--accent-red-bright);
 }
 
-/* LIÊN KẾT: Thẻ <h2> (Tiêu đề mục nhỏ) | TÁC DỤNG: Tạo gạch đứng màu xanh bên trái tiêu đề mục */
 h2 {
     font-size: 1.35rem;
     font-weight: 600;
     color: #f1f5f9;
     padding-left: 14px;
-    border-left: 3px solid var(--accent-cyan);
+    border-left: 3px solid var(--accent-red);
     margin: 35px 0 20px;
     letter-spacing: 0.5px;
     transition: all 0.3s var(--ease-luxury);
 }
 
-/* LIÊN KẾT: Khi di chuột vào <h2> (h2:hover) | TÁC DỤNG: Đẩy tiêu đề nhích sang phải 4px và đổi màu chữ sang xanh cyan */
 h2:hover {
     padding-left: 18px;
-    color: var(--accent-cyan);
+    color: var(--accent-red);
 }
 
-/* 
-   3. THANH ĐIỀU HƯỚNG (BREADCRUMB)
-   LIÊN KẾT: Thẻ <nav>
-   TÁC DỤNG: Thanh đường dẫn vị trí (Trang chủ > Danh mục xe) có hiệu ứng kính mờ (backdrop-filter)
-*/
+/* =========================================================
+   3. THANH ĐIỀU HƯỚNG (BREADCRUMB - CHẠY SÁNG TỰ ĐỘNG)
+   ========================================================= */
 nav {
-    background: rgba(18, 22, 32, 0.6);
+    background: var(--card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--card-border);
-    padding: 12px 20px;
-    border-radius: 10px;
+    padding: 12px 22px;
+    border-radius: 30px; /* Dạng Pill bo tròn theo ảnh mẫu */
     margin-bottom: 30px;
     font-size: 0.88rem;
     color: var(--text-muted);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* LIÊN KẾT: Thẻ link <a> nằm trong nav | TÁC DỤNG: Bỏ gạch chân mặc định, đổi màu cyan khi di chuột vào (nav a:hover) */
+/* Tia sáng chạy tự động ngang thanh Nav */
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-red-bright), transparent);
+    background-size: 200% 100%;
+    animation: autoScanline 4s linear infinite;
+}
+
 nav a {
     color: var(--text-muted);
     text-decoration: none;
@@ -129,128 +161,144 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--accent-cyan);
+    color: var(--accent-red);
 }
 
-/* LIÊN KẾT: Thẻ <strong> trong nav | TÁC DỤNG: Làm nổi bật tên trang hiện tại */
 nav strong {
     color: var(--text-primary);
     font-weight: 600;
 }
 
-/* 
-   4. THẺ XE / VIDEO (SỬA LỖI TỈ LỆ KHUNG HÌNH CHUẨN 16:9)
-   LIÊN KẾT: Thẻ chứa khung xem xe <div class="car-card">
-   TÁC DỤNG: Cố định tỷ lệ chuẩn điện ảnh 16:9, tự động co giãn không lo vỡ khung
-*/
+/* =========================================================
+   4. THẺ CAR-CARD (PHÁT SÁNG NỔI BỒNG BỀNH TỰ ĐỘNG)
+   ========================================================= */
 .car-card {
     position: relative;
     width: 100%;
-    max-width: 960px;          
-    aspect-ratio: 16 / 9;      
-    border-radius: 14px;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px; /* Bo góc cong dày theo mẫu UI trong ảnh */
     border: 1px solid var(--card-border);
-    background-color: #000000;
+    background-color: rgba(12, 12, 18, 0.9);
+    backdrop-filter: blur(20px);
     overflow: hidden;
     margin: 20px 0 35px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    transition: transform 0.5s var(--ease-luxury), 
-                border-color 0.5s ease, 
-                box-shadow 0.5s ease;
-    will-change: transform; /* Báo card đồ họa (GPU) tối ưu hiệu ứng nhấc card */
+    
+    /* Áp dụng 2 chuyển động tự động: Phát sáng nhịp thở & Bồng bềnh */
+    animation: autoGlowPulse 3.5s ease-in-out infinite, autoFloat 6s ease-in-out infinite;
+    transition: transform 0.5s var(--ease-luxury), border-color 0.5s ease, box-shadow 0.5s ease;
+    will-change: transform, box-shadow;
 }
 
-/* LIÊN KẾT: Khi rê chuột vào thẻ xe (.car-card:hover) | TÁC DỤNG: Nhấc thẻ xe lên 4px và tỏa sáng xanh xung quanh */
+/* Viền phản quang bóng nhẹ phía trên giống hệt hình mẫu */
+.car-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    z-index: 3;
+}
+
 .car-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--card-hover-border);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8),
-                0 0 30px var(--accent-glow);
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--accent-red);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9),
+                0 0 40px var(--red-glow);
 }
 
-/* LIÊN KẾT: Tất cả các thẻ <img> trên trang | TÁC DỤNG: Tự động ép ảnh theo tỷ lệ 16:9, cắt cúp không bị co giãn méo hình */
+/* Tự động tối ưu hình ảnh */
 img {
     width: 100%;
     max-width: 960px;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 20px;
     border: 1px solid var(--card-border);
     margin: 20px 0;
+    animation: autoGlowPulse 4s ease-in-out infinite;
     transition: all 0.4s var(--ease-luxury);
 }
 
 img:hover {
-    border-color: var(--card-hover-border);
-    box-shadow: 0 0 25px var(--accent-glow);
+    border-color: var(--accent-red);
+    box-shadow: 0 0 30px var(--red-glow);
 }
 
-/* LIÊN KẾT: Thẻ ảnh (.car-img) và video (.car-video) trong thẻ xe */
-/* TÁC DỤNG: Đặt nằm đè lên nhau tại cùng vị trí (position: absolute), phủ kín 100% khung */
 .car-img, 
 .car-video {
     width: 100%;
     height: 100%;
-    object-fit: cover;        
+    object-fit: cover;
     object-position: center;
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.5s ease, transform 0.7s var(--ease-luxury);
+    transition: opacity 0.6s ease, transform 0.8s var(--ease-luxury);
 }
 
-/* LIÊN KẾT: Thẻ video (.car-video) | TÁC DỤNG: Ban đầu ẩn đi (opacity: 0) và không cho nhận kích hoạt chuột */
 .car-video {
     opacity: 0;
     pointer-events: none;
 }
 
-/* LIÊN KẾT: Khi rê chuột vào card xe | TÁC DỤNG: Hiện video lên đè lên ảnh (.car-video { opacity: 1; }) */
 .car-card:hover .car-video {
     opacity: 1;
 }
 
-/* LIÊN KẾT: Khi rê chuột vào card xe | TÁC DỤNG: Phóng to nhẹ ảnh/video 3% (scale 1.03) tạo hiệu ứng cinematic */
 .car-card:hover .car-img,
 .car-card:hover .car-video {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
-/* 
-   5. NÚT BẤM & NỘI DUNG NGHỆ THUẬT
-   LIÊN KẾT: Thẻ <hr> | TÁC DỤNG: Đường gạch ngang phân cách màu xanh mờ dần về bên phải
-*/
+/* =========================================================
+   5. NÚT BẤM (BUTTON - BO TRÒN DẠNG PILL VỚI VIỀN ĐỎ NEON)
+   ========================================================= */
 hr {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(255, 255, 255, 0.05) 60%, transparent 100%);
+    background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255, 255, 255, 0.05) 60%, transparent 100%);
     margin: 30px 0;
 }
 
-/* LIÊN KẾT: Tất cả thẻ <button> | TÁC DỤNG: Định dạng nút bấm màu xanh dương, in hoa chữ, có bóng đổ phát sáng */
 button {
-    background: linear-gradient(135deg, #0088ff, #0055b8);
+    background: linear-gradient(135deg, rgba(255, 0, 51, 0.2), rgba(200, 0, 40, 0.4));
     color: #ffffff;
-    border: none;
-    padding: 12px 28px;
+    border: 1px solid var(--accent-red);
+    padding: 12px 32px;
     font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    border-radius: 8px;
+    border-radius: 50px; /* Dạng Pill chuẩn giống nút "Создать workspace" trong ảnh */
     cursor: pointer;
-    box-shadow: 0 4px 15px var(--accent-glow);
+    box-shadow: 0 4px 20px var(--red-glow-soft), inset 0 1px 1px rgba(255,255,255,0.3);
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s var(--ease-luxury);
 }
 
-/* LIÊN KẾT: Khi di chuột vào nút (button:hover) | TÁC DỤNG: Nhấc nút lên 2px và tăng độ phát sáng */
-button:hover {
-    background: linear-gradient(135deg, #0099ff, #0066d6);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 136, 255, 0.4);
+/* Tia sáng chạy tự động qua nút bấm */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: autoScanline 3s infinite;
 }
 
-/* LIÊN KẾT: Danh sách <ul> và <li> | TÁC DỤNG: Định dạng danh sách đặc tính xe màu xám mờ, đổi màu trắng khi di chuột qua */
+button:hover {
+    background: var(--accent-red-bright);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px var(--red-glow);
+}
+
 ul {
     padding-left: 20px;
     margin-bottom: 20px;
@@ -270,11 +318,7 @@ li:hover {
     color: var(--text-primary);
 }
 
-/* 
-   RESPONSIVE MÀN HÌNH DI ĐỘNG
-   LIÊN KẾT: Áp dụng khi màn hình nhỏ hơn hoặc bằng 768px (Điện thoại)
-   TÁC DỤNG: Giảm cỡ chữ tiêu đề và chuyển tỉ lệ khung xe từ 16:9 sang 16:10 đứng hơn cho phù hợp màn hình dọc
-*/
+/* RESPONSIVE MÀN HÌNH DI ĐỘNG */
 @media (max-width: 768px) {
     body { padding: 15px; }
     h1 { font-size: 1.7rem; }

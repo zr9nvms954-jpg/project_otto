@@ -1,12 +1,12 @@
-/* :root - Khai báo các Biến toàn cục (CSS Variables) để tái sử dụng màu sắc, phông chữ dễ dàng */
+/* :root - Khai báo các Biến toàn cục (CSS Variables) - Đã cập nhật bảng màu Bạch Kim / Đen Tuyền */
 :root {
-    --bg-main: #0a0c10;
-    --card-bg: rgba(18, 22, 30, 0.7);
-    --border: rgba(255, 255, 255, 0.08);
-    --orange: #ff6600;
-    --orange-glow: rgba(255, 102, 0, 0.3);
-    --text: #ffffff;
-    --text-sub: #8a99ad;
+    --bg-main: #08080a;                        /* Nền đen tuyền nhám */
+    --card-bg: rgba(18, 19, 23, 0.75);          /* Nền thẻ kính mờ đen đậm */
+    --border: rgba(255, 255, 255, 0.12);        /* Viền bạc mờ */
+    --orange: #ffffff;                         /* Đổi màu nhấn chính sang Trắng Bạch Kim */
+    --orange-glow: rgba(255, 255, 255, 0.25);   /* Hiệu ứng tỏa sáng bạc */
+    --text: #ffffff;                           /* Màu chữ chính */
+    --text-sub: #8a8d93;                       /* Màu chữ phụ xám khói */
 }
 
 /* * - Universal Selector (Chọn tất cả các thẻ): Dùng để Reset Padding/Margin và tính kích thước chuẩn */
@@ -45,6 +45,11 @@ body {
     color: var(--text-sub);
     text-decoration: none;
     /* Bỏ gạch chân mặc định của thẻ <a> */
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--text);
 }
 
 .breadcrumb span {
@@ -71,7 +76,7 @@ body {
     overflow: hidden;
     /* Cắt bỏ các phần thừa tràn ra ngoài góc bo border-radius */
     border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
     /* Đổ bóng tạo độ sâu 3D */
 }
 
@@ -87,7 +92,7 @@ body {
     position: absolute;
     inset: 0;
     /* Cách đều 4 cạnh Top, Right, Bottom, Left = 0px */
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(10, 12, 16, 0.85) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(8, 8, 10, 0.9) 100%);
     /* Lớp phủ chuyển màu tối dần */
 }
 
@@ -101,14 +106,15 @@ body {
 
 /* Badge (Thẻ nhãn nhỏ đánh dấu thuộc tính) */
 .badge {
-    background: var(--orange);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text);
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 2px;
     /* Khoảng cách giữa các chữ cái */
     padding: 4px 10px;
     border-radius: 4px;
+    border: 1px solid var(--border);
 }
 
 .hero-caption h1 {
@@ -116,6 +122,7 @@ body {
     font-weight: 800;
     letter-spacing: 2px;
     margin-top: 6px;
+    color: var(--text);
 }
 
 .hero-caption p {
@@ -140,6 +147,7 @@ body {
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
     /* Hiệu ứng kính mờ (Glassmorphism) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .price-info small {
@@ -150,17 +158,17 @@ body {
 
 .price-info strong {
     font-size: 1.5rem;
-    color: var(--orange);
+    color: var(--text);
 }
 
-/* Nút kêu gọi hành động (Call To Action) */
+/* Nút kêu gọi hành động (Call To Action) - Nút Bạch Kim */
 .btn-cta {
-    background: var(--orange);
-    color: #fff;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    color: #050608;
     border: none;
     padding: 14px 32px;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 8px;
     cursor: pointer;
     /* Đổi con trỏ chuột thành hình bàn tay khi di chuột vào */
@@ -171,7 +179,8 @@ body {
 
 /* Hover: Trạng thái khi di chuột vào nút */
 .btn-cta:hover {
-    background: #ff771a;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
     /* Nhấc nhẹ nút lên 2px tạo hiệu ứng nổi 3D */
 }
@@ -194,6 +203,12 @@ body {
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    transition: border-color 0.3s ease;
+}
+
+.spec-card:hover {
+    border-color: rgba(255, 255, 255, 0.35);
 }
 
 .spec-card h3 {
@@ -211,6 +226,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 16px;
+    border: 1px solid var(--border);
 }
 
 /* Gom nhóm CSS dùng chung cho cả img và video trong card */
@@ -245,6 +261,7 @@ body {
     border-radius: 16px;
     padding: 24px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
 }
 
 .model-3d-box h2 {

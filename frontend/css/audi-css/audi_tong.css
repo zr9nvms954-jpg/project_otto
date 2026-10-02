@@ -1,328 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+
 :root {
-    /* Khai báo màu chủ đạo và giao diện dạng biến dùng chung toàn trang */
-    --bg-main: #06080d;
-    --card-bg: rgba(14, 18, 26, 0.65);
-    --card-border: rgba(255, 255, 255, 0.07);
-    --blue-accent: #005293;
-    --cyan-glow: #00d4ff;
-    --cyan-subtle: rgba(0, 212, 255, 0.12);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    
-    /* Easing curves cao cấp: Công thức giúp hiệu ứng mượt và có độ nảy 3D */
-    --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-spring: cubic-bezier(0.34, 1.25, 0.64, 1);
+    --bg-main: #0a0a0f;
+    --card-bg: rgba(18, 18, 24, 0.85);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --orange-neon: #ff5500;
+    --orange-glow: rgba(255, 85, 0, 0.35);
+    --orange-gradient: linear-gradient(135deg, #ff7700 0%, #ff2200 100%);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0ab;
 }
 
-/* Reset & Nền */
 * { 
-    box-sizing: border-box; /* Tính kích thước gồm cả viền và padding, không bị phình to khung */
+    box-sizing: border-box;
     margin: 0; 
-    padding: 0; /* Xóa khoảng cách mặc định của trình duyệt */
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    /* Nền tối kết hợp ánh sáng dạ quang xanh tròn cố định giữa màn hình */
-    background: var(--bg-main) radial-gradient(circle at 50% 0%, rgba(0, 82, 147, 0.22) 0%, transparent 60%) fixed;
+    background: var(--bg-main) radial-gradient(circle at 50% 0%, rgba(255, 85, 0, 0.12) 0%, transparent 60%) fixed;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.5; /* Giúp dòng chữ giãn cách dễ đọc */
-    min-height: 100vh; /* Chiều cao tối thiểu phủ toàn bộ màn hình */
+    min-height: 100vh;
+    padding-bottom: 60px;
 }
 
 .container { 
-    max-width: 1200px; /* Giới hạn chiều rộng tối đa của nội dung */
-    margin: 0 auto; /* Căn giữa khung ra giữa màn hình */
-    padding: 10px 20px 50px; 
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
-/* 1. BREADCRUMB GLASSMORPHISM (Thanh hướng dẫn phong cách kính mờ) */
+/* Breadcrumb Glassmorphism */
 .breadcrumb {
-    background: rgba(12, 16, 24, 0.7);
-    backdrop-filter: blur(16px); /* Hiệu ứng làm mờ nền phía sau (Glassmorphism) */
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(20, 20, 28, 0.6);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
-    border-bottom-color: rgba(0, 212, 255, 0.2);
-    padding: 10px 20px;
-    margin: 20px auto 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Đổ bóng tạo độ nổi */
+    padding: 8px 18px;
+    margin: 20px auto 25px;
+    border-radius: 30px;
+    display: inline-block;
 }
 
 .breadcrumb p {
     font-size: 0.85rem;
-    letter-spacing: 0.5px; /* Giãn khoảng cách giữa các chữ cái */
     color: var(--text-secondary);
-    display: flex; /* Xếp các phần tử nằm ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    gap: 10px; /* Khoảng cách giữa các mục */
 }
 
 .breadcrumb a {
     color: var(--text-primary);
-    text-decoration: none; /* Bỏ gạch chân mặc định của link */
-    padding: 5px 14px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    transition: all 0.3s var(--ease-out-smooth); /* Giúp hiệu ứng đổi màu mượt mà */
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* LED Pulse - Tạo chấm tròn nhấp nháy đèn LED nhịp thở */
-.breadcrumb a::before {
-    content: ""; /* Tạo ra phần tử ảo */
-    width: 6px;
-    height: 6px;
-    background-color: var(--cyan-glow);
-    border-radius: 50%; /* Biến thành chấm tròn */
-    animation: ledBreathing 2.5s infinite ease-in-out; /* Bật hiệu ứng chớp tắt vô tận */
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 12px;
+    transition: 0.3s ease;
 }
 
 .breadcrumb a:hover {
-    background: rgba(0, 82, 147, 0.3);
-    border-color: rgba(0, 212, 255, 0.4);
-    box-shadow: 0 0 15px var(--cyan-subtle); /* Phát sáng khi rê chuột vào */
-    transform: translateY(-1px); /* Nổi nhẹ lên 1px */
+    color: var(--orange-neon);
 }
 
-.breadcrumb strong {
-    color: var(--text-primary);
-    font-weight: 500;
-    background: linear-gradient(135deg, rgba(0, 82, 147, 0.3), var(--cyan-subtle));
-    border: 1px solid rgba(0, 212, 255, 0.25);
-    padding: 5px 14px;
-    border-radius: 8px;
-}
-
-/* 2. PAGE HEADER (Tiêu đề trang) */
+/* Page Header */
 .page-header {
-    text-align: center;
-    padding: 20px 20px 10px;
-    margin-bottom: 35px;
-}
-
-/* Tự động thêm chữ "/// LUXURY COLLECTION" phía trên tiêu đề */
-.page-header::before {
-    content: "/// LUXURY COLLECTION";
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--cyan-glow);
-    background: rgba(0, 82, 147, 0.15);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    padding: 4px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 14px;
+    border-left: 3px solid var(--orange-neon);
 }
 
 .page-header h1 {
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 5px;
-    text-transform: uppercase; /* In hoa toàn bộ chữ */
-    margin-bottom: 10px;
-    /* Kỹ thuật đổ màu Gradient chuyển từ trắng sang bạc cho chữ */
-    background: linear-gradient(180deg, #ffffff 40%, #8a9bb0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 .page-header p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    max-width: 540px;
-    margin: 0 auto;
+    font-size: 0.88rem;
+    margin-top: 4px;
 }
 
-/* Tạo đường gạch ngang trang trí siêu mảnh dưới tiêu đề */
-.page-header::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    margin: 20px auto 0;
-    background: linear-gradient(90deg, transparent, var(--cyan-glow), transparent);
-    opacity: 0.7;
-}
-
-/* 3. LƯỚI CARD XE & ANIMATION ĐỘC QUYỀN */
+/* =========================================================
+   CAR GRID LAYOUT - BỐ CỤC LƯỚI SANG TRỌNG (GỌN MỊN)
+   ========================================================= */
 .car-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Chia đều giao diện thành 2 cột */
-    gap: 28px; /* Khoảng cách giữa các card xe */
-    perspective: 1000px; /* Tạo không gian 3D chuẩn bị cho hiệu ứng nghiêng card */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
 }
 
 .car-card {
-    position: relative;
     background: var(--card-bg);
-    backdrop-filter: blur(12px); /* Mờ nền hiệu ứng kính */
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 16px;
-    padding: 12px;
     border: 1px solid var(--card-border);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s var(--ease-spring), border-color 0.4s ease, box-shadow 0.4s ease;
-    overflow: hidden; /* Cắt các vệt sáng thừa ra ngoài khung */
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Tạo vệt sáng kim loại/kính (Light Sheen Sweep) ẩn bên trái card */
-.car-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: -100%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-    transform: skewX(-25deg); /* Nghiêng vệt sáng */
-    transition: left 0.75s var(--ease-out-smooth);
-    pointer-events: none;
-    z-index: 3;
-}
-
-/* Cho vệt sáng lướt qua card khi di chuột vào */
-.car-card:hover::before {
-    left: 150%;
-}
-
-/* Card nhô lên và xoay 3D nhẹ khi di chuột vào */
 .car-card:hover {
-    transform: translateY(-6px) rotateX(2deg);
-    border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 82, 147, 0.25);
+    transform: translateY(-6px);
+    border-color: var(--orange-neon);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--orange-glow);
 }
 
-.car-link { text-decoration: none; color: inherit; display: block; }
+.car-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
+/* KHUNG HÌNH / VIDEO */
 .car-image {
     width: 100%;
-    height: 210px;
-    border-radius: 10px;
+    height: 190px;
+    background: #000;
     overflow: hidden;
-    background-color: #020305;
     position: relative;
 }
 
-.car-image img,
-.car-image .hover-video {
+.hover-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Giữ chuẩn tỉ lệ ảnh, tự cúp viền không bị co giãn méo hình */
-    display: block;
-    transition: transform 0.6s var(--ease-out-smooth);
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-/* Phóng to ảnh nhẹ khi rê chuột vào card */
-.car-card:hover .car-image img,
-.car-card:hover .car-image .hover-video {
-    transform: scale(1.05);
+.car-card:hover .hover-video {
+    transform: scale(1.06);
 }
 
-/* Thông tin xe */
-.car-info { padding: 14px 8px 6px; }
+/* THÔNG TIN XE */
+.car-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
 
 .car-name {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 4px;
-    transition: color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Tên xe đổi sang màu dạ quang khi hover */
-.car-card:hover .car-name { color: var(--cyan-glow); }
-.car-price { font-size: 0.85rem; color: var(--text-secondary); }
+.car-card:hover .car-name {
+    color: var(--orange-neon);
+}
 
-.page-footer {
-    text-align: center;
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 50px;
-    color: var(--text-secondary);
+.car-price {
     font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 85, 0, 0.12);
+    border: 1px solid rgba(255, 85, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 8px;
+    align-self: flex-start;
 }
 
-/* NÚT CHAT BỔ NỔI GÓC DƯỚI BÊN TRÁI MÀN HÌNH */
+.car-card:hover .car-price {
+    background: var(--orange-gradient);
+    border-color: transparent;
+}
+
+/* CHATBOX FLOATING */
 .chatbox-icon {
-    position: fixed; /* Cố định vị trí trên màn hình kể cả khi cuộn trang */
-    bottom: 30px;
-    left: 30px; /* Ghim ở góc dưới bên trái */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Bo tròn hoàn hảo */
-    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%); /* Màu vàng kim sang trọng */
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #0b0b0d;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    box-shadow: 
-        0 8px 25px rgba(212, 175, 55, 0.4),
-        0 0 20px rgba(212, 175, 55, 0.2); /* Tạo hiệu ứng hào quang tỏa sáng */
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: 999; /* Đảm bảo nút chat luôn nổi lên trên cùng các thành phần khác */
-    animation: pulse-chat 2s infinite;
-}
-
-.chatbox-icon:hover {
-    transform: scale(1.12); /* Phóng to nhẹ khi di chuột vào */
-    box-shadow: 
-        0 12px 35px rgba(212, 175, 55, 0.6),
-        0 0 30px rgba(212, 175, 55, 0.4);
-}
-
-.chatbox-icon:active {
-    transform: scale(0.95); /* Thu nhỏ lại 1 chút khi nhấp chuột */
-}
-
-/* Chấm đỏ báo số tin nhắn mới trên nút chat */
-.chat-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 24px;
-    height: 24px;
-    background: #ff4444;
-    color: white;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 52px;
+    height: 52px;
+    background: var(--orange-gradient);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
-    font-weight: 900;
-    border: 2px solid #0b0b0d;
-    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.5);
-    animation: badge-pulse 1.5s infinite;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(255, 85, 0, 0.4);
+    z-index: 999;
+    transition: transform 0.3s ease;
 }
 
-/* KEYFRAMES: Kịch bản animation nhịp thở đèn LED */
-@keyframes ledBreathing {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.8;
-        box-shadow: 0 0 6px var(--cyan-glow);
-    }
-    50% {
-        transform: scale(1.3);
-        opacity: 1;
-        box-shadow: 0 0 12px var(--cyan-glow);
-    }
-}
-
-/* RESPONSIVE: Tự động tương thích theo cỡ màn hình */
-@media (max-width: 992px) {
-    /* Áp dụng cho máy tính bảng */
-    .car-grid { gap: 20px; }
-    .car-image { height: 180px; }
-}
-
-@media (max-width: 768px) {
-    /* Áp dụng cho điện thoại: Đổi từ 2 cột thành 1 cột */
-    .car-grid { grid-template-columns: 1fr; }
-    .page-header h1 { font-size: 1.5rem; letter-spacing: 3px; }
+.chatbox-icon:hover {
+    transform: scale(1.1);
 }

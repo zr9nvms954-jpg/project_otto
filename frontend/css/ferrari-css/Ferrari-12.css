@@ -1,237 +1,316 @@
-/* 1. KEYFRAMES ANIMATION (HIỆU ỨNG CHUYỂN ĐỘNG) */
-@keyframes pageEntrance {
-    from { opacity: 0; transform: translateY(20px) scale(0.99); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+/* :root - Khai báo các Biến toàn cục (CSS Variables) - Cập nhật chính xác theo màu Đen - Đỏ Cyberpunk */
+:root {
+    --bg-main: #060506;                        /* Nền đen tuyền carbon cực tối */
+    --card-bg: rgba(18, 12, 14, 0.85);          /* Nền thẻ đen ánh đỏ trầm */
+    --border: rgba(220, 20, 60, 0.35);          /* Viền neon đỏ crimson phát sáng */
+    --orange: #dc143c;                         /* Màu nhấn chính: Đỏ Crimson / Đỏ Cyber */
+    --orange-glow: rgba(220, 20, 60, 0.5);     /* Hiệu ứng tỏa sáng đỏ rực */
+    --text: #ffffff;                           /* Màu chữ chính Trắng */
+    --text-sub: #9e9195;                       /* Màu chữ phụ Xám ánh đỏ */
 }
 
-@keyframes redPulse {
-    0%, 100% { box-shadow: 0 4px 15px rgba(255, 30, 39, 0.35); border-bottom-color: #ff1e27; }
-    50% { box-shadow: 0 6px 25px rgba(179, 0, 6, 0.7); border-bottom-color: #b30006; }
-}
-
-@keyframes redSweep {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-@keyframes buttonGlow {
-    0%, 100% { box-shadow: 0 4px 15px rgba(255, 30, 39, 0.4); }
-    50% { box-shadow: 0 8px 30px rgba(179, 0, 6, 0.85); }
-}
-
-/* 2. TOÀN TRANG */
-body {
-    background-color: #050507;
-    background-image: radial-gradient(circle at 50% 0%, rgba(255, 30, 39, 0.12) 0%, transparent 60%);
-    background-attachment: fixed;
-    color: #a0a5b5;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.65;
+/* * - Universal Selector (Chọn tất cả các thẻ): Dùng để Reset Padding/Margin và tính kích thước chuẩn */
+* {
+    box-sizing: border-box;
+    /* Giúp padding/border không làm tăng kích thước chiều rộng thực tế của phần tử */
     margin: 0;
-    padding: 30px 50px;
-    animation: pageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    padding: 0;
 }
 
-/* 3. TIÊU ĐỀ & ĐƯỜNG PHÂN CÁCH */
-h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+/* body - Thẻ chứa toàn bộ giao diện: Thiết lập màu nền và các vệt sáng đỏ huyền bí theo ảnh */
+body {
+    background: var(--bg-main);
+    background-image: 
+        radial-gradient(circle at 50% 10%, rgba(220, 20, 60, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 10% 50%, rgba(150, 0, 30, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(220, 20, 60, 0.15) 0%, transparent 45%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 20px 0;
 }
 
-h1 {
-    font-size: 2.2rem;
-    border-bottom: 3px solid #ff1e27;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    display: inline-block;
-    animation: redPulse 3s infinite ease-in-out;
-    transition: all 0.4s ease;
+/* Container dùng để gom nhóm nội dung vào giữa màn hình với chiều rộng tối đa */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-h1:hover {
-    text-shadow: 0 0 15px rgba(255, 30, 39, 0.8);
+/* 
+   BREADCRUMB (Thanh điều hướng phân cấp vị trí trang)
+*/
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 1.4rem;
-    border-left: 4px solid #b30006;
-    padding-left: 14px;
-    margin-top: 35px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-h2:hover {
-    padding-left: 20px;
-    border-left-color: #ff1e27;
-    text-shadow: 0 0 12px rgba(255, 30, 39, 0.7);
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, #ff1e27 0%, #b30006 50%, transparent 100%);
-    background-size: 200% 100%;
-    margin: 35px 0;
-    animation: redSweep 6s infinite linear;
-}
-
-/* 4. NAV & LIÊN KẾT */
-nav {
-    background-color: rgba(18, 12, 14, 0.8);
-    backdrop-filter: blur(12px);
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 30, 39, 0.3);
-    transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-nav:hover {
-    border-color: rgba(255, 30, 39, 0.5);
-    box-shadow: 0 4px 20px rgba(255, 30, 39, 0.2);
-}
-
-a {
-    color: #ff1e27;
+.breadcrumb a {
+    color: var(--text-sub);
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: inline-block;
-}
-
-a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 30, 39, 0.8);
-    transform: translateY(-1px);
-}
-
-/* 5. KHUNG HÌNH CHUẨN ĐIỆN ẢNH (.media-container & .car-card) */
-.media-container, 
-.car-card {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9;
-    background-color: #000000;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
-    margin: 25px 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.4s ease,
-                box-shadow 0.4s ease;
-    will-change: transform;
-}
-
-/* Ép tất cả thẻ Ảnh & Video hiển thị chuẩn khung, không bị méo hay vỡ tỉ lệ */
-.media-container img, 
-.media-container video,
-.car-card img, 
-.car-card video,
-.car-img, 
-.car-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border: none;
-    outline: none;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-}
-
-/* Hiệu ứng Hover 3D cho khung hình */
-.media-container:hover, 
-.car-card:hover {
-    transform: scale(1.015) translateY(-4px) rotateX(2deg);
-    border-color: #ff1e27;
-    box-shadow: 0 18px 40px rgba(255, 30, 39, 0.35);
-}
-
-.media-container:hover img, 
-.media-container:hover video,
-.car-card:hover img, 
-.car-card:hover video {
-    transform: scale(1.05);
-}
-
-/* Xử lý chuyển đổi Hover giữa Ảnh và Video trong Thẻ Car Card */
-.car-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.car-card:hover .car-video {
-    opacity: 1;
-}
-
-/* 6. NÚT BẤM SPORT RED */
-button {
-    background: linear-gradient(135deg, #ff1e27, #b30006);
-    color: #ffffff;
-    border: none;
-    padding: 13px 30px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 30, 39, 0.4);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s ease;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    animation: buttonGlow 1.8s infinite ease-in-out;
-}
-
-button:hover::before {
-    left: 100%;
-}
-
-button:active {
-    transform: translateY(0) scale(0.98);
-}
-
-/* 7. DANH SÁCH & THÔNG SỐ */
-ul {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-    transition: transform 0.25s ease, color 0.25s ease;
-}
-
-li:hover {
-    transform: translateX(6px);
-    color: #ffffff;
-}
-
-p strong, li strong {
-    color: #ffffff;
+    /* Bỏ gạch chân mặc định của thẻ <a> */
     transition: color 0.3s ease;
 }
 
-li:hover strong {
-    color: #ff1e27;
+.breadcrumb a:hover {
+    color: #ff2e55;
+}
+
+.breadcrumb span {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* 
+   1. HERO VIDEO BANNER (Khung Video Cinema đầu trang)
+*/
+.hero-cinematic {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.video-wrapper {
+    position: relative;
+    /* Làm mốc tọa độ cho các phần tử con dùng position: absolute bên trong */
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    /* Tỷ lệ khung hình siêu rộng Cinematic */
+    max-height: 520px;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Cắt bỏ các phần thừa tràn ra ngoài góc bo border-radius */
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95), 0 0 25px rgba(220, 20, 60, 0.25);
+    /* Đổ bóng tạo độ sâu 3D kết hợp hào quang đỏ */
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Giúp video lấp đầy khung mà không bị méo/co giãn sai tỷ lệ */
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    /* Cách đều 4 cạnh Top, Right, Bottom, Left = 0px */
+    background: linear-gradient(180deg, rgba(6, 5, 6, 0.2) 0%, rgba(6, 5, 6, 0.9) 100%);
+    /* Lớp phủ chuyển màu tối dần */
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 35px;
+    z-index: 2;
+    /* Đưa chữ nổi lên trên lớp overlay */
+}
+
+/* Badge (Thẻ nhãn nhỏ đánh dấu thuộc tính) - Màu Đỏ Neon Cyber */
+.badge {
+    background: var(--orange);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    /* Khoảng cách giữa các chữ cái */
+    padding: 4px 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px var(--orange-glow);
+}
+
+.hero-caption h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    color: var(--text);
+}
+
+.hero-caption p {
+    color: var(--text-sub);
+    font-size: 1rem;
+}
+
+/* 
+   2. THANH GIÁ BÁN & NÚT BẤM (Action Bar)
+*/
+.action-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 30px;
+    display: flex;
+    /* Dùng Flexbox để căn chỉnh hàng ngang */
+    justify-content: space-between;
+    /* Đẩy giá xe sang trái, nút bấm sang phải */
+    align-items: center;
+    /* Căn giữa theo trục dọc */
+    margin-bottom: 30px;
+    backdrop-filter: blur(12px);
+    /* Hiệu ứng kính mờ (Glassmorphism) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(220, 20, 60, 0.1);
+}
+
+.price-info small {
+    display: block;
+    color: var(--text-sub);
+    font-size: 0.8rem;
+}
+
+.price-info strong {
+    font-size: 1.5rem;
+    color: #ff2e55;
+}
+
+/* Nút kêu gọi hành động (Call To Action) - Nút Đỏ Crimson */
+.btn-cta {
+    background: linear-gradient(135deg, #e6123d 0%, #990022 100%);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 32px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Đổi con trỏ chuột thành hình bàn tay khi di chuột vào */
+    box-shadow: 0 6px 20px var(--orange-glow);
+    transition: all 0.3s;
+    /* Tạo hiệu ứng mượt mà khi Hover */
+}
+
+/* Hover: Trạng thái khi di chuột vào nút */
+.btn-cta:hover {
+    background: #ff1a47;
+    box-shadow: 0 8px 25px rgba(255, 26, 71, 0.7);
+    transform: translateY(-2px);
+    /* Nhấc nhẹ nút lên 2px tạo hiệu ứng nổi 3D */
+}
+
+/* 
+   3. LƯỚI THÔNG SỐ XE (Specs Grid - 3 Cột Ngang)
+*/
+.specs-grid {
+    display: grid;
+    /* Dùng CSS Grid chia cột */
+    grid-template-columns: repeat(3, 1fr);
+    /* Chia đều thành 3 cột bằng nhau */
+    gap: 24px;
+    /* Khoảng cách giữa các card */
+    margin-bottom: 30px;
+}
+
+.spec-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.spec-card:hover {
+    border-color: rgba(220, 20, 60, 0.8);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(220, 20, 60, 0.3);
+}
+
+.spec-card h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 14px;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+
+/* Gom nhóm CSS dùng chung cho cả img và video trong card */
+.card-media img,
+.card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spec-card ul {
+    list-style: none;
+    /* Bỏ dấu chấm đầu dòng mặc định của thẻ <ul> */
+}
+
+.spec-card li {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin-bottom: 8px;
+}
+
+.spec-card li strong {
+    color: var(--text);
+}
+
+/* 
+   4. KHỐI MÔ PHỎNG 3D INTERACTIVE (Interactive 3D Box)
+*/
+.model-3d-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+.model-3d-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text);
+    border-left: 4px solid var(--orange);
+    padding-left: 12px;
+}
+
+.iframe-wrapper {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    max-height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Bỏ đường viền đen mặc định của iframe */
+}
+
+/* 
+   5. RESPONSIVE (Tối ưu hiển thị trên Mobile & Tablet)
+*/
+@media (max-width: 992px) {
+
+    .video-wrapper,
+    .iframe-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
