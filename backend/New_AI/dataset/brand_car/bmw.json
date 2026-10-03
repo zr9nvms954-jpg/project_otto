@@ -72,7 +72,7 @@
     },
     {
       "name": "BMW M2 Coupe",
-      "price_vnd": 4299000000,
+      "price_vnd": 3999000000,
       "body_type": "Coupe thể thao cỡ nhỏ hiệu suất cao",
       "model_year": "2024 - 2026",
       "status": "Nhập khẩu nguyên chiếc",
@@ -94,7 +94,7 @@
     },
     {
       "name": "BMW M3 Sedan",
-      "price_vnd": 5500000000,
+      "price_vnd": 4800000000,
       "body_type": "Sedan thể thao hiệu suất cao",
       "model_year": "2024 - 2026",
       "status": "Nhập khẩu nguyên chiếc",
@@ -116,7 +116,7 @@
     },
     {
       "name": "BMW M5 Sedan",
-      "price_vnd": 8900000000,
+      "price_vnd": 6200000000,
       "body_type": "Sedan cỡ trung hiệu suất cao",
       "model_year": "2024 - 2026",
       "status": "Nhập khẩu nguyên chiếc",

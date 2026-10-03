@@ -1,17 +1,18 @@
 import os
+import re
 from pathlib import Path
-from typing import Optional
 
 from catalog_manager import (
     format_catalog_context,
     format_vehicle_list_response,
     get_available_brands,
-    is_vehicle_list_request,
     is_brand_list_request,
+    is_vehicle_list_request,
+    load_all_catalogs,
 )
+from conversation_logger import ConversationLogger
 from db_cache import SemanticCache
 from memory_manager import MemoryManager
-from conversation_logger import ConversationLogger
 
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "0"
 
@@ -135,9 +136,109 @@ Khi khách hàng hỏi xem các mẫu xe của một hãng, hãy liệt kê tên
 
 def generate_car_advice(
     user_prompt: str,
-    conversation_history: Optional[list[dict[str, str]]] = None,
+    conversation_history: list[dict[str, str]] | None = None,
     user_id: str = "customer_001",  # Abstraction
 ) -> str:
+    normalized_prompt = user_prompt.lower().strip()
+    ordinal_match = re.search(
+        r"\b(?:số|thứ)\s*(\d+|một|hai|ba|bốn|năm)\b", normalized_prompt
+    )
+    if ordinal_match:
+        ordinal_words = {"một": 1, "hai": 2, "ba": 3, "bốn": 4, "năm": 5}
+        requested_number = ordinal_words.get(
+            ordinal_match.group(1),
+            int(ordinal_match.group(1)) if ordinal_match.group(1).isdigit() else 0,
+        )
+        catalog_vehicles = load_all_catalogs()
+        for history_item in reversed(conversation_history or []):
+            if history_item.get("role") != "assistant":
+                continue
+            numbered_items = re.findall(
+                r"(?m)^\s*(\d+)[.)]\s+\*\*([^*\n]+)\*\*",
+                history_item.get("content", ""),
+            )
+            selected_name = next(
+                (
+                    name.strip()
+                    for number, name in numbered_items
+                    if int(number) == requested_number
+                ),
+                None,
+            )
+            if selected_name:
+                selected_vehicle = next(
+                    (
+                        vehicle
+                        for vehicle in catalog_vehicles
+                        if str(vehicle.get("name") or vehicle.get("model", ""))
+                        .strip()
+                        .casefold()
+                        == selected_name.casefold()
+                    ),
+                    None,
+                )
+                if selected_vehicle:
+                    selected_model = selected_vehicle.get(
+                        "name"
+                    ) or selected_vehicle.get("model")
+                    return format_vehicle_list_response(f"chi tiết {selected_model}")
+        return (
+            "Dạ, em chưa xác định được mẫu xe Anh/Chị đang nhắc đến. "
+            "Anh/Chị cho em xin tên xe hoặc gửi lại danh sách xe vừa xem nhé ạ."
+        )
+
+    available_brands = get_available_brands()
+    brand_display_names = {"Bmw": "BMW", "Buggati": "Bugatti"}
+    showroom_brands = (
+        ", ".join(brand_display_names.get(brand, brand) for brand in available_brands)
+        or "các hãng xe trong danh mục showroom"
+    )
+
+    car_related_terms = (
+        "xe",
+        "ô tô",
+        "oto",
+        "car",
+        "vehicle",
+        "giá",
+        "tỷ",
+        "triệu",
+        "động cơ",
+        "mã lực",
+        "lái thử",
+        "bảo dưỡng",
+        "suv",
+        "sedan",
+        "coupe",
+        "roadster",
+        *[brand.lower() for brand in get_available_brands()],
+        "bugatti",
+    )
+    is_greeting = any(
+        normalized_prompt == greeting
+        or normalized_prompt.startswith((f"{greeting} ", f"{greeting},"))
+        for greeting in ("chào", "xin chào", "hello", "hi", "hey")
+    )
+    has_purchase_intent = any(
+        term in normalized_prompt
+        for term in ("mua", "bán", "tìm", "tư vấn", "cần", "muốn")
+    )
+    has_car_context = any(term in normalized_prompt for term in car_related_terms)
+
+    if is_greeting and not has_car_context and not has_purchase_intent:
+        return (
+            "Dạ, em chào Anh/Chị! Em là trợ lý tư vấn của Showroom Otto. "
+            f"Showroom hiện có các hãng xe: {showroom_brands}. "
+            "Anh/Chị đang quan tâm hãng hoặc mẫu xe nào ạ?"
+        )
+
+    if not has_car_context:
+        return (
+            "Dạ, em không hỗ trợ tư vấn hoặc mua bán sản phẩm ngoài ô tô. "
+            f"Showroom hiện có các hãng xe: {showroom_brands}. "
+            "Anh/Chị muốn tìm hiểu hãng hoặc mẫu xe nào ạ?"
+        )
+
     if is_brand_list_request(user_prompt) or is_vehicle_list_request(user_prompt):
         return format_vehicle_list_response(user_prompt)
 

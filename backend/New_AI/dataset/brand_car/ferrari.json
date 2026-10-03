@@ -6,7 +6,7 @@
   "vehicles": [
     {
       "name": "Ferrari 12Cilindri",
-      "price_vnd": 21000000000,
+      "price_vnd": 11500000000,
       "body_type": "Super GT động cơ V12 đặt trước",
       "model_year": "2024 - 2026",
       "status": "Mới ra mắt / Đặt hàng trước",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Ferrari 488 Pista Spider",
-      "price_vnd": 31000000000,
+      "price_vnd": 30000000000,
       "body_type": "Siêu xe mui xếp hiệu suất cao (Track-Focused Convertible)",
       "model_year": "2019 - 2026",
       "status": "Xe sưu tầm / Nhập khẩu",
@@ -94,7 +94,7 @@
     },
     {
       "name": "Ferrari Daytona SP3",
-      "price_vnd": 60000000000,
+      "price_vnd": 55000000000,
       "body_type": "Siêu xe độc bản Icona Series (Few-Off Hypercar)",
       "model_year": "2022 - 2026",
       "status": "Phiên bản giới hạn (599 chiếc toàn thế giới)",
@@ -160,7 +160,7 @@
     },
     {
       "name": "Ferrari Monza SP2",
-      "price_vnd": 45000000000,
+      "price_vnd": 42000000000,
       "body_type": "Siêu xe Barchetta không kính chắn gió",
       "model_year": "2019 - 2026",
       "status": "Phiên bản giới hạn (499 chiếc cùng SP1)",

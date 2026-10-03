@@ -1,0 +1,79 @@
+[
+  {
+    "id": "mercedes_eqs_580",
+    "brand": "Mercedes",
+    "model": "Mercedes-Benz EQS 580 4MATIC",
+    "keywords": ["mercedes eqs 580", "mercedes-benz eqs 580", "eqs 580"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-EQS580.html"
+  },
+  {
+    "id": "mercedes_e300_amg",
+    "brand": "Mercedes",
+    "model": "Mercedes-Benz E300 AMG",
+    "keywords": ["mercedes e300 amg", "mercedes-benz e300", "e300 amg"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-E300AMG.html"
+  },
+  {
+    "id": "mercedes_maybach_eqs_680",
+    "brand": "Mercedes",
+    "model": "Mercedes-Maybach EQS 680 SUV",
+    "keywords": ["mercedes maybach eqs 680", "maybach eqs 680"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-MaybachEQS680.html"
+  },
+  {
+    "id": "mercedes_c300_amg",
+    "brand": "Mercedes",
+    "model": "Mercedes-Benz C300 AMG",
+    "keywords": ["mercedes c300 amg", "mercedes-benz c300", "c300 amg"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-C300AMG.html"
+  },
+  {
+    "id": "mercedes_amg_sl_63",
+    "brand": "Mercedes",
+    "model": "Mercedes-AMG SL 63 4MATIC+",
+    "keywords": ["mercedes amg sl 63", "amg sl 63", "sl 63 4matic"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-AMGSL63.html"
+  },
+  {
+    "id": "mercedes_amg_g63",
+    "brand": "Mercedes",
+    "model": "Mercedes-AMG G63",
+    "keywords": ["mercedes amg g63", "mercedes g63", "amg g63"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-AMGG63.html"
+  },
+  {
+    "id": "mercedes_maybach_haute_voiture",
+    "brand": "Mercedes",
+    "model": "Mercedes-Maybach Haute Voiture",
+    "keywords": ["maybach haute voiture", "haute voiture"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mec-MaybachHauteVoiture.html"
+  },
+  {
+    "id": "mercedes_maybach_s580",
+    "brand": "Mercedes",
+    "model": "Mercedes-Maybach S580 4MATIC",
+    "keywords": ["mercedes maybach s580", "maybach s580"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mercedes-Maybach%20S580.html"
+  },
+  {
+    "id": "mercedes_maybach_s680",
+    "brand": "Mercedes",
+    "model": "Mercedes-Maybach S680 4MATIC",
+    "keywords": ["mercedes maybach s680", "maybach s680"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mercedes-Maybach%20S680.html"
+  },
+  {
+    "id": "mercedes_maybach_sl680",
+    "brand": "Mercedes",
+    "model": "Mercedes-Maybach SL680 Monogram Series",
+    "keywords": ["mercedes maybach sl680", "maybach sl680", "sl680 monogram"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mercedes-Maybach%20SL680%20Monogram%20Series.html"
+  },
+  {
+    "id": "mercedes_maybach_gls_600",
+    "brand": "Mercedes",
+    "model": "Mercedes-Maybach GLS 600 4MATIC",
+    "keywords": ["mercedes maybach gls 600", "maybach gls 600"],
+    "url": "http://127.0.0.1:5500/frontend/html/Mecc.html/Mercedes-Maybach_GLS_600.html"
+  }
+]

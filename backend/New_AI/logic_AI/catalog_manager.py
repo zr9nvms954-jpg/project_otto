@@ -10,7 +10,6 @@ CATALOG_DIR = _BASE_DIR_PARENT if _BASE_DIR_PARENT.exists() else _BASE_DIR_LOCAL
 
 
 def _clean_str(text: str) -> str:
-    """Hàm làm sạch chuỗi: viết thường, xóa gạch dưới, xóa khoảng trắng và ký tự đặc biệt."""
     if not text:
         return ""
     text = str(text).lower()
@@ -27,7 +26,7 @@ def load_all_catalogs() -> list[dict[str, Any]]:
     url_dir = CATALOG_DIR.parent / "url_car"
     url_mapping = {}
 
-    # 1. Đọc dữ liệu 
+    # 1. Đọc dữ liệu
     if url_dir.exists():
         for url_file in url_dir.glob("*.json"):
             try:
@@ -104,12 +103,14 @@ def get_available_brands() -> list[str]:
 def parse_budget_range(prompt: str) -> Optional[tuple[float, float]]:
     p = prompt.lower()
     range_match = re.search(
-        r"(\d+(?:\.\d+)?)\s*(?:đến|-|tới)\s*(\d+(?:\.\d+)?)\s*tỷ", p
+        r"(\d+(?:\.\d+)?)\s*(?:tỷ\s*)?(?:đến|-|tới)\s*(\d+(?:\.\d+)?)\s*tỷ", p
     )
     if range_match:
+        first_value = float(range_match.group(1)) * 1_000_000_000
+        second_value = float(range_match.group(2)) * 1_000_000_000
         return (
-            float(range_match.group(1)) * 1_000_000_000,
-            float(range_match.group(2)) * 1_000_000_000,
+            min(first_value, second_value),
+            max(first_value, second_value),
         )
 
     single_match = re.search(
@@ -155,7 +156,7 @@ def format_catalog_context(user_prompt: str) -> str:
         "audi",
         "bugatti",
     ]
-    
+
     available_brands_lower = [br.lower() for br in available_brands]
     for b in common_brands:
         if b in p and not any(b in avail for avail in available_brands_lower):
@@ -185,6 +186,75 @@ def format_catalog_context(user_prompt: str) -> str:
         ):
             candidate_vehicles.append(v)
 
+    wants_cheaper = any(
+        phrase in p
+        for phrase in ("giá mềm hơn", "rẻ hơn", "giá thấp hơn", "giá hợp lý hơn")
+    )
+    if wants_cheaper:
+        referenced_vehicle = next(
+            (
+                v
+                for v in vehicles
+                if any(
+                    len(token) > 1 and re.search(rf"\b{re.escape(token)}\b", p)
+                    for token in re.findall(
+                        r"[a-z0-9]+", str(v.get("name") or v.get("model", "")).lower()
+                    )
+                    if token
+                    not in {"audi", "bmw", "mercedes", "benz", "ferrari", "lamborghini"}
+                )
+            ),
+            None,
+        )
+        if referenced_vehicle and isinstance(
+            referenced_vehicle.get("price_vnd"), (int, float)
+        ):
+            reference_price = referenced_vehicle["price_vnd"]
+            reference_brand = _clean_str(referenced_vehicle.get("brand"))
+            candidate_vehicles = [
+                v
+                for v in vehicles
+                if _clean_str(v.get("brand")) == reference_brand
+                and isinstance(v.get("price_vnd"), (int, float))
+                and v["price_vnd"] < reference_price
+            ]
+            if any(
+                term in p for term in ("kiểu dáng", "thể thao", "coupe", "sportback")
+            ):
+                style_matches = [
+                    v
+                    for v in candidate_vehicles
+                    if any(
+                        term in f"{v.get('name', '')} {v.get('body_type', '')}".lower()
+                        for term in ("coupe", "sportback", "roadster")
+                    )
+                    and "suv" not in str(v.get("body_type", "")).lower()
+                ]
+                if style_matches:
+                    candidate_vehicles = sorted(
+                        style_matches, key=lambda v: v["price_vnd"]
+                    )
+
+    requested_electric = any(
+        term in p for term in ("xe điện", "thuần điện", "xe chạy điện")
+    )
+    electric_note = ""
+    if requested_electric and "audi" in p:
+        audi_electric = [
+            v
+            for v in vehicles
+            if _clean_str(v.get("brand")) == "audi"
+            and any(
+                term in str(v.get("powertrain", "")).lower()
+                for term in ("thuần điện", "pin điện", "electric")
+            )
+        ]
+        if not audi_electric:
+            electric_note = (
+                "[LƯU Ý HỆ THỐNG]: Dữ liệu showroom hiện chưa có mẫu Audi thuần điện; "
+                "không tự đề xuất Audi e-tron hoặc khẳng định xe điện Audi đang được bán.\n"
+            )
+
     # Nếu không lọc được xe cụ thể, kiểm tra xem khách có đang hỏi câu ngoài lề không
     if not candidate_vehicles:
         budget_range = parse_budget_range(user_prompt)
@@ -210,7 +280,7 @@ def format_catalog_context(user_prompt: str) -> str:
             + "HỆ THỐNG: Không tìm thấy mẫu xe phù hợp trong dữ liệu Showroom."
         )
 
-    lines = [brand_warning + "DỮ LIỆU XE PHÙ HỢP TẠI SHOWROOM:"]
+    lines = [brand_warning + electric_note + "DỮ LIỆU XE PHÙ HỢP TẠI SHOWROOM:"]
     for v in candidate_vehicles[:5]:
         price = v.get("price_vnd")
         price_str = f"{price:,}" if isinstance(price, (int, float)) else "Liên hệ"
@@ -227,10 +297,42 @@ def format_catalog_context(user_prompt: str) -> str:
 
 
 def is_brand_list_request(text: str) -> bool:
-
     text_lower = text.lower()
     if "tỷ" in text_lower or "giá" in text_lower or "vài xe" in text_lower:
         return False
+
+    specific_vehicle = any(
+        any(
+            re.search(rf"\b{re.escape(token)}\b", text_lower)
+            for token in re.findall(
+                r"[a-z0-9]+", str(v.get("name") or v.get("model", "")).lower()
+            )
+            if any(character.isdigit() for character in token)
+        )
+        for v in load_all_catalogs()
+    )
+    if specific_vehicle or any(
+        term in text_lower for term in ("link", "chi tiết", "đường dẫn")
+    ):
+        return False
+
+    requested_brand = any(
+        re.search(rf"\b{re.escape(brand.lower())}\b", text_lower)
+        for brand in get_available_brands()
+    )
+    brand_vehicle_phrases = (
+        "xem xe",
+        "cho xem",
+        "các dòng xe",
+        "dòng xe",
+        "các mẫu xe",
+        "có xe",
+        "những xe",
+    )
+    if requested_brand and any(
+        phrase in text_lower for phrase in brand_vehicle_phrases
+    ):
+        return True
 
     kws = [
         "hãng xe",
@@ -243,8 +345,12 @@ def is_brand_list_request(text: str) -> bool:
     ]
     return any(kw in text_lower for kw in kws)
 
+
 def is_vehicle_list_request(text: str) -> bool:
     """Xác định xem khách có đang hỏi danh sách TẤT CẢ XE không."""
+    if parse_budget_range(text):
+        return True
+
     kws = [
         "danh sách xe",
         "xem danh sách",
@@ -253,7 +359,23 @@ def is_vehicle_list_request(text: str) -> bool:
         "tất cả các xe",
         "các mẫu xe hiện có",
     ]
-    return any(kw in text.lower() for kw in kws)
+    text_lower = text.lower()
+    if any(kw in text_lower for kw in kws):
+        return True
+
+    if any(term in text_lower for term in ("link", "đường dẫn", "chi tiết")):
+        return any(
+            any(
+                re.search(rf"\b{re.escape(token)}\b", text_lower)
+                for token in re.findall(
+                    r"[a-z0-9]+", str(v.get("name") or v.get("model", "")).lower()
+                )
+                if any(character.isdigit() for character in token)
+            )
+            for v in load_all_catalogs()
+        )
+
+    return False
 
 
 def format_vehicle_list_response(user_prompt: str) -> str:
@@ -262,7 +384,126 @@ def format_vehicle_list_response(user_prompt: str) -> str:
     if not vehicles:
         return "Dạ, hiện tại showroom bên em chưa cập nhật dữ liệu xe ạ."
 
-    # Xử lý trường hợp 
+    text_lower = user_prompt.lower()
+    clean_prompt = _clean_str(text_lower)
+    requested_vehicle = next(
+        (
+            v
+            for v in vehicles
+            if any(
+                re.search(rf"\b{re.escape(token)}\b", text_lower)
+                for token in re.findall(
+                    r"[a-z0-9]+", str(v.get("name") or v.get("model", "")).lower()
+                )
+                if any(character.isdigit() for character in token)
+            )
+            and any(term in text_lower for term in ("link", "đường dẫn", "chi tiết"))
+        ),
+        None,
+    )
+    budget_range = parse_budget_range(user_prompt)
+    requested_brand = next(
+        (
+            brand
+            for brand in get_available_brands()
+            if re.search(rf"\b{re.escape(brand.lower())}\b", text_lower)
+        ),
+        None,
+    )
+
+    if requested_vehicle:
+        selected_vehicles = [requested_vehicle]
+    elif budget_range:
+        min_budget, max_budget = budget_range
+        selected_vehicles = sorted(
+            [
+                v
+                for v in vehicles
+                if isinstance(v.get("price_vnd"), (int, float))
+                and min_budget <= v["price_vnd"] <= max_budget
+                and v.get("url") not in (None, "", "N/A")
+            ],
+            key=lambda v: v["price_vnd"],
+            reverse=True,
+        )[:5]
+    elif requested_brand and is_brand_list_request(user_prompt):
+        selected_vehicles = [
+            v
+            for v in vehicles
+            if str(v.get("brand", "")).lower() == requested_brand.lower()
+            and v.get("url") not in (None, "", "N/A")
+        ]
+        __import__("random").shuffle(selected_vehicles)
+        selected_vehicles = selected_vehicles[:5]
+        previous_lists = getattr(
+            format_vehicle_list_response, "_last_random_brand_lists", {}
+        )
+        brand_key = requested_brand.lower()
+        current_names = tuple(
+            v.get("name") or v.get("model") for v in selected_vehicles
+        )
+        if len(selected_vehicles) > 1 and current_names == previous_lists.get(
+            brand_key
+        ):
+            selected_vehicles = selected_vehicles[1:] + selected_vehicles[:1]
+            current_names = tuple(
+                v.get("name") or v.get("model") for v in selected_vehicles
+            )
+        previous_lists[brand_key] = current_names
+        format_vehicle_list_response._last_random_brand_lists = previous_lists
+    else:
+        selected_vehicles = [
+            v for v in vehicles if v.get("url") not in (None, "", "N/A")
+        ][:5]
+
+    if selected_vehicles:
+        lines = ["Dạ, em gửi thông tin các mẫu xe phù hợp ạ:\n"]
+        for idx, vehicle in enumerate(selected_vehicles, 1):
+            price = vehicle.get("price_vnd")
+            price_text = (
+                f"{price:,} VNĐ" if isinstance(price, (int, float)) else "Liên hệ"
+            )
+            description = (
+                str(
+                    vehicle.get("description")
+                    or vehicle.get("detailed_description")
+                    or ""
+                )
+                .split(".")[0]
+                .strip()
+            )
+            car_url = str(vehicle["url"]).replace(" ", "%20")
+            name = vehicle.get("name") or vehicle.get("model")
+            if requested_vehicle:
+                technical_details = [
+                    f"- Động cơ: {vehicle['powertrain']}"
+                    for _ in [0]
+                    if vehicle.get("powertrain")
+                ]
+                if vehicle.get("power_hp"):
+                    technical_details.append(f"- Công suất: {vehicle['power_hp']} HP")
+                if vehicle.get("seats"):
+                    technical_details.append(f"- Số chỗ: {vehicle['seats']}")
+                if vehicle.get("transmission"):
+                    technical_details.append(f"- Hộp số: {vehicle['transmission']}")
+                if vehicle.get("drivetrain"):
+                    technical_details.append(f"- Dẫn động: {vehicle['drivetrain']}")
+                detailed_description = (
+                    vehicle.get("detailed_description") or description
+                )
+                lines.append(
+                    f"{idx}. **{name}** — **{price_text}**.\n"
+                    + "\n".join(technical_details)
+                    + f"\n{detailed_description}\n"
+                    + f"[Xem chi tiết xe tại đây]({car_url})"
+                )
+            else:
+                lines.append(
+                    f"{idx}. **{name}** — **{price_text}**. {description} "
+                    f"[Xem chi tiết xe tại đây]({car_url})"
+                )
+        return "\n".join(lines)
+
     if is_brand_list_request(user_prompt):
         available_brands = get_available_brands()
         lines = [
@@ -275,21 +516,4 @@ def format_vehicle_list_response(user_prompt: str) -> str:
         )
         return "\n".join(lines)
 
-    lines = ["Dạ, em gửi danh sách các mẫu xe hiện có tại showroom ạ:\n"]
-    for idx, v in enumerate(vehicles, 1):
-        price = v.get("price_vnd")
-        price_str = f"{price:,}" if isinstance(price, (int, float)) else "Liên hệ"
-        car_url = v.get("url", "N/A")
-
-        if car_url != "N/A":
-            clean_url = car_url.replace(" ", "%20")
-            url_text = f" — [Xem chi tiết xe tại đây]({clean_url})"
-        else:
-            url_text = ""
-
-        lines.append(
-            f"{idx}. **{v.get('brand', '').upper()} {v.get('name') or v.get('model')}** — **{price_str} VNĐ**{url_text}"
-        )
-
-    lines.append("\nAnh/Chị muốn tư vấn chi tiết mẫu xe nào trên đây ạ?")
-    return "\n".join(lines)
+    return "Dạ, hiện chưa tìm thấy mẫu xe có trang chi tiết phù hợp trong dữ liệu showroom ạ."

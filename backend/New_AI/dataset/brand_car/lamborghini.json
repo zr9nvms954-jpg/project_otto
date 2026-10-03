@@ -31,7 +31,7 @@
     },
     {
       "name": "Lamborghini Sesto Elemento",
-      "price_vnd": 70000000000,
+      "price_vnd": 19000000000,
       "body_type": "Siêu xe thể thao đường đua độc bản (Track-Only Hypercar)",
       "model_year": "2011 - 2026",
       "status": "Phiên bản giới hạn chạy đường đua (20 chiếc toàn thế giới)",
@@ -56,7 +56,7 @@
     },
     {
       "name": "Lamborghini Sián FKP 37",
-      "price_vnd": 87000000000,
+      "price_vnd": 85000000000,
       "body_type": "Siêu xe lai Hybrid độc bản giới hạn (Few-Off Mild-Hybrid Hypercar)",
       "model_year": "2020 - 2026",
       "status": "Siêu xe giới hạn (63 chiếc Coupe & 19 chiếc Roadster toàn thế giới)",
@@ -80,8 +80,8 @@
       "detailed_description": "Lamborghini Sián FKP 37 là mẫu siêu xe Hybrid thương mại đầu tiên của hãng ứng dụng công nghệ Siêu tụ điện (Supercapacitor) tiên tiến nhằm vinh danh cố Chủ tịch Tập đoàn Volkswagen Ferdinand Karl Piëch. Ngoại thất sở hữu ngôn ngữ thiết kế khí động học viễn tưởng lấy cảm hứng từ Terzo Millennio và Countach kinh điển, nổi bật với đèn LED ban ngày hình chữ Y cỡ lớn, cánh gió sau ẩn tự động và các lá gió tản nhiệt phía sau làm bằng vật liệu nhớ hình (Smart Material) tự động mở ra nhờ nhiệt độ ống xả. Hệ động lực Mild-Hybrid kết hợp động cơ V12 6.5L Hút khí tự nhiên (785 hp) với mô-tơ điện 48V (34 hp) tích hợp Siêu tụ điện có khả năng sạc/xả năng lượng cực nhanh và nhẹ hơn 3 lần so với pin Lithium-ion cùng công suất, đạt tổng công suất 819 mã lực và mô-men xoắn 720 Nm. Trọng lượng khô ~1.620 kg (tỷ lệ 1,98 kg/mã lực). Đi kèm hộp số 7 cấp ISR và dẫn động 4 bánh Haldex Gen IV, xe tăng tốc 0-100 km/h dưới 2,8 giây và đạt tốc độ tối đa 355 km/h. Cabin chế tác thủ công qua chương trình cá nhân hóa Ad Personam bọc da Poltrona Frau Ý, tích hợp chi tiết cửa gió in 3D, màn hình cảm ứng trung tâm dạng dọc và vô-lăng thể thao bọc Alcantara."
     },
     {
-      "name": "Lamborghini Veneno Coupe",
-      "price_vnd": 200000000000,
+      "name": "Lamborghini Veneno Roadster",
+      "price_vnd": 110000000000,
       "body_type": "Siêu xe độc bản kỷ niệm cực hiếm (Few-Off Hypercar)",
       "model_year": "2013 - 2026",
       "status": "Siêu xe độc bản cực hiếm (Chỉ 4 chiếc Coupe toàn thế giới)",

@@ -6,7 +6,7 @@
   "vehicles": [
     {
       "name": "Audi A3",
-      "price_vnd": 1500000000,
+      "price_vnd": 9500000000,
       "body_type": "Sedan hạng sang cỡ nhỏ (Subcompact Executive Sedan)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -28,7 +28,7 @@
     },
     {
       "name": "Audi A4",
-      "price_vnd": 1800000000,
+      "price_vnd": 10500000000,
       "body_type": "Sedan hạng sang cỡ nhỏ (Compact Executive Sedan)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Audi A5",
-      "price_vnd": 2100000000,
+      "price_vnd": 5500000000,
       "body_type": "Coupe / Sportback hạng sang (Executive Coupe)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -70,7 +70,7 @@
     },
     {
       "name": "Audi A6",
-      "price_vnd": 2500000000,
+      "price_vnd": 6500000000,
       "body_type": "Sedan hạng sang cỡ trung (Executive Sedan)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -91,7 +91,7 @@
     },
     {
       "name": "Audi A7",
-      "price_vnd": 3200000000,
+      "price_vnd": 7500000000,
       "body_type": "Sportback / Coupe 4 cửa hạng sang (Luxury Fastback)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Audi A8L",
-      "price_vnd": 5800000000,
+      "price_vnd": 8500000000,
       "body_type": "Sedan hạng sang cỡ lớn đầu bảng (Full-size Luxury Sedan)",
       "model_year": "2024 - 2026",
       "status": "Đặt hàng trước / Nhập khẩu",
@@ -133,7 +133,7 @@
     },
     {
       "name": "Audi RS5",
-      "price_vnd": 3800000000,
+      "price_vnd": 18500000000,
       "body_type": "Coupe thể thao hiệu suất cao (High-Performance Coupe)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -155,7 +155,7 @@
     },
     {
       "name": "Audi RS7 Sportback",
-      "price_vnd": 10500000000,
+      "price_vnd": 15500000000,
       "body_type": "Coupe 5 cửa hiệu suất cao (High-Performance Sportback)",
       "model_year": "2024 - 2026",
       "status": "Sẵn xe giao ngay",
@@ -178,7 +178,7 @@
     },
     {
       "name": "Audi R8 V10 Performance",
-      "price_vnd": 12000000000,
+      "price_vnd": 15500000000,
       "body_type": "Siêu xe thể thao động cơ đặt giữa (Mid-Engine Supercar)",
       "model_year": "2022 - 2026",
       "status": "Nhập khẩu nguyên chiếc",
@@ -201,7 +201,7 @@
     },
     {
       "name": "Audi TT 20th Anniversary Edition",
-      "price_vnd": 4500000000,
+      "price_vnd": 18500000000,
       "body_type": "Xe thể thao Coupe / Roadster (Kỷ niệm giới hạn)",
       "model_year": "2020 - 2026",
       "status": "Phiên bản giới hạn / Đặt hàng trước",
@@ -223,7 +223,7 @@
     },
     {
       "name": "Audi Q3",
-      "price_vnd": 1900000000,
+      "price_vnd": 30500000000,
       "body_type": "SUV hạng sang cỡ nhỏ (Subcompact Luxury Crossover)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -244,7 +244,7 @@
     },
     {
       "name": "Audi Q5",
-      "price_vnd": 2300000000,
+      "price_vnd": 10500000000,
       "body_type": "SUV hạng sang cỡ trung (Compact Luxury Crossover)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -265,7 +265,7 @@
     },
     {
       "name": "Audi Q7",
-      "price_vnd": 3500000000,
+      "price_vnd": 11500000000,
       "body_type": "SUV 7 chỗ hạng sang cỡ lớn (Mid-Size Luxury SUV)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",
@@ -286,7 +286,7 @@
     },
     {
       "name": "Audi Q8",
-      "price_vnd": 4200000000,
+      "price_vnd": 13500000000,
       "body_type": "SUV Coupe hạng sang cỡ lớn (Mid-Size Luxury Coupe SUV)",
       "model_year": "2024 - 2026",
       "status": "Đang bán",

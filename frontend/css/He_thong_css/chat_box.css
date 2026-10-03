@@ -182,8 +182,9 @@ body {
 .message {
     display: flex;
     gap: 14px;
-    max-width: 80%;
+    max-width: min(88%, 760px);
     animation: fadeIn 0.3s ease;
+    align-items: flex-start;
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -210,15 +211,52 @@ body {
 /* Bong bóng nội dung tin nhắn */
 .msg-content {
     background: var(--bot-msg-bg);
-    padding: 14px 18px;
+    padding: 16px 20px;
     border-radius: 18px;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--text-primary);
     position: relative;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 .user .msg-content { background: var(--user-msg-bg); border-bottom-right-radius: 4px; }
 .assistant .msg-content { border-bottom-left-radius: 4px; }
+.message > div:last-child { flex: 1; min-width: 0; }
+
+.msg-content p + p { margin-top: 12px; }
+.msg-content strong { color: #ffffff; font-weight: 700; }
+.msg-content h1,
+.msg-content h2,
+.msg-content h3,
+.msg-content h4 {
+    margin: 16px 0 8px;
+    color: #ffffff;
+    line-height: 1.35;
+}
+.msg-content h1 { font-size: 1.35rem; }
+.msg-content h2 { font-size: 1.2rem; }
+.msg-content h3,
+.msg-content h4 { font-size: 1.08rem; }
+
+.msg-content a {
+    color: #7dd3fc;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(125, 211, 252, 0.65);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+.msg-content a:hover {
+    color: #bae6fd;
+    text-decoration-color: currentColor;
+}
+.msg-content a:focus-visible {
+    outline: 2px solid #7dd3fc;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
 
 .msg-time { font-size: 0.7rem; color: var(--text-secondary); margin-top: 6px; display: block; }
 .user .msg-time { text-align: right; color: rgba(255, 255, 255, 0.7); }
@@ -313,26 +351,30 @@ body {
 @media (max-width: 768px) {
     .sidebar { display: none; }
     .chat-wrapper { height: 95vh; border-radius: 16px; }
+    .chat-messages { padding: 18px 14px; gap: 16px; }
+    .message { width: 100%; max-width: 100%; gap: 9px; }
+    .msg-avatar { width: 32px; height: 32px; }
+    .msg-content { padding: 13px 15px; font-size: 0.97rem; }
+    .chat-header { padding: 16px 18px; }
+    .chat-input-container { padding: 14px 16px; }
 }
 /* Khắc phục lỗi thụt lề quá sâu của danh sách do Markdown sinh ra */
 .msg-content ul,
 .msg-content ol {
-    margin: 0;
-    padding-left: 20px;
-    /* Thuộc tính này điều chỉnh độ thụt lề theo ý muốn */
+    margin: 10px 0 14px;
+    padding-left: 1.5em;
 }
 
 .msg-content li {
-    margin-bottom: 4px;
-    /* Tạo khoảng cách nhỏ giữa các dòng cho thoáng */
+    margin-bottom: 7px;
+    padding-left: 3px;
 }
+.msg-content li:last-child { margin-bottom: 0; }
+.msg-content li::marker { color: #7dd3fc; font-weight: 700; }
 /* Styling trực tiếp cho thẻ a href Trang chủ */
 a.home-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 100;
-    
+    position: static;
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -357,4 +399,15 @@ a.home-btn:hover {
     border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+    body { padding: 10px; }
+    .chat-wrapper { height: calc(100vh - 20px); }
+    .chat-messages { padding: 14px 10px; }
+    .message { gap: 7px; }
+    .msg-avatar { width: 30px; height: 30px; }
+    .msg-content { padding: 12px 13px; font-size: 0.95rem; }
+    .chat-header { flex-wrap: wrap; gap: 12px; }
+    a.home-btn { margin-left: auto; padding: 7px 11px; }
 }

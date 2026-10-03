@@ -77,11 +77,11 @@
     "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_R8_V10_Performance.html"
   },
   {
-    "id": "audi_rs6",
+    "id": "audi_rs5",
     "brand": "Audi",
-    "model": "Audi RS6",
-    "keywords": ["audi rs6", "xe audi rs6", "rs6"],
-    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_RS6.html"
+    "model": "Audi RS5",
+    "keywords": ["audi rs5", "xe audi rs5", "rs5"],
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_RS5.html"
   },
   {
     "id": "audi_rs7",
@@ -95,7 +95,7 @@
     "brand": "Audi",
     "model": "Audi TT 20th Anniversary Edition",
     "keywords": ["audi tt", "xe audi tt", "audi tt 20th", "tt 20th anniversary"],
-    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_TT_20th_Anniversary_Edition.html"
+    "url": "http://127.0.0.1:5500/frontend/html/audi/Audi_TT_20th_Anniversary%20Edition.html"
   },
   {
     "id": "audi_tong",
