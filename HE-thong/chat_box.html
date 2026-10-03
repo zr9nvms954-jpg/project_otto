@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tư Vấn Showroom Luxury VIP</title>
+    <title>Zyricon AI Assistant</title>
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<<<<<<< Updated upstream
     <!-- Nhúng thư viện đọc Markdown & Làm sạch HTML -->
+=======
+    
+    <a href="/HE-thong/TRANG-CHU.html" class="home-btn">← Trang chủ</a>
+
+    <!-- Thư viện Markdown & DOMPurify -->
+>>>>>>> Stashed changes
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
 
-    <!-- Nhúng file CSS ngoài -->
+    <!-- CSS ngoài -->
     <link rel="stylesheet" href="/frontend/css/He_thong_css/chat_box.css">
 </head>
 
@@ -21,78 +27,124 @@
     <div class="chat-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
+            <div class="brand-header">
+                <div class="logo-box">
+                    <i class="fa-solid fa-asterisk"></i>
+                    <span>Zyricon</span>
+                </div>
+                <i class="fa-regular fa-sidebar sidebar-icon"></i>
+            </div>
+
             <button class="new-chat-btn" id="newChatBtn" onclick="resetChat()">
-                <i class="fa-solid fa-plus"></i> Cuộc trò chuyện mới
+                <i class="fa-solid fa-plus"></i> New Chat
             </button>
 
-            <div class="history-title">Gần đây</div>
+            <!-- Section Features -->
+            <div class="history-title">Features</div>
             <ul class="chat-history-list">
                 <li class="chat-history-item active">
-                    <i class="fa-regular fa-message"></i> Tư vấn Showroom Siêu Xe
+                    <i class="fa-regular fa-comment"></i> Chat
+                </li>
+                <li class="chat-history-item">
+                    <i class="fa-regular fa-box-archive"></i> Archived
+                </li>
+                <li class="chat-history-item">
+                    <i class="fa-regular fa-bookmark"></i> Library
                 </li>
             </ul>
 
-            <div class="user-profile">
-                <div class="avatar"
-                    style="background-image: url('https://ui-avatars.com/api/?name=VIP+Client&background=random');">
-                </div>
-                <div>
-                    <h4 style="font-size: 0.9rem; font-weight: 600;">Khách Hàng VIP</h4>
-                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Showroom Access</p>
-                </div>
+            <!-- Section Workspaces -->
+            <div class="history-title">Workspaces</div>
+            <ul class="chat-history-list">
+                <li class="chat-history-item"><i class="fa-regular fa-folder"></i> New Project</li>
+                <li class="chat-history-item"><i class="fa-regular fa-folder"></i> Image</li>
+                <li class="chat-history-item"><i class="fa-regular fa-folder"></i> Presentation</li>
+                <li class="chat-history-item"><i class="fa-regular fa-folder"></i> Riset</li>
+            </ul>
+
+            <!-- Premium Box Card -->
+            <div class="premium-card">
+                <div class="crown-icon"><i class="fa-solid fa-crown"></i></div>
+                <h5>Upgrade to premium</h5>
+                <p>Boost productivity with seamless automation and responsive AI.</p>
+                <button class="upgrade-btn">Upgrade</button>
             </div>
         </aside>
 
         <!-- Main Chat Panel -->
         <main class="main-chat">
-            <!-- Header -->
+            <!-- Header Bar -->
             <header class="chat-header">
-                <div class="bot-info">
-                    <div class="msg-avatar assistant" style="width: 42px; height: 42px;">
-                        <i class="fa-solid fa-robot" style="font-size: 1.2rem;"></i>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
-                            Showroom AI Assistant <span class="bot-status"></span>
-                        </h3>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Trợ lý tư vấn siêu xe VIP</p>
-                    </div>
+                <div class="model-selector">
+                    <span>ChatGPT v4.0</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="header-btn">Configuration <i class="fa-solid fa-gear"></i></button>
+                    <button class="header-btn">Export <i class="fa-solid fa-arrow-up-from-bracket"></i></button>
                 </div>
                 <a href="/HE-thong/TRANG-CHU.html" class="home-btn">
                     ← Trang chủ
                 </a>
             </header>
 
-            <!-- Message Container -->
+            <!-- DANH SÁCH TIN NHẮN CUỘN -->
             <div class="chat-messages" id="chatMessages">
+                
+                <!-- Màn hình chào mừng ban đầu (Chỉ nằm trong luồng cuộc gọi) -->
+                <div class="welcome-section" id="welcomeScreen">
+                    <div class="hero-section">
+                        <div class="orb"></div>
+                        <h2>Ready to Create Something New?</h2>
+                    </div>
+
+                    <div class="action-badges">
+                        <button class="badge-btn">Create Image <i class="fa-regular fa-image"></i></button>
+                        <button class="badge-btn">Brainstorm <i class="fa-regular fa-lightbulb"></i></button>
+                        <button class="badge-btn">Make a plan <i class="fa-regular fa-file-lines"></i></button>
+                    </div>
+                </div>
+
                 <!-- Typing Indicator Placeholder -->
                 <div class="message assistant" id="typingContainer" style="display: none;">
                     <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
-                    <div class="typing-indicator" id="typingIndicator" style="display: flex;">
+                    <div class="typing-indicator" id="typingIndicator">
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Input Box -->
+            <!-- FOOTER CONTAINER (Khung nhập luôn ở ĐÁY) -->
             <footer class="chat-input-container">
-                <div class="input-box">
-                    <!-- Đã xóa thẻ form -->
-                    <textarea id="userInput" class="chat-textarea"
-                        placeholder="Nhập câu hỏi tư vấn (ví dụ: Showroom có xe gì, giá dưới 10 tỷ...)..." rows="1"></textarea>
-            
-                    <!-- Bắt buộc dùng type="button" để nút không bao giờ submit web -->
-                    <button type="button" id="sendBtn" class="send-btn">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
+                <div class="main-prompt-box">
+                    <div class="prompt-input-area">
+                        <i class="fa-solid fa-sparkles sparkles-icon"></i>
+                        <textarea id="userInput" class="chat-textarea" placeholder="Ask Anything..." rows="2"></textarea>
+                    </div>
+
+                    <div class="prompt-toolbar">
+                        <div class="tool-actions">
+                            <span><i class="fa-solid fa-paperclip"></i> Attach</span>
+                            <span><i class="fa-solid fa-sliders"></i> Settings</span>
+                            <span><i class="fa-solid fa-border-all"></i> Options</span>
+                        </div>
+                        <div class="send-actions">
+                            <button class="mic-btn" type="button"><i class="fa-solid fa-microphone"></i></button>
+                            <button type="button" id="sendBtn" class="send-btn">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </main>
     </div>
 
-    <!-- Nhúng file Javascript điều khiển -->
+    <!-- Javascript điều khiển -->
     <script src="/frontend/java/chat_box.js"></script>
 </body>
 
