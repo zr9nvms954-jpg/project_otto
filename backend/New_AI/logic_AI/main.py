@@ -141,7 +141,8 @@ def generate_car_advice(
 ) -> str:
     normalized_prompt = user_prompt.lower().strip()
     ordinal_match = re.search(
-        r"\b(?:số|thứ)\s*(\d+|một|hai|ba|bốn|năm)\b", normalized_prompt
+        r"\b(?:con\s+số|số|thứ)\s*(\d+|một|hai|ba|bốn|năm)\b",
+        normalized_prompt,
     )
     if ordinal_match:
         ordinal_words = {"một": 1, "hai": 2, "ba": 3, "bốn": 4, "năm": 5}
@@ -153,10 +154,19 @@ def generate_car_advice(
         for history_item in reversed(conversation_history or []):
             if history_item.get("role") != "assistant":
                 continue
+            content = history_item.get("content")
+            if not isinstance(content, str):
+                continue
             numbered_items = re.findall(
                 r"(?m)^\s*(\d+)[.)]\s+\*\*([^*\n]+)\*\*",
-                history_item.get("content", ""),
+                content,
             )
+            if not numbered_items:
+                continue
+            if len(numbered_items) > 1 and not any(
+                int(number) == requested_number for number, _ in numbered_items
+            ):
+                break
             selected_name = next(
                 (
                     name.strip()
@@ -182,6 +192,16 @@ def generate_car_advice(
                         "name"
                     ) or selected_vehicle.get("model")
                     return format_vehicle_list_response(f"chi tiết {selected_model}")
+                selected_brand = next(
+                    (
+                        brand
+                        for brand in get_available_brands()
+                        if brand.casefold() == selected_name.casefold()
+                    ),
+                    None,
+                )
+                if selected_brand:
+                    return format_vehicle_list_response(f"các mẫu xe {selected_brand}")
         return (
             "Dạ, em chưa xác định được mẫu xe Anh/Chị đang nhắc đến. "
             "Anh/Chị cho em xin tên xe hoặc gửi lại danh sách xe vừa xem nhé ạ."
@@ -224,6 +244,46 @@ def generate_car_advice(
         for term in ("mua", "bán", "tìm", "tư vấn", "cần", "muốn")
     )
     has_car_context = any(term in normalized_prompt for term in car_related_terms)
+    latest_assistant_content = next(
+        (
+            item.get("content", "").casefold()
+            for item in reversed(conversation_history or [])
+            if item.get("role") == "assistant" and isinstance(item.get("content"), str)
+        ),
+        "",
+    )
+    referenced_vehicle = next(
+        (
+            vehicle
+            for vehicle in load_all_catalogs()
+            if str(vehicle.get("name") or vehicle.get("model", "")).casefold()
+            in latest_assistant_content
+        ),
+        None,
+    )
+    is_contextual_follow_up = (
+        any(
+            phrase in normalized_prompt
+            for phrase in (
+                "rẻ hơn",
+                "giá thấp hơn",
+                "giá mềm hơn",
+                "mẫu khác",
+                "xe khác",
+                "chi tiết hơn",
+                "thông tin thêm",
+                "xem thêm thông tin",
+                "mẫu đó",
+                "xe đó",
+                "con đó",
+            )
+        )
+        and referenced_vehicle is not None
+    )
+    catalog_prompt = user_prompt
+    if is_contextual_follow_up:
+        catalog_prompt = f"{user_prompt} {referenced_vehicle.get('name') or referenced_vehicle.get('model')}"
+        has_car_context = True
 
     if is_greeting and not has_car_context and not has_purchase_intent:
         return (
@@ -242,7 +302,7 @@ def generate_car_advice(
     if is_brand_list_request(user_prompt) or is_vehicle_list_request(user_prompt):
         return format_vehicle_list_response(user_prompt)
 
-    bypass = should_bypass_cache(user_prompt)
+    bypass = bool(conversation_history) or should_bypass_cache(user_prompt)
     if not bypass:
         cached_res = _get_cache().search(user_prompt)
         if cached_res.get("hit"):
@@ -252,7 +312,7 @@ def generate_car_advice(
 
     # 1. Thu thập dữ liệu
     available_brands_str = ", ".join(get_available_brands())
-    context_data = format_catalog_context(user_prompt)
+    context_data = format_catalog_context(catalog_prompt)
 
     customer_memory = _get_memory().get_relevant_memories(user_id, user_prompt)
     if not customer_memory:

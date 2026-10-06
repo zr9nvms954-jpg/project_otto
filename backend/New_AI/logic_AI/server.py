@@ -1,7 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from typing import List, Optional
+from typing import Optional
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
@@ -56,6 +56,8 @@ async def chat_endpoint(request: ChatRequest):
         bot_reply = generate_car_advice(request.message, request.history)
         return ChatResponse(response=bot_reply)
 
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"[Lỗi Server]: {e}")
         raise HTTPException(status_code=500, detail=f"Lỗi xử lý hệ thống: {str(e)}")

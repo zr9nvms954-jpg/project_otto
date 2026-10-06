@@ -167,6 +167,7 @@ def format_catalog_context(user_prompt: str) -> str:
         brand_warning = f"[LƯU Ý HỆ THỐNG]: Khách hỏi hãng {', '.join(unsupported_requested)} -> Showroom KHÔNG CÓ sẵn hãng này.\n\n"
 
     candidate_vehicles = []
+    specific_vehicle_candidates = []
 
     # Lọc xe
     clean_p = _clean_str(p)
@@ -177,14 +178,52 @@ def format_catalog_context(user_prompt: str) -> str:
 
         raw_name = str(v.get("name") or v.get("model")).lower()
         raw_brand = str(v.get("brand")).lower()
+        generic_model_tokens = {
+            "amg",
+            "maybach",
+            "coupe",
+            "sportback",
+            "roadster",
+            "sedan",
+            "suv",
+            "4matic",
+            "quattro",
+            "competition",
+            "series",
+            "turbo",
+        }
+        name_tokens = re.findall(r"[a-z0-9]+", raw_name)
+        model_tokens = [
+            token
+            for token in name_tokens
+            if token not in re.findall(r"[a-z0-9]+", raw_brand)
+            and token not in generic_model_tokens
+            and (len(token) > 2 or any(character.isdigit() for character in token))
+        ]
+        numeric_model_tokens = [
+            token
+            for token in model_tokens
+            if any(character.isdigit() for character in token)
+        ]
+        if numeric_model_tokens:
+            model_tokens = numeric_model_tokens
+        specific_model_match = (v_name and v_name in clean_p) or any(
+            re.search(rf"(?<![a-z0-9]){re.escape(token)}(?![a-z0-9])", p)
+            for token in model_tokens
+        )
 
-        if (
-            (v_name and (v_name in clean_p or clean_p in v_name))
-            or (v_brand and v_brand in clean_p)
+        if specific_model_match:
+            specific_vehicle_candidates.append(v)
+        elif (
+            (v_brand and v_brand in clean_p)
             or (raw_brand and raw_brand.split("-")[0] in p)
+            or ("maybach" in p and "maybach" in raw_name)
             or (raw_name and any(w in p for w in raw_name.split() if len(w) > 2))
         ):
             candidate_vehicles.append(v)
+
+    if specific_vehicle_candidates:
+        candidate_vehicles = specific_vehicle_candidates
 
     wants_cheaper = any(
         phrase in p
@@ -192,6 +231,13 @@ def format_catalog_context(user_prompt: str) -> str:
     )
     if wants_cheaper:
         referenced_vehicle = next(
+            (
+                v
+                for v in vehicles
+                if _clean_str(v.get("name") or v.get("model")) in clean_p
+            ),
+            None,
+        ) or next(
             (
                 v
                 for v in vehicles
@@ -390,12 +436,30 @@ def format_vehicle_list_response(user_prompt: str) -> str:
         (
             v
             for v in vehicles
+            if _clean_str(v.get("name") or v.get("model")) in clean_prompt
+            and any(term in text_lower for term in ("link", "đường dẫn", "chi tiết"))
+        ),
+        None,
+    ) or next(
+        (
+            v
+            for v in vehicles
             if any(
                 re.search(rf"\b{re.escape(token)}\b", text_lower)
                 for token in re.findall(
                     r"[a-z0-9]+", str(v.get("name") or v.get("model", "")).lower()
                 )
                 if any(character.isdigit() for character in token)
+                and token
+                not in {
+                    "4matic",
+                    "quattro",
+                    "amg",
+                    "coupe",
+                    "sportback",
+                    "roadster",
+                    "suv",
+                }
             )
             and any(term in text_lower for term in ("link", "đường dẫn", "chi tiết"))
         ),
