@@ -16,6 +16,7 @@
     <div class="container" id="container">
         <!-- FORM ĐĂNG KÝ (SIGN UP) -->
         <div class="form-container sign-up">
+            <!-- BƯỚC 1: ĐIỀN THÔNG TIN TÀI KHOẢN -->
             <form id="register-form">
                 <h1>Create Account</h1>
                 <div class="social-icons">
@@ -30,6 +31,19 @@
                 <input type="password" id="reg-password" placeholder="Password (ít nhất 6 ký tự, gồm chữ & số)"
                     required>
                 <button type="submit">Sign Up</button>
+            </form>
+
+            <!-- BƯỚC 2: NHẬP MÃ OTP 6 CHỮ SỐ (ẨN MẶC ĐỊNH) -->
+            <form id="otp-form" style="display: none;">
+                <h1>Verify OTP</h1>
+                <span>Enter the 6-digit code sent to your email</span>
+                <input type="text" id="otp-code" placeholder="------" maxlength="6" pattern="\d{6}" required
+                    style="text-align: center; letter-spacing: 6px; font-weight: bold; font-size: 18px;">
+                <button type="submit">Verify & Register</button>
+                <button type="button" id="btn-back-register"
+                    style="background: transparent; color: #888; border: none; cursor: pointer; margin-top: 8px; text-decoration: underline;">
+                    Back
+                </button>
             </form>
         </div>
 
